@@ -6,8 +6,7 @@ const HtmlRouter = lazy(() => import('./router/HtmlRouter.js'));
 
 function App() {
   return ( 
-		  <Suspense>
-
+	<Suspense> 
 		<HtmlRouter />
 	</Suspense>   
   );
