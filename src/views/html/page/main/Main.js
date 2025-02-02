@@ -25,7 +25,7 @@ function Main() {
             <div className="com_sec_tit__wrap">
               <h2 className="com_sec_tit">
                 <i className="png_icon icon_ai"></i>
-                포트폴리오 main add deploy
+                포트폴리오 main add 
               </h2>
             </div>
             <section className="com_swiper_wrap">
