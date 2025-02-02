@@ -20,13 +20,12 @@ function Main() {
     <>
       <main className="p_main">
         {/*  포트폴리오 */}
-				
         <section className="main_cont_sec">
           <div className="com_center_wrap">
             <div className="com_sec_tit__wrap">
               <h2 className="com_sec_tit">
                 <i className="png_icon icon_ai"></i>
-                포트폴리오 main add 
+                포트폴리오 main add deploy
               </h2>
             </div>
             <section className="com_swiper_wrap">
