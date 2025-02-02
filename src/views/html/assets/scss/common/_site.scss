@@ -1,0 +1,137 @@
+/*!스크롤*/
+.scroll {
+  scrollbar-face-color: #d5d3d7;
+  /*스크롤*/
+  scrollbar-highlight-color: #d5d3d7;
+  /*하이라이트*/
+  scrollbar-3dlight-color: #d5d3d7;
+  /*왼쪽외곽음영*/
+  scrollbar-darkshadow-color: #d5d3d7;
+  /*오른쪽외곽음영*/
+  scrollbar-shadow-color: #d5d3d7;
+  /*오른쪽 안쪽음영*/
+  scrollbar-arrow-color: #d5d3d7;
+  /*화살*/
+  scrollbar-track-color: rgba(255, 255, 255, 0);
+  /*스크롤영역*/
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  /*스크롤바*/
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+
+  /*스크롤바 버튼(아래 위 화살표)*/
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .2);
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-radius: 10px;
+  }
+
+  /*스크롤바 핸들*/
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  /*스크롤바 진행줄*/
+  &::-webkit-scrollbar-track-piece {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  /*진행줄에서 핸들로 덮이지 않은 영역 */
+  &::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, .08);
+  }
+
+  /*상하 좌우 스크롤이 만나는 공간*/
+}
+
+.scroll_lock {
+  touch-action: none;
+  overflow-y: hidden !important;
+
+  body {
+    touch-action: none;
+    overflow-y: hidden !important;
+  }
+}
+
+.com_swiper_wrap{
+  position: relative;
+  &.full{
+    // width:calc(100% + $pd-inline * 2);
+    // margin-left:calc(0px - $pd-inline);
+    // .swiper-wrapper{
+    //   padding-left: $pd-inline;
+    // }
+    @include media-max($l){
+      width:calc(100% + $pd-inline-m * 2);
+      margin-left:calc(0px - $pd-inline-m);
+      .swiper-wrapper{
+        padding-left: $pd-inline-m;
+      }
+    }
+  }
+  // &.out_nav{
+  //   .swiper-button-prev{
+  //     left:0;
+  //   }
+  //   .swiper-button-next{
+  //     right: 0;
+  //   }
+  // }
+  .swiper-button-prev{
+    transform: rotate(180deg);
+  }
+  .swiper-button-prev,.swiper-button-next{
+    width:64px;
+    height: 64px;
+    @include inflex(all);
+    border-radius: 100%;
+    background-color: rgba(0,0,0,.7);
+    margin-top:-32px;
+    @include media-max($l){
+      width:45px;
+      height: 45px;
+      margin-top:-22.5px;
+    }
+    &:after{
+      @include addImg(slide_next,24,24);  
+      background-repeat: no-repeat;
+      @include media-max($l){
+        width:22.3px;
+        min-width:22.3px;
+        height: 16.4px;;
+      }  
+    }
+  }
+  .swiper-button-disabled{display: none;}
+}
+
+.com_divider{
+  width:100%;
+  height: 1px;
+  background-color: $c-border;
+  .dark &{
+    background-color: $c-border-dark-light;
+  }
+  &+.com_board_info, &+.com_sec_tit__wrap{
+    margin-top:50px;
+  }
+}
+.com_outarea{
+  width:calc(100% + $pd-inline * 2);
+  margin-left:calc(0px - $pd-inline);
+  @include media-max($l){
+    width:calc(100% +  $pd-inline-m * 2);
+    margin-left:calc(0px -  $pd-inline-m);
+  }
+}

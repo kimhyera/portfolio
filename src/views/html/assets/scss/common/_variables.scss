@@ -1,0 +1,392 @@
+/* ^scss에서 수정해주세요!  Don't edit .css file, Only work on the scss*/
+// &mixin
+@mixin media-max($w) {
+  @media screen and (max-width: $w) {
+    @content;
+  }
+}
+
+@mixin media-min($w) {
+  @media screen and (min-width: $w) {
+    @content;
+  }
+}
+
+@mixin media-between($max, $min) {
+  @media screen and (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}
+
+//! 단독 사용하지 않음. Don't use alone
+@mixin flex-align($align) {
+	@if ($align == "x") {
+		justify-content: center;
+		-webkit-justify-content: center;
+		-moz-justify-content: center;
+	}
+	@if ($align == "y") {
+		align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+	}
+	@if ($align == "s") {
+		align-items: flex-start;
+		-webkit-align-items: flex-start;
+		-moz-align-items: flex-start;
+	}
+  @if ($align == "right") {
+		justify-content: flex-end;
+		-webkit-justify-content: flex-end;
+		-moz-justify-content: flex-end;
+	}
+  @if ($align == "left") {
+		justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+		-moz-justify-content: flex-start;
+	}
+	@if ($align == "all") {
+		align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		justify-content: center;
+		-webkit-justify-content: center;
+		-moz-justify-content: center;
+	}
+	@if ($align == "between") {
+		align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-moz-justify-content: space-between;
+	}
+	@if ($align == "evenly") {
+		align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		justify-content: space-evenly;
+		-webkit-justify-content: space-evenly;
+		-moz-justify-content: space-evenly;
+	}
+	@if ($align == "column") {
+		flex-direction: column;
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+	}
+  @if ($align == "_") {
+		align-items: baseline;
+		-webkit-align-items: baseline;
+		-moz-align-items: baseline;
+	}
+}
+//^ flex 박스
+@mixin flex($align) {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	@include flex-align($align);
+}
+//^ inline flex 박스
+@mixin inflex($align) {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	@include flex-align($align);
+}
+// flex-wrap
+@mixin flex-wrap($wrap: wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+@mixin browser-ie {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@mixin beforeafter{
+  content: '';
+  display: inline-block;
+}
+//^ 텍스트 분할선 (가로, 세로, 양쪽여백) Text divider
+@mixin divider($w, $h, $side-mg, $position:after, $color:$c-border){
+  position: relative;
+  @if($position == "after"){
+    &::after {
+      @include beforeafter;
+      position: relative;
+      width: $w;
+      height: $h;
+      margin-inline: $side-mg;
+      background: $color;
+      cursor: default;
+      .dark &{
+        background: $c-border-dark-light !important;
+      }
+    }
+  }
+  @if($position == "before"){
+    &::before {
+      @include beforeafter;
+      position: relative;
+      width: $w;
+      height: $h;
+      margin-inline: $side-mg;
+      background: $color;
+      cursor: default;
+      .dark &{
+        background: $c-border-dark-light !important;
+      }
+    }
+  }
+}
+@mixin dot($w, $h, $side-mg, $color) {
+  position: relative;
+  &::before {
+    @include beforeafter;
+    position: relative;
+    width: $w;
+    height: $h;
+    margin-inline: $side-mg;
+    background: $color;
+    border-radius: $w;
+    vertical-align: middle;
+    cursor: default;
+  }
+}
+
+//^ 이미지 리스트 정렬 (좌우여백,상하여백, 한줄에 들어갈 갯수)
+@mixin list($gapinline, $gapBlock, $i) {
+  @include flex(y);
+  @include flex-wrap;
+  gap:$gapBlock $gapinline;
+  width:100%;
+  > *{
+    width:calc((100% - #{$gapinline} * ($i - 1)) / $i);
+    min-width:calc((100% - #{$gapinline} * ($i - 1)) / $i);
+  }
+}
+
+@mixin thumb($w,$h,$ratio:auto,$fit:cover) {//영역에 꽉찬 이미지 ex)thumbnail ,profile image
+	overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:$w;
+  height:$h;
+  min-width:$w;
+  aspect-ratio:$ratio;
+  &>a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+  }
+  &>img,
+  &>a>img{
+    object-fit:$fit;
+    min-height:100%;
+    min-width:100%;
+    max-height:100%;
+    max-width:none;
+  }
+}
+
+@mixin addImg($img,$w,$h,$size:contain){//:after, :before 로 이미지 추가 시 add image with ":after, :before"
+  content: '';
+  display: inline-block;
+  background-position: center;
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-image: url(../../img/#{$img}.png);
+  width: #{$w}px;
+  min-width: #{$w}px;
+  height: #{$h}px;
+}
+
+@mixin addImgSvg($img,$w,$h,$size:contain){//:after, :before 로 이미지 추가 시 add image with ":after, :before"
+  content: '';
+  display: inline-block;
+  background-position: center;
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-image: url(../../img/svg/#{$img}.svg);
+  width: #{$w}px;
+  min-width: #{$w}px;
+  height: #{$h}px;
+}
+
+@mixin addContent($content, $width, $height,$bgColor:transparent,$color:transparent) {
+  content: $content;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  text-align: center;
+  line-height: $height;
+  background: $bgColor;
+  color: $color;
+}
+
+// arrow
+@mixin addArrow($size,$color,$direction,$borderWidth:2){ //$size:px제외
+  @include beforeafter;
+  position: relative;
+  width: #{$size}px;
+  height: #{$size}px;
+  border: solid $color;
+  border-width: #{$borderWidth}px #{$borderWidth}px 0 0;
+  @if ($direction == "left") {
+    transform: rotate(-135deg);
+  }
+  @if ($direction == "right") {
+    transform: rotate(45deg);
+  }
+  @if ($direction == "down") {
+    transform: rotate(135deg);
+  }
+  @if ($direction == "up") {
+    transform: rotate(-45deg);
+  }
+}
+
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+@mixin border-radius($radius: 5px) {
+  @include css3-prefix("border-radius", $radius);
+}
+
+// ellipsis
+@mixin multi-ellipsis($line) {
+	display: block;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+}
+
+//scroll style
+@mixin scroll($max-height,$x,$y){//최대높이, 가로스크롤생성여부, 세로스크롤생성여부
+  max-height:$max-height;
+  overflow-x: $x;
+  overflow-y: $y;
+  scrollbar-face-color: transparent;    /*스크롤*/
+  scrollbar-highlight-color: #e2e8f0;    /*하이라이트*/
+  scrollbar-3dlight-color: transparent;    /*왼쪽외곽음영*/
+  scrollbar-darkshadow-color: transparent;    /*오른쪽외곽음영*/
+  scrollbar-shadow-color: transparent;    /*오른쪽 안쪽음영*/
+  scrollbar-arrow-color: transparent;    /*화살*/
+  scrollbar-track-color:transparent;    /*스크롤영역*/    
+  &::-webkit-scrollbar {/*스크롤바*/
+    //opacity: 0;
+    width: 8px;
+    height: 8px;
+  }    
+  &::-webkit-scrollbar-button {/*스크롤바 버튼(아래 위 화살표)*/
+    width: 0px;
+    height: 0px;
+  }    
+  &::-webkit-scrollbar-thumb {/*스크롤바 핸들*/
+    background-color: #7A7A7A;
+    background-clip: padding-box;
+    border-radius: 8px;
+  }    
+  &::-webkit-scrollbar-track {/*스크롤바 진행줄*/
+    background-color: none;
+  }    
+  &::-webkit-scrollbar-track-piece {/*진행줄에서 핸들로 덮이지 않은 영역 */
+    background-color:#E8E8E8;
+  }    
+  &::-webkit-scrollbar-corner {
+    // background: #fff;
+  }
+  .dark &{
+    &::-webkit-scrollbar-thumb {/*스크롤바 핸들*/
+      background-color: #5B637A;
+    }  
+    &::-webkit-scrollbar-track-piece {/*진행줄에서 핸들로 덮이지 않은 영역 */
+      background-color:rgba(0, 0, 0, 0.70);
+    }  
+    scrollbar-highlight-color: #5B637A; 
+  }
+}
+
+@mixin duration($speed: 0.4s){//반응속도
+  -webkit-transition-duration:$speed;  
+  -moz-transition-duration:$speed;  
+  -o-transition-duration:$speed;  
+  -ms-transition-duration:$speed;  
+  transition-duration:$speed;
+}
+
+@mixin out{
+  width:100vw;
+  margin-inline:calc(0px - $pd-inline);
+  padding-left:$pd-inline;
+  @include media-max($l){
+    margin-inline:calc(0px - $pd-inline-m);
+    padding-left:$pd-inline-m;
+  }
+}
+
+//* 변수 목록
+
+// device-size
+$devices: (full:1920px, xxl:1599.9px,  xl:1279.9px, l:1023.9px, m:767.9px, s:639.9px, xs:575.9px, xxs:359.9px, mini:319.9px);
+$full: map-get($devices, full); //디자인 시안 최대 크기
+$xxl: map-get($devices, xxl); //full이 너무 커서(1900이상) breakpoint가 추가로 필요할 경우
+$xl: map-get($devices, xl); 
+$l: map-get($devices, l); // 태블릿
+$m: map-get($devices, m); // mobile
+$s: map-get($devices, s);
+$xs: map-get($devices, xs);
+$xxs: map-get($devices, xxs);
+$mini: map-get($devices, mini);
+
+// margin
+$pd-inline:63px;
+$pd-inline-m:20px;
+$max-w:650px;// 현 사이트 디자인으로 수정 가능, 수정 후 주석 삭제 요망
+$bottom-menu-h:70px;
+$head-h:178px;
+$head-h-m:110px;
+$head-h-mini:70px;
+// font
+$font-default: 'Pretendard', sans-serif; //기본 폰트 스타일 Default font-family
+$fc-default: #222; //Font default color
+$fc-default-dark: #D4D4D7; //Font default color dark
+// color
+//$black: #222;
+$point: #49BCBD;
+$point-light:#C9EBEB;
+$point2: #F8B62D;
+$gray: #E2E7ED;
+$gray-dark:#2B3141;
+$orange: #F47321;
+//$white: #fff;
+$red: #FD4957;
+$blue:#0f8af5;// 현 사이트 디자인으로 수정 가능, 수정 후 주석 삭제 요망
+$bg-gray:#F4F7FA;
+$bg-dark:#262A35;
+$inner-dark:#1C202D;
+$inner-dark-light:#3A4053;
+
+$c-border:#E2E2E2;
+$c-border-dark:#1C202D ;
+$c-border-dark-light:#4C5367;
+
+

@@ -1,0 +1,307 @@
+//!^text style
+
+.com_point_txt {
+	color: $point !important;
+}
+
+.com_point2_txt {
+	color: $point2 !important;
+}
+
+.com_blue_txt {
+	//color: $blue !important;
+}
+.com_red_txt {
+	color: $red !important;
+}
+.com_orange_txt {
+	color: $orange;
+}
+.com_info_txt {
+	color: #ff9800;
+	margin-top: 10px;
+	line-height: 1.6;
+}
+.com_error_txt {
+	display: block;
+	text-align: left;
+	font-size: 13px;
+	color: $red;
+}
+.com_bold {
+	font-weight: 700;
+}
+// !page title
+.com_pg_tit {
+	font-size: 42px;
+	font-weight: 700;
+	letter-spacing: -0.84px;
+	@include media-max($l) {
+		font-size: 22px;
+	}
+	.dark & {
+		color: #fff;
+	}
+	&__wrap {
+		padding-block: 60px 30px;
+		text-align: center;
+		&.left{
+			text-align: left;
+		}
+		@include media-max($l) {
+			padding-block: 20px 30px;
+		}
+		// .site_map {
+		//   @include flex(y);
+		//   gap: 10px;
+		//   margin-left: auto;
+		//   padding-bottom:30px;
+		//   font-size: 14px;
+		//   line-height: 1.4;
+		//   letter-spacing: -0.35px;
+		//   color: #999;
+		//   @include media-max($m) {
+		//     display: none;
+		//     padding-bottom: 15px;
+		//     font-size: 12px;
+		//   }
+		//   .icon_arrow {
+		//     width: 8px;
+		//     height: 12px;
+		//     &::after {
+		//       @include addImg(icon_arrow_right_gray,8,12,6px 10px);
+		//       vertical-align: 2px;
+		//     }
+		//   }
+		// }
+	}
+	+ .sub {
+		font-size: 20px;
+		margin-top: 15px;
+		line-height: 1.5;
+		@include media-max($l) {
+			font-size: 14px;
+		}
+	}
+}
+
+//section title
+.com_sec_tit {
+	@include flex(y);//가운데 정렬로 디자인 통일
+	gap: 9px;
+	font-size: 42px;
+	font-weight: 700;
+	margin-bottom: 50px;
+	@include media-max($l) {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.dark & {
+		color: #fff;
+	}
+	.com_swiper_wrap + & {
+		margin-top: 100px;
+		@include media-max($l) {
+			margin-top: 60px;
+		}
+	}
+	&__wrap {
+		@include flex(between);
+		margin-bottom: 55px;
+		@include media-max($l) {
+			margin-bottom: 30px;
+		}
+		.com_swiper_wrap + & {
+			margin-top: 100px;
+			@include media-max($l) {
+				margin-top: 60px;
+			}
+		}
+		&.column {
+			flex-direction: column;
+		}
+		.com_sec_tit {
+			margin-bottom: 0;
+			line-height: initial;
+		}
+		.sub {
+			font-size: 20px;
+			font-weight: 700;
+			color: $point;
+			align-self: flex-end;
+			margin-left: 5px;
+			margin-right: auto;
+			padding-bottom: 3px;
+			display: inline-block;
+			@include media-max($l) {
+				display: block;
+				text-align: center;
+				width: 100%;
+				font-size: 14px;
+			}
+		}
+		&.has_sort {
+			@include media-max($l) {
+				@include flex(column);
+				@include flex(all);
+				gap: 5px;
+				.com_board_sort {
+					margin-top: 20px;
+					width: 100%;
+					.select {
+						width: 100% !important;
+					}
+				}
+			}
+			.select {
+				width: 100px;
+			}
+		}
+	}
+}
+
+//content title
+.com_cont_tit {
+	@include flex(y);
+	 gap: 10px;
+	&__wrap {
+		@include flex(between);
+		gap: 10px;
+	}
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	.dark & {
+		color: #fff;
+	}
+	@include media-max($l) {
+		font-size: 18px;
+	}
+}
+
+.com_tag {
+	font-weight: 500;
+	color: #666;
+	border-radius: 3px;
+	border: 1px solid $c-border;
+	padding: 5px;
+	white-space: nowrap;
+	.dark & {
+		border-color: rgba(255, 255, 255, 0.2);
+		color: #9da3b5;
+	}
+	&__wrap {
+		@include flex(y);
+		@include flex-wrap;
+		gap: 5px;
+	}
+}
+
+//!info icon
+.com_info_icon {
+	&__wrap {
+		@include flex(column);
+		gap: 10px;
+		.com_info_txt {
+			margin-top: 0;
+		}
+	}
+	@include flex(s);
+	gap: 10px;
+	.tit {
+		color: #666;
+		@include flex(y);
+		gap: 2px;
+		white-space: nowrap;
+		.dark & {
+			color: #c2c4c9;
+		}
+
+	}
+	.desc {
+		flex: 1;
+		font-weight: 700;
+		&.fw_normal {
+			font-weight: 400;
+		}
+		.dark & {
+			color: #fff;
+		}
+	}
+}
+
+//텍스트 사이즈
+// xxl:20px, xl:17px, l:16px, m:14px, s:12px
+.com_font_xl{
+	font-size: 17px;
+}
+.com_font_xl_m{
+	font-size: 17px;
+	@include media-max($m) {
+			font-size: 14px;
+	}
+}
+.com_font_s{
+	font-size: 12px;
+}
+
+//정보 카드
+.com_info_card {
+	background-color: $bg-gray;
+	border-radius: 15px;
+	padding: 20px 30px;
+	@include flex(between);
+	gap:10px;
+	align-items: center;
+	flex:1;
+	align-self: stretch;
+	@include media-max($l) {
+		padding: 20px;
+	}
+	.dark & {
+		background-color: $inner-dark;
+	}
+	&__wrap{
+		@include flex(y);
+		gap:10px;
+		@include media-max($l) {
+			flex-direction: column
+		}
+		&.column{
+			@include flex(column);
+			gap:10px;
+		}
+	}
+	.tit {
+		font-weight: 700;
+		@include media-min($m) {
+			font-size: 17px;
+		}
+	}
+	.desc{
+		@include media-min($m) {
+			font-size: 17px;
+		}
+	}
+	.m_full{
+		@include media-max($l) {
+				width: 100%;
+		}
+	}
+	.count {
+		font-size: 30px;
+		font-weight: 700;
+		color: $point;
+		.unit {
+			font-size: 20px;
+			font-weight: normal;
+			color: #222;
+		}
+		@include media-max($l) {
+			font-size: 16px;
+			.unit {
+				font-size: 14px;
+			}
+		}
+	}
+}
