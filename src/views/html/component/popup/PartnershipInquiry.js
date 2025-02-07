@@ -5,7 +5,7 @@ function PartnershipInquiry() {
     <>
       <h2 className="pop_tit">제휴 제안 문의</h2>
       <div className="content_container scroll">
-        <ul className="com_input_sec type_mini">
+        <ul className="pf_input_sec type_mini">
           <li className="tit_field">유형</li>
           <li className="input_field">
             <select name="" id="">

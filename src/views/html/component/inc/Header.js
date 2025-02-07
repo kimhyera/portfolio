@@ -1,79 +1,45 @@
-import React,{useState} from 'react'
-import { Link, NavLink } from 'react-router-dom';
-
-/*이미지*/
-//component
+import React, {useState} from 'react';
+import {NavLink} from 'react-router-dom';
 
 function Header() {
-
   //햄버거 메뉴
-  const [barMenu, setBarMenu] = useState(false); 
-
+  const [barMenu, setBarMenu] = useState(false);
   //햄버거 메뉴
-  const toggleBarMenu = () =>{
-  setBarMenu(current => !current);
-  }
+  const toggleBarMenu = () => {
+    setBarMenu((current) => !current);
+  };
   return (
     <>
-    <header className="head">
-      <div className='com_center_wrap head__inner'>
-        <Link to='/html/Main' className='head__logo'>
-       logo
-        </Link>
-        <RenderNav 
-        />
+      <header className="head">
+        <div className="head__about">
+          <p className="head__about-txt">
+            🏆 퍼블리셔 10년 차 김혜라 입니다! <br />
+            300여건의 프로젝트 경험과 노하우
+          </p>
+          <div className="head__about-links"> 🔗email 🔗Github 🔗Notion</div>
+          <a href="tel:01065791828" className="head__about-tel">
+             Tel: 010-6579-1828
+          </a>
+        </div>
 
-		<button className='head__bar svg_icon icon_bar' onClick={toggleBarMenu}>메뉴</button> 
-      </div>
-    </header>
-    {/*햄버거메뉴*/}
-    <section className={`head__menu_sec ${barMenu ? 'active':''}`}>
-      <div className='head__menu_sec__inner'>
-        <article className='head__m'>
-          <div className='head__m_ribbon'>
-            <button type='button' className='svg_icon icon_close' onClick={()=>setBarMenu(false)}></button>
-          </div>
-					<RenderNav 
-        />
-        </article>
-      </div>
-    </section>
+<nav className={`nav  ${barMenu ? 'active' : ''}`}>
+	<NavLink className="item" activeclassname="active" to="/About">
+		About
+	</NavLink>
+	<NavLink className="item" activeclassname="active" to="/Experience">
+		Experience
+	</NavLink>
+	<NavLink className="item" activeclassname="active" to="/Portfolio">
+		Portfolio
+	</NavLink>
+</nav>
+        <button className={`nav__open ${barMenu ? 'active' : ''}`} onClick={toggleBarMenu}>
+          <span className="item"></span>
+          <span className="item"></span>
+          <span className="item"></span>
+        </button>
+      </header>
     </>
-  )
+  );
 }
-function RenderNav() {
-
-	//테블릿, 모바일 화면
-	//const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-
-  //useEffect(() => {
-  //  const handleResize = () => {
-  //    setIsMobile(window.innerWidth <= 1024);
-  //  };
-  //  window.addEventListener('resize', handleResize);
-  //  return () => {
-  //    window.removeEventListener('resize', handleResize);
-  //  };
-  //}, []);
-
-    return(
-      <>
-    
-							<nav className='head__nav_wrap'>
-								<NavLink className="head__nav" activeclassname="active" to='/About'>
-								About
-								</NavLink>
-								<NavLink className="head__nav" activeclassname="active" to="/Experience">
-						
-									Experience
-								</NavLink>
-								<NavLink className="head__nav" activeclassname="active" to="/Portfolio">
-								Portfolio
-								</NavLink>
-							</nav>
-					
-					</>
-    )
-  
-}
-export default Header
+export default Header;

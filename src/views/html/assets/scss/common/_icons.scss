@@ -228,94 +228,31 @@ $iconSizes: map-values($iconInfos);
 	//   transform: rotate(90deg);
 	// }
 	@include svg-icon-color("icon_edit", "92949A", gray);
-	@include svg-icon-color("icon_edit", "fff", white);
-	@include svg-icon-color("icon_star", "BDBFC2", off);
-	@include svg-icon-color("icon_star", "FD4957", on); 
-	@include svg-icon-color("icon_subscribe", "fff", white);
-	@include svg-icon-color("icon_search", "fff", white);
-	@include svg-icon-color("icon_map", "fff", white);
-	@include svg-icon-color("icon_request", "fff", white);
-  @include svg-icon-color("icon_edit_fill", "fff", white);
 
 	&.icon_review {
 		@include svg-icon-color("icon_review", "49BCBD");
 	}
-	&.icon_edit_fill {
-		@include svg-icon-color("icon_edit_fill", "000");
-	}
-	&.icon_prev {
-		@include svg-icon-color("icon_prev", "666");
-	}
-	&.icon_next {
-		@include svg-icon-color("icon_next", "666");
-	}
-	&.icon_plus{
-		@include svg-icon-color("icon_plus", "222");
-	}
-	&.icon_mius{
-		@include svg-icon-color("icon_mius", "222");
-	}
-  &.icon_toggle{
-    @include svg-icon-color("icon_toggle", "9598A0");
-  }
-	&.icon_write_fill{
-		@include svg-icon-color("icon_write_fill", "fff");
-	}
-  &.icon_comment {
-    @include svg-icon-color("icon_comment", "fff");
-  }
-  &.icon_excel{
-    @include svg-icon-color("icon_excel", "fff");
-  }
-  &.icon_pdf{
-    @include svg-icon-color("icon_pdf", "fff");
-  }
-	&.icon_link_arrow{
-		@include svg-icon-color("icon_link_arrow", "222");
-	}
-	//^다크모드
-	.dark & {
-		&.icon_search {
-			@include svg-icon-color("icon_search", "fff");
-		}
-		&.icon_my {
-			@include svg-icon-color("icon_my", "fff");
-		}
-		&.icon_youtube {
-			@include svg-icon-color("icon_youtube", "474747");
-		}
-		&.icon_insta {
-			@include svg-icon-color("icon_insta", "474747");
-		}
-		&.icon_kakao {
-			@include svg-icon-color("icon_kakao", "474747");
-		}
-		&.icon_bar {
-			@include svg-icon-color("icon_bar", "fff");
-		}
-		&.icon_review {
-			@include svg-icon-color("icon_review", "fff");
-		}
-		&.icon_close {
-			@include svg-icon-color("icon_close", "fff");
-		}
-		&.icon_prev {
-			@include svg-icon-color("icon_prev", "fff");
-		}
-		&.icon_next {
-			@include svg-icon-color("icon_next", "fff");
-		}
-		&.icon_plus{
-			@include svg-icon-color("icon_plus", "fff");
-		}
-		&.icon_mius{
-			@include svg-icon-color("icon_mius", "fff");
-		}
-    &.icon_toggle{
-      @include svg-icon-color("icon_toggle", "5B637A");
+
+}
+
+
+
+//* icon 목록 (클래스명, 사이즈)
+$iconInfo: (
+	icon_link: 12 12,
+);
+$iconName: map-keys($iconInfo);
+$iconSize: map-values($iconInfo);
+
+//* icon 기본
+.icon{
+  vertical-align:top;
+  @for $i from 1 through length($iconName){
+    $size: str-split(#{nth($iconSize, $i)}, " ");
+    $w: nth($size, 1);
+    $h: nth($size, 2);
+    &.#{nth($iconName, $i)}{
+      @include addImg(#{nth($iconName, $i)},$w,$h,contain,svg);
     }
-		&.icon_link_arrow{
-			@include svg-icon-color("icon_link_arrow", "fff");
-		}
-	}
+  }
 }

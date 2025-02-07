@@ -1,0 +1,58 @@
+@import "../common/variables";
+.portfolio{
+	&__list{
+		@include list(24px,24px,2);
+	}
+	&__item{
+    border-radius: 6px;
+		padding: 30px;
+		background-color: $bg-dark-light;
+		gap:10px;
+		@include flex(y);
+		gap:30px;
+	}
+	&__thumb{
+		@include thumb(210px, auto, 210/180);
+		border-radius: 10px;
+		overflow: hidden;
+		background: linear-gradient(45deg, #42b883, #0ebbd2) border-box;
+		&::before{
+			background: linear-gradient(45deg, #42b883, #0ebbd2) border-box;
+		}
+	}
+	&__info{
+		flex:1;
+		@include flex(column);
+		gap:5px;
+		&-tit{
+			font-size: 20px;
+			font-weight: 700;
+			color:#fff;
+			margin-bottom: 10px;
+		}
+		&-desc{
+			font-size: 15px;
+			color:$fc-gray;
+			@include flex(s);
+			gap:8px;
+			.flex_row{
+				@include flex(y);
+				gap:10px;
+			}
+			.skil{
+				@include flex(y);
+				gap:3px;
+				
+			}
+			.link{
+				color:$point;
+				border-bottom: 1px solid $point;
+				@include flex(y);
+				gap:2px;
+			}
+			&.skills,&.links{
+				margin-top: 5px;
+			}
+		}
+	}
+}

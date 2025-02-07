@@ -1,38 +1,49 @@
 //!^text style
 
-.com_point_txt {
+.point {
 	color: $point !important;
 }
 
-.com_point2_txt {
+.point2 {
 	color: $point2 !important;
 }
 
-.com_blue_txt {
+.blue {
 	//color: $blue !important;
 }
-.com_red_txt {
+.red {
 	color: $red !important;
 }
-.com_orange_txt {
+.orange {
 	color: $orange;
 }
-.com_info_txt {
+.dote {
+	width: 14px;
+	height: 14px;
+	border-radius: 14px;
+	&.vue {
+		background-color: #41b883;
+	}
+	&.scss {
+		background-color: #c6538c;
+	}
+}
+.info {
 	color: #ff9800;
 	margin-top: 10px;
 	line-height: 1.6;
 }
-.com_error_txt {
+.error {
 	display: block;
 	text-align: left;
 	font-size: 13px;
 	color: $red;
 }
-.com_bold {
+.bold {
 	font-weight: 700;
 }
 // !page title
-.com_pg_tit {
+.pg_tit {
 	font-size: 42px;
 	font-weight: 700;
 	letter-spacing: -0.84px;
@@ -45,7 +56,7 @@
 	&__wrap {
 		padding-block: 60px 30px;
 		text-align: center;
-		&.left{
+		&.left {
 			text-align: left;
 		}
 		@include media-max($l) {
@@ -86,8 +97,8 @@
 }
 
 //section title
-.com_sec_tit {
-	@include flex(y);//가운데 정렬로 디자인 통일
+.sec_tit {
+	@include flex(y); //가운데 정렬로 디자인 통일
 	gap: 9px;
 	font-size: 42px;
 	font-weight: 700;
@@ -99,7 +110,7 @@
 	.dark & {
 		color: #fff;
 	}
-	.com_swiper_wrap + & {
+	.swiper_wrap + & {
 		margin-top: 100px;
 		@include media-max($l) {
 			margin-top: 60px;
@@ -111,7 +122,7 @@
 		@include media-max($l) {
 			margin-bottom: 30px;
 		}
-		.com_swiper_wrap + & {
+		.swiper_wrap + & {
 			margin-top: 100px;
 			@include media-max($l) {
 				margin-top: 60px;
@@ -120,7 +131,7 @@
 		&.column {
 			flex-direction: column;
 		}
-		.com_sec_tit {
+		.sec_tit {
 			margin-bottom: 0;
 			line-height: initial;
 		}
@@ -145,7 +156,7 @@
 				@include flex(column);
 				@include flex(all);
 				gap: 5px;
-				.com_board_sort {
+				.board_sort {
 					margin-top: 20px;
 					width: 100%;
 					.select {
@@ -161,9 +172,9 @@
 }
 
 //content title
-.com_cont_tit {
+.cont_tit {
 	@include flex(y);
-	 gap: 10px;
+	gap: 10px;
 	&__wrap {
 		@include flex(between);
 		gap: 10px;
@@ -179,7 +190,7 @@
 	}
 }
 
-.com_tag {
+.tag {
 	font-weight: 500;
 	color: #666;
 	border-radius: 3px;
@@ -198,11 +209,11 @@
 }
 
 //!info icon
-.com_info_icon {
+.info_icon {
 	&__wrap {
 		@include flex(column);
 		gap: 10px;
-		.com_info_txt {
+		.info {
 			margin-top: 0;
 		}
 	}
@@ -216,7 +227,6 @@
 		.dark & {
 			color: #c2c4c9;
 		}
-
 	}
 	.desc {
 		flex: 1;
@@ -232,28 +242,28 @@
 
 //텍스트 사이즈
 // xxl:20px, xl:17px, l:16px, m:14px, s:12px
-.com_font_xl{
+.font_xl {
 	font-size: 17px;
 }
-.com_font_xl_m{
+.font_xl_m {
 	font-size: 17px;
 	@include media-max($m) {
-			font-size: 14px;
+		font-size: 14px;
 	}
 }
-.com_font_s{
+.font_s {
 	font-size: 12px;
 }
 
 //정보 카드
-.com_info_card {
+.info_card {
 	background-color: $bg-gray;
 	border-radius: 15px;
 	padding: 20px 30px;
 	@include flex(between);
-	gap:10px;
+	gap: 10px;
 	align-items: center;
-	flex:1;
+	flex: 1;
 	align-self: stretch;
 	@include media-max($l) {
 		padding: 20px;
@@ -261,15 +271,15 @@
 	.dark & {
 		background-color: $inner-dark;
 	}
-	&__wrap{
+	&__wrap {
 		@include flex(y);
-		gap:10px;
+		gap: 10px;
 		@include media-max($l) {
-			flex-direction: column
+			flex-direction: column;
 		}
-		&.column{
+		&.column {
 			@include flex(column);
-			gap:10px;
+			gap: 10px;
 		}
 	}
 	.tit {
@@ -278,14 +288,14 @@
 			font-size: 17px;
 		}
 	}
-	.desc{
+	.desc {
 		@include media-min($m) {
 			font-size: 17px;
 		}
 	}
-	.m_full{
+	.m_full {
 		@include media-max($l) {
-				width: 100%;
+			width: 100%;
 		}
 	}
 	.count {

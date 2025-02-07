@@ -1,5 +1,5 @@
 // !popup 공통
-.com_popup {
+.pf_popup {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -127,7 +127,7 @@
 				font-size: 16px;
 			}
 		}
-		.com_card.bg{
+		.pf_card.bg{
 			.dark & {
 			background-color: $bg-dark;
 			}
@@ -138,7 +138,7 @@
 		@include flex(all);
 		gap: 10px;
 		margin-top: 25px;
-		.com_btn{
+		.pf_btn{
 			flex: 1;
 			&.s {
 				font-size: 14px;
@@ -211,7 +211,7 @@
 		}
 	}
 	@include media-min($m) {
-		.com_write {
+		.pf_write {
 			th {
 				width: 150px;
 			}

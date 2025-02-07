@@ -14,7 +14,7 @@ function Modal(props) {
   return (
     <>
       {open ? (
-        <section className={`com_popup ${props.type}`}>
+        <section className={`pf_popup ${props.type}`}>
           <div className={`pop_container ${props.popSize}`}>
             <button type="button" className="btn_close svg_icon icon_close" onClick={close}></button>
             {props.children}
