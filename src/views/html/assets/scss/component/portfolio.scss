@@ -9,7 +9,10 @@
 		background-color: $bg-dark-light;
 		gap:10px;
 		@include flex(y);
-		gap:30px;
+		gap:30px;	&:hover{
+			background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2)  50%);
+		}
+
 	}
 	&__thumb{
 		@include thumb(210px, auto, 210/180);
