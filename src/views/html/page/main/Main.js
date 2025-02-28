@@ -184,7 +184,6 @@ function Main() {
 			url: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php',
 			url2: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php',
 		},
-
 		{
 			title: '맛집 모바일',
 			thumb: 'pt_manna.jpg',
