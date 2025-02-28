@@ -197,8 +197,9 @@
 		object-fit: $fit;
 		//min-height:100%;
 		//min-width:100%;
+		width: 100%;
 		max-height: 100%;
-		max-width: none;
+		//max-width: none;
 	}
 }
 
@@ -347,14 +348,14 @@
 // device-size
 $devices: (
 	full: 1920px,
-	xxl: 1599.9px,
-	xl: 1279.9px,
-	l: 1023.9px,
-	m: 767.9px,
-	s: 639.9px,
-	xs: 575.9px,
-	xxs: 359.9px,
-	mini: 319.9px
+	xxl: 1599.98px,
+	xl: 1399.98px,
+	l: 1023.98px,
+	m:767.98px,
+	s: 639.98px,
+	xs: 575.98px,
+	xxs: 359.98px,
+	mini: 319.98px
 );
 $full: map-get($devices, full); //디자인 시안 최대 크기
 $xxl: map-get($devices, xxl); //full이 너무 커서(1900이상) breakpoint가 추가로 필요할 경우
@@ -394,7 +395,7 @@ $bg-gray: #f4f7fa;
 $bg-dark: #111827;
 $bg-dark-light: #161f32;
 $inner-dark: #161b22;
-$inner-dark-light: #3a4053;
+$inner-dark-light: #161f32;
 
 $c-border: #e2e2e2;
 $c-border-dark: #2e2e32;

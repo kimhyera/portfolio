@@ -1,0 +1,57 @@
+@import "../common/variables";
+//about
+.about{
+	gap:40px;
+	@include flex(column);
+	@include media-min($l) {
+			
+	padding-top: 80px;
+	}
+	&__txt{
+		gap:20px;
+		@include flex(column);
+		.h{
+			font-size: 60px;
+			margin-bottom: 20px;
+			@include media-max($l) {
+					font-size: 30px;
+			}
+		}
+		.h_st{
+			font-size: 20px;
+			@include flex(s);
+			gap:6px;
+			@include media-max($l) {
+					font-size: 16px;
+			}
+		}
+		.desc{
+			line-height: 1.8;
+			@include media-min($l) {
+					font-size: 16px;
+			}
+		}
+		.list{
+			@include flex(column);
+			gap:6px;
+			line-height: 1.5;
+			@include media-min($l) {
+					font-size: 16px;
+			}
+			a{
+				color:#fff;
+				display: inline-flex;
+				min-width: auto;
+				gap:5px;
+				border-bottom: 1px solid #fff;
+			}
+			li{
+				@include flex(s);
+				gap:6px;
+			}
+		}
+		.pf_btn{
+			width: fit-content;
+		}
+	}
+}

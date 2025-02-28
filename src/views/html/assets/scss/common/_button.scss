@@ -77,36 +77,6 @@
 				}
 			}
 		}
-		&.has_btn_right {
-			@include media-max($l) {
-				flex-direction: column;
-			}
-			.btn_right {
-				@include media-min($l) {
-					position: absolute;
-					right: 0;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-				display: inline-flex;
-				align-items: center;
-				gap: 5px;
-				font-size: 16px;
-				color: #222;
-				@include media-max($l) {
-					font-size: 13px;
-					order: -1;
-					margin-left: auto;
-					margin-bottom: 10px;
-				}
-				.dark & {
-					color: #fff;
-				}
-			}
-			.pf_btn.l {
-				line-height: 60px;
-			}
-		}
 		&.right {
 			justify-content: flex-end;
 		}
@@ -131,8 +101,9 @@
 		}
 	}
 	//&컬러 color
-	&.point {
-		background-color: $point;
+	&.point {  
+		  background-image: linear-gradient(90deg, #00d36a, #00c1ff);
+		color:#fff !important;
 	}
 	&.black {
 		background-color: #000;
@@ -250,7 +221,7 @@
 	}
 	&.s {
 		height: 36px;
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 500;
 		min-width: auto;
 		&.oval {
@@ -383,11 +354,15 @@
 
 //탭
 .pf_tab {
-	@include flex(y);
 	margin-bottom: 40px;
 	overflow-x: auto;
-	max-width: 250px;
 	margin-left: auto;
+   display: flex;
+	gap:40px;
+	justify-content: flex-end;
+	@include media-max($l) {
+			gap:20px;
+	}
 	&__wrap {
 		position: relative;
 	}
@@ -397,7 +372,6 @@
 		justify-content: flex-start;
 		white-space: nowrap;
 		color: #92949a;
-		flex: 1;
 		font-size: 20px;
 		padding-left: 20px;
 		&::before {
@@ -406,7 +380,8 @@
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%);
-			border-left: 2px solid $c-border-dark;
+			width: 2px;
+			background: #ddd;
 			height: 15px;
 		}
 		@include media-max($l) {
@@ -416,7 +391,7 @@
 			color: #fff;
 			font-weight: 500;
 			&::before {
-				border-color: #fff;
+				background: linear-gradient(to bottom,#00d36a, #00c1ff);
 			}
 		}
 	}
