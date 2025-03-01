@@ -83,7 +83,7 @@ function Header({animation}) {
             <Link to="https://github.com/kimhyera" target="_blank">
               🔗Github
             </Link>
-            <Link to="https://www.notion.so/c37bdd09de3043909972c701a71be573" target="_blank">
+            <Link to="https://enshrined-cone-70b.notion.site/c37bdd09de3043909972c701a71be573" target="_blank">
               🔗Notion
             </Link>
             <Link to="tel:01065791828" className="head__about-tel">

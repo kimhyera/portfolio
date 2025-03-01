@@ -84,7 +84,7 @@ function About() {
             </li>
 
             <li>
-              <Link to="https://www.notion.so/c37bdd09de3043909972c701a71be573" target="_blank">
+              <Link to="https://enshrined-cone-70b.notion.site/c37bdd09de3043909972c701a71be573" target="_blank">
                 <i> 🔗</i>Notion
               </Link>
             </li>
