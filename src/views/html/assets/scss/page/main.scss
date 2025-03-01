@@ -2,5 +2,8 @@
 //메인
 .p_main {
 	padding-bottom: 0;
-
+	@include media-max($l) {
+			
+	margin-top:50px
+	}
 }

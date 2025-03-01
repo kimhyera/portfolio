@@ -21,6 +21,9 @@
 	width: 14px;
 	height: 14px;
 	border-radius: 14px;
+	&.react {
+		background-color: #61dafb;
+	}
 	&.vue {
 		background-color: #41b883;
 	}

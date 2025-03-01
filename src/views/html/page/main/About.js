@@ -37,7 +37,7 @@ function About() {
             </li>
 
             <li>
-              <i> ✅</i>Vue/Nuxt 프론트엔드 경험 
+              <i> ✅</i>Vue/Nuxt 프론트엔드 경험 / React 기반 퍼블리싱 작업 
             </li>
           </ul>
         </div>

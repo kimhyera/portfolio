@@ -29,6 +29,7 @@ function PortfolioItem({item = {}}) {
           <dd className="flex_row">
             <span className="skil">
 							
+						{item.stack[0] === 'react' && <><i className="react dote"></i>{item.stack[0]}</>}
               {item.stack[0] === 'vue' && <><i className="vue dote"></i>{item.stack[0]}</>}
               {item.stack[0] === 'php' && <><i className="php dote"></i>{item.stack[0]}</>}
             </span>
