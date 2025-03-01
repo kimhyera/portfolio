@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.f855e6bc.css",
-    "main.js": "/portfolio/static/js/main.c8672789.js",
+    "main.js": "/portfolio/static/js/main.0153f87d.js",
     "static/css/223.62ed4b51.chunk.css": "/portfolio/static/css/223.62ed4b51.chunk.css",
-    "static/js/223.e2dd9b26.chunk.js": "/portfolio/static/js/223.e2dd9b26.chunk.js",
+    "static/js/223.97079fab.chunk.js": "/portfolio/static/js/223.97079fab.chunk.js",
     "static/js/488.7a876c9d.chunk.js": "/portfolio/static/js/488.7a876c9d.chunk.js",
     "static/js/622.f1edd1e4.chunk.js": "/portfolio/static/js/622.f1edd1e4.chunk.js",
     "static/media/pt_gounlaw.png": "/portfolio/static/media/pt_gounlaw.45509a847ba8b0b88485.png",
@@ -174,14 +174,14 @@
     "static/media/icon_bar.svg": "/portfolio/static/media/icon_bar.fd7422890e6865371c05.svg",
     "static/media/icon_caret.svg": "/portfolio/static/media/icon_caret.a1a6f490435d0d5fb096.svg",
     "main.f855e6bc.css.map": "/portfolio/static/css/main.f855e6bc.css.map",
-    "main.c8672789.js.map": "/portfolio/static/js/main.c8672789.js.map",
+    "main.0153f87d.js.map": "/portfolio/static/js/main.0153f87d.js.map",
     "223.62ed4b51.chunk.css.map": "/portfolio/static/css/223.62ed4b51.chunk.css.map",
-    "223.e2dd9b26.chunk.js.map": "/portfolio/static/js/223.e2dd9b26.chunk.js.map",
+    "223.97079fab.chunk.js.map": "/portfolio/static/js/223.97079fab.chunk.js.map",
     "488.7a876c9d.chunk.js.map": "/portfolio/static/js/488.7a876c9d.chunk.js.map",
     "622.f1edd1e4.chunk.js.map": "/portfolio/static/js/622.f1edd1e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.c8672789.js"
+    "static/js/main.0153f87d.js"
   ]
 }
