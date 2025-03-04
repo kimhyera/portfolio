@@ -6,7 +6,7 @@ body {
 	background-repeat: repeat;
 	background-position: 0 0;
 	@include media-max($l) {
-			background-size: 100% auto;
+		background-size: 100% auto;
 	}
 }
 main {
@@ -41,7 +41,7 @@ main {
 		gap: 40px;
 	}
 	@include media-max($xxl) {
-			gap:20px;
+		gap: 20px;
 	}
 	main {
 		flex: 1;
@@ -51,7 +51,7 @@ main {
 	width: $lnb-w;
 	flex: 0 0 auto;
 	@include media-max($xxl) {
-			width: 280px;
+		width: 280px;
 	}
 	@include media-max($xl) {
 		position: fixed;
@@ -73,11 +73,11 @@ main {
 			font-size: 20px;
 			font-weight: 300;
 			@include flex(s);
-			gap:5px;
+			gap: 5px;
 			line-height: 27px;
 			white-space: nowrap;
 			.name {
-				background-image: linear-gradient(90deg, #00d36a, #00c1ff,#00d36a,#0077ff);
+				background-image: linear-gradient(90deg, #00d36a, #00c1ff, #00d36a, #0077ff);
 				background-size: 200% 200%;
 				background-clip: text;
 				-webkit-background-clip: text;
@@ -91,7 +91,7 @@ main {
 			}
 			&:before {
 				position: absolute;
-				bottom: -0.75rem;
+				bottom: -15px;
 				left: 0;
 				right: 0;
 				content: "";
@@ -103,49 +103,61 @@ main {
 				animation: gradientShift 2s ease-in-out infinite;
 			}
 		}
-		&-desc{
+		&-desc {
 			font-size: 16px;
-			color:#94a3b8;
+			color: #94a3b8;
 			//padding-left: 35px;
 		}
-		&-links{
-			margin-top: 20px;
+		&-links {
+			margin-top: 10px;
 			@include flex(y);
 			flex-wrap: wrap;
-			gap:5px;
-			a{
-			
-			color:#fff;
+			gap: 5px;
+			a {
+				color: #fff;
+				@include flex(y);
+			}
+			.icon_gmail{
+				
+				@include addImgSvg(icon_gmail,20,20);
+			}
+			.icon_github{
+				
+				@include addImgSvg(icon_github,20,20);
+			}
+			.icon_notion{
+				
+				@include addImgSvg(icon_notion,20,20);
 			}
 		}
 		&-tel {
 			color: #fff;
-			min-width: 100%;
+			.icon_phone {
+				@include addImgSvg(icon_phone,20,20);
+			}
 		}
 		@include media-max($xl) {
 			position: relative;
-			.head__about-txt{
+			.head__about-txt {
 				font-size: 16px;
 				text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-				&::before{
+				&::before {
 					display: none;
 				}
-				.name{
+				.name {
 					font-size: 16px;
-					margin-top:2px;
+					margin-top: 2px;
 				}
 			}
-			.head__about-desc{
+			.head__about-desc {
 				display: none;
 			}
-			.head__about-links{
+			.head__about-links {
 				margin-top: 0;
-				a{
-					
-				text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+				a {
+					text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 				}
 			}
-
 		}
 	}
 }
@@ -256,7 +268,7 @@ main {
 	width: 160px;
 	height: 160px;
 	//background: rgba($point, 0.5);
-	background-image: linear-gradient(15deg, #4ff378 65%, #46c2d8 30%);;
+	background-image: linear-gradient(15deg, #4ff378 65%, #46c2d8 30%);
 	filter: blur(100px) brightness(70%);
 	transform: translate(-50%, -50%);
 	z-index: 1;
@@ -341,12 +353,12 @@ main {
 }
 @keyframes gradientShift {
 	0% {
-			background-position: 0% 50%;
+		background-position: 0% 50%;
 	}
 	50% {
-			background-position: 100% 50%;
+		background-position: 100% 50%;
 	}
 	100% {
-			background-position: 0% 50%;
+		background-position: 0% 50%;
 	}
 }

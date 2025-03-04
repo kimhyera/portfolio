@@ -6,4 +6,11 @@
 			
 	margin-top:50px
 	}
+	.pf_tab__wrap{
+		margin-bottom: 40px;
+		@include media-max($l) {
+				margin-top: 90px;
+				margin-bottom: 20px;
+		}
+	}
 }

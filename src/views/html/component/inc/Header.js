@@ -54,7 +54,7 @@ function Header({animation}) {
     const tl = gsap.timeline();
     tl.fromTo('.start_bg', {top: '0'}, {top: '-100vh', ease: 'expo.inOut', duration: 1}) // 배경 애니메이션
       .fromTo('.portfolio__item ,.about__txt', {opacity: 0, y: 30}, {opacity: 1, y: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.7') //콘텐츠 애니메이션
-      .fromTo('.pf_tab .tab', {opacity: 0, x: 30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1')
+      //.fromTo('.pf_tab .tab', {opacity: 0, x: 30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1')
       .fromTo('.head__about', {opacity: 0, x: -30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1');
     if (isMobile) {
       document.querySelector('.nav__open ').classList.remove('active');
@@ -79,15 +79,14 @@ function Header({animation}) {
           </p>
           <p className="head__about-desc"> 200여건의 프로젝트 경험과 노하우</p>
           <div className="head__about-links">
-            <Link to="mailto:khr1828@gmail.com"> 🔗email </Link>
-            <Link to="https://github.com/kimhyera" target="_blank">
-              🔗Github
+            <Link to="mailto:khr1828@gmail.com">		 <i className='icon_gmail'></i> </Link>
+            <Link to="https://github.com/kimhyera" target="_blank"> <i className='icon_github'></i>
             </Link>
             <Link to="https://enshrined-cone-70b.notion.site/c37bdd09de3043909972c701a71be573" target="_blank">
-              🔗Notion
+						 <i className='icon_notion'></i>
             </Link>
             <Link to="tel:01065791828" className="head__about-tel">
-               Tel: 010-6579-1828
+               <i className='icon_phone'></i>
             </Link>
           </div>
         </div>

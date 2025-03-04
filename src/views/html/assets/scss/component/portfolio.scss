@@ -57,8 +57,11 @@
 		@include media-max($l) {
 				width: 120px;
 		}
-		@include media-max($s) {
+		@include media-max($m) {
 			@include thumb(200px, auto, 200/130);
+		}
+		@include media-max($xs) {
+			@include thumb(100%, auto, 200/130);
 		}
 		&::before {
 			content: '';
@@ -78,6 +81,9 @@
 		width: calc(100% - 100px);
 		}
 		gap: 5px;
+		@include media-max($l) {
+				width: 100%;
+		}
 		&-tit {
 			font-size: 20px;
 			font-weight: 700;
