@@ -68,12 +68,12 @@ function About() {
           <ul className="list">
             <li>
               <Link to="tel:01065791828" className="head__about-tel">
-                Tel: 010-6579-1828{' '}
+                Tel: 010-6579-1828
               </Link>
             </li>
             <li>
               <Link to="mailto:khr1828@gmail.com">
-                <i> 🔗</i> email{' '}
+                <i> 🔗</i> email
               </Link>
             </li>
 
