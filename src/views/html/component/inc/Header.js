@@ -19,7 +19,6 @@ function Header({animation}) {
       resetNav();
     }
   };
-
   function resetNav() {
     gsap.fromTo('.nav .item', {opacity: 1, y: 0}, {opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut'});
     gsap.to('.nav', {opacity: 0, 'pointer-events': 'none'}, '<');
@@ -58,17 +57,15 @@ function Header({animation}) {
       .fromTo('.head__about', {opacity: 0, x: -30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1');
     if (isMobile) {
       document.querySelector('.nav__open ').classList.remove('active');
-     
-    gsap.fromTo('.nav .item', {opacity: 1, y: 0}, {opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut'});
-    gsap.to('.nav', {opacity: 0, 'pointer-events': 'none'}, '<');
-    gsap.to('.nav__bg', {display: 'none', scale: 50, duration: 0.1});
+
+      gsap.fromTo('.nav .item', {opacity: 1, y: 0}, {opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut'});
+      gsap.to('.nav', {opacity: 0, 'pointer-events': 'none'}, '<');
+      gsap.to('.nav__bg', {display: 'none', scale: 50, duration: 0.1});
     } else {
       gsap.to('.nav', {opacity: 1, 'pointer-events': 'auto'});
       tl.fromTo('.nav .item', {opacity: 0, x: -40}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1');
     }
   }, [location.pathname, isMobile]);
-
-	
 
   return (
     <>
@@ -79,14 +76,18 @@ function Header({animation}) {
           </p>
           <p className="head__about-desc"> 200여건의 프로젝트 경험과 노하우</p>
           <div className="head__about-links">
-            <Link to="mailto:khr1828@gmail.com">		 <i className='icon_gmail'></i> </Link>
-            <Link to="https://github.com/kimhyera" target="_blank"> <i className='icon_github'></i>
+            <Link to="mailto:khr1828@gmail.com">
+              {' '}
+               <i className="icon_gmail"></i>{' '}
+            </Link>
+            <Link to="https://github.com/kimhyera" target="_blank">
+               <i className="icon_github"></i>
             </Link>
             <Link to="https://enshrined-cone-70b.notion.site/c37bdd09de3043909972c701a71be573" target="_blank">
-						 <i className='icon_notion'></i>
+               <i className="icon_notion"></i>
             </Link>
             <Link to="tel:01065791828" className="head__about-tel">
-               <i className='icon_phone'></i>
+               <i className="icon_phone"></i>
             </Link>
           </div>
         </div>
