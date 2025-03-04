@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.f855e6bc.css",
-    "main.js": "/portfolio/static/js/main.0153f87d.js",
-    "static/css/223.62ed4b51.chunk.css": "/portfolio/static/css/223.62ed4b51.chunk.css",
-    "static/js/223.97079fab.chunk.js": "/portfolio/static/js/223.97079fab.chunk.js",
+    "main.js": "/portfolio/static/js/main.3b4aaf38.js",
+    "static/css/223.bdd11071.chunk.css": "/portfolio/static/css/223.bdd11071.chunk.css",
+    "static/js/223.8a089a58.chunk.js": "/portfolio/static/js/223.8a089a58.chunk.js",
     "static/js/488.7a876c9d.chunk.js": "/portfolio/static/js/488.7a876c9d.chunk.js",
     "static/js/622.f1edd1e4.chunk.js": "/portfolio/static/js/622.f1edd1e4.chunk.js",
     "static/media/pt_gounlaw.png": "/portfolio/static/media/pt_gounlaw.45509a847ba8b0b88485.png",
@@ -105,9 +105,11 @@
     "static/media/my_service.svg": "/portfolio/static/media/my_service.de281c8caba874abfc8c.svg",
     "static/media/icon_blood_pressure.svg": "/portfolio/static/media/icon_blood_pressure.023965d82099e0247e83.svg",
     "static/media/icon_medicine.svg": "/portfolio/static/media/icon_medicine.3030b58bf8c75359e10b.svg",
+    "static/media/icon_notion.svg": "/portfolio/static/media/icon_notion.b72d3c00ea10160e98b7.svg",
     "static/media/icon_correct_recored.svg": "/portfolio/static/media/icon_correct_recored.5cacd15b2107cd77075c.svg",
     "static/media/icon_review.svg": "/portfolio/static/media/icon_review.79cc2c92a1e78d5a319b.svg",
     "static/media/icon_thumbup.svg": "/portfolio/static/media/icon_thumbup.06237bd9fd6244d4fa34.svg",
+    "static/media/icon_phone.svg": "/portfolio/static/media/icon_phone.fcef4dad983b62cbc0fc.svg",
     "static/media/icon_share.svg": "/portfolio/static/media/icon_share.88d453a2e1d1292b6369.svg",
     "static/media/icon_thumbs_up.svg": "/portfolio/static/media/icon_thumbs_up.8f4f63bd076a6b4f098b.svg",
     "static/media/icon_qr.svg": "/portfolio/static/media/icon_qr.a09ad78ed3aac2ddd77b.svg",
@@ -118,6 +120,7 @@
     "static/media/my_member.svg": "/portfolio/static/media/my_member.e6bf2ed9b7b08ff23e3d.svg",
     "static/media/icon_comment.svg": "/portfolio/static/media/icon_comment.5e659d5cbf09f46a7f9d.svg",
     "static/media/icon_link.svg": "/portfolio/static/media/icon_link.7776fb3664bc6882a499.svg",
+    "static/media/icon_github.svg": "/portfolio/static/media/icon_github.5ad14148a4d43db128bc.svg",
     "static/media/my_reservation.svg": "/portfolio/static/media/my_reservation.b4ead9bb22724b1b1032.svg",
     "static/media/icon_notice.svg": "/portfolio/static/media/icon_notice.d6ea23e64e135e6ea420.svg",
     "static/media/icon_my.svg": "/portfolio/static/media/icon_my.8081d3fb8224a8366aa3.svg",
@@ -131,6 +134,7 @@
     "static/media/icon_edit.svg": "/portfolio/static/media/icon_edit.e63a1a2acba6efce1b26.svg",
     "static/media/icon_write_fill.svg": "/portfolio/static/media/icon_write_fill.83d0ee93058b5a695a03.svg",
     "static/media/my_health.svg": "/portfolio/static/media/my_health.4f6cc843342ee887a90b.svg",
+    "static/media/icon_gmail.svg": "/portfolio/static/media/icon_gmail.1925dc2b7bf236f3e89e.svg",
     "static/media/menu_contents.svg": "/portfolio/static/media/menu_contents.ed71c5eb92eff0dd1b89.svg",
     "static/media/icon_calendar.svg": "/portfolio/static/media/icon_calendar.5d84b9b20aabbf3172cb.svg",
     "static/media/icon_del_circel.svg": "/portfolio/static/media/icon_del_circel.89f314c05a3fd614d81c.svg",
@@ -174,14 +178,14 @@
     "static/media/icon_bar.svg": "/portfolio/static/media/icon_bar.fd7422890e6865371c05.svg",
     "static/media/icon_caret.svg": "/portfolio/static/media/icon_caret.a1a6f490435d0d5fb096.svg",
     "main.f855e6bc.css.map": "/portfolio/static/css/main.f855e6bc.css.map",
-    "main.0153f87d.js.map": "/portfolio/static/js/main.0153f87d.js.map",
-    "223.62ed4b51.chunk.css.map": "/portfolio/static/css/223.62ed4b51.chunk.css.map",
-    "223.97079fab.chunk.js.map": "/portfolio/static/js/223.97079fab.chunk.js.map",
+    "main.3b4aaf38.js.map": "/portfolio/static/js/main.3b4aaf38.js.map",
+    "223.bdd11071.chunk.css.map": "/portfolio/static/css/223.bdd11071.chunk.css.map",
+    "223.8a089a58.chunk.js.map": "/portfolio/static/js/223.8a089a58.chunk.js.map",
     "488.7a876c9d.chunk.js.map": "/portfolio/static/js/488.7a876c9d.chunk.js.map",
     "622.f1edd1e4.chunk.js.map": "/portfolio/static/js/622.f1edd1e4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.0153f87d.js"
+    "static/js/main.3b4aaf38.js"
   ]
 }
