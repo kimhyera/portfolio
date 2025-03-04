@@ -29,14 +29,13 @@ function About() {
               <i>✅</i>UI 퍼포먼스를 극대화하는 개발자
             </li>
             <li>
-              <i>✅</i>반응형에 최적화된 최대한 가볍고 빠르게 제작가능합니다.
+              <i>✅</i>반응형에 최적화된 코드로로 최대한 가볍고 빠르게 제작가능합니다.
             </li>
             <li>
-              <i>✅</i>클라이언트가 이해할 수 있는 용어로 커뮤니케이션을 수월하게 진행합니다.
+              <i>✅</i>클라이언트가 원하는 인터렉션 기법을 사용하여 작업합니다.
             </li>
-
             <li>
-              <i>✅</i>Vue/Nuxt 프론트엔드 경험 / React 기반 퍼블리싱 작업
+              <i>✅</i>Vue/Nuxt 프론트엔드 경험 및 React 기반 퍼블리싱 작업 합니다. 
             </li>
           </ul>
         </div>
@@ -48,13 +47,13 @@ function About() {
               <i>✅</i>HTML5, SCSS/CSS
             </li>
             <li>
-              <i>✅</i>Javascript/jQuery
+              <i>✅</i>TypeScript/Javascript, jQuery
             </li>
             <li>
-              <i>✅</i> Vue/Nuxt, React 기반 작업
+              <i>✅</i> Vue/Nuxt, React,
             </li>
             <li>
-              <i>✅</i><span>크롬, 사파리, IE10 크로스브라우징(협의를 통한 IE8 ,IE9도 가능)</span>
+              <i>✅</i>Scss, Vuetify, Tailwind, Bootstrap
             </li>
             <li>
               <i>✅</i>웹접근성 준수 및 인증마크 획득한 경험 유

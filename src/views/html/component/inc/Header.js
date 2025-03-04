@@ -72,12 +72,13 @@ function Header({animation}) {
       <header className="head">
         <div className="head__about">
           <p className="head__about-txt" onClick={animation}>
-            <i>🏆</i>퍼블리셔 10년차 <strong className="name">김혜라 입니다!</strong> <br />
+            {/*<strong className="name">김혜라 입니다!</strong> <br />*/}
+						Web Publisher<br/>Hyera's Portfolio
           </p>
-          <p className="head__about-desc"> 200여건의 프로젝트 경험과 노하우</p>
-          <div className="head__about-links">
+          <p className="head__about-desc"><i>🏆</i>퍼블리셔 10년차<br/> 200여건의 프로젝트 경험과 노하우</p>
+         
+				<div className="head__about-links">
             <Link to="mailto:khr1828@gmail.com">
-              {' '}
                <i className="icon_gmail"></i>
             </Link>
             <Link to="https://github.com/kimhyera" target="_blank">
@@ -101,7 +102,6 @@ function Header({animation}) {
             Portfolio
           </NavLink>
         </nav>
-
         <button className={`nav__open ${barMenu ? 'active' : ''}`} onClick={toggleBarMenu}>
           <span className="item"></span>
           <span className="item"></span>
