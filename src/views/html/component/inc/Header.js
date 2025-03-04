@@ -78,7 +78,7 @@ function Header({animation}) {
           <div className="head__about-links">
             <Link to="mailto:khr1828@gmail.com">
               {' '}
-               <i className="icon_gmail"></i>{' '}
+               <i className="icon_gmail"></i>
             </Link>
             <Link to="https://github.com/kimhyera" target="_blank">
                <i className="icon_github"></i>
