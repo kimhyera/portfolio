@@ -54,13 +54,14 @@ main {
 		width: 280px;
 	}
 	@include media-max($xl) {
-		position: fixed;
-		top: 0;
-		left: 0;
+		//position: fixed;
+		//top: 0;
+		//left: 0;
+		position: relative;
 		height: $head-h-m;
 		width: 100%;
-		padding: 20px $pd-inline-m;
-		@include flex(right);
+		padding: 15px 0;
+		@include flex(s);
 		z-index: 10;
 		background: none;
 	}
@@ -213,6 +214,12 @@ main {
 		overflow: hidden;
 		@include media-min($xl) {
 			display: none;
+		}
+		@include media-max($l) {
+				position: fixed;
+				right:20px;
+				top:20px;
+				z-index: 1000;
 		}
 		.item {
 			position: absolute;
