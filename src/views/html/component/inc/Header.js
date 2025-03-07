@@ -6,7 +6,7 @@ import gsap from 'gsap';
 function Header({animation}) {
   const location = useLocation(); // 현재 경로 가져오기
   const [barMenu, setBarMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024); // 모바일 여부 체크
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
 
   //Nav 메뉴
   const toggleBarMenu = () => {
@@ -40,7 +40,7 @@ function Header({animation}) {
   // 창 크기 변경 시 모바일 여부 업데이트
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 1279);
     };
 
     window.addEventListener('resize', handleResize);
@@ -51,20 +51,25 @@ function Header({animation}) {
     setBarMenu(false);
 
     const tl = gsap.timeline();
-    tl.fromTo('.start_bg', {top: '0'}, {top: '-100vh', ease: 'expo.inOut', duration: 1}) // 배경 애니메이션
-      .fromTo('.portfolio__item ,.about__txt', {opacity: 0, y: 30}, {opacity: 1, y: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.7') //콘텐츠 애니메이션
+		
+			// 기존 애니메이션 중지
+			gsap.killTweensOf('.portfolio__item');
+    tl.to('.start_bg',{top: '-100vh', ease: 'expo.inOut', duration: 0.7}) // 배경 애니메이션
+			//콘텐츠 애니메이션
       //.fromTo('.pf_tab .tab', {opacity: 0, x: 30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1')
-      .fromTo('.head__about', {opacity: 0, x: -30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1');
+    .fromTo('.head__about', {opacity: 0, x: -30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut'}, '<0.5')
     if (isMobile) {
       document.querySelector('.nav__open ').classList.remove('active');
-
-      gsap.fromTo('.nav .item', {opacity: 1, y: 0}, {opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut'});
+      gsap.to('.nav .item', {opacity: 0, y: 30});
       gsap.to('.nav', {opacity: 0, 'pointer-events': 'none'}, '<');
       gsap.to('.nav__bg', {display: 'none', scale: 50, duration: 0.1});
     } else {
       gsap.to('.nav', {opacity: 1, 'pointer-events': 'auto'});
-      tl.fromTo('.nav .item', {opacity: 0, x: -40}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power3.easeOut'}, '<0.1');
+      tl.fromTo('.nav .item', {opacity: 0, x: -40}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut'}, '<')
+			console.log('모바일 아님 ');
+			
     }
+		tl.fromTo('.portfolio__item ,.about__txt',{opacity: 0, y: 30},{opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut'}, '<0.4') 
   }, [location.pathname, isMobile]);
 
   return (

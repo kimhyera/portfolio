@@ -1,14 +1,17 @@
 
-import './App.css';
 import React, { lazy, Suspense } from 'react';
 
 const HtmlRouter = lazy(() => import('./router/HtmlRouter.js'));
 
 function App() {
-  return ( 
-	<Suspense> 
-		<HtmlRouter />
-	</Suspense>   
+  let routerComponent;
+    routerComponent = (
+      <HtmlRouter />
+    );
+  return (
+    <Suspense>
+      {routerComponent}
+    </Suspense>    
   );
 }
 

@@ -7,7 +7,7 @@ import '../../assets/scss/page/main.scss';
 //component
 import PortfolioItem from '../../component/contents/PortfolioItem';
 //img
-function Main({animItem}) {
+function Main() {
   //탭
   const [tabIdx, setTabIdx] = useState(0);
   const tab = [
@@ -221,7 +221,6 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://hanjae.freewebclub.com/main/main.html'
     },
-		
 
     {
       title: '아일랜드캐슬 반응형 ',
@@ -232,7 +231,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://www.island-castle.co.kr/'
     },
-		
+
     {
       title: ' 더케이 커뮤니케이션 반응형 ',
       thumb: 'pt_thek.jpg',
@@ -242,7 +241,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://mc3099.freewebclub.com/main/main.html'
     },
-		
+
     {
       title: '미스터 키친 반응형 ',
       thumb: 'pt_mrbossam.jpg',
@@ -252,7 +251,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://mrbossam.co.kr/main/main.html'
     },
-		
+
     {
       title: '스쿨푸드 반응형 ',
       thumb: 'pt_schoolfood.jpg',
@@ -262,7 +261,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://schoolfood.freewebclub.com/main/main.html'
     },
-		
+
     {
       title: '차앤박피부과 pc/m ',
       thumb: 'pt_03.jpg',
@@ -271,10 +270,9 @@ function Main({animItem}) {
       role: '회사/지점/고객 관리 시스템, 퍼블리싱',
       stack: ['php', 'scss'],
       url: 'https://www.cnpskin.com/pc/cnp/main/main.html',
-			url2:'https://www.cnpskin.com/pc/branch/main/main.html?jijummid=cnpskin18'
+      url2: 'https://www.cnpskin.com/pc/branch/main/main.html?jijummid=cnpskin18'
     },
-		
-		
+
     {
       title: '일본 유랑기 pc/m',
       thumb: 'pt_01.jpg',
@@ -313,9 +311,6 @@ function Main({animItem}) {
       url: 'https://www.grate.kr'
     },
 
-
-		
-		
     {
       title: '세이브존 반응형',
       thumb: 'pt_08.jpg',
@@ -325,8 +320,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://saveculture.savezone.co.kr/'
     },
-		
-		
+
     {
       title: '장사의달인 반응형, 앱',
       thumb: 'pt_jangsa.jpg',
@@ -336,7 +330,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://www.jangsadalin.com'
     },
-		
+
     {
       title: '국민 청소년 디딤센터 반응형',
       thumb: 'pt_07.jpg',
@@ -346,7 +340,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://www.grate.kr'
     },
-		
+
     {
       title: ' SBI저축은행',
       thumb: 'pt_07.jpg',
@@ -356,7 +350,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://www.sbisb.co.kr/'
     },
-		
+
     {
       title: '(주)나이스신용정보',
       thumb: 'pt_nice_1.jpg',
@@ -376,7 +370,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://www.dongyangbooks.com'
     },
-		
+
     {
       title: '경기도청소년 수련원 프로젝트',
       thumb: 'pt_ggyc.jpg',
@@ -386,7 +380,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://www.ggyc.kr/'
     },
-		{
+    {
       title: '이오플로우',
       thumb: 'pt_eoflow.jpg',
       desc: '제품 소개 플랫폼',
@@ -395,9 +389,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'http://eoflow.freewebclub.com/'
     },
-		
-		
-		
+
     {
       title: '브래드 가든 반응형',
       thumb: 'pt_10.jpg',
@@ -407,7 +399,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://www.breadgarden.co.kr/'
     },
-		
+
     {
       title: '마이리틀 프랜드 반응형',
       thumb: 'pt_09.jpg',
@@ -417,8 +409,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://www.mylittlefriend.kr/'
     },
-		
-		
+
     {
       title: '영풀 pc/m',
       thumb: 'pt_17.jpg',
@@ -437,7 +428,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://hivesystem.net/'
     },
-		{
+    {
       title: '법률 사무소 고은 ',
       thumb: 'pt_gounlaw.png',
       desc: '법률 사무소',
@@ -446,8 +437,7 @@ function Main({animItem}) {
       stack: ['php', 'scss'],
       url: 'https://gounlaw.com/'
     },
-		
-		
+
     {
       title: '부산마루 음악제',
       thumb: 'pt_bmimf.jpg',
@@ -458,7 +448,6 @@ function Main({animItem}) {
       url: 'https://www.bmimf.co.kr/'
     },
 
-		
     {
       title: '하이브 시스템',
       thumb: 'pt_hivesystem.jpg',
@@ -470,19 +459,23 @@ function Main({animItem}) {
     }
   ];
 
-  useEffect(() => {
-    if (tabIdx !== null) {
-      gsap.fromTo('.portfolio__item', {opacity: 0, y: 30, duration: 0.1}, {opacity: 1, y: 0, stagger: 0.1, ease: 'Power3.easeOut', delay: 0.5}); //콘텐츠 애니메이션
-    }
-  }, [tabIdx]);
+
+  function handleTabClick(idx) {
+    setTabIdx(idx);
+    // 기존 애니메이션 중지
+    gsap.killTweensOf('.portfolio__item');
+
+    // 새로운 애니메이션 실행
+    gsap.fromTo('.portfolio__item', {opacity: 0, y: 50}, {opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut'});
+  }
 
   return (
     <>
-      <main className="p_main">
+      <main className="main">
         <section className="pf_tab__wrap">
           <div className="pf_tab ">
             {tab.map((v, idx) => (
-              <button key={idx} className={`tab ${tabIdx === idx ? 'active' : ''}`} onClick={() => setTabIdx(idx)}>
+              <button key={idx} className={`tab ${tabIdx === idx ? 'active' : ''}`} onClick={() => handleTabClick(idx)}>
                 {v.text}
               </button>
             ))}
@@ -490,7 +483,7 @@ function Main({animItem}) {
         </section>
         {/*  포트폴리오 */}
         <section className="main_cont_sec">
-          {tabIdx === 0 && (
+          {tabIdx === 0 ? (
             <div className="portfolio__list">
               {items
                 .filter((item) => parseInt(item.date) >= 2024)
@@ -498,14 +491,19 @@ function Main({animItem}) {
                   <PortfolioItem key={index} index={index} item={item} />
                 ))}
             </div>
-          )}
-          {tabIdx === 1 && (
+          ) : tabIdx === 1 ? (
             <div className="portfolio__list">
               {items
                 .filter((item) => parseInt(item.date) < 2024)
                 .map((item, index) => (
                   <PortfolioItem key={index} index={index} item={item} />
                 ))}
+            </div>
+          ) : (
+            <div className="portfolio__list">
+              {items.map((item, index) => (
+                <PortfolioItem key={index} index={index} item={item} />
+              ))}
             </div>
           )}
         </section>

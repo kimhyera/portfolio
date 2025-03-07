@@ -16,7 +16,10 @@
 		@include flex(y);
 		gap: 30px;
 		position: relative;		
-	  transition: 0.2s ease-out;
+		&.hide{
+		opacity: 0;
+		transform: translateY(30px);
+		}
 		@include media-max($xs) {
 				flex-direction: column;
 				gap:15px;
