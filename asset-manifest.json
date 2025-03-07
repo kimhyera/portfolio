@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.f855e6bc.css",
-    "main.js": "/portfolio/static/js/main.1b5c121e.js",
-    "static/css/223.79388891.chunk.css": "/portfolio/static/css/223.79388891.chunk.css",
-    "static/js/223.d7b44c3f.chunk.js": "/portfolio/static/js/223.d7b44c3f.chunk.js",
+    "main.css": "/portfolio/static/css/main.31d6cfe0.css",
+    "main.js": "/portfolio/static/js/main.08a65952.js",
+    "static/css/223.b7d40cf3.chunk.css": "/portfolio/static/css/223.b7d40cf3.chunk.css",
+    "static/js/223.8865ad02.chunk.js": "/portfolio/static/js/223.8865ad02.chunk.js",
     "static/js/488.7a876c9d.chunk.js": "/portfolio/static/js/488.7a876c9d.chunk.js",
     "static/js/622.f1edd1e4.chunk.js": "/portfolio/static/js/622.f1edd1e4.chunk.js",
     "static/media/pt_gounlaw.png": "/portfolio/static/media/pt_gounlaw.45509a847ba8b0b88485.png",
@@ -95,9 +95,9 @@
     "static/media/icon_pronounce.svg": "/portfolio/static/media/icon_pronounce.61a5361f59f901e770d8.svg",
     "static/media/icon_lang.svg": "/portfolio/static/media/icon_lang.b64c216ada11f9046415.svg",
     "static/media/icon_blood_sugar.svg": "/portfolio/static/media/icon_blood_sugar.fead89b466264e5b98e8.svg",
-    "index.html": "/portfolio/index.html",
     "static/media/icon_push.svg": "/portfolio/static/media/icon_push.0ee5c2ffe9323add0279.svg",
     "static/media/icon_request.svg": "/portfolio/static/media/icon_request.e45465bd08054ec957a8.svg",
+    "index.html": "/portfolio/index.html",
     "static/media/icon_subscribe.svg": "/portfolio/static/media/icon_subscribe.d21dd1a6e81b73d7c216.svg",
     "static/media/icon_faq.svg": "/portfolio/static/media/icon_faq.59accb61a663a843e519.svg",
     "static/media/icon_report.svg": "/portfolio/static/media/icon_report.2667fa84c5851ae96235.svg",
@@ -177,15 +177,14 @@
     "static/media/icon_close.svg": "/portfolio/static/media/icon_close.87f6d02aa730aba4bdce.svg",
     "static/media/icon_bar.svg": "/portfolio/static/media/icon_bar.fd7422890e6865371c05.svg",
     "static/media/icon_caret.svg": "/portfolio/static/media/icon_caret.a1a6f490435d0d5fb096.svg",
-    "main.f855e6bc.css.map": "/portfolio/static/css/main.f855e6bc.css.map",
-    "main.1b5c121e.js.map": "/portfolio/static/js/main.1b5c121e.js.map",
-    "223.79388891.chunk.css.map": "/portfolio/static/css/223.79388891.chunk.css.map",
-    "223.d7b44c3f.chunk.js.map": "/portfolio/static/js/223.d7b44c3f.chunk.js.map",
+    "main.08a65952.js.map": "/portfolio/static/js/main.08a65952.js.map",
+    "223.b7d40cf3.chunk.css.map": "/portfolio/static/css/223.b7d40cf3.chunk.css.map",
+    "223.8865ad02.chunk.js.map": "/portfolio/static/js/223.8865ad02.chunk.js.map",
     "488.7a876c9d.chunk.js.map": "/portfolio/static/js/488.7a876c9d.chunk.js.map",
     "622.f1edd1e4.chunk.js.map": "/portfolio/static/js/622.f1edd1e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.1b5c121e.js"
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.08a65952.js"
   ]
 }
