@@ -298,7 +298,7 @@ function Main() {
       date: '2019',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
-      url: 'https://www.eurobike.kr/'
+      url: 'https://www.titaninvest.co.kr'
     },
 
     {
@@ -343,7 +343,7 @@ function Main() {
 
     {
       title: ' SBI저축은행',
-      thumb: 'pt_07.jpg',
+      thumb: 'pt_sb.jpg',
       desc: '금융 플랫폼',
       date: '2017',
       role: '반응형 퍼블리싱',
@@ -430,7 +430,7 @@ function Main() {
     },
     {
       title: '법률 사무소 고은 ',
-      thumb: 'pt_gounlaw.png',
+      thumb: 'pt_gounlaw.jpg',
       desc: '법률 사무소',
       date: '2015',
       role: '반응형 퍼블리싱',
