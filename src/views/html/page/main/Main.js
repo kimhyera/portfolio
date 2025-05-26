@@ -11,18 +11,25 @@ function Main() {
   //탭
   const [tabIdx, setTabIdx] = useState(0);
   const tab = [
-    {text: '2024~', link: ''},
-    {text: '2015~2023', link: ''}
+    {text: '전체', link: ''},
+    {text: '홈페이지', link: ''},
+    {text: '반응형', link: ''},
+    {text: '모바일', link: ''},
+    {text: 'B2B', link: ''},
+    {text: 'React · Vue', link: ''}
+    //{text: '리디자인', link: ''}
   ];
+	const selectedTabText = tab[tabIdx].text;
   const items = [
     {
-      title: '코크플레이 반응형',
+      title: '코크플레이 반응형 / 앱',
       thumb: 'pt_2024_cgplay.jpg',
       desc: '뇌 트레이닝 플랫폼',
       date: '2024',
       role: '퍼블리싱',
       stack: ['react', 'scss'],
-      url: 'https://cgplay2.awsome-app.kr/html/Main'
+			type:['홈페이지', '반응형','앱','react'],
+      url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1'
     },
     {
       title: 'Vetbless PC 관리',
@@ -31,6 +38,7 @@ function Main() {
       date: '2025',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:['홈페이지', 'b2b','관리자'],
       url: 'https://nalazoo.awsome-app.kr/front/Chart'
     },
     {
@@ -40,6 +48,7 @@ function Main() {
       date: '2023 ~ 2024 ',
       role: '모바일 퍼블리싱, Vue 프론트엔드 제작 ',
       stack: ['vue', 'scss'],
+			type:[ 'b2c','vue','모바일','플랫폼'],
       url: 'https://634fa63d3236be6714353078--willowy-parfait-db4af9.netlify.app/path',
       url2: 'https://smartshop.mannashop.co.kr/shop/mns/'
     },
@@ -50,6 +59,7 @@ function Main() {
       date: '2024',
       role: '모바일 퍼블리싱, Nuxt3 프론트엔드 제작 ',
       stack: ['vue', 'scss'],
+			type:[ 'b2c','vue','모바일','플랫폼'],
       url: 'https://web-nuxt-qr-netlify.netlify.app/pb/path'
     },
     {
@@ -59,6 +69,7 @@ function Main() {
       date: '2023',
       role: '모바일 퍼블리싱, Vue 프론트엔드 제작 (일부참여) ',
       stack: ['vue', 'scss'],
+			type:[ 'b2c','vue','모바일','플랫폼'],
       url: 'https://vue-mart-2.netlify.app/publish',
       url2: 'https://tsmartshop.mannashop.co.kr/shop/mts/'
     },
@@ -69,6 +80,7 @@ function Main() {
       date: '2024',
       role: 'Vue 모바일 퍼블리싱',
       stack: ['vue', 'scss'],
+			type:[ 'b2c','vue','모바일','플랫폼'],
       url: 'https://63233a86330f840008be9b72--extraordinary-snickerdoodle-799c22.netlify.app/path'
     },
     {
@@ -78,6 +90,7 @@ function Main() {
       date: '2024',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '모바일'],
       url: 'https://suva.awsome-app.kr/'
     },
     {
@@ -87,6 +100,7 @@ function Main() {
       date: '2024',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '반응형'],
       url: 'https://ecohigh.kr/front/Member/Login'
     },
     {
@@ -96,6 +110,7 @@ function Main() {
       date: '2024',
       role: '퍼블리싱',
       stack: ['react', 'scss'],
+			type:[ '반응형','react','b2b'],
       url: 'http://easy-study.awsome-app.kr/'
     },
     {
@@ -105,6 +120,7 @@ function Main() {
       date: '2024',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://bluebird.awsome-app.kr/'
     },
     {
@@ -114,6 +130,7 @@ function Main() {
       date: '2024',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://onply.awsome-app.kr/'
     },
     {
@@ -123,6 +140,7 @@ function Main() {
       date: '2025',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://gadget.awsome-app.kr/'
     },
     {
@@ -132,6 +150,7 @@ function Main() {
       date: '2025',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '모바일','반응형'],
       url: 'https://gagu.awsome-app.kr/'
     },
 
@@ -142,6 +161,7 @@ function Main() {
       date: '2025',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://winos.awsome-app.kr/'
     },
 
@@ -152,6 +172,7 @@ function Main() {
       date: '2025',
       role: '퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '모바일'],
       url: 'https://qding2.awsome-app.kr/front/Mall/Online'
     },
 
@@ -162,6 +183,7 @@ function Main() {
       date: '2024',
       role: '반응형 퍼블리싱, 인터렉션',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.firsteyeclinic.co.kr/'
     },
 
@@ -172,6 +194,7 @@ function Main() {
       date: '2024',
       role: '반응형 퍼블리싱, 인터렉션',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://lasikmasan.mycafe24.com/'
     },
     {
@@ -181,16 +204,18 @@ function Main() {
       date: '2022',
       role: 'pc 퍼블리싱, php 프론트엔드 제작',
       stack: ['php', 'scss'],
+			type:[ 'b2b'],
       url: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php',
       url2: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php'
     },
     {
       title: '맛집 모바일',
-      thumb: 'pt_manna.jpg',
-      desc: '맛집 플랫폼',
+      thumb: 'pt_manna.png',
+      desc: '맛집 플랫폼 asdassd',
       date: '2022',
       role: '모바일 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '모바일'],
       url: 'https://smartshop.mannashop.co.kr/shop/mns/'
     },
     {
@@ -200,6 +225,7 @@ function Main() {
       date: '2021',
       role: 'pc,mobile 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.shinhanwall.co.kr'
     },
     {
@@ -209,6 +235,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://hyera1828.cafe24.com/coupon_send/ch.html'
     },
 
@@ -219,6 +246,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://hanjae.freewebclub.com/main/main.html'
     },
 
@@ -229,6 +257,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://www.island-castle.co.kr/'
     },
 
@@ -239,6 +268,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://mc3099.freewebclub.com/main/main.html'
     },
 
@@ -249,6 +279,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://mrbossam.co.kr/main/main.html'
     },
 
@@ -259,6 +290,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://schoolfood.freewebclub.com/main/main.html'
     },
 
@@ -269,6 +301,7 @@ function Main() {
       date: '2018',
       role: '회사/지점/고객 관리 시스템, 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','모바일','b2c','b2b'],
       url: 'https://www.cnpskin.com/pc/cnp/main/main.html',
       url2: 'https://www.cnpskin.com/pc/branch/main/main.html?jijummid=cnpskin18'
     },
@@ -280,6 +313,7 @@ function Main() {
       date: '2019',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','모바일'],
       url: 'https://www.japanuranggi.com/main/main.html'
     },
     {
@@ -289,6 +323,7 @@ function Main() {
       date: '2020',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','모바일'],
       url: 'http://www.jangsadalin.com'
     },
     {
@@ -298,6 +333,7 @@ function Main() {
       date: '2019',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.titaninvest.co.kr'
     },
 
@@ -308,6 +344,7 @@ function Main() {
       date: '2016',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.grate.kr'
     },
 
@@ -318,6 +355,7 @@ function Main() {
       date: '2018',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://saveculture.savezone.co.kr/'
     },
 
@@ -328,6 +366,7 @@ function Main() {
       date: '2018',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://www.jangsadalin.com'
     },
 
@@ -338,6 +377,7 @@ function Main() {
       date: '2016',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.grate.kr'
     },
 
@@ -348,6 +388,7 @@ function Main() {
       date: '2017',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.sbisb.co.kr/'
     },
 
@@ -358,6 +399,7 @@ function Main() {
       date: '2016',
       role: 'pc/m 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.niceamc.co.kr/kr/index.do'
     },
 
@@ -368,6 +410,7 @@ function Main() {
       date: '2016',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.dongyangbooks.com'
     },
 
@@ -378,6 +421,7 @@ function Main() {
       date: '2015',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.ggyc.kr/'
     },
     {
@@ -387,6 +431,7 @@ function Main() {
       date: '2017',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'http://eoflow.freewebclub.com/'
     },
 
@@ -397,6 +442,7 @@ function Main() {
       date: '2017',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.breadgarden.co.kr/'
     },
 
@@ -407,6 +453,7 @@ function Main() {
       date: '2017',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.mylittlefriend.kr/'
     },
 
@@ -417,6 +464,7 @@ function Main() {
       date: '2017',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','모바일'],
       url: 'http://www.youngpull.com/'
     },
     {
@@ -426,6 +474,7 @@ function Main() {
       date: '2015',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ 'b2b','홈페이지'],
       url: 'https://hivesystem.net/'
     },
     {
@@ -435,6 +484,7 @@ function Main() {
       date: '2015',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://gounlaw.com/'
     },
 
@@ -445,6 +495,7 @@ function Main() {
       date: '2016',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://www.bmimf.co.kr/'
     },
 
@@ -455,10 +506,10 @@ function Main() {
       date: '2015',
       role: '반응형 퍼블리싱',
       stack: ['php', 'scss'],
+			type:[ '홈페이지','반응형'],
       url: 'https://hivesystem.net/'
     }
   ];
-
 
   function handleTabClick(idx) {
     setTabIdx(idx);
@@ -472,41 +523,64 @@ function Main() {
   return (
     <>
       <main className="main">
-        <section className="pf_tab__wrap">
-          <div className="pf_tab ">
-            {tab.map((v, idx) => (
-              <button key={idx} className={`tab ${tabIdx === idx ? 'active' : ''}`} onClick={() => handleTabClick(idx)}>
-                {v.text}
-              </button>
-            ))}
-          </div>
-        </section>
-        {/*  포트폴리오 */}
-        <section className="main_cont_sec">
-          {tabIdx === 0 ? (
-            <div className="portfolio__list">
-              {items
-                .filter((item) => parseInt(item.date) >= 2024)
-                .map((item, index) => (
-                  <PortfolioItem key={index} index={index} item={item} />
-                ))}
-            </div>
-          ) : tabIdx === 1 ? (
-            <div className="portfolio__list">
-              {items
-                .filter((item) => parseInt(item.date) < 2024)
-                .map((item, index) => (
-                  <PortfolioItem key={index} index={index} item={item} />
-                ))}
-            </div>
-          ) : (
-            <div className="portfolio__list">
-              {items.map((item, index) => (
-                <PortfolioItem key={index} index={index} item={item} />
+        <div className="pf_center_wrap">
+					<section className='tit_wrap'>
+						 <h2 className="tit">WORK</h2>
+						  <div className="filter_list">
+							 {tab.map((v, idx) => (
+                <button key={idx} className={`filter ${tabIdx === idx ? 'active' : ''}`} onClick={() => handleTabClick(idx)}>
+                  {v.text}
+                </button>
               ))}
-            </div>
-          )}
-        </section>
+							</div>
+					</section>
+ 
+          {/*  포트폴리오 */}
+          {/*<section className="main_cont_sec">
+            {tabIdx === 0 ? (
+              <div className="portfolio__list">
+                {items
+                  .filter((item) => parseInt(item.date) >= 2024)
+                  .map((item, index) => (
+                    <PortfolioItem key={index} index={index} item={item} />
+                  ))}
+              </div>
+            ) : tabIdx === 1 ? (
+              <div className="portfolio__list">
+                {items
+                  .filter((item) => parseInt(item.date) < 2024)
+                  .map((item, index) => (
+                    <PortfolioItem key={index} index={index} item={item} />
+                  ))}
+              </div>
+            ) : (
+              <div className="portfolio__list">
+                {items.map((item, index) => (
+                  <PortfolioItem key={index} index={index} item={item} />
+                ))}
+              </div>
+            )}
+          </section>*/}
+
+				 <section className="main_cont_sec">
+          <div className="portfolio__list">
+    {items
+      .filter((item) => {
+        if (selectedTabText === '전체') return true;
+        // 예: item.type가 ['홈페이지', '쇼핑몰', ...]인 경우
+        return item.type?.some(keyword =>
+          selectedTabText
+            .toLowerCase()
+            .split(' ')
+            .some(filterWord => keyword.toLowerCase().includes(filterWord))
+        );
+      })
+      .map((item, index) => (
+        <PortfolioItem key={index} index={index} item={item} />
+      ))}
+  </div>
+          </section>
+        </div>
       </main>
     </>
   );

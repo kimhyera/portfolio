@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* ^scss에서 수정해주세요!  Don't edit .css file, Only work on the scss*/
+.about {
+  gap: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+}
+@media screen and (min-width: 1023.98px) {
+  .about {
+    padding-top: 80px;
+  }
+}
+.about__txt {
+  gap: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+}
+.about__txt .h {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1023.98px) {
+  .about__txt .h {
+    font-size: 30px;
+  }
+}
+.about__txt .h_st {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  gap: 6px;
+}
+@media screen and (max-width: 1023.98px) {
+  .about__txt .h_st {
+    font-size: 16px;
+  }
+}
+.about__txt .desc {
+  line-height: 1.8;
+}
+@media screen and (min-width: 1023.98px) {
+  .about__txt .desc {
+    font-size: 16px;
+  }
+}
+.about__txt .list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  gap: 6px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 1023.98px) {
+  .about__txt .list {
+    font-size: 16px;
+  }
+}
+.about__txt .list a {
+  color: #fff;
+  display: inline-flex;
+  min-width: auto;
+  gap: 5px;
+  border-bottom: 1px solid #fff;
+}
+.about__txt .list li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  gap: 6px;
+}
+.about__txt .pf_btn {
+  width: fit-content;
+}

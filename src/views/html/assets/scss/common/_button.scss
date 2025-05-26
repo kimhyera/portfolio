@@ -363,13 +363,16 @@
 	}
 	&__wrap {
 		position: relative;
+		@include media-min($l) {
+				margin-right: 40px;
+		}
 	}
 	.tab {
 		position: relative;
 		@include flex(all);
 		justify-content: center;
 		white-space: nowrap;
-		color: #92949a;
+		color: $text-3;
 		font-size: 20px;
 		//padding-left: 20px;
 		width: 120px;

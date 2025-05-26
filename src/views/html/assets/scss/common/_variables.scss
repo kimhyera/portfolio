@@ -162,6 +162,21 @@
 	}
 }
 
+@mixin bar($h, $color) {
+	position: relative;
+	&::before {
+		@include beforeafter;
+		position: relative;
+		width:1px;
+		height: $h;
+		background: $color;
+		vertical-align: middle;
+		cursor: default;
+		rotate: 40deg;
+		margin-inline: 10px;
+	}
+}
+
 //^ 이미지 리스트 정렬 (좌우여백,상하여백, 한줄에 들어갈 갯수)
 @mixin list($gapinline, $gapBlock, $i) {
 	@include flex(y);
@@ -372,7 +387,7 @@ $pd-inline: 63px;
 $pd-inline-m: 20px;
 $max-w: 1024px; // 현 사이트 디자인으로 수정 가능, 수정 후 주석 삭제 요망
 $bottom-menu-h: 70px;
-$head-h: 178px;
+$head-h: 110px;
 $head-h-m: 60px;
 $lnb-w: 350px;
 // font
@@ -396,6 +411,10 @@ $bg-dark: #111827;
 $bg-dark-light: #161f32;
 $inner-dark: #161b22;
 $inner-dark-light: #161f32;
+
+$bg: #191919;
+$text-2:#E4E4E7;
+$text-3:#A1A1AA;
 
 $c-border: #e2e2e2;
 $c-border-dark: #2e2e32;

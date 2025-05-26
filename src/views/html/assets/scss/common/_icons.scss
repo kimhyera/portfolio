@@ -256,3 +256,25 @@ $iconSize: map-values($iconInfo);
     }
   }
 }
+
+
+.icon_html{
+  @include addImg(icon_html,16,16);
+}
+
+.icon_js{
+  @include addImg(icon_js,16,16);
+}
+
+.icon_react{
+  @include addImg(icon_react,16,16);
+}
+.icon_vue{
+  @include addImg(icon_vue,16,16);
+}
+.icon_git{
+  @include addImg(icon_git,16,16);
+}
+.icon_pigma{
+  @include addImg(icon_pigma,16,16);
+}

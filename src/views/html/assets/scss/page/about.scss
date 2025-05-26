@@ -1,11 +1,17 @@
 @import "../common/variables";
 //about
 .about{
-	gap:40px;
-	@include flex(column);
 	@include media-min($l) {
 			
 	padding-top: 80px;
+	}
+	.pf_center_wrap{
+		
+	  gap:60px;
+	  @include flex(column);
+		@include media-max($l) {
+				gap:30px;
+		}
 	}
 	&__txt{
 		gap:20px;

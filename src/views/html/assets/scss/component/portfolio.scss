@@ -49,7 +49,7 @@
 		}
 	}
 	&__thumb {
-		@include thumb(200px, auto, 200/180);
+		@include thumb(340px, auto, 200/180);
 		
 		border-radius: 6px;
 		overflow: hidden;

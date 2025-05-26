@@ -29,10 +29,9 @@ function HtmlRouter() {
   const basename = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
   return (
     <BrowserRouter basename={basename}>      {/* 환경에 따라 basename 설정 */}
-      <div className="main_container pf_center_wrap">
+   
         <Header />
         <AppRouter />
-      </div>
     </BrowserRouter>
   );
 }

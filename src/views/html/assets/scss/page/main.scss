@@ -12,4 +12,42 @@
 				margin-bottom: 20px;
 		}
 	}
+
+	.tit_wrap{
+		@include flex(between);
+		border-bottom: 1px solid $text-3;
+		padding-bottom: 10px;
+		@include media-max($m) {
+				flex-direction: column;
+				gap:20px;
+		}
+		.tit{
+			font-size: 60px;
+			letter-spacing: 1px;
+		   font-family: Poppins;
+			 font-weight: 100;
+		}
+	}
+
+	.filter_list{
+    @include flex(y);
+		
+		.filter{
+		   color:$text-3;
+		   font-size: 18px;
+			 &.active{
+				color:#fff;
+				font-weight: 600;
+			 }
+			 &:not(:first-child){
+			 @include bar(10px,$text-3);
+			 }
+			 @include media-max($m) {
+					 font-size: 13px;
+				&:before{
+					margin-inline: 4px;
+				}
+			 }
+		}
+	}
 }
