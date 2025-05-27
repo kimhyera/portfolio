@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { useLocation} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useLocation, NavLink } from 'react-router-dom';
 
 import gsap from 'gsap';
 //img
@@ -7,88 +7,87 @@ import logoUrl from '../../assets/img/logo.svg';
 //component
 import ContactLinks from '../../component/inc/ContactLinks';
 function Header() {
-  const location = useLocation(); // 현재 경로 가져오기
-  const [barMenu, setBarMenu] = useState(false);
-  const [ isMobile,setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
+	const location = useLocation(); // 현재 경로 가져오기
+	const [barMenu, setBarMenu] = useState(false);
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
 	console.log(isMobile);
-	
 
-  //Nav 메뉴
-  const toggleBarMenu = () => {
-    setBarMenu((current) => !current);
-    if (!barMenu) {
-			console.log('dd');
-			
-      gsap.to('.nav__bg', {display: 'flex', scale: 100, duration: 1});
-      gsap.to('.nav .FadeUp', {opacity: 1, y: -30, stagger: 0.1, ease: 'Power3.easeOut'},'<0.5');
-      gsap.to('.nav', {opacity: 1, 'pointer-events': 'auto'});
-    } else {
-      resetNav();
-    }
-  };
-  function resetNav() {
-    gsap.fromTo('.nav .FadeUp', {opacity: 1, y: 0}, {opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut'});
-    gsap.to('.nav', {opacity: 0, y:0}, '<');
-    gsap.to('.nav__bg', {display: 'none', scale: 5, duration: 0.3, delay: 0.3});
-  }
 
-  //const [position, setPosition] = useState({x: 0, y: 0});
+	//Nav 메뉴
+	const toggleBarMenu = () => {
+		setBarMenu((current) => {
+			const next = !current;
 
-  //useEffect(() => {
-  //  const handleMouseMove = (event) => {
-  //    setPosition({x: event.clientX, y: event.clientY});
-  //  };
+			if (next) {
+				console.log('메뉴 클릭 !barMenu');
+				gsap.to('.nav__bg', { display: 'flex', scale: 100 });
+				gsap.to('.nav', { opacity: 1, 'pointer-events': 'auto' });
+				gsap.to('.nav .FadeUp', { opacity: 1, y: -30, stagger: 0.1, ease: 'Power3.easeOut' }, '<0.5');
+			} else {
+				resetNav();
+			}
 
-  //  window.addEventListener('mousemove', handleMouseMove);
-  //  return () => {
-  //    window.removeEventListener('mousemove', handleMouseMove);
-  //  };
-  //}, []);
-  // 창 크기 변경 시 모바일 여부 업데이트
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1279);
-    };
+			return next;
+		});
+	};
+	function resetNav() {
+		gsap.fromTo('.nav .FadeUp', { opacity: 1, y: 0 }, { opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut' });
+		gsap.to('.nav', { opacity: 0, y: 0 }, '<');
+		gsap.to('.nav__bg', { display: 'none', scale: 5, duration: 0.3, delay: 0.3 });
+	}
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+	//const [position, setPosition] = useState({x: 0, y: 0});
 
-  useEffect(() => {
-    setBarMenu(false);
+	//useEffect(() => {
+	//  const handleMouseMove = (event) => {
+	//    setPosition({x: event.clientX, y: event.clientY});
+	//  };
 
-    const tl = gsap.timeline();
+	//  window.addEventListener('mousemove', handleMouseMove);
+	//  return () => {
+	//    window.removeEventListener('mousemove', handleMouseMove);
+	//  };
+	//}, []);
+	// 창 크기 변경 시 모바일 여부 업데이트
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 1279);
+		};
 
-    // 기존 애니메이션 중지
-    gsap.killTweensOf('.portfolio__item');
-    tl.to('.start_bg', {top: '-100vh', ease: 'expo.inOut', duration: 1}) // 배경 애니메이션
-      //콘텐츠 애니메이션
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
-      .fromTo('.nav__open', {opacity: 0, x: 30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut'}, '<0.5')
-      //.fromTo('.head__about', {opacity: 0, x: -30}, {opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut'}, '<');
+	useEffect(() => {
+		setBarMenu(false);
 
-    document.querySelector('.nav__open ').classList.remove('active');
-    //gsap.to('.nav .FadeUp', {opacity: 0, y: 30});
-    gsap.to('.nav', {opacity: 0, 'pointer-events': 'none'}, '<');
-    gsap.to('.nav__bg', {display: 'none', scale: 5, duration: 0.1});
+		const tl = gsap.timeline();
+		gsap.killTweensOf('.portfolio__item');
 
-    tl.fromTo('.portfolio__item ', {opacity: 0, y: 30}, {opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut'}, '<0.4');
+		// 메뉴 애니메이션 닫기
+		gsap.to('.nav', { opacity: 0, 'pointer-events': 'none' }, '<');
+		gsap.to('.nav__bg', { display: 'none', scale: 5, duration: 0.1 });
+		document.querySelector('.nav__open').classList.remove('active');
 
-		console.log('라우터 이동',location.pathname);
-		
-  }, [location.pathname]);
+		// 새 페이지 콘텐츠 애니메이션
+		tl.to('.start_bg', { top: '-100vh', ease: 'expo.inOut', duration: 1 })
+			.fromTo('.nav__open', { opacity: 0, x: 30 }, { opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut' }, '<0.5')
+			.fromTo('.portfolio__item', { opacity: 0, y: 30 }, { opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut' }, '<0.4');
 
-  return (
-    <>
-      <header className="head">
-        <div className="pf_center_wrap">
-          <a href="/" className="logo">
-            <img src={logoUrl} alt="" />
-          </a>
-          <span className="nav__bg"></span>
-          <nav className={`nav  ${barMenu ? 'active' : ''}`}>
-            <div className="nav_item__wrap">
-              <a className={`nav_item FadeUp  ${location.pathname === '/portfolio/Main' ? 'active' : ''}`} href="/Main">
+		console.log('라우터 이동', location.pathname);
+	}, [location.pathname]);
+
+	return (
+		<>
+			<header className="head">
+				<div className="pf_center_wrap">
+					<a href="/" className="logo">
+						<img src={logoUrl} alt="" />
+					</a>
+					<span className="nav__bg"></span>
+					<nav className={`nav  ${barMenu ? 'active' : ''}`}>
+						<div className="nav_item__wrap">
+							{/*<a className={`nav_item FadeUp  ${location.pathname === '/portfolio/Main' ? 'active' : ''}`} href="/Main">
                 MAIN
               </a>
               <a  className={`nav_item FadeUp  ${location.pathname === '/portfolio/About' ? 'active' : ''}`}  href="/About">
@@ -96,33 +95,52 @@ function Header() {
               </a>
               <a className={`nav_item FadeUp  ${location.pathname === '/portfolio/Work' ? 'active' : ''}`} href="/Work">
                 WORK
-              </a>
-              {/*<NavLink className="nav_item FadeUp" activeclassname="active" to="/About/#contact">
+              </a>*/}
+
+							<NavLink  className={`nav_item FadeUp  ${location.pathname === '/Main' ? 'active' : ''}`} activeclassname="active" to="/" onClick={() => {
+								resetNav();
+								setBarMenu(false);
+							}}>
+								MAIN
+							</NavLink>
+							<NavLink className="nav_item FadeUp" activeclassname="active" to="/About" onClick={() => {
+								resetNav();
+								setBarMenu(false);
+							}}>
+								ABOUT
+							</NavLink>
+							<NavLink className="nav_item FadeUp" activeclassname="active" to="/Work" onClick={() => {
+								resetNav();
+								setBarMenu(false);
+							}}>
+								WORK
+							</NavLink>
+							{/*<NavLink className="nav_item FadeUp" activeclassname="active" to="/About/#contact">
 								CONTACT
 							</NavLink>*/}
 
-              <ContactLinks />
-            </div>
-          </nav>
-          <button className={`nav__open ${barMenu ? 'active' : ''}`} onClick={toggleBarMenu}>
-            <span className="item"></span>
-            <span className="item"></span>
-            <span className="item"></span>
-          </button>
-        </div>
-      </header>
-      <div className="start_bg"></div>
-      {/*<span className="cusor_bg" style={{
+							<ContactLinks />
+						</div>
+					</nav>
+					<button className={`nav__open ${barMenu ? 'active' : ''}`} onClick={toggleBarMenu}>
+						<span className="item"></span>
+						<span className="item"></span>
+						<span className="item"></span>
+					</button>
+				</div>
+			</header>
+			<div className="start_bg"></div>
+			{/*<span className="cusor_bg" style={{
           transform: `translate(${position.x}px, ${position.y}px)`,
         }} ></span>*/}
 
-      <div className="star_area">
-        <span className="star blue"></span>
-        {/*<span className="star yellow"></span>*/}
-      </div>
+			<div className="star_area">
+				<span className="star blue"></span>
+				{/*<span className="star yellow"></span>*/}
+			</div>
 
-      <section className="top_section">
-        {/*<div className="pf_center_wrap">
+			<section className="top_section">
+				{/*<div className="pf_center_wrap">
           <div className="about_row">
             <div className="box_l">
               UI/UX 디자인부터 퍼블리싱
@@ -151,8 +169,8 @@ function Header() {
             </ul>
           </div>
         </div>*/}
-      </section>
-    </>
-  );
+			</section>
+		</>
+	);
 }
 export default Header;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'; 
+import { useLocation} from 'react-router-dom';
 import SplitType from 'split-type';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -14,6 +15,7 @@ import PortfolioItem from '../../component/contents/PortfolioItem';
 
 gsap.registerPlugin(ScrollTrigger);
 function Work() {
+	const location = useLocation(); // 현재 경로 가져오기
 	//탭
 	const [tabIdx, setTabIdx] = useState(0);
 	const tab = [
@@ -529,15 +531,19 @@ function Work() {
 	}
 
 
+
 	useEffect(() => {
 		 new SplitType('.section3 .motion_txt span', {
 			types: 'chars'
 			// optional: line/word도 원하면 추가
 		});
-
-		gsap.fromTo(
+		
+			gsap.to(
 			'.motion_txt .char',
 			{ y: '100%', opacity: 0 },
+		)
+		gsap.to(
+			'.motion_txt .char',
 			{
 				y: '0%',
 				opacity: 1,
@@ -557,8 +563,8 @@ function Work() {
 				ease: 'expo.inOut'
 			},'<0.4'
 		);
-
-	}, []);
+		
+  }, [location.pathname]);
 
 
 	return (
