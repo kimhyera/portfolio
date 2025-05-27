@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {NavLink, useLocation} from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 
 import gsap from 'gsap';
 //img
@@ -9,7 +9,7 @@ import ContactLinks from '../../component/inc/ContactLinks';
 function Header() {
   const location = useLocation(); // 현재 경로 가져오기
   const [barMenu, setBarMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
+  const [ setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
 
   //Nav 메뉴
   const toggleBarMenu = () => {
