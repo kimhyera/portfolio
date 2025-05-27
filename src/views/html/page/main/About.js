@@ -10,7 +10,7 @@ function About() {
       <main className="about">
         <div className="pf_center_wrap">
           <div className="about__txt">
-            <p className="h">Hello, I'm Coder</p>
+            <p className="h en">Hello, I'm Coder</p>
 
             <div className="h_st">
               <i>✅</i>10년 차 웹 퍼블리셔, 다양한 UI/UX 프로젝트 경험
@@ -18,12 +18,12 @@ function About() {
             <div className="h_st">
               <i>✅</i>200여 건의 프로젝트 경험있는 디자인 가능한 퍼블리셔
             </div>
-            <a href="#contact" className="pf_btn point  s">
+            <a href="#contact" className="pf_btn point l">
               Contact me
             </a>
           </div>
           <div className="about__txt">
-            <p className="h">About me</p>
+            <p className="h en">About me</p>
             <ul className="list">
               <li>
                 <i>✅</i>에이전시에서 작업한 경험으로 웹에서 보여지는 모든사이트 완벽하게 작업가능합니다.
@@ -43,7 +43,7 @@ function About() {
             </ul>
           </div>
           <div className="about__txt">
-            <p className="h">Skills</p>
+            <p className="h en">Skills</p>
 
             <ul className="list">
               <li>
@@ -64,7 +64,7 @@ function About() {
             </ul>
           </div>
           <div className="about__txt" id="contact">
-            <p className="h">Contact</p>
+            <p className="h en">Contact</p>
 
             <ul className="list">
               <li>

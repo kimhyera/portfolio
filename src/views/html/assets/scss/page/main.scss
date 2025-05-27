@@ -2,52 +2,188 @@
 //메인
 .main {
 	padding-bottom: 0;
-	@include media-max($l) {
-	margin-top:40px
-	}
-	.pf_tab__wrap{
+	margin-top: 0;
+
+	.pf_tab__wrap {
 		margin-bottom: 40px;
 		@include media-max($l) {
-				margin-top: 60px;
-				margin-bottom: 20px;
+			margin-top: 60px;
+			margin-bottom: 20px;
 		}
 	}
 
-	.tit_wrap{
-		@include flex(between);
-		border-bottom: 1px solid $text-3;
-		padding-bottom: 10px;
+
+
+}
+
+//section1
+.section1 {
+	position: relative;
+	height: 100vh;
+	background-color: $bg;
+	padding-top: 3%;
+	@include media-max($l) {
+		padding-top: 5%;
+	}
+	.pf_center_wrap {
+		position: relative;
+	}
+	.svgAniLine {
+		position: absolute;
+		top: 8%;
+		right: 0;
+		max-width: 50%;
+		width: 100%;
+		height: auto;
+		display: block;
+		@include media-max($xxl) {
+			max-width: 40%;
+		}
 		@include media-max($m) {
-				flex-direction: column;
-				gap:20px;
+			position: static;
+			max-width: 90%;
+			margin-inline: auto;
+			margin-top: 20px;
 		}
-		.tit{
-			font-size: 60px;
-			letter-spacing: 1px;
-		   font-family: Poppins;
-			 font-weight: 100;
+		path {
+			opacity: 0.8;
+			stroke-width: 3px;
+			stroke: $point;
+			//stroke-dasharray: 4313;
+			//stroke-dashoffset: -4313;
+			//animation: ani1 2s linear 1s forwards;
+			//transition: 3s;
+		}
+	}
+	.txt_area {
+		&.main_txt {
+			.en2 {
+				font-style: italic;
+				span {
+					line-height: 1.2;
+				}
+			}
+
+			@include font-size(44px, 130px);
+		}
+		&.sub_txt {
+			font-size: 24px;
+			color: $text-2;
+			margin-top: 6%;
+			@include media-max($l) {
+				font-size: 14px;
+				margin-top: 10%;
+			}
+			span {
+				line-height: 1.8;
+			}
+			@include font-size(16px, 28px);
+		}
+		span {
+			line-height: 1.1;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+			display: block;
+		}
+		.char {
+			transform: translateY(115px);
+			transition: transform 0.5s;
+		}
+	}
+}
+
+@keyframes ani1 {
+	0% {
+		stroke-dashoffset: 4313;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+//section2
+.section2 {
+	position: relative;
+	height: 100vh;
+	background-color: #fff;
+
+	.video_wrap {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+		video {
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			background-color: rgba($color: #000000, $alpha: 0.7);
 		}
 	}
 
-	.filter_list{
-    @include flex(y);
+	.txt_area {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		gap: 10px;
+		color: $text-2;
+		max-width: 600px;
+		@include flex(column);
+		gap: 60px;
+		align-items: center;
+		text-shadow: rgba($color: #000000, $alpha: 0.5) 1px 0 5px;
+		@include media-max($l) {
+			gap: 24px;
+		}
+		li {
+			@include flex(s);
+			gap: 5px;
+			@include font-size(24px, 48px);
+			font-weight: 600;
+			text-align: center;
+		}
+	}
+}
+
+//section3
+.section3{
+	min-height: 100vh;
+	padding: 20% 0;
+	
+	.tit_wrap {
+		@include flex(column);
+		//border-bottom: 1px solid $text-3;
+		gap:100px;
+		align-items: center;
+		margin-bottom: 80px;
+		@include media-max($m) {
+			flex-direction: column;
+			gap: 40px;
+			margin-bottom: 40px;
+		}
 		
-		.filter{
-		   color:$text-3;
-		   font-size: 18px;
-			 &.active{
-				color:#fff;
-				font-weight: 600;
-			 }
-			 &:not(:first-child){
-			 @include bar(10px,$text-3);
-			 }
-			 @include media-max($m) {
-					 font-size: 13px;
-				&:before{
-					margin-inline: 4px;
-				}
-			 }
+		.tit {
+			font-family: Poppins;
+			font-weight: 400;
+			@include font-size(40px, 140px);
+			
+		.motion_txt{
+			overflow: hidden;
+		  span{
+				display: block;
+			}
+		}
 		}
 	}
 }

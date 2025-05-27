@@ -1,71 +1,44 @@
 @import "../common/variables";
 .portfolio {
 	&__list {
-		@include list(24px, 24px, 2);
-		@include media-max($xl) {
-			@include list(24px, 24px, 2);
-		}
+		@include list(40px, 80px, 2);
 		@include media-max($m) {
-		@include list(0px, 24px, 1);
+			@include list(0px, 30px, 1);
 		}
 	}
 	&__item {
+		position: relative;
 		border-radius: 6px;
-		padding: 30px;
-		gap: 10px;
-		@include flex(y);
-		gap: 30px;
-		position: relative;		
-		&.hide{
-		opacity: 0;
-		transform: translateY(30px);
+		gap: 15px;
+		//@include flex(y);
+		@include flex(column);
+		&.hide {
+			opacity: 0;
+			transform: translateY(30px);
 		}
 		@include media-max($xs) {
-				flex-direction: column;
-				gap:15px;
-				padding: 15px;
-		}
-		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 100%;
-			height: 50%;
-			background: linear-gradient(to  bottom, rgba(#00c1ff, 0.05), rgba(#0077ff, 0.01), transparent 49%);
-			opacity: 0.1;
-			transition: inherit;
-			transition-property: opacity, transform;
-			border-radius: 6px;
+			flex-direction: column;
+			gap: 15px;
+			padding: 15px;
 		}
 		&:hover {
-			background-color: rgba(30, 41, 59, .5);
-			box-shadow: #000  0px 0px 0px 0px, #000 0px 0px 0px 0px, rgba(148, 163, 184, 0.1) 0px 1px 0px 0px inset;
-			filter:drop-shadow(rgba(0, 0, 0, 0.04) 0px 10px 8px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 3px);
-			transition: 0.5s;
-			&:before{
+			.portfolio__hover{
 				opacity: 1;
+				
+	     	height: 100%;
 			}
 		}
 	}
 	&__thumb {
-		@include thumb(340px, auto, 200/180);
-		
-		border-radius: 6px;
+		@include thumb(100%, auto, 776/468);
+
+		//border-radius: 6px;
 		overflow: hidden;
 		position: relative;
-		img{
-		object-fit: contain;
+		img {
+			object-fit: cover;
 		}
-		@include media-max($l) {
-				width: 120px;
-		}
-		@include media-max($m) {
-			@include thumb(200px, auto, 200/130);
-		}
-		@include media-max($xs) {
-			@include thumb(100%, auto, 200/130);
-		}
+
 		//&::before {
 		//	content: '';
 		//	position: absolute;
@@ -77,15 +50,11 @@
 		//}
 	}
 	&__info {
-		flex: 1;
-		@include flex(column);
-		@include media-min($l) {
-				
-		width: calc(100% - 100px);
-		}
+		width: 100%;
+		@include flex(between);
 		gap: 5px;
 		@include media-max($l) {
-				width: 100%;
+			width: 100%;
 		}
 		&-tit {
 			font-size: 20px;
@@ -93,18 +62,48 @@
 			color: #fff;
 			margin-bottom: 10px;
 			@include media-max($l) {
-					font-size: 16px;
-					margin-bottom: 5px;
+				font-size: 16px;
+				margin-bottom: 5px;
 			}
 		}
 		&-desc {
-			font-size: 15px;
-			color: $fc-gray;
+			flex: 0 0 auto;
+			display: flex;
+			gap: 10px;
+			color:$text-3;
+			font-size: 16px;
+		}
+	}
+	&__hover {
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		@include flex(column);
+		@include inflex(all);
+		align-items: center;
+		gap:15px;
+		background-image: linear-gradient(to bottom, $bg-2 40%, #011052 120%);
+    opacity: 0;
+		transition: 0.3s;
+		
+				@include media-max($l) {
+						display: none !important;
+				}
+   
+		.tit{
+			font-size: 28px;
+			font-weight: 600;
+			margin-bottom: 10px;
+		}
+
+		.desc {
+			font-size: 18px;
+			color: #fff;
 			@include flex(s);
 			gap: 8px;
-			flex:1;
 			@include media-max($l) {
-					font-size: 14px;
+				font-size: 14px;
 			}
 			.flex_row {
 				@include flex(y);

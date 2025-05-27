@@ -162,7 +162,7 @@
 	}
 }
 
-@mixin bar($h, $color) {
+@mixin bar($h, $color,$margin) {
 	position: relative;
 	&::before {
 		@include beforeafter;
@@ -173,7 +173,7 @@
 		vertical-align: middle;
 		cursor: default;
 		rotate: 40deg;
-		margin-inline: 10px;
+		margin-inline: $margin;
 	}
 }
 
@@ -358,6 +358,56 @@
 	}
 }
 
+
+
+//sizecalc
+
+$lock-min: 360px !default;
+$lock-max: 1700px !default;
+
+@function num($value) {
+    $result : calc($value / ($value * 0 + 1px));
+    @return $result;
+}
+
+@function sizecalc($min, $max) {
+
+    $rangeS: calc(num($max) - num($min));
+    $rangeW: calc(num($lock-max) - num($lock-min));
+
+    @return calc($min + $rangeS * (100vw - $lock-min) / $rangeW);
+
+
+}
+
+
+@mixin font-size($min, $max, $lock-min: $lock-min, $lock-max: $lock-max) {
+
+    & {
+        font-size: $min;
+    }
+
+    @if $max {
+
+
+        @media screen and (min-width: $lock-max) {
+            font-size: $max;
+
+        }
+
+        // @media screen and (min-width:$lock-min) and (max-width: $lock-max){
+        @media screen and (max-width: $lock-max) {
+
+            font-size: sizecalc($min, $max);
+
+        }
+
+
+    }
+
+}
+
+
 //* 변수 목록
 
 // device-size
@@ -397,7 +447,7 @@ $fc-default-dark: #d4d4d7; //Font default color dark
 $fc-gray: #ebebf599;
 // color
 //$black: #222;
-$point: #58a6ff;
+$point: #00D5BE;
 $point-light: #c9ebeb;
 $point2: #f8b62d;
 $gray: #e2e7ed;
@@ -407,14 +457,16 @@ $orange: #f47321;
 $red: #fd4957;
 $blue: #0f8af5; // 현 사이트 디자인으로 수정 가능, 수정 후 주석 삭제 요망
 $bg-gray: #f4f7fa;
-$bg-dark: #111827;
+$bg-dark: #050b18;
 $bg-dark-light: #161f32;
 $inner-dark: #161b22;
 $inner-dark-light: #161f32;
 
-$bg: #191919;
+$bg: #030712;
+$bg-2: #09091d;
 $text-2:#E4E4E7;
 $text-3:#A1A1AA;
+$text: #222;
 
 $c-border: #e2e2e2;
 $c-border-dark: #2e2e32;

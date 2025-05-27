@@ -1,10 +1,13 @@
 //layout
+
+
 body {
 	background-color: $bg;
 	color: #fff;
 }
 
 main {
+	position: relative;
 	padding-bottom: 100px;
 	@include media-max($l) {
 		margin-top: $head-h-m;
@@ -12,7 +15,7 @@ main {
 	}
 }
 .pf_center_wrap {
-	max-width: 1500px;
+	max-width: 1700px;
 	width: 100%;
 	margin-inline: auto;
 	//background-image: url(../../img/star-bg.svg);
@@ -186,18 +189,24 @@ main {
 		height: 100px;
 		transform: translateX(-50%);
 		border-radius: 50%;
-		background-color: #050b18;
+		background-color: $bg-2;
 		scale: 1;
 		//display: none;
+    background-image: linear-gradient(to bottom,  $bg-2 40%, #041c86 120%);
+
 	}
 	.nav_item {
 		color: #fff;
 		font-size: 80px;
 		font-family: Poppins;
-		font-weight: 100;
+		font-weight: 300;
      letter-spacing: 1px;
+		 opacity: 0;
 		 @include media-max($l) {
 				 font-size: 40px;
+		 }
+		 &.active{
+			color:$point;
 		 }
 
 		 &__wrap{
@@ -307,7 +316,6 @@ main {
 }
 .start_bg {
 	position: fixed;
-	background-color: #060910;
 	left: 0;
 	top: 0;
 	right: 0;
@@ -315,6 +323,9 @@ main {
 	width: 100%;
 	z-index: 100;
 	//display: none;
+	//background: linear-gradient(270deg, $bg 0%, #303030 100%);
+	
+    background-image: linear-gradient(to bottom, #05165e  20%, $bg-2 100%);
 }
 
 .cusor_bg {
@@ -496,3 +507,31 @@ main {
 	}
 
 }
+
+	.filter_list {
+		@include flex(y);
+
+		.filter {
+			color: $text-3;
+			
+			@include font-size(20px, 30px);
+			display: block;
+			&.active {
+				color: #fff;
+				font-weight: 600;
+			}
+			&:not(:first-child) {
+				@include bar(20px, $text-3,20px);
+				@include media-max($m) {
+				@include bar(10px, $text-3,10px);
+						
+				}
+			}
+			@include media-max($m) {
+				font-size: 13px;
+				&:before {
+					margin-inline: 4px;
+				}
+			}
+		}
+	}

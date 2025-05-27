@@ -7,12 +7,15 @@ import Header from '../views/html/component/inc/Header';
 //pages
 import Main from '../views/html/page/main/Main';
 import About from '../views/html/page/main/About';
+import Work from '../views/html/page/main/Work';
+
 
 function AppRouter() {
   const routes = [
     {path: '/', element: <Navigate to="/Main" />},
     {path: '/Main', element: <Main />},
     {path: '/About', element: <About />},
+    {path: '/Work', element: <Work />},
   ];
 
   return (
