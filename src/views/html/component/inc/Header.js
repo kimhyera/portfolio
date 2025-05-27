@@ -9,7 +9,9 @@ import ContactLinks from '../../component/inc/ContactLinks';
 function Header() {
   const location = useLocation(); // 현재 경로 가져오기
   const [barMenu, setBarMenu] = useState(false);
-  const [ setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
+  const [ isMobile,setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
+	console.log(isMobile);
+	
 
   //Nav 메뉴
   const toggleBarMenu = () => {
@@ -86,13 +88,13 @@ function Header() {
           <span className="nav__bg"></span>
           <nav className={`nav  ${barMenu ? 'active' : ''}`}>
             <div className="nav_item__wrap">
-              <a className={`nav_item FadeUp  ${location.pathname === '/Main' ? 'active' : ''}`} href="/Main">
+              <a className={`nav_item FadeUp  ${location.pathname === '/portfolio/Main' ? 'active' : ''}`} href="/Main">
                 MAIN
               </a>
-              <a  className={`nav_item FadeUp  ${location.pathname === '/About' ? 'active' : ''}`}  href="/About">
+              <a  className={`nav_item FadeUp  ${location.pathname === '/portfolio/About' ? 'active' : ''}`}  href="/About">
                 ABOUT
               </a>
-              <a className={`nav_item FadeUp  ${location.pathname === '/Work' ? 'active' : ''}`} href="/Work">
+              <a className={`nav_item FadeUp  ${location.pathname === '/portfolio/Work' ? 'active' : ''}`} href="/Work">
                 WORK
               </a>
               {/*<NavLink className="nav_item FadeUp" activeclassname="active" to="/About/#contact">

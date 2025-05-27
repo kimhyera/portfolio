@@ -633,7 +633,7 @@ function Main() {
 				start: '0% 100%',
 				end: '10% 100%',
 				scrub: 1, //스크롤이 사용될때만 재생
-				markers: true,
+				//markers: true,
 				onEnter: () => {
 					gsap.fromTo(
 						'.section3 .motion_txt .char',
@@ -662,14 +662,14 @@ function Main() {
 				},
 			},
 		})
-			.fromTo('.section3',
-				{
-					backgroundColor: '#fff'
-				},
-				{
-					backgroundColor: '#030712', ease: 'none', duration: 5
-				}
-			)
+			//.fromTo('.section3',
+			//	{
+			//		backgroundColor: '#fff'
+			//	},
+			//	{
+			//		backgroundColor: '#030712', ease: 'none', duration: 5
+			//	}
+			//)
 			.fromTo('.portfolio__item',
 				{ y: '100%', opacity: 0 },
 				{
