@@ -16,7 +16,7 @@ function About() {
 				start: '-15% 0%',
 				end: '100% 100%',
 				scrub: 1, //스크롤이 사용될때만 재생
-				//markers: true,
+			//markers: true,
 			},
 		})
 			.fromTo('.about__txt .motion_txt',
