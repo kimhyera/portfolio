@@ -6,9 +6,7 @@
 	min-width: 85px;
 	@include inflex(all);
 	letter-spacing: normal;
-	box-sizing: border-box;
-	letter-spacing: -0.025em;
-	color: $text;
+	color: #fff;
 	gap: 8px;
 	&:visited,
 	&:link,
@@ -101,10 +99,14 @@
 		}
 	}
 	//&컬러 color
-	&.point {  
-		  background-image: linear-gradient(122deg, $point, #01b0f5);
-    box-shadow: 5px 5px 15px 0px rgba(108, 52, 249, 0.3);
-		color:$text !important;
+	&.point {
+		background-image: linear-gradient(135deg, #00d36a, #00c1ff);
+		box-shadow: 5px 5px 15px 0px rgba(108, 52, 249, 0.3);
+		color:$text;
+		&:hover {
+			border-color: #12b4dd80;
+			box-shadow: 0 0 15px 4px #4d71ff66;
+		}
 	}
 	&.black {
 		background-color: #000;
@@ -135,12 +137,21 @@
 	}
 	//&유형 type
 	&.line {
+		background-color: transparent;
 		border: solid 2px;
-		background-color: $point;
+		background-color: $bg;
 		&.point {
-			border-color: $point;
-			background-color: $bg-gray;
-			color: $point;
+			color:#fff;
+				padding-inline: 0;
+				position: relative;
+				border: 3px solid transparent;
+				border-radius: 6px;
+				background-image: linear-gradient($bg, $bg), 
+				linear-gradient(to right, #0088FF 0%, #7900C9 100%);
+				background-origin: border-box;
+				background-clip: content-box, border-box;
+
+	
 			.dark & {
 				background-color: $gray-dark;
 				//color:#fff;
@@ -208,8 +219,9 @@
 		height: 60px;
 		font-weight: 600;
 		font-size: 18px;
+		min-width: 200px;
 		@include media-max($m) {
-				font-size: 16px;
+			font-size: 16px;
 		}
 		&.oval {
 			border-radius: 60px;
@@ -359,16 +371,16 @@
 //탭
 .pf_tab {
 	margin-left: auto;
-   display: flex;
-	gap:40px;
+	display: flex;
+	gap: 40px;
 	justify-content: flex-end;
 	@include media-max($l) {
-			gap:20px;
+		gap: 20px;
 	}
 	&__wrap {
 		position: relative;
 		@include media-min($l) {
-				margin-right: 40px;
+			margin-right: 40px;
 		}
 	}
 	.tab {
@@ -381,7 +393,7 @@
 		//padding-left: 20px;
 		width: 120px;
 		@include media-max($m) {
-				width:90px;
+			width: 90px;
 		}
 		&::before {
 			content: "";
@@ -390,7 +402,7 @@
 			left: 0;
 			transform: translateY(-50%);
 			width: 0;
-			background-image: linear-gradient(90deg,  #95FF2B, #00c1ff);
+			background-image: linear-gradient(90deg, #95ff2b, #00c1ff);
 			height: 2px;
 			transition: 0.2s;
 		}

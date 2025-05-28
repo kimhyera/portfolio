@@ -2,10 +2,9 @@
 
 
 //section3
-.section3{
+.section_work{
 	min-height: 100vh;
-	padding: 5% 0;
-	
+	padding: 13% 0;
 	.tit_wrap {
 		@include flex(column);
 		//border-bottom: 1px solid $text-3;

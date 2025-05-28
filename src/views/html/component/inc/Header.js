@@ -19,7 +19,6 @@ function Header() {
 			const next = !current;
 
 			if (next) {
-				console.log('메뉴 클릭 !barMenu');
 				gsap.to('.nav__bg', { display: 'flex', scale: 100 });
 				gsap.to('.nav', { opacity: 1, 'pointer-events': 'auto' });
 				gsap.to('.nav .FadeUp', { opacity: 1, y: -30, stagger: 0.1, ease: 'Power3.easeOut' }, '<0.5');
@@ -74,16 +73,15 @@ function Header() {
 			.fromTo('.nav__open', { opacity: 0, x: 30 }, { opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut' }, '<0.5')
 			.fromTo('.portfolio__item', { opacity: 0, y: 30 }, { opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut' }, '<0.4');
 
-		console.log('라우터 이동', location.pathname);
 	}, [location.pathname]);
 
 	return (
 		<>
 			<header className="head">
 				<div className="pf_center_wrap">
-					<a href="/" className="logo">
+					<NavLink to="/" className="logo">
 						<img src={logoUrl} alt="" />
-					</a>
+					</NavLink>
 					<span className="nav__bg"></span>
 					<nav className={`nav  ${barMenu ? 'active' : ''}`}>
 						<div className="nav_item__wrap">

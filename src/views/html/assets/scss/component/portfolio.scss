@@ -52,7 +52,8 @@
 	&__info {
 		width: 100%;
 		@include flex(between);
-		gap: 5px;
+		align-items: flex-start;
+		gap: 20px;
 		@include media-max($l) {
 			width: 100%;
 		}
@@ -61,17 +62,23 @@
 			font-weight: 700;
 			color: #fff;
 			margin-bottom: 10px;
+			flex: 0 0 auto;
 			@include media-max($l) {
 				font-size: 16px;
 				margin-bottom: 5px;
 			}
 		}
 		&-desc {
-			flex: 0 0 auto;
+			flex:1;
 			display: flex;
+		 justify-content: flex-end;
 			gap: 10px;
 			color:$text-3;
 			font-size: 16px;
+			line-height: 1.5;
+			@include media-max($m) {
+					font-size: 14px;
+			}
 		}
 	}
 	&__hover {
@@ -106,7 +113,7 @@
 				font-size: 14px;
 			}
 			.flex_row {
-				@include flex(y);
+				@include flex(s);
 				gap: 10px;
 				flex-wrap: wrap;
 			}
@@ -119,6 +126,10 @@
 				border-bottom: 1px solid $point;
 				@include flex(y);
 				gap: 2px;
+
+			.icon_link path{
+				stroke: $point;
+			}
 			}
 			&.skills,
 			&.links {

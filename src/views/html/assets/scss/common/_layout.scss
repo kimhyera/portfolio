@@ -509,29 +509,39 @@ main {
 }
 
 	.filter_list {
-		@include flex(y);
+		@include inflex(all);
+   @include media-max($m) {
+			 flex-wrap: wrap;
+			 max-width: 340px;
 
+	 }
 		.filter {
 			color: $text-3;
-			
-			@include font-size(20px, 30px);
+			padding-inline: 20px;
+			padding-block: 10px;
+			@include font-size(16px, 30px);
 			display: block;
 			&.active {
 				color: #fff;
 				font-weight: 600;
 			}
 			&:not(:first-child) {
-				@include bar(20px, $text-3,20px);
+				@include bar(20px, $text-3,10px);
 				@include media-max($m) {
-				@include bar(10px, $text-3,10px);
+				@include bar(10px, $text-3,5px);
 						
 				}
 			}
+
 			@include media-max($m) {
-				font-size: 13px;
-				&:before {
-					margin-inline: 4px;
+				padding-inline: 15px;
+				&:nth-child(5){
+					&::before{
+						display: none;
+					}
 				}
 			}
+
+		
 		}
 	}

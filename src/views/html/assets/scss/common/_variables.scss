@@ -166,14 +166,17 @@
 	position: relative;
 	&::before {
 		@include beforeafter;
-		position: relative;
 		width:1px;
 		height: $h;
 		background: $color;
 		vertical-align: middle;
 		cursor: default;
 		rotate: 40deg;
-		margin-inline: $margin;
+		position: absolute;
+		left: -$margin;
+		top:50%;
+		transform: translateY(-50%);
+
 	}
 }
 
@@ -447,9 +450,9 @@ $fc-default-dark: #d4d4d7; //Font default color dark
 $fc-gray: #ebebf599;
 // color
 //$black: #222;
-$point: #00D5BE;
+$point: #7346f3;
+$point2: #000ac9;
 $point-light: #c9ebeb;
-$point2: #f8b62d;
 $gray: #e2e7ed;
 $gray-dark: #2b3141;
 $orange: #f47321;

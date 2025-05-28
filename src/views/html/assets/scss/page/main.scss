@@ -140,9 +140,8 @@
 		color: $text-2;
 		max-width: 600px;
 		@include flex(column);
-		gap: 60px;
+		gap: 40px;
 		align-items: center;
-		text-shadow: rgba($color: #000000, $alpha: 0.5) 1px 0 5px;
 		@include media-max($l) {
 			gap: 24px;
 		}
@@ -152,6 +151,17 @@
 			@include font-size(24px, 48px);
 			font-weight: 600;
 			text-align: center;
+			.point{
+				font-weight: 700;
+				background-image: linear-gradient(to bottom, #a98fff, #8470ff, #554af3);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				
+		text-shadow: rgba($color: #a98fff, $alpha: 0.1) 1px 0 3px;
+				
+		
+			}
 		}
 	}
 }
@@ -159,31 +169,6 @@
 //section3
 .section3{
 	min-height: 100vh;
-	padding: 20% 0;
-	
-	.tit_wrap {
-		@include flex(column);
-		//border-bottom: 1px solid $text-3;
-		gap:100px;
-		align-items: center;
-		margin-bottom: 80px;
-		@include media-max($m) {
-			flex-direction: column;
-			gap: 40px;
-			margin-bottom: 40px;
-		}
-		
-		.tit {
-			font-family: Poppins;
-			font-weight: 400;
-			@include font-size(40px, 140px);
-			
-		.motion_txt{
-			overflow: hidden;
-		  span{
-				display: block;
-			}
-		}
-		}
-	}
+	padding: 13% 0;
+
 }

@@ -753,17 +753,17 @@ function Main() {
 						</video>
 					</div>
 					<ul className="txt_area en">
-						<li>웹 접근성 중심 UI 마크업</li>
-						<li>사용자 중심 인터랙션 구현</li>
-						<li>React / Vue 프론트 퍼블리싱</li>
-						<li>Git 협업 기반 팀 프로젝트 경험</li>
-						<li>디자인 시스템 기반 UI 설계</li>
+						<li><span className="point">웹 접근성</span> 중심 UI 마크업</li>
+						<li>사용자 중심 <span className="point">인터랙션</span> 구현</li>
+						<li><span className="point">React / Vue</span> 프론트 퍼블리싱</li>
+						<li><span className="point">Git 협업</span> 기반 팀 프로젝트 경험</li>
+						<li><spsan className="point">디자인 시스템</spsan> 기반 UI 설계</li>
 					</ul>
 				</section>
 
 				{/*  포트폴리오 */}
 
-				<section className="section3">
+				<section className="section3 section_work">
 					<div className="pf_center_wrap">
 						<section className="tit_wrap">
 							<h2 className="tit motion_txt"><span>WORK</span></h2>

@@ -571,7 +571,7 @@ function Work() {
 		<>
 			<main className="work">
 
-				<section className="section3">
+				<section className="section_work">
 					<div className="pf_center_wrap">
 						<section className="tit_wrap">
 							<h2 className="tit motion_txt"><span>WORK</span></h2>
