@@ -571,7 +571,7 @@ function PortfolioList() {
 				start: '0 100%',
 				end: '100% 100%',
 				scrub: 1, //스크롤이 사용될때만 재생
-				markers: true,
+				//markers: true,
 			
 			},
 		})
