@@ -1,9 +1,9 @@
 @import "../common/variables";
 //about
 .about{
-	@include media-min($l) {
-			
-	padding-top: 80px;
+	padding-block: 80px 120px;
+	@include media-max($l) {
+			padding-block: 40px 60px;
 	}
 
 		&:before{
