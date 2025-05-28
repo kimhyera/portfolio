@@ -5,10 +5,11 @@
 .section_work{
 	min-height: 100vh;
 	padding: 13% 0;
+	background-color:$bg-2;
 	.tit_wrap {
 		@include flex(column);
 		//border-bottom: 1px solid $text-3;
-		gap:100px;
+		gap:80px;
 		align-items: center;
 		margin-bottom: 100px;
 		@include media-max($m) {
@@ -30,4 +31,11 @@
 			
 		}
 	}
+}
+
+.work{
+	.section_work{
+		padding-top: 5%;
+	}
+
 }

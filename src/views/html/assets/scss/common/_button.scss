@@ -104,8 +104,8 @@
 		box-shadow: 5px 5px 15px 0px rgba(108, 52, 249, 0.3);
 		color:$text;
 		&:hover {
-			border-color: #12b4dd80;
-			box-shadow: 0 0 15px 4px #4d71ff66;
+			border-color: #5400c9;
+			box-shadow: 0 0 15px 4px #6b4dff66;
 		}
 	}
 	&.black {
@@ -138,13 +138,11 @@
 	//&유형 type
 	&.line {
 		background-color: transparent;
-		border: solid 2px;
-		background-color: $bg;
+		border: 2px solid transparent;
 		&.point {
 			color:#fff;
 				padding-inline: 0;
 				position: relative;
-				border: 3px solid transparent;
 				border-radius: 6px;
 				background-image: linear-gradient($bg, $bg), 
 				linear-gradient(to right, #0088FF 0%, #7900C9 100%);
@@ -217,7 +215,7 @@
 	//&사이즈 size
 	&.l {
 		height: 60px;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 18px;
 		min-width: 200px;
 		@include media-max($m) {

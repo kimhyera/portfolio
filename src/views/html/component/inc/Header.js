@@ -19,7 +19,7 @@ function Header() {
 			const next = !current;
 
 			if (next) {
-				gsap.to('.nav__bg', { display: 'flex', scale: 100 });
+				gsap.to('.nav__bg', { scale: 35,  duration:0.4, });
 				gsap.to('.nav', { opacity: 1, 'pointer-events': 'auto' });
 				gsap.to('.nav .FadeUp', { opacity: 1, y: -30, stagger: 0.1, ease: 'Power3.easeOut' }, '<0.5');
 			} else {
@@ -30,9 +30,9 @@ function Header() {
 		});
 	};
 	function resetNav() {
+		gsap.to('.nav', { opacity: 0, y: 0 ,'pointer-events': 'none' }, '<');
+		gsap.to('.nav__bg', { scale: 0,  duration: 0.4});
 		gsap.fromTo('.nav .FadeUp', { opacity: 1, y: 0 }, { opacity: 0, y: 30, stagger: 0.1, ease: 'Power3.easeOut' });
-		gsap.to('.nav', { opacity: 0, y: 0 }, '<');
-		gsap.to('.nav__bg', { display: 'none', scale: 5, duration: 0.3, delay: 0.3 });
 	}
 
 	//const [position, setPosition] = useState({x: 0, y: 0});
@@ -65,13 +65,12 @@ function Header() {
 
 		// 메뉴 애니메이션 닫기
 		gsap.to('.nav', { opacity: 0, 'pointer-events': 'none' }, '<');
-		gsap.to('.nav__bg', { display: 'none', scale: 5, duration: 0.1 });
+		gsap.to('.nav__bg', { scale: 0, duration: 0.4 });
 		document.querySelector('.nav__open').classList.remove('active');
 
 		// 새 페이지 콘텐츠 애니메이션
 		tl.to('.start_bg', { top: '-100vh', ease: 'expo.inOut', duration: 1 })
 			.fromTo('.nav__open', { opacity: 0, x: 30 }, { opacity: 1, x: 0, stagger: 0.1, ease: 'Power.easeInOut' }, '<0.5')
-			.fromTo('.portfolio__item', { opacity: 0, y: 30 }, { opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut' }, '<0.4');
 
 	}, [location.pathname]);
 
@@ -95,7 +94,7 @@ function Header() {
                 WORK
               </a>*/}
 
-							<NavLink  className={`nav_item FadeUp  ${location.pathname === '/Main' ? 'active' : ''}`} activeclassname="active" to="/" onClick={() => {
+							<NavLink  className={`nav_item FadeUp  ${location.pathname === '/Main' ? 'active' : ''}`} activeclassname="active" to="/Main" onClick={() => {
 								resetNav();
 								setBarMenu(false);
 							}}>

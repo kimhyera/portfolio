@@ -12,6 +12,7 @@
 		gap: 15px;
 		//@include flex(y);
 		@include flex(column);
+		transition: 0.25s box-shadow;
 		&.hide {
 			opacity: 0;
 			transform: translateY(30px);
@@ -22,10 +23,10 @@
 			padding: 15px;
 		}
 		&:hover {
-			.portfolio__hover{
+			box-shadow: 0 0 15px 4px #6b4dff66;
+			.portfolio__hover {
 				opacity: 1;
-				
-	     	height: 100%;
+				transform: scale(1);
 			}
 		}
 	}
@@ -69,36 +70,41 @@
 			}
 		}
 		&-desc {
-			flex:1;
+			flex: 1;
 			display: flex;
-		 justify-content: flex-end;
+			justify-content: flex-end;
 			gap: 10px;
-			color:$text-3;
+			color: $text-3;
 			font-size: 16px;
 			line-height: 1.5;
 			@include media-max($m) {
-					font-size: 14px;
+				font-size: 14px;
 			}
 		}
 	}
 	&__hover {
 		position: absolute;
-		top:0;
-		left:0;
-		width: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		transform: scale(0.9);
+		margin: auto;
 		@include flex(column);
 		@include inflex(all);
 		align-items: center;
-		gap:15px;
-		background-image: linear-gradient(to bottom, $bg-2 40%, #011052 120%);
-    opacity: 0;
-		transition: 0.3s;
-		
-				@include media-max($l) {
-						display: none !important;
-				}
-   
-		.tit{
+		gap: 15px;
+		opacity: 0;
+		transition: 0.25s ease;
+		border: 2px solid transparent;
+		background-image: linear-gradient($bg-2, $bg-2), linear-gradient(to right, #0088ff 0%, #7900c9 100%);
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+		@include media-max($l) {
+			//display: none !important;
+		}
+
+		.tit {
 			font-size: 28px;
 			font-weight: 600;
 			margin-bottom: 10px;
@@ -106,7 +112,7 @@
 
 		.desc {
 			font-size: 18px;
-			color: #fff;
+			color: $text-3;
 			@include flex(s);
 			gap: 8px;
 			@include media-max($l) {
@@ -127,9 +133,9 @@
 				@include flex(y);
 				gap: 2px;
 
-			.icon_link path{
-				stroke: $point;
-			}
+				.icon_link path {
+					stroke: $point;
+				}
 			}
 			&.skills,
 			&.links {
