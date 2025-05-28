@@ -518,7 +518,7 @@ function PortfolioList() {
 		gsap.killTweensOf('.portfolio__item');
 
 		// 새로운 애니메이션 실행
-		gsap.fromTo('.portfolio__item', { opacity: 0, y: 50 }, { opacity: 1, y: 0, stagger: 0.1, ease: 'Power.easeInOut' });
+		gsap.fromTo('.portfolio__item', { opacity: 0, scale:0}, { opacity: 1, scale: 1, duration:0.5,ease:'Power.easeInOut'});
 	}
 
 	useEffect(() => {

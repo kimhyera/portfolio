@@ -167,7 +167,7 @@ function Main() {
 					stagger: 1.5,
 					duration: 8,
 
-				}, '<4'
+				}, '<'
 			);
 		return () => {
 			tl3.kill();      // GSAP 타임라인 제거

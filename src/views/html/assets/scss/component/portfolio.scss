@@ -4,6 +4,7 @@
 		@include list(40px, 80px, 2);
 		@include media-max($m) {
 			@include list(0px, 30px, 1);
+			gap:20px;
 		}
 	}
 	&__item {
@@ -20,10 +21,12 @@
 		@include media-max($xs) {
 			flex-direction: column;
 			gap: 15px;
-			padding: 15px;
 		}
 		&:hover {
+			.portfolio__thumb{
+
 			box-shadow: 0 0 15px 4px #6b4dff66;
+			}
 			.portfolio__hover {
 				opacity: 1;
 				transform: scale(1);
@@ -101,7 +104,7 @@
 		background-origin: border-box;
 		background-clip: content-box, border-box;
 		@include media-max($l) {
-			//display: none !important;
+			display: none !important;
 		}
 
 		.tit {
