@@ -27,7 +27,7 @@ function About() {
 				}, 0
 			);
 		return () => {
-			tl3.kill();      // GSAP 타임라인 제거
+			tl3.kill(); // GSAP 타임라인 제거
 		};
 
 	}, []);
