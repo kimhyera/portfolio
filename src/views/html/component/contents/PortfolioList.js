@@ -6,7 +6,7 @@ import '../../assets/scss/component/portfolio.scss';
 //component
 import PortfolioItem from '../../component/contents/PortfolioItem';
 
-function PortfolioList() {
+function PortfolioList({ page = 'work' }) {
 	const items = [
 		{
 			title: '코크플레이 반응형 / 앱',
@@ -522,6 +522,8 @@ function PortfolioList() {
 	}
 
 	useEffect(() => {
+
+		if(page === 'main') return
 			new SplitType('.section_work .motion_txt span', {
 				types: 'chars'
 				// optional: line/word도 원하면 추가
@@ -563,37 +565,14 @@ function PortfolioList() {
 	}, []);
 
 
-	//section_work
-	useEffect(() => {
-		const tl3 = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.work .section_work',
-				start: '0 100%',
-				end: '100% 100%',
-				scrub: 1, //스크롤이 사용될때만 재생
-				//markers: true,
-			
-			},
-		})
-			.fromTo('.work .portfolio__item',
-				{ y: '100%', opacity: 0 },
-				{
-		
-					opacity: 1, y:'0%', stagger: 0.1
 
-				}, 0
-			);
-		return () => {
-			tl3.kill();      // GSAP 타임라인 제거
-		};
-
-	}, []);
 
 
 	return (
 		<>
+		{page === 'work'? 
 			<section className="tit_wrap">
-				<h2 className="tit motion_txt"><span>WORK</span></h2>
+			<h2 className="tit motion_txt"><span>WORK</span></h2> 
 				<div className="filter_list ">
 					{tab.map((v, idx) => (
 						<button key={idx} className={`filter ${tabIdx === idx ? 'active' : ''}`} onClick={() => handleTabClick(idx)}>
@@ -602,6 +581,7 @@ function PortfolioList() {
 					))}
 				</div>
 			</section>
+			: null}
 
 
 			<div className="portfolio__list">

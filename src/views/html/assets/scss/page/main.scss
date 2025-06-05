@@ -4,6 +4,7 @@
 	padding-bottom: 0;
 	margin-top: 0;
 
+
 	.pf_tab__wrap {
 		margin-bottom: 40px;
 		@include media-max($l) {
@@ -11,8 +12,6 @@
 			margin-bottom: 20px;
 		}
 	}
-
-
 
 }
 
@@ -151,6 +150,7 @@
 			@include font-size(24px, 48px);
 			font-weight: 600;
 			text-align: center;
+			overflow: hidden;
 			.point{
 				font-weight: 700;
 				background-image: linear-gradient(to bottom, #a98fff, #8470ff, #554af3);
@@ -168,7 +168,94 @@
 
 //section3
 .section3{
-	min-height: 100vh;
-	padding: 13% 0;
+	padding-bottom: 10vh;
+	background-color: #fff;
+	color:#000;
+	padding-bottom: 80vh;
+	.section_title{
+		position: relative;
+		height: 100vh;
+		padding-block: 30vh;
+		line-height: 1;
+		text-align: center;
+		width: 100%;
+		.tit_my{
+		@include font-size(40px, 150px);
+		}
+		.tit_work{
+			@include font-size(46px, 180px);
+			font-style: italic ;
 
+		}
+	}
+	.portfolio__list{
+		.portfolio__item{
+			&:nth-child(2n){
+				@include media-min($m) {
+				margin-top: 10%;
+				}
+			}
+		}
+	}
+
+}
+
+//section4
+.section4{
+	position: relative;
+	height: 100vh;
+	background-color: $bg;
+	padding-block: 20vh;
+	@include flex(column);
+	justify-content: center;
+	&:before{
+		content: "";
+	 position: absolute;
+	 inset: 0;
+	 bottom:0;
+	 background-image: linear-gradient(to bottom, transparent 60%, #051661 120%);
+ }
+
+	.section_title{
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 15vh;
+		@include media-max($l) {
+				margin-bottom: 50px;
+		}
+		.tit{
+		@include font-size(40px, 150px);
+		}
+	}
+
+	.list{
+		@include flex(column);
+		gap:50px;
+		line-height: 1.5;
+		&.center{
+			align-items: center;
+		}
+
+		@include media-max($l) {
+				
+		gap:30px;
+		}
+		a{
+			color:#fff;
+			display: inline-flex;
+			min-width: auto;
+			gap:5px;
+			border-bottom: 1px solid #fff;
+		}
+		li{
+			@include flex(y);
+			gap:10px;
+		@include font-size(20px, 30px);
+		color:$text-3;
+
+		@include media-max($m) {
+			align-items: flex-start;
+	}
+		}
+	}
 }

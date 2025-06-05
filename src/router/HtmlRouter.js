@@ -8,6 +8,7 @@ import Header from '../views/html/component/inc/Header';
 import Main from '../views/html/page/main/Main';
 import About from '../views/html/page/main/About';
 import Work from '../views/html/page/main/Work';
+import WorkDetail from '../views/html/page/main/WorkDetail';
 
 
 function AppRouter() {
@@ -16,6 +17,7 @@ function AppRouter() {
     {path: '/Main', element: <Main />},
     {path: '/About', element: <About />},
     {path: '/Work', element: <Work />},
+    {path: '/WorkDetail', element: <WorkDetail />},
   ];
 
   return (

@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+
+import { Link } from 'react-router-dom';
 import SplitType from 'split-type';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -16,13 +18,13 @@ function Main() {
 
 	const videoRef = useRef(null);
 
-	//section1
+	//section1 gsap animation 
 	useEffect(() => {
 		new SplitType('.section1 .txt_area span', {
 			types: 'chars'
 			// optional: line/word도 원하면 추가
 		});
-
+		//글자 효과
 		gsap.fromTo(
 			'.section1 .txt_area .char',
 			{ y: '100%', opacity: 0 },
@@ -34,7 +36,7 @@ function Main() {
 				ease: 'expo.inOut'
 			}
 		);
-
+		//svg라인 효과 
 		const paths = document.querySelectorAll('.svgAniLine path');
 		paths.forEach((path, i) => {
 			const length = path.getTotalLength();
@@ -54,7 +56,7 @@ function Main() {
 
 	}, []);
 
-	//section2
+	//section2 gsap animation
 	useEffect(() => {
 		if (videoRef.current) {
 			videoRef.current.muted = true; // 명시적 설정
@@ -96,13 +98,13 @@ function Main() {
 					duration: 10
 				}
 			)
-			// video clip-path 애니 끝나고 txt_area 등장
-			.fromTo('.txt_area li',
-				{ y: '100%', opacity: 0 },
+			.fromTo('.txt_area li p',
+				{ y: '100%', opacity: 0, rotate: 8 },
 				{
 					y: '0%',
 					opacity: 1,
-					stagger: 1.5,
+					rotate: 0,
+					stagger: 2,
 					duration: 8,
 
 				}, '<5'
@@ -114,66 +116,135 @@ function Main() {
 		};
 	}, []);
 
-	//section3
+	//section3 gsap animation
 	useEffect(() => {
 		const tl3 = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.section3',
-				start: '0% 100%',
-				end: '100% 100%',
+				start: '5% 100%',
+				end: '0% 20%',
 				scrub: 1, //스크롤이 사용될때만 재생
 				//markers: true,
-				onEnter: () => {
-					gsap.fromTo(
-						'.section3 .motion_txt .char',
-						{ y: '100%', opacity: 0 },
-						{
-							y: '0%',
-							opacity: 1,
-							stagger: 0.02,
-							duration: 1,
-							ease: 'expo.inOut'
-						}, '<0.1'
-					)
-
-
-					gsap.fromTo('.section3 .filter',
-						{ y: '100%', opacity: 0 },
-						{
-							y: '0%',
-							opacity: 1,
-							stagger: 0.05,
-							duration: 0.5,
-
-						}, '<0.6'
-					)
-
-				},
 			},
 		})
-			.fromTo('.section3',
-				{
-					backgroundColor: '#fff'
-				},
-				{
-					backgroundColor: '#030712', ease: 'none', duration: 2
-				}
-			)
-			.fromTo('.portfolio__item',
-				{ y: '100%', opacity: 0 },
-				{
-					y: '0%',
-					opacity: 1,
-					stagger: 1.5,
-					duration: 8,
+			.fromTo('.section_title .Left', {
+				x: '100%'
+			}, {
+				x: '0%', duration: 6,
+			}, 0)
+			.fromTo('.section_title .Right', {
+				x: '-100%'
+			}, {
+				x: '0%', duration: 6,
+			}, 0)
+		
 
-				}, '<'
-			);
+		 gsap.timeline({
+				scrollTrigger: {
+					trigger: '.section3',
+					start: '-10% 0%',
+					end: '100% 100%',
+					scrub: 1, //스크롤이 사용될때만 재생
+					//markers: true,
+				},
+			})
+			.fromTo('.portfolio__item',
+			{ y: '20%', opacity: 0 },
+			{
+	
+				opacity: 1, y:'0%', stagger: 0.01,
+				duration:0.05
+
+			}, 0
+		);
+
+		//work 리스트 전에 배경색 변경
+	 gsap.timeline({
+			scrollTrigger: {
+				trigger: '.portfolio__list',
+				start: '0% 100%',
+				end: '0% 100%',
+				scrub: 1, //스크롤이 사용될때만 재생
+				//markers: true,
+			},
+		})
+			.to('.section3', { backgroundColor: '#000', color: '#fff', duration: 5 }, 0)
+			//title positon fixed
+			.to('.section3 .section_title', { position: 'fixed', top: 0, left: 0, ease: 'none', duration: 5 }, 0)
+			.fromTo('.portfolio__list', { margin: '0 auto' }, { margin: '100vh auto 0', position: 'relative', zIndex: 10, duration: 1 }, 0)
+
+
+	
+		
+
+		//work 리스트 끝난후 title 사라지는 효과 
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: '.portfolio__list',
+				start: '100% 20%',
+				end: '100% 0%',
+				scrub: 1, //스크롤이 사용될때만 재생
+				//markers: true,
+			},
+		})
+			//title positon fixed
+		.to('.section_title .Left',  {
+			x: '100%', ease:'none', duration: 6,
+		},0)
+		.to('.section_title .Right',  {
+			x: '-100%', ease:'none',duration: 6,
+		},0)
+
 		return () => {
-			tl3.kill();      // GSAP 타임라인 제거
+			tl3.kill();
 		};
 
 	}, []);
+
+			//section4 gsap animation
+			useEffect(() => {
+				//ani
+				const tl4 = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.section4',
+						start: '0% 80%',
+						end: '100% 100%',
+						scrub: 1, //스크롤이 사용될때만 재생
+						//markers: true
+					}
+				})
+					.fromTo('.section3',
+						{
+							backgroundColor: '#030712'
+						},
+						{
+							backgroundColor: '#fff', ease: 'none', duration: 5
+						}
+					)
+	
+				gsap.timeline({
+					scrollTrigger: {
+						trigger: '.section4',
+						start: '-15% 0%',
+						end: '100% 100%',
+						scrub: 1, //스크롤이 사용될때만 재생
+					//markers: true,
+					},
+				})
+					.fromTo('.section4 .motion_txt',
+						{ y: '100%', opacity: 0,scale:0.9 },
+						{
+							opacity: 1, y:'0%', stagger: 0.1, scale:1,ease: 'Power3.easeOut'
+		
+						}, 0
+					);
+		
+		
+				return () => {
+					tl4.kill();      // GSAP 타임라인 제거
+				};
+			}, []);
+	
 
 	return (
 		<>
@@ -237,22 +308,58 @@ function Main() {
 						</video>
 					</div>
 					<ul className="txt_area en">
-						<li><span className="point">웹 접근성</span> 중심 UI 마크업</li>
-						<li>사용자 중심 <span className="point">인터랙션</span> 구현</li>
-						<li><span className="point">React / Vue</span> 프론트 퍼블리싱</li>
-						<li><span className="point">Git 협업</span> 기반 팀 프로젝트 경험</li>
-						<li><span className="point">디자인 시스템</span> 기반 UI 설계</li>
+						<li><p><span className="point">웹 접근성</span> 중심 UI 마크업</p></li>
+						<li><p>사용자 중심 <span className="point">인터랙션</span> 구현</p></li>
+						<li><p><span className="point">React / Vue</span> 프론트 퍼블리싱</p></li>
+						<li><p><span className="point">Git 협업</span> 기반 팀 프로젝트 경험</p></li>
+						<li><p><span className="point">디자인 시스템</span> 기반 UI 설계</p></li>
 					</ul>
 				</section>
 
 				{/*  포트폴리오 */}
 
-				<section className="section3 section_work">
+				<section className="section3">
+					<div className="section_title">
+						<h2 className="tit_my en Left">My</h2>
+						<h2 className="tit_work en2 Right">Work</h2>
+					</div>
 					<div className="pf_center_wrap">
 
 						{/* 포트폴리오 리스트 */}
-						<PortfolioList />
+						<PortfolioList page={'main'} />
 					</div>
+				</section>
+				<section className="section4">
+				<div className="section_title">
+						<h2 className="motion_txt tit">Contact</h2>
+					</div>
+
+					<ul className="list center">
+						<li className='motion_txt'>
+							<Link to="tel:01065791828" className="motion_txt head__about-tel">
+								Tel: 010-6579-1828
+							</Link>
+						</li>
+						<li className='motion_txt'>
+							<Link to="mailto:khr1828@gmail.com">
+								<i>🔗</i> email
+							</Link>
+						</li>
+
+						<li className='motion_txt'>
+							<Link to="https://github.com/kimhyera" target="_blank">
+								<i>🔗</i>Github
+							</Link>
+						</li>
+
+						<li className='motion_txt'>
+							<Link to="https://enshrined-cone-70b.notion.site/c37bdd09de3043909972c701a71be573" target="_blank">
+								<i>🔗</i>Notion
+							</Link>
+						</li>
+					</ul>
+
+
 				</section>
 			</main >
 		</>

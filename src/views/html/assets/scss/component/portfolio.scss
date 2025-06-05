@@ -1,7 +1,7 @@
 @import "../common/variables";
 .portfolio {
 	&__list {
-		@include list(40px, 80px, 2);
+		@include list(80px, 30px, 2);
 		@include media-max($m) {
 			@include list(0px, 30px, 1);
 			gap:20px;
@@ -13,7 +13,6 @@
 		gap: 15px;
 		//@include flex(y);
 		@include flex(column);
-		transition: 0.25s box-shadow;
 		&.hide {
 			opacity: 0;
 			transform: translateY(30px);
@@ -24,7 +23,6 @@
 		}
 		&:hover {
 			.portfolio__thumb{
-
 			box-shadow: 0 0 15px 4px #6b4dff66;
 			}
 			.portfolio__hover {
