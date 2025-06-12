@@ -100,16 +100,16 @@
 	}
 	//&컬러 color
 	&.point {
-		background-image: linear-gradient(135deg, #00d36a, #00c1ff);
+		background-image: linear-gradient(135deg, #0088FF, #7900C9);
 		box-shadow: 5px 5px 15px 0px rgba(108, 52, 249, 0.3);
-		color:$text;
+		color:#fff;
 		&:hover {
 			border-color: #5400c9;
 			box-shadow: 0 0 15px 4px #6b4dff66;
 		}
 	}
-	&.black {
-		background-color: #000;
+	&.white {
+		
 	}
 	&.orange {
 		background-color: $orange;
@@ -155,14 +155,9 @@
 				//color:#fff;
 			}
 		}
-		&.black {
-			border-color: #5b637a;
-			background-color: $bg-gray;
-			color: $gray-dark;
-			.dark & {
-				background-color: $gray-dark;
-				color: #d4d4d7;
-			}
+		&.white {
+			border-color: #fff;
+		  color:#fff;
 		}
 		&.dark {
 			background-color: #fff;
@@ -220,6 +215,7 @@
 		min-width: 200px;
 		@include media-max($m) {
 			font-size: 16px;
+			height: 50px;
 		}
 		&.oval {
 			border-radius: 60px;

@@ -227,11 +227,13 @@ $iconSizes: map-values($iconInfos);
 	//   height:18px;
 	//   transform: rotate(90deg);
 	// }
-	@include svg-icon-color("icon_edit", "92949A", gray);
+	@include svg-icon-color("icon_close", "ffffff", white);
 
 	&.icon_review {
 		@include svg-icon-color("icon_review", "49BCBD");
 	}
+	
+		
 
 }
 
@@ -278,3 +280,9 @@ $iconSize: map-values($iconInfo);
 .icon_pigma{
   @include addImg(icon_pigma,16,16);
 }
+
+
+.icon_chevron_right{
+  @include addImgSvg(chevron-right,20,20);
+}
+

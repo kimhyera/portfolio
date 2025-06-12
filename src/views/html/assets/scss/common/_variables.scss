@@ -186,7 +186,7 @@
 	@include flex-wrap;
 	gap: $gapBlock $gapinline;
 	width: 100%;
-	> * {
+	> .portfolio__item {
 		width: calc((100% - #{$gapinline} * ($i - 1)) / $i);
 		min-width: calc((100% - #{$gapinline} * ($i - 1)) / $i);
 	}
@@ -316,29 +316,31 @@
 	//scrollbar-shadow-color: transparent;    /*오른쪽 안쪽음영*/
 	//scrollbar-arrow-color: transparent;    /*화살*/
 	//scrollbar-track-color:transparent;    /*스크롤영역*/
-	&:-webkit-scrollbar {
+	&::-webkit-scrollbar {
 		width: 8px;
 		height: 8px;
+		border-radius: 10px;
 	}
-	&:-webkit-scrollbar-track {
+	&::-webkit-scrollbar-track {
 		/*스크롤바 진행줄*/
 		background: transparent;
+		border-radius: 10px;
 	}
 
-	&:-webkit-scrollbar-thumb {
+	&::-webkit-scrollbar-thumb {
 		/*스크롤바 핸들*/
-		background-color: #5b637a;
-		border: 3px solid red;
+		background-color: #808083;
 		border-radius: 10px;
 	}
 	//
 	&::-webkit-scrollbar-track-piece {
 		/*진행줄에서 핸들로 덮이지 않은 영역 */
-		background-color: rgba(0, 0, 0, 0.7);
+		background: transparent;
 	}
 	&::-webkit-scrollbar-button {/*스크롤바 버튼(아래 위 화살표)*/
     width: 0px;
     height: 0px;
+		border-radius: 10px;
   }    
 }
 
@@ -410,6 +412,12 @@ $lock-max: 1700px !default;
 
 }
 
+@mixin box($pd:0px,$radius:10px){
+  padding:$pd;
+  border-radius: $radius;
+  border-bottom: 1px solid #E9EAED;
+  background: #FFF; 
+}
 
 //* 변수 목록
 

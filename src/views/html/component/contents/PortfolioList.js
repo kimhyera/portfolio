@@ -6,20 +6,33 @@ import '../../assets/scss/component/portfolio.scss';
 //component
 import PortfolioItem from '../../component/contents/PortfolioItem';
 
+
+
 function PortfolioList({ page = 'work' }) {
+
 	const items = [
 		{
 			title: '코크플레이 반응형 / 앱',
-			thumb: 'pt_2024_cgplay.png',
-			thumbDetail: 'pt_2024_cgplay.png',
+			thumb: 'pt_2024_cgplay.jpg',
 			desc: '뇌 트레이닝 플랫폼',
-			descDetail: '디자이너 및 프론트엔드 개발자와 협업',
-			date: '2024',
+			date: '2024.09 ~ 2024.10',
 			role: '퍼블리싱',
-			디바이스:'PC/M',
-			stack: ['react', 'scss'],
+			디바이스: 'PC/M',
+			stack: ['react', ' scss'],
 			type: ['홈페이지', '반응형', '앱', 'react'],
-			url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1'
+			url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1',
+			titleDetail: [
+				'코크플레이 웹/앱',
+				'반응형 리뉴얼 구축'
+			],
+
+
+			descDetail: [
+				'코크 플레이 앱용 반응형 퍼블리싱',
+				'React 기반의 컴포넌트 퍼블리싱',
+				'디자이너 및 프론트엔드 개발자와 협업'
+			],
+			thumbDetail: 'pt_2024_cgplay.png',
 		},
 		{
 			title: 'Vetbless PC 관리',
@@ -521,16 +534,16 @@ function PortfolioList({ page = 'work' }) {
 		gsap.killTweensOf('.portfolio__item');
 
 		// 새로운 애니메이션 실행
-		gsap.fromTo('.portfolio__item', { opacity: 0, scale:0}, { opacity: 1, scale: 1, duration:0.5,ease:'Power.easeInOut'});
+		gsap.fromTo('.portfolio__item', { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'Power.easeInOut' });
 	}
 
 	useEffect(() => {
 
-		if(page === 'main') return
-			new SplitType('.section_work .motion_txt span', {
-				types: 'chars'
-				// optional: line/word도 원하면 추가
-			});
+		if (page === 'main') return
+		new SplitType('.section_work .motion_txt span', {
+			types: 'chars'
+			// optional: line/word도 원하면 추가
+		});
 
 		const tl = gsap.timeline();
 
@@ -573,18 +586,18 @@ function PortfolioList({ page = 'work' }) {
 
 	return (
 		<>
-		{page === 'work'? 
-			<section className="tit_wrap">
-			<h2 className="tit motion_txt"><span>WORK</span></h2> 
-				<div className="filter_list ">
-					{tab.map((v, idx) => (
-						<button key={idx} className={`filter ${tabIdx === idx ? 'active' : ''}`} onClick={() => handleTabClick(idx)}>
-							<span>{v.text}</span>
-						</button>
-					))}
-				</div>
-			</section>
-			: null}
+			{page === 'work' ?
+				<section className="tit_wrap">
+					<h2 className="tit motion_txt"><span>WORK</span></h2>
+					<div className="filter_list ">
+						{tab.map((v, idx) => (
+							<button key={idx} className={`filter ${tabIdx === idx ? 'active' : ''}`} onClick={() => handleTabClick(idx)}>
+								<span>{v.text}</span>
+							</button>
+						))}
+					</div>
+				</section>
+				: null}
 
 
 			<div className="portfolio__list">
@@ -600,9 +613,11 @@ function PortfolioList({ page = 'work' }) {
 						);
 					})
 					.map((item, index) => (
-						<PortfolioItem key={index} index={index} item={item} />
+						<>
+							<PortfolioItem key={index} index={index} item={item} /></>
 					))}
 			</div>
+
 		</>
 	);
 }

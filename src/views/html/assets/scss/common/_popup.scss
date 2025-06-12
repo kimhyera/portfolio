@@ -22,12 +22,13 @@
 		top: 0;
 		left: 0;
 		z-index: 105;
-		background-color: rgba(0, 0, 0, 0.7);
+		background-color: rgba(#111, 0.05);
+
 	}
 	.pop_container {
 		position: relative;
 		z-index: 108;
-		width: $max-w;
+		width: 100%;
 		max-width: calc(100% - $pd-inline * 2);
 		padding: 30px;
 		background: #fff;
@@ -65,49 +66,13 @@
 	.content_container {
 		max-height: calc(95vh - 220px);
 		padding-top: 10px;
-		scrollbar-face-color: #999;
-		scrollbar-highlight-color: #999; /*스크롤*/
-		scrollbar-3dlight-color: #999; /*하이라이트*/
-		scrollbar-darkshadow-color: #999; /*왼쪽외곽음영*/
-		scrollbar-shadow-color: #999; /*오른쪽외곽음영*/
-		scrollbar-arrow-color: #999; /*오른쪽 안쪽음영*/
-		scrollbar-track-color: #999; /*화살*/
 		/*스크롤영역*/
 		overflow: hidden;
 		overflow-y: auto;
 		text-align: left;
-		&::-webkit-scrollbar {
-			opacity: 0;
-			width: 10px;
-			height: 10px;
-		}
-		/*스크롤바*/
-		&::-webkit-scrollbar-button {
-			width: 0;
-			height: 0;
-		}
-		/*스크롤바 버튼(아래 위 화살표)*/
-		&::-webkit-scrollbar-thumb {
-			background-color: #999;
-			background-clip: padding-box;
-			//border:4px solid transparent;
-			//border-radius:10px;
-		}
-		/*스크롤바 핸들*/
-		&::-webkit-scrollbar-track {
-			// background-color:$bg-gray;
-		}
-		/*스크롤바 진행줄*/
-		&::-webkit-scrollbar-track-piece {
-			// background-color:$bg-gray;
-		}
-		/*진행줄에서 핸들로 덮이지 않은 영역 */
-		&::-webkit-scrollbar-corner {
-			// background:$bg-gray;
-		}
-		.dark & {
-			color: #fff;
-		}
+
+		@include scroll(100vh, hidden,auto);
+
 		.tit_sub {
 			line-height: 1.42;
 			margin-block: -10px 15px;
@@ -169,11 +134,13 @@
 	}
 	.btn_close {
 		position: absolute;
-		top: 15px;
-		right: 15px;
-		width: 14px;
-		height: 14px;
-		.dark & {
+		top: 20px;
+		right: 20px;
+		width:24px;
+		height:24px;
+		.svg_icon.icon_close{
+
+			background-size: cover;
 		}
 	}
 	.pop_tit_sub {
@@ -220,5 +187,73 @@
 				height: 50px;
 			}
 		}
+	}
+}
+
+
+.popup_detail{
+	color:$text;
+	.pop_container{
+		max-width: 1200px;
+		padding: 0;
+			    box-shadow: 5px 5px 15px 0px rgba(13, 5, 34, 0.3);
+	}
+	.popup_top{
+		background-color: #0169FF;
+		    background:linear-gradient(150deg, #0e8ef9 0%, #6c34f9 100%);
+		padding: 100px 20px 400px;
+		@include flex(column);
+		align-items: center;
+		text-align: center;
+		color:#fff;
+		gap:40px;
+		@include media-max($m) {
+				gap:20px;
+				padding: 50px 20px 35%;
+		}
+		.tit{
+			@include font-size(24px,40px);
+			line-height: 1.4;
+			letter-spacing: 1px;
+
+		}
+		.desc{
+			@include font-size(16px,20px);
+			line-height: 1.8;
+			margin: 10px 0;
+		}
+
+	}
+		.detail_img{
+			position: relative;
+			text-align: center;
+			height: 250px;
+			@include media-max($m) {
+					height: 100px;
+			}
+			img{
+						position: absolute;
+						top: -350px;
+						left:50%;
+						 transform: translate(-50%,0);
+						 width: 80%;
+						 @include media-max($l) {
+								 width: 70%;
+						 }
+						 @include media-max($m) {
+								 top:-100px;
+								 width: 60%;
+						 }
+			}
+		}
+		
+	.popup_body{
+		padding: 0  60px 30px;
+		@include media-max($l) {
+				padding-inline: 20px;
+		}
+	}
+	.pf_btn_wrap{
+		padding: 30px ;
 	}
 }
