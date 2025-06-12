@@ -10,10 +10,13 @@ function PortfolioList({ page = 'work' }) {
 	const items = [
 		{
 			title: '코크플레이 반응형 / 앱',
-			thumb: 'pt_2024_cgplay.jpg',
+			thumb: 'pt_2024_cgplay.png',
+			thumbDetail: 'pt_2024_cgplay.png',
 			desc: '뇌 트레이닝 플랫폼',
+			descDetail: '디자이너 및 프론트엔드 개발자와 협업',
 			date: '2024',
 			role: '퍼블리싱',
+			디바이스:'PC/M',
 			stack: ['react', 'scss'],
 			type: ['홈페이지', '반응형', '앱', 'react'],
 			url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1'

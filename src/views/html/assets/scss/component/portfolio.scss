@@ -34,9 +34,13 @@
 	&__thumb {
 		@include thumb(100%, auto, 776/468);
 
-		//border-radius: 6px;
+		border-radius: 6px;
 		overflow: hidden;
 		position: relative;
+		
+
+    border: solid 1px rgba(255, 255, 255, .1);
+    background-image: linear-gradient(to top, #141414, #242831);
 		img {
 			object-fit: cover;
 		}

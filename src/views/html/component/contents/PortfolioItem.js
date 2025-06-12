@@ -4,6 +4,7 @@ import '../../assets/scss/component/portfolio.scss';
 import { Link } from 'react-router-dom';
 
 function PortfolioItem({ item = {} }) {
+
 	const imageUrl = require(`../../assets/img/${item.thumb}`);
 	return (
 		<div className={`portfolio__item`}>
@@ -18,7 +19,7 @@ function PortfolioItem({ item = {} }) {
 				</dl>
 
 			</div>
-			<div className="portfolio__hover">
+			<div className="portfolio__hover" >
 				<p className="tit">{item.title} </p>
 				<dl className="desc">
 					<dt>기간:</dt>
