@@ -15,9 +15,8 @@ function PortfolioList({ page = 'work' }) {
 			title: '코크플레이 반응형 / 앱',
 			thumb: 'pt_2024_cgplay.jpg',
 			desc: '뇌 트레이닝 플랫폼',
-			date: '2024.09 ~ 2024.10',
+			date: '2024.11 ~ 2024.12',
 			role: '퍼블리싱',
-			디바이스: 'PC/M',
 			stack: ['react', ' scss'],
 			type: ['홈페이지', '반응형', '앱', 'react'],
 			url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1',
@@ -26,13 +25,14 @@ function PortfolioList({ page = 'work' }) {
 				'반응형 리뉴얼 구축'
 			],
 
-
 			descDetail: [
 				'코크 플레이 앱용 반응형 퍼블리싱',
 				'React 기반의 컴포넌트 퍼블리싱',
 				'디자이너 및 프론트엔드 개발자와 협업'
 			],
 			thumbDetail: 'pt_2024_cgplay.png',
+
+			디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: 'Vetbless PC 관리',
@@ -42,7 +42,9 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', 'b2b', '관리자'],
-			url: 'https://nalazoo.awsome-app.kr/front/Chart'
+			url: 'https://nalazoo.awsome-app.kr/front/Chart',
+
+			디바이스: 'PC',
 		},
 		{
 			title: '배달플랫폼 모바일',
@@ -53,7 +55,9 @@ function PortfolioList({ page = 'work' }) {
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
 			url: 'https://634fa63d3236be6714353078--willowy-parfait-db4af9.netlify.app/path',
-			url2: 'https://smartshop.mannashop.co.kr/shop/mns/'
+			url2: 'https://smartshop.mannashop.co.kr/shop/mns/',
+
+			디바이스: 'Mobile',
 		},
 		{
 			title: '주문테이블 Qr 모바일',
@@ -63,7 +67,9 @@ function PortfolioList({ page = 'work' }) {
 			role: '모바일 퍼블리싱, Nuxt3 프론트엔드 제작 ',
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
-			url: 'https://web-nuxt-qr-netlify.netlify.app/pb/path'
+			url: 'https://web-nuxt-qr-netlify.netlify.app/pb/path',
+
+			디바이스: 'Mobile',
 		},
 		{
 			title: '마트 모바일',
@@ -74,7 +80,9 @@ function PortfolioList({ page = 'work' }) {
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
 			url: 'https://vue-mart-2.netlify.app/publish',
-			url2: 'https://tsmartshop.mannashop.co.kr/shop/mts/'
+			url2: 'https://tsmartshop.mannashop.co.kr/shop/mts/',
+
+			디바이스: 'Mobile',
 		},
 		{
 			title: '스마트 골프 모바일',
@@ -84,7 +92,9 @@ function PortfolioList({ page = 'work' }) {
 			role: 'Vue 모바일 퍼블리싱',
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
-			url: 'https://63233a86330f840008be9b72--extraordinary-snickerdoodle-799c22.netlify.app/path'
+			url: 'https://63233a86330f840008be9b72--extraordinary-snickerdoodle-799c22.netlify.app/path',
+
+			디바이스: 'Mobile',
 		},
 		{
 			title: '수바툴 모바일',
@@ -94,7 +104,8 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['모바일'],
-			url: 'https://suva.awsome-app.kr/'
+			url: 'https://suva.awsome-app.kr/',
+			디바이스: 'Mobile',
 		},
 		{
 			title: '에코하이 반응형',
@@ -104,7 +115,8 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['반응형'],
-			url: 'https://ecohigh.kr/front/Member/Login'
+			url: 'https://ecohigh.kr/front/Member/Login',
+			디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: '이지수능 교육 관리',
@@ -114,7 +126,8 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['react', 'scss'],
 			type: ['반응형', 'react', 'b2b'],
-			url: 'http://easy-study.awsome-app.kr/'
+			url: 'http://easy-study.awsome-app.kr/',
+			디바이스: 'PC',
 		},
 		{
 			title: '파랑새 반응형',
@@ -124,7 +137,8 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://bluebird.awsome-app.kr/'
+			url: 'https://bluebird.awsome-app.kr/',
+			디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: '온플 반응형',
@@ -134,7 +148,8 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://onply.awsome-app.kr/'
+			url: 'https://onply.awsome-app.kr/',
+			디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: '특허유사도gadget 반응형',
@@ -144,7 +159,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://gadget.awsome-app.kr/'
+			url: 'https://gadget.awsome-app.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: '가구의장인 모바일',
@@ -154,7 +169,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['모바일', '반응형'],
-			url: 'https://gagu.awsome-app.kr/'
+			url: 'https://gagu.awsome-app.kr/', 디바이스: 'Mobile',
 		},
 
 		{
@@ -165,7 +180,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://winos.awsome-app.kr/'
+			url: 'https://winos.awsome-app.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -187,7 +202,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱, 인터렉션',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.firsteyeclinic.co.kr/'
+			url: 'https://www.firsteyeclinic.co.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -198,7 +213,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱, 인터렉션',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://lasikmasan.mycafe24.com/'
+			url: 'https://lasikmasan.mycafe24.com/', 디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: '가맹점 POS 상품 설정',
@@ -239,7 +254,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://hyera1828.cafe24.com/coupon_send/ch.html'
+			url: 'https://hyera1828.cafe24.com/coupon_send/ch.html', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -250,7 +265,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://hanjae.freewebclub.com/main/main.html'
+			url: 'http://hanjae.freewebclub.com/main/main.html', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -261,7 +276,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://www.island-castle.co.kr/'
+			url: 'http://www.island-castle.co.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -272,7 +287,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://mc3099.freewebclub.com/main/main.html'
+			url: 'http://mc3099.freewebclub.com/main/main.html', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -283,7 +298,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://mrbossam.co.kr/main/main.html'
+			url: 'http://mrbossam.co.kr/main/main.html', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -294,7 +309,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://schoolfood.freewebclub.com/main/main.html'
+			url: 'http://schoolfood.freewebclub.com/main/main.html', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -306,7 +321,7 @@ function PortfolioList({ page = 'work' }) {
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '모바일', 'b2c', 'b2b'],
 			url: 'https://www.cnpskin.com/pc/cnp/main/main.html',
-			url2: 'https://www.cnpskin.com/pc/branch/main/main.html?jijummid=cnpskin18'
+			url2: 'https://www.cnpskin.com/pc/branch/main/main.html?jijummid=cnpskin18', 디바이스: 'PC/Mobile',
 		},
 
 		{
@@ -317,7 +332,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '모바일'],
-			url: 'https://www.japanuranggi.com/main/main.html'
+			url: 'https://www.japanuranggi.com/main/main.html', 디바이스: 'PC/Mobile',
 		},
 		{
 			title: '유로자전거나라 pc/m',
@@ -327,7 +342,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '모바일'],
-			url: 'http://www.jangsadalin.com'
+			url: 'http://www.jangsadalin.com', 디바이스: 'PC/Mobile',
 		},
 		{
 			title: '타이탄 인베스트 P2P ',
@@ -337,7 +352,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.titaninvest.co.kr'
+			url: 'https://www.titaninvest.co.kr', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -348,7 +363,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.grate.kr'
+			url: 'https://www.grate.kr', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -359,7 +374,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://saveculture.savezone.co.kr/'
+			url: 'https://saveculture.savezone.co.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -370,7 +385,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://www.jangsadalin.com'
+			url: 'http://www.jangsadalin.com', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -381,7 +396,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.grate.kr'
+			url: 'https://www.grate.kr', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -392,7 +407,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.sbisb.co.kr/'
+			url: 'https://www.sbisb.co.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -403,7 +418,7 @@ function PortfolioList({ page = 'work' }) {
 			role: 'pc/m 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.niceamc.co.kr/kr/index.do'
+			url: 'https://www.niceamc.co.kr/kr/index.do', 디바이스: 'PC',
 		},
 
 		{
@@ -414,7 +429,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.dongyangbooks.com'
+			url: 'https://www.dongyangbooks.com', 디바이스: 'PC/Mobile',
 		},
 
 		{
@@ -425,7 +440,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.ggyc.kr/'
+			url: 'https://www.ggyc.kr/', 디바이스: 'PC/Mobile',
 		},
 		{
 			title: '이오플로우',
@@ -435,7 +450,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'http://eoflow.freewebclub.com/'
+			url: 'http://eoflow.freewebclub.com/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -446,7 +461,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.breadgarden.co.kr/'
+			url: 'https://www.breadgarden.co.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -457,7 +472,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.mylittlefriend.kr/'
+			url: 'https://www.mylittlefriend.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -468,7 +483,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '모바일'],
-			url: 'http://www.youngpull.com/'
+			url: 'http://www.youngpull.com/', 디바이스: 'PC/Mobile',
 		},
 		{
 			title: 'Nice 지니데이터 ',
@@ -478,7 +493,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['b2b', '홈페이지'],
-			url: 'https://hivesystem.net/'
+			url: 'https://hivesystem.net/', 디바이스: 'PC/Tablet/Mobile',
 		},
 		{
 			title: '법률 사무소 고은 ',
@@ -488,7 +503,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://gounlaw.com/'
+			url: 'https://gounlaw.com/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -499,7 +514,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://www.bmimf.co.kr/'
+			url: 'https://www.bmimf.co.kr/', 디바이스: 'PC/Tablet/Mobile',
 		},
 
 		{
@@ -510,7 +525,7 @@ function PortfolioList({ page = 'work' }) {
 			role: '반응형 퍼블리싱',
 			stack: ['php', 'scss'],
 			type: ['홈페이지', '반응형'],
-			url: 'https://hivesystem.net/'
+			url: 'https://hivesystem.net/', 디바이스: 'PC/Tablet/Mobile',
 		}
 	];
 

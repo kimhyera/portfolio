@@ -10,6 +10,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	&.active {
 		display: flex;
 		align-items: center;
@@ -30,14 +31,13 @@
 		z-index: 108;
 		width: 100%;
 		max-width: calc(100% - $pd-inline * 2);
-		padding: 30px;
 		background: #fff;
 		border-radius: 10px;
 		overflow: hidden;
 		margin-inline: auto;
 		@include media-max($l) {
 			max-width: calc(100% - $pd-inline-m * 2) !important;
-			padding-inline: 20px;
+		  
 		}
 		.dark & {
 			background: #1a1d26;
@@ -64,14 +64,12 @@
 		//}
 	}
 	.content_container {
-		max-height: calc(95vh - 220px);
-		padding-top: 10px;
 		/*스크롤영역*/
 		overflow: hidden;
 		overflow-y: auto;
 		text-align: left;
 
-		@include scroll(100vh, hidden,auto);
+		@include scroll(calc(100vh - 80px), hidden,auto);
 
 		.tit_sub {
 			line-height: 1.42;
@@ -138,6 +136,7 @@
 		right: 20px;
 		width:24px;
 		height:24px;
+		z-index: 1;
 		.svg_icon.icon_close{
 
 			background-size: cover;
@@ -195,30 +194,51 @@
 	color:$text;
 	.pop_container{
 		max-width: 1200px;
-		padding: 0;
+	
 			    box-shadow: 5px 5px 15px 0px rgba(13, 5, 34, 0.3);
 	}
 	.popup_top{
-		background-color: #0169FF;
-		    background:linear-gradient(150deg, #0e8ef9 0%, #6c34f9 100%);
-		padding: 100px 20px 400px;
+		position: relative;
+		padding: 100px 20px 30px;
 		@include flex(column);
 		align-items: center;
 		text-align: center;
 		color:#fff;
 		gap:40px;
+		&::before{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height:180%;
+			top:0;
+			left:0;
+			background-color: #0169FF;
+			background:linear-gradient(150deg, #0e8ef9 0%, #6c34f9 100%);
+			z-index: -1;
+		}
+		.pf_btn{
+			@include media-max($m) {
+					height: 45px;
+					min-width: 100px;
+					padding-inline:20px;
+					font-size: 15px;
+			}
+		}
 		@include media-max($m) {
 				gap:20px;
-				padding: 50px 20px 35%;
+				padding: 50px 20px 20px;
+				&::before{
+					height: 130%;
+				}
 		}
 		.tit{
-			@include font-size(24px,40px);
+			@include font-size(20px,40px);
 			line-height: 1.4;
 			letter-spacing: 1px;
 
 		}
 		.desc{
-			@include font-size(16px,20px);
+			@include font-size(14px,20px);
 			line-height: 1.8;
 			margin: 10px 0;
 		}
@@ -227,22 +247,15 @@
 		.detail_img{
 			position: relative;
 			text-align: center;
-			height: 250px;
+			padding-bottom: 60px;
 			@include media-max($m) {
-					height: 100px;
+				padding-bottom: 30px;
+				
 			}
 			img{
-						position: absolute;
-						top: -350px;
-						left:50%;
-						 transform: translate(-50%,0);
 						 width: 80%;
-						 @include media-max($l) {
-								 width: 70%;
-						 }
 						 @include media-max($m) {
-								 top:-100px;
-								 width: 60%;
+				width: 100%;
 						 }
 			}
 		}
@@ -250,10 +263,25 @@
 	.popup_body{
 		padding: 0  60px 30px;
 		@include media-max($l) {
-				padding-inline: 20px;
+				padding: 0 20px 0;
+		}
+		.flex_row {
+			@include flex(x);
+			gap: 10px;
+		}
+		.skil {
+			@include flex(y);
+			gap: 3px;
 		}
 	}
-	.pf_btn_wrap{
+	.popup_bottom{
 		padding: 30px ;
+		text-align: center;
+		.pf_btn{
+			@include media-max($l) {
+					width: 100%;
+			}
+		}
+	
 	}
 }
