@@ -8,6 +8,7 @@
 	letter-spacing: normal;
 	color: #fff;
 	gap: 8px;
+	transition: .3s;
 	&:visited,
 	&:link,
 	&:active,
@@ -108,9 +109,7 @@
 			box-shadow: 0 0 15px 4px #6b4dff66;
 		}
 	}
-	&.white {
-		
-	}
+
 	&.orange {
 		background-color: $orange;
 	}
@@ -149,15 +148,21 @@
 				background-origin: border-box;
 				background-clip: content-box, border-box;
 
-	
-			.dark & {
-				background-color: $gray-dark;
-				//color:#fff;
-			}
 		}
 		&.white {
 			border-color: #fff;
 		  color:#fff;
+			padding-inline: 0;
+			transition: background-image .3s;
+			&:hover{
+				background-color: rgba(0, 0, 0, 0.1);
+				box-shadow: 0 0 15px 4px #6b4dff66;
+				position: relative;
+				background-image:  
+				linear-gradient(to right, #0088FF 0%, #7900C9 100%);
+				background-origin: border-box;
+				background-clip: content-box, border-box;
+			}
 		}
 		&.dark {
 			background-color: #fff;

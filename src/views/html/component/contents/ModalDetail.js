@@ -19,8 +19,12 @@ function ModalDetail({ item = {}, open, close }) {
 			{open ? (
 				<section className={`pf_popup popup_detail`}>
 					<div className={`pop_container`}>
+						<div className="popup_header">
+							<button type="button" className="btn_close" onClick={close}>
+								<i className="svg_icon icon_close white"></i>
+							</button>
+						</div>
 						<div className="content_container">
-							<button type="button" className="btn_close svg_icon icon_close white" onClick={close}></button>
 							<div className="popup_top">
 
 								<div className="tit">
