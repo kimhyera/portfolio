@@ -39,6 +39,10 @@
 			max-width: calc(100% - $pd-inline-m * 2) !important;
 		  
 		}
+		@include media-max($m) {
+				border-radius: 0;
+				max-width: 100% !important;
+		}
 		.dark & {
 			background: #1a1d26;
 			border: 1px solid rgba(255, 255, 255, 0.2);
@@ -70,7 +74,9 @@
 		text-align: left;
 
 		@include scroll(calc(100vh - 80px), hidden,auto);
-
+		@include media-max($m) {
+			max-height: 100vh;
+	}
 		.tit_sub {
 			line-height: 1.42;
 			margin-block: -10px 15px;
@@ -195,7 +201,7 @@
 	.pop_container{
 		max-width: 1200px;
 	
-			    box-shadow: 5px 5px 15px 0px rgba(13, 5, 34, 0.3);
+		 box-shadow: 5px 5px 15px 0px rgba(13, 5, 34, 0.3);
 	}
 	.popup_top{
 		position: relative;
@@ -250,6 +256,7 @@
 			padding-bottom: 60px;
 			@include media-max($m) {
 				padding-bottom: 30px;
+				padding-inline: 20px;
 				
 			}
 			img{

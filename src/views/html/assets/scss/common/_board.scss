@@ -30,8 +30,8 @@
 		text-align: center;
 		height: 24px;
 		@include media-max($m) {
-				font-size: 13px;
-				padding: 10px 0px;
+				font-size: 12px;
+				padding: 10px 5px;
 		}
     &.align_l{
       text-align: left;
