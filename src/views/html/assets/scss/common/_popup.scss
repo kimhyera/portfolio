@@ -148,9 +148,14 @@
 		transition: 0.3s;
 		.svg_icon.icon_close {
 			background-size: 20px 20px;
+						transform:rotate(0);
+		transition: 0.2s;
 		}
 		&:hover{
 			background-color: rgba(#000, 0.5);
+					.svg_icon.icon_close{
+						transform:rotate(180deg);
+					}
 		}
 		@include media-max($m) {
 			padding: 10px;
@@ -235,7 +240,7 @@
 			height: 200%;
 			top: 0;
 			left: 0;
-			background: linear-gradient(150deg, #0e8ef9 0%, #6c34f9 100%);
+			background: linear-gradient(180deg, #6c34f9 0%, #0e8ef9 100%);
 			z-index: -1;
 		}
 		.pf_btn {
@@ -269,16 +274,16 @@
 		position: relative;
 		text-align: center;
 		padding-bottom: 60px;
-		padding-top: 30px;
+		padding-top: 50px;
 		@include media-max($m) {
 			padding-bottom: 30px;
 			padding-inline: 20px;
 			padding-top: 20px;
 		}
 		img {
-			width: 80%;
+			max-width: 80%;
 			@include media-max($m) {
-				width: 100%;
+				max-width: 100%;
 			}
 		}
 	}
