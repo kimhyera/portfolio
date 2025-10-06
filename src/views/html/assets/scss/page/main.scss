@@ -70,13 +70,13 @@
 			color: $text-2;
 			margin-top: 6%;
 			@include media-max($l) {
-				font-size: 14px;
 				margin-top: 10%;
+				
 			}
 			span {
 				line-height: 1.8;
 			}
-			@include font-size(16px, 28px);
+			@include font-size(18px, 32px);
 		}
 		span {
 			line-height: 1.1;
@@ -173,12 +173,18 @@
 	color:#000;
 	padding-bottom: 80vh;
 	.section_title{
-		position: relative;
+		position: relative ;
 		height: 100vh;
-		padding-block: 30vh;
 		line-height: 1;
 		text-align: center;
 		width: 100%;
+		color:#fff;
+		.inner{
+		text-align: center;
+		width: 100%;
+		padding-block: 30vh;
+		height: 100vh;
+		}
 		.tit_my{
 		@include font-size(40px, 150px);
 		}

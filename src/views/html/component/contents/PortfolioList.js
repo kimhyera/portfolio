@@ -12,11 +12,99 @@ function PortfolioList({ page = 'work' }) {
 
 	const items = [
 		{
+			title: '접근성 한국인터넷 진흥원',
+			thumb: 'pt_kisa.jpg',
+			desc: '보안 사이트 전근성',
+			date: '2025',
+			role: 'vue퍼블리싱, 접근성 ',
+			stack: ['vue', 'scss'],
+			type: ['vue', '바응형'],
+			url: 'https://kisa.awsome-app.kr/main',
+			titleDetail: [
+				'접근성 한국인터넷 진흥원',
+				''
+			],
+
+			descDetail: [
+				'접근성 퍼블리싱',
+				'디자이너와 협업'
+			],
+			thumbDetail: 'pt_kisa.jpg',
+
+			디바이스: 'PC',
+		},
+		{
+			title: '디지털교과서 현대사회와 윤리',
+			thumb: 'pt_2025_jhmse.jpg',
+			desc: '웹뷰 퍼블리싱',
+			date: '2025.08 ~ 2025.09',
+			role: '퍼블리싱',
+			stack: ['교과서','퀴즈 js'],
+			type: ['교과서', '이러닝 컨텐츠'],
+			url: 'https://www.usuaia.me/ebook/jhmse_/',
+			titleDetail: [
+				'현대사회와 윤리 교과서',
+				'디지털 교과서 앱 웹뷰'
+			],
+
+			descDetail: [
+				'웹뷰 퍼블리싱',
+				'개발자 협업'
+			],
+			thumbDetail: 'pt_2025_jhmse.jpg',
+
+			디바이스: 'PC',
+		},
+		{
+			title: '디지털교과서 역사 2',
+			thumb: 'pt_2025_jmhs2.jpg',
+			desc: '웹뷰 퍼블리싱',
+			date: '2025.08 ~ 2025.09',
+			role: '퍼블리싱',
+			stack: ['교과서','퀴즈 js'],
+			type: ['교과서', '이러닝 컨텐츠'],
+			url: 'https://www.usuaia.me/ebook/jmhs2/contents/html/ebook/ebook.html',
+			titleDetail: [
+				'역사 2 교과서',
+				'디지털 교과서 앱 웹뷰'
+			],
+
+			descDetail: [
+				'웹뷰 퍼블리싱',
+				'개발자 협업'
+			],
+			thumbDetail: 'pt_2025_jmhs2.jpg',
+
+			디바이스: 'PC',
+		},
+		{
+			title: '디지털교과서 한국사 2',
+			thumb: 'pt_2025_jmkh2.jpg',
+			desc: '웹뷰 퍼블리싱',
+			date: '2025.07 ~ 2025.09',
+			role: '퍼블리싱',
+			stack: ['교과서','퀴즈 js'],
+			type: ['교과서', '이러닝 컨텐츠'],
+			url: 'https://www.usuaia.me/ebook/jmkh2/',
+			titleDetail: [
+				'한국사 2 교과서',
+				'디지털 교과서 앱 웹뷰'
+			],
+
+			descDetail: [
+				'웹뷰 퍼블리싱',
+				'개발자 협업'
+			],
+			thumbDetail: 'pt_2025_jmkh2.jpg',
+
+			디바이스: 'PC',
+		},
+		{
 			title: '코크플레이 반응형 / 앱',
 			thumb: 'pt_2024_cgplay.jpg',
 			desc: '뇌 트레이닝 플랫폼',
 			date: '2024.11 ~ 2024.12',
-			role: 'React 퍼블리싱',
+			role: '퍼블리싱',
 			stack: ['react', ' scss'],
 			type: ['홈페이지', '반응형', '앱', 'react'],
 			url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1',
@@ -51,7 +139,7 @@ function PortfolioList({ page = 'work' }) {
 			thumb: 'manashop.jpg',
 			desc: '고객 배달 플랫폼 (배달음식)',
 			date: '2023 ~ 2024 ',
-			role: 'Vue 퍼블리싱, Vue 프론트엔드 제작 ',
+			role: '퍼블리싱, Vue 프론트엔드 개발 ',
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
 			url: 'https://634fa63d3236be6714353078--willowy-parfait-db4af9.netlify.app/path',
@@ -64,7 +152,7 @@ function PortfolioList({ page = 'work' }) {
 			thumb: 'pt_qr.png',
 			desc: '  주문 테이블 플랫폼',
 			date: '2024',
-			role: 'Vue 퍼블리싱, Nuxt3 프론트엔드 제작 ',
+			role: '퍼블리싱, Nuxt3 프론트엔드 개발 ',
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
 			url: 'https://web-nuxt-qr-netlify.netlify.app/pb/path',
@@ -76,7 +164,7 @@ function PortfolioList({ page = 'work' }) {
 			thumb: 'pt_mart.png',
 			desc: '  주문 테이블 플랫폼',
 			date: '2023',
-			role: 'Vue 퍼블리싱, Vue 프론트엔드 제작 ',
+			role: '퍼블리싱, Vue 프론트엔드 개발 ',
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
 			url: 'https://vue-mart-2.netlify.app/publish',
@@ -89,7 +177,7 @@ function PortfolioList({ page = 'work' }) {
 			thumb: 'pt_golf.png',
 			desc: '예약 플랫폼',
 			date: '2024',
-			role: 'Vue 퍼블리싱',
+			role: '퍼블리싱',
 			stack: ['vue', 'scss'],
 			type: ['b2c', 'vue', '모바일', '플랫폼'],
 			url: 'https://63233a86330f840008be9b72--extraordinary-snickerdoodle-799c22.netlify.app/path',
@@ -123,7 +211,7 @@ function PortfolioList({ page = 'work' }) {
 			thumb: 'pt_2024_easy_study.jpg',
 			desc: '교사 학생 교육 관리 플랫폼',
 			date: '2024',
-			role: 'React 퍼블리싱',
+			role: '퍼블리싱',
 			stack: ['react', 'scss'],
 			type: ['반응형', 'react', 'b2b'],
 			url: 'http://easy-study.awsome-app.kr/',
@@ -220,7 +308,7 @@ function PortfolioList({ page = 'work' }) {
 			thumb: 'pt_pos-web.png',
 			desc: '가맹점 플랫폼',
 			date: '2022',
-			role: 'pc 퍼블리싱, php 프론트엔드 제작',
+			role: 'pc 퍼블리싱, php 프론트엔드 개발',
 			stack: ['php', 'scss'],
 			type: ['b2b'],
 			url: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php',
@@ -533,6 +621,7 @@ function PortfolioList({ page = 'work' }) {
 	const [tabIdx, setTabIdx] = useState(0);
 	const tab = [
 		{ text: '전체', link: '' },
+		{ text: '이러닝', link: '' },
 		{ text: '홈페이지', link: '' },
 		{ text: '반응형', link: '' },
 		{ text: '모바일', link: '' },
@@ -615,7 +704,8 @@ function PortfolioList({ page = 'work' }) {
 				: null}
 
 
-			<div className="portfolio__list">
+
+			<div className={`portfolio__list type_${page}`}>
 				{items
 					.filter((item) => {
 						if (selectedTabText === '전체') return true;

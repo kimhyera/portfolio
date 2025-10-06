@@ -444,7 +444,7 @@ $xxs: map-get($devices, xxs);
 $mini: map-get($devices, mini);
 
 // margin
-$pd-inline: 63px;
+$pd-inline: 60px;
 $pd-inline-m: 20px;
 $max-w: 1024px; // 현 사이트 디자인으로 수정 가능, 수정 후 주석 삭제 요망
 $bottom-menu-h: 70px;

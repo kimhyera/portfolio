@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://kimhyera.github.io/portfolio/",
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
     "cra-template": "1.2.0",
     "gh-pages": "^6.3.0",
     "gsap": "^3.12.7",
@@ -12,6 +13,7 @@
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "sass": "^1.83.4",
+    "smoothscroll-for-websites": "^1.5.1",
     "split-type": "^0.3.4",
     "swiper": "^11.1.14",
     "web-vitals": "^4.2.4"

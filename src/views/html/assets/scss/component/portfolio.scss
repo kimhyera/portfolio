@@ -1,10 +1,22 @@
 @import "../common/variables";
 .portfolio {
 	&__list {
-		@include list(80px, 30px, 2);
+		@include list(100px, 80px, 2);
+		@include media-max($l) {
+		@include list(40px, 20px, 2);
+		}
 		@include media-max($m) {
 			@include list(0px, 30px, 1);
 			gap:20px;
+		}
+		&.type_main{
+			@include media-min($l) {
+	   	@include list(200px, 80px, 2);
+			}
+			.portfolio__item{
+				opacity: 0;
+			}
+
 		}
 	}
 	&__item {
@@ -12,6 +24,7 @@
 		border-radius: 6px;
 		gap: 15px;
 		//@include flex(y);
+		transition: none;
 		@include flex(column);
 		&.hide {
 			opacity: 0;
@@ -61,13 +74,12 @@
 			width: 100%;
 		}
 		&-tit {
-			font-size: 20px;
 			font-weight: 700;
+			@include font-size(16px, 28px);
 			color: #fff;
 			margin-bottom: 10px;
 			flex: 0 0 auto;
 			@include media-max($l) {
-				font-size: 16px;
 				margin-bottom: 5px;
 			}
 		}
@@ -79,9 +91,7 @@
 			color: $text-3;
 			font-size: 18px;
 			line-height: 1.5;
-			@include media-max($m) {
-				font-size: 14px;
-			}
+			@include font-size(14px, 26px);
 		}
 	}
 	&__hover {
