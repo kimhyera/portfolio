@@ -157,7 +157,7 @@ main {
     &-tel {
       color: #fff;
       .icon_phone {
-        @include addImgSvg(icon_phone, 20, 20);
+        @include addImgSvg(icon_phone, 26, 26);
       }
     }
     @include media-max($xl) {
@@ -443,13 +443,13 @@ main {
     @include flex(y);
   }
   .icon_gmail {
-    @include addImgSvg(icon_gmail, 20, 20);
+    @include addImgSvg(icon_gmail, 26, 26);
   }
   .icon_github {
-    @include addImgSvg(icon_github, 20, 20);
+    @include addImgSvg(icon_github, 26, 26);
   }
   .icon_notion {
-    @include addImgSvg(icon_notion, 20, 20);
+    @include addImgSvg(icon_notion, 26, 26);
   }
 }
 
@@ -513,7 +513,7 @@ main {
     color: $text-3;
     padding-inline: 20px;
     padding-block: 10px;
-    @include font-size(16px, 26px);
+    @include fontSize(16, 26);
     display: block;
     font-weight: 400;
     &.active {

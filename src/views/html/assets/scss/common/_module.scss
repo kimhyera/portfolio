@@ -1,193 +1,194 @@
 //!콘텐츠
 .pf_contents_item {
-	.thumb {
-		@include thumb(100%, auto, 210/180);
-		border-radius: 10px;
-		overflow: hidden;
-		margin-bottom: 25px;
-		position: relative;
-	}
-	.tit {
-		font-size: 24px;
-		font-weight: 700;
-		@include flex(y);
-		@include media-max($l) {
-			font-size: 20px;
-		}
-		.dark & {
-			color: #d4d4d7;
-		}
-		.cate{
-			@include flex(y);
-			gap:10px;
-			margin-right: 10px;
-			padding: 5px;
-			height: 22px;
-			font-size: 10px;
-			border-radius: 22px;
-		 border:1px solid #222;
-		 .dark & {
-			border-color: #fff ;
-		}
-		}
-	}
-	.desc {
-		color: #666;
-		font-size: 18px;
-		line-height: 1.2;
-		@include multi-ellipsis(2);
-		margin-top: 5px;
-		@include media-max($l) {
-			font-size: 14px;
-		}
-		.dark & {
-			color: #bdbfc2;
-		}
-	}
-	.info {
-		@include flex(y);
-		gap: 3px;
-		margin-top: 20px;
-		@include media-max($l) {
-			margin-top: 10px;
-		}
-	}
-	.pf_tag__wrap{
-		margin-top: 20px;
-	}
-	.stats{
-		&__wrap{
-			margin-top: 20px;
-			@include flex(y);
-			gap:20px;
-		}
-		position: relative;
-		font-size: 15px;
-		@include media-max($l) {
-				font-size: 13px;
-		}
-		.count{
-			color:$point;
-			font-weight: 700;
-			font-size: 18px;
-			@include media-max($l) {
-					font-size: 16px;
-			}
-		}
-		&:not(:first-child):before  {
-				content: '';
-				border-left: 1px solid $c-border;
-				position: absolute;
-				top: 50%;
-				left: -10px;
-				 transform: translateY(-50%);
-				height: 12px;
-				
-			.dark & {
-				border-color: $c-border-dark-light;
-				}
-		}
-	}
-	.pf_star_display {
-		margin-right: 9px;
-	}
-	[class^="badge_"] {
-		@include inflex(all);
-		border-radius: 50px;
-		padding-inline: 8px;
-		text-align: center;
-		font-size: 10px;
-		height: 22px;
-	}
-	.badge_cate {
-		border: 1px solid#222;
-		.dark & {
-			border-color: #fff;
-			color: #fff;
-		}
-	}
-	.badge_state {
-		background: #d4d4d7;
-		font-weight: 600;
-		.dark & {
-			color: #fff;
-			background-color: #000;
-		}
-	}
-	.badge_free {
-		color: #fff;
-		background: #38475e;
-	}
-	&__wrap {
-		@include list(10px, 70px, 5);
-		@include media-max($xl) {
-			@include list(10px, 50px, 3);
-		}
-		@include media-max($m) {
-			@include list(0px, 50px, 1);
-		}
-	}
-	&.type_wide {
-		@include media-min($xxl) {
-			overflow: hidden;
-			.thumb {
-				float: left;
-				width: 247px;
-				min-width: 247px;
-				margin-bottom: 0;
-			}
-			& > *:not(.thumb) {
-				float: right;
-				margin-left: 17px;
-				width: calc(100% - 264px);
-			}
-		}
-	}
-	//메인 오늘의 트레이닝
-	&.today_training, &.ai_training{
-		.txt_area{
-			@include flex(y);
-			position: relative;
-		}
-    .count{
-			color:#D4D4D7;
-			transform:  scaleX(0.7);
-			display: flex;
-			height: 70px;
-			flex-direction: column;
-			justify-content: center;
-			flex-shrink: 0;
-			font-family: "Noto Sans";
-			font-size: 90px;
-			font-style: italic;
-			font-weight: 600;
-			position: relative;
-			left:-10px;
-			top:-5px;
-			@include media-max($l) {
-					font-size: 70px;
-			}
-		}
-	}
-	//ai 추천 트레이닝
-	&.ai_training{
-		padding-inline: 35px;
-		@include media-max($m) {
-				padding-inline: 25px;
-		}
-		.txt_area .count{
-      top:-120px;
-			left:-65px;
-			position: absolute;
-			font-size: 150px;
-			@include media-max($l) {
-					font-size: 100px;
-					top:-110px;
-					left:-45px;
-			}
-		}
-		.thumb {
-			@include thumb(100%, auto, 250/350);
-		}
-	}
+  .thumb {
+    @include thumb(100%, auto, 210/180);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  .tit {
+    font-size: 24px;
+    font-weight: 700;
+    @include flex(y);
+    @include media-max($l) {
+      font-size: 20px;
+    }
+    .dark & {
+      color: #d4d4d7;
+    }
+    .cate {
+      @include flex(y);
+      gap: 10px;
+      margin-right: 10px;
+      padding: 5px;
+      height: 22px;
+      font-size: 10px;
+      border-radius: 22px;
+      border: 1px solid #222;
+      .dark & {
+        border-color: #fff;
+      }
+    }
+  }
+  .desc {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.2;
+    @include multi-ellipsis(2);
+    margin-top: 5px;
+    @include media-max($l) {
+      font-size: 14px;
+    }
+    .dark & {
+      color: #bdbfc2;
+    }
+  }
+  .info {
+    @include flex(y);
+    gap: 3px;
+    margin-top: 20px;
+    @include media-max($l) {
+      margin-top: 10px;
+    }
+  }
+  .pf_tag__wrap {
+    margin-top: 20px;
+  }
+  .stats {
+    &__wrap {
+      margin-top: 20px;
+      @include flex(y);
+      gap: 20px;
+    }
+    position: relative;
+    font-size: 15px;
+    @include media-max($l) {
+      font-size: 13px;
+    }
+    .count {
+      color: $point;
+      font-weight: 700;
+      font-size: 18px;
+      @include media-max($l) {
+        font-size: 16px;
+      }
+    }
+    &:not(:first-child):before {
+      content: '';
+      border-left: 1px solid $c-border;
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      transform: translateY(-50%);
+      height: 12px;
+
+      .dark & {
+        border-color: $c-border-dark-light;
+      }
+    }
+  }
+  .pf_star_display {
+    margin-right: 9px;
+  }
+  [class^='badge_'] {
+    @include inflex(all);
+    border-radius: 50px;
+    padding-inline: 8px;
+    text-align: center;
+    font-size: 10px;
+    height: 22px;
+  }
+  .badge_cate {
+    border: 1px solid#222;
+    .dark & {
+      border-color: #fff;
+      color: #fff;
+    }
+  }
+  .badge_state {
+    background: #d4d4d7;
+    font-weight: 600;
+    .dark & {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+  .badge_free {
+    color: #fff;
+    background: #38475e;
+  }
+  &__wrap {
+    @include list(10px, 70px, 5);
+    @include media-max($xl) {
+      @include list(10px, 50px, 3);
+    }
+    @include media-max($m) {
+      @include list(0px, 50px, 1);
+    }
+  }
+  &.type_wide {
+    @include media-min($xxl) {
+      overflow: hidden;
+      .thumb {
+        float: left;
+        width: 247px;
+        min-width: 247px;
+        margin-bottom: 0;
+      }
+      & > *:not(.thumb) {
+        float: right;
+        margin-left: 17px;
+        width: calc(100% - 264px);
+      }
+    }
+  }
+  //메인 오늘의 트레이닝
+  &.today_training,
+  &.ai_training {
+    .txt_area {
+      @include flex(y);
+      position: relative;
+    }
+    .count {
+      color: #d4d4d7;
+      transform: scaleX(0.7);
+      display: flex;
+      height: 70px;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Noto Sans';
+      font-size: 90px;
+      font-style: italic;
+      font-weight: 600;
+      position: relative;
+      left: -10px;
+      top: -5px;
+      @include media-max($l) {
+        font-size: 70px;
+      }
+    }
+  }
+  //ai 추천 트레이닝
+  &.ai_training {
+    padding-inline: 35px;
+    @include media-max($m) {
+      padding-inline: 25px;
+    }
+    .txt_area .count {
+      top: -120px;
+      left: -65px;
+      position: absolute;
+      font-size: 150px;
+      @include media-max($l) {
+        font-size: 100px;
+        top: -110px;
+        left: -45px;
+      }
+    }
+    .thumb {
+      @include thumb(100%, auto, 250/350);
+    }
+  }
 }

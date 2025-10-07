@@ -375,43 +375,35 @@ $lock-max: 1700px !default;
     @return $result;
 }
 
-@function sizecalc($min, $max) {
+@mixin fontSize($min-px, $max-px, $breakpoint: 1700) {
+  $vw: ($max-px / $breakpoint) * 100;
+  font-size: max(#{$min-px / 10}rem, #{$vw}vw);
 
-    $rangeS: calc(num($max) - num($min));
-    $rangeW: calc(num($lock-max) - num($lock-min));
-
-    @return calc($min + $rangeS * (100vw - $lock-min) / $rangeW);
-
-
+  @media screen and (min-width: #{$breakpoint}px) {
+    font-size: #{$max-px}px;
+  }
 }
 
+@mixin calc($property, $min-px, $max-px, $breakpoint: 1700) {
+  $vw: ($max-px / $breakpoint) * 100;
+  #{$property}: max(#{$min-px / 10}rem, #{$vw}vw);
 
-@mixin font-size($min, $max, $lock-min: $lock-min, $lock-max: $lock-max) {
-
-    & {
-        font-size: $min;
-    }
-
-    @if $max {
-
-
-        @media screen and (min-width: $lock-max) {
-            font-size: $max;
-
-        }
-
-        // @media screen and (min-width:$lock-min) and (max-width: $lock-max){
-        @media screen and (max-width: $lock-max) {
-
-            font-size: sizecalc($min, $max);
-
-        }
-
-
-    }
-
+  @media screen and (min-width: #{$breakpoint}px) {
+    #{$property}: #{$max-px}px;
+  }
 }
 
+@function num($value) {
+  $result: calc($value / ($value * 0 + 1px));
+  @return $result;
+}
+
+@function sizecalc($min, $max, $lock-min: $lock-min, $lock-max: $lock-max) {
+  $rangeS: calc(num($max) - num($min));
+  $rangeW: calc(num($lock-max) - num($lock-min));
+  //@return clamp(calc($min + $rangeS * (100vw - $lock-min) / $rangeW),$max);
+  @return clamp(#{$min}, calc($min + $rangeS * (100vw - $lock-min) / $rangeW), #{$max});
+}
 @mixin box($pd:0px,$radius:10px){
   padding:$pd;
   border-radius: $radius;

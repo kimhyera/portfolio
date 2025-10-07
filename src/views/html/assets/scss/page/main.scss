@@ -63,7 +63,7 @@
 				}
 			}
 
-			@include font-size(44px, 130px);
+			@include fontSize(44, 130);
 		}
 		&.sub_txt {
 			font-size: 24px;
@@ -76,7 +76,7 @@
 			span {
 				line-height: 1.8;
 			}
-			@include font-size(18px, 32px);
+			@include fontSize(18, 32);
 		}
 		span {
 			line-height: 1.1;
@@ -97,6 +97,7 @@
 	100% {
 		stroke-dashoffset: 0;
 	}
+	
 }
 
 //section2
@@ -147,7 +148,7 @@
 		li {
 			@include flex(s);
 			gap: 5px;
-			@include font-size(24px, 48px);
+			@include fontSize(24, 48);
 			font-weight: 600;
 			text-align: center;
 			overflow: hidden;
@@ -186,10 +187,10 @@
 		height: 100vh;
 		}
 		.tit_my{
-		@include font-size(40px, 150px);
+		@include fontSize(40, 150);
 		}
 		.tit_work{
-			@include font-size(46px, 180px);
+			@include fontSize(46, 180);
 			font-style: italic ;
 
 		}
@@ -230,7 +231,7 @@
 				margin-bottom: 50px;
 		}
 		.tit{
-		@include font-size(40px, 150px);
+		@include fontSize(40, 150);
 		}
 	}
 
@@ -256,12 +257,21 @@
 		li{
 			@include flex(y);
 			gap:10px;
-		@include font-size(20px, 30px);
+		@include fontSize(20, 30);
 		color:$text-3;
 
 		@include media-max($m) {
 			align-items: flex-start;
 	}
+		}
+	}
+	.motion_txt{
+		transition: all 0.3s;
+		transform: translateY(100px);
+		opacity: 0;
+		&.active{
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 }

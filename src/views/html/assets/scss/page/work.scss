@@ -26,7 +26,7 @@
 		.tit {
 			font-family: Poppins;
 			font-weight: 400;
-			@include font-size(40px, 140px);
+			@include fontSize(40, 140);
 			
 		}
 	}
@@ -46,7 +46,7 @@
 		}
 
 		.tit {
-			@include font-size(40px, 100px);
+			@include fontSize(40, 100);
 			
 		}
 	}
