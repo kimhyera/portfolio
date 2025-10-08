@@ -118,7 +118,7 @@ function PortfolioItem({item = {}}) {
             <dt></dt>
             <dd className="flex_row">
               <button
-                className="link pf_btn m point oval"
+                className="link com_btn m point oval"
                 onClick={() => handleOpenDetail(item)}
               >
                 <svg

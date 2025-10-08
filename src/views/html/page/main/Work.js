@@ -11,7 +11,7 @@ function Work() {
 		<>
 			<main className="work">
 				<section className="section_work">
-					<div className="pf_center_wrap">
+					<div className="com_center_wrap">
 							
 						{/* 포트폴리오 리스트 */}
 						<PortfolioList page="work" />

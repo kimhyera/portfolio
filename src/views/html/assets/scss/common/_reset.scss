@@ -2,7 +2,7 @@
 
 @charset "utf-8";
 @font-face {
-	font-family: "Pretendard";
+	font-family: 'SUITE', sans-serif;;
 	font-weight: 100;
 	font-style: normal;
 	src:
@@ -86,7 +86,7 @@
 /* import font */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&display=swap");
-
+@import url("https://cdn.jsdelivr.net/gh/sun-typeface/SUITE@2/fonts/variable/woff2/SUITE-Variable.css");
 html {
 	/* Prevent font scaling in landscape */
 	-webkit-text-size-adjust: none; /*Chrome, Safari, newer versions of Opera*/
@@ -101,6 +101,12 @@ button,
 input,
 textarea {
 	font-family: "Pretendard", sans-serif;
+}
+.font-primary{
+font-family: 'SUITE', sans-serif;
+}
+.font-secondary{
+font-family: 'DelaGothicOne', sans-serif;
 }
 .en {
 	font-family: Poppins, "Pretendard", sans-serif;
@@ -125,6 +131,7 @@ textarea {
 
 html {
 	height: 100vh;
+	font-size:62.5%;
 	-webkit-text-size-adjust: none;
 	/*Chrome, Safari, newer versions of Opera*/
 	-moz-text-size-adjust: none;
@@ -139,10 +146,9 @@ html {
 html,
 textarea,
 input {
-	font-size: 14px;
 	color: #fff;
 	font-weight: normal;
-	letter-spacing: -0.35px;
+	letter-spacing:no;
 	line-height: 1.14;
 	word-break: keep-all;
 	color: $fc-default;

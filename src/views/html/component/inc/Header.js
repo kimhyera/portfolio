@@ -77,7 +77,7 @@ function Header() {
 	return (
 		<>
 			<header className="head">
-				<div className="pf_center_wrap">
+				<div className="com_center_wrap">
 					<NavLink to="/" className="logo">
 						<img src={logoUrl} alt="" />
 					</NavLink>
@@ -137,7 +137,7 @@ function Header() {
 			</div>
 
 			<section className="top_section">
-				{/*<div className="pf_center_wrap">
+				{/*<div className="com_center_wrap">
           <div className="about_row">
             <div className="box_l">
               UI/UX 디자인부터 퍼블리싱

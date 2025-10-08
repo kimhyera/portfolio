@@ -15,7 +15,7 @@
     background-image: linear-gradient(to bottom, transparent 60%, #051661 120%);
   }
 
-  .pf_center_wrap {
+  .com_center_wrap {
     gap: 160px;
     @include flex(column);
     @include media-max($l) {
@@ -91,7 +91,7 @@
         }
       }
     }
-    .pf_btn {
+    .com_btn {
       width: fit-content;
       margin-top: 6%;
     }

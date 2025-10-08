@@ -140,10 +140,6 @@
         gap: 10px;
         flex-wrap: wrap;
       }
-      .skil {
-        @include flex(y);
-        gap: 3px;
-      }
       .link {
         margin-top: 10px;
         //color: $point;

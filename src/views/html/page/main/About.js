@@ -81,7 +81,7 @@ function About() {
   return (
     <>
       <main className="about">
-        <div className="pf_center_wrap">
+        <div className="com_center_wrap">
           <div className="about__txt">
             <p className="h en">
               <span className="char_text">Hello, I'm Coder</span>
@@ -101,7 +101,7 @@ function About() {
             </div>
             <div className="motion_txt">
               <span>
-                <a href="#contact" className=" pf_btn point l line">
+                <a href="#contact" className=" com_btn point l line">
                   Contact me
                 </a>
               </span>

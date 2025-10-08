@@ -96,6 +96,6 @@
   -moz-align-items: flex-start;
   gap: 6px;
 }
-.about__txt .pf_btn {
+.about__txt .com_btn {
   width: fit-content;
 }

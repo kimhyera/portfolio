@@ -7,7 +7,7 @@ import ArrowRightEnd from '../../assets/img/icon_arrow_last.png';
 
 function Paging() {
   return (
-    <div className="pf_paging">
+    <div className="com_paging">
       <Link to="#" className="btn_first"><img src={ArrowRightEnd} alt="end" /></Link>
       <Link to="#" className="btn_prev"><img src={ArrowRight} alt="prev" /></Link>
       <Link to="#" className="btn_page active">1</Link>

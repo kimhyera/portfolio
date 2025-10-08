@@ -8,10 +8,11 @@ body {
   color: #fff;
 }
 
-html.scroll_lock {
+html.scroll_lock, html.lenis-stopped  {
   touch-action: none !important;
   overflow: hidden !important;
 	height: 100vh;
+	scroll-behavior: smooth;
 }
 
 
@@ -24,7 +25,7 @@ main {
   //	padding-bottom: 70px;
   //}
 }
-.pf_center_wrap {
+.com_center_wrap {
   max-width: 1820px;
   width: 100%;
   margin-inline: auto;
@@ -72,7 +73,7 @@ main {
   transition: 0.2s;
   z-index: 10;
   height: $head-h;
-  .pf_center_wrap {
+  .com_center_wrap {
     height: 100%;
     @include flex(between);
   }

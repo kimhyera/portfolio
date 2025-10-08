@@ -1,5 +1,5 @@
 /*common input form*/
-.pf_input_sec {
+.com_input_sec {
 	@include flex(column);
 	gap: 30px;
 	// .input{
@@ -21,7 +21,7 @@
 		.dark & {
 			color: #fff;
 		}
-	   .pf_info_txt{
+	   .com_info_txt{
 			margin-top: 15px;
 			font-size: 14px;
 			font-weight: 400;
@@ -54,7 +54,7 @@
 	}
 		// input[type=text], input[type=password]{
 		//   width:100%;
-		//   &+.pf_btn{
+		//   &+.com_btn{
 		//     min-width:102px;
 		//     font-weight:400;
 		//     font-size:15px;
@@ -82,7 +82,7 @@
 				}
 			}
 			
-			> .pf_input_sec{
+			> .com_input_sec{
 				flex: 1;
 			}
 
@@ -110,7 +110,7 @@
 			.input ,.select {
 				flex: 1;
 				width: 100%;
-				+ .pf_btn {
+				+ .com_btn {
 					width: 95px;
 					padding-inline: 0;
 					letter-spacing: -0.28px;
@@ -132,7 +132,7 @@
 			//& + .input_wrap {
 			//	margin-top: 10px;
 			//}
-			//.pf_btn {
+			//.com_btn {
 			//	margin-left: 0;
 			//}
 			.txt {
@@ -179,7 +179,7 @@
 		//   padding-bottom: 20px;
 		// }
 	
-	.pf_btn.full.gray2 {
+	.com_btn.full.gray2 {
 		margin-top: 10px;
 		height: 38px;
 		font-size: 15px;
@@ -199,7 +199,7 @@
 			font-size: 15px;
 		}
 	}
-	//& + .pf_btn_wrap {
+	//& + .com_btn_wrap {
 	//	margin-top: 20px;
 	//}
   &.type_mini{
@@ -239,7 +239,7 @@
 	}
 }
 //!데이터피커
-.pf_datepicker{
+.com_datepicker{
 	position: relative;
 	&::-webkit-calendar-picker-indicator {
 		position: absolute;
@@ -252,7 +252,7 @@
 }
 
 //!파일
-.pf_input_file {
+.com_input_file {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -263,7 +263,7 @@
 }
 
 //!이미지 등록
-.pf_add_img{
+.com_add_img{
   @include flex(y);
   gap:15px;
   @include media-max($l){
@@ -283,13 +283,13 @@
     .btn_area{
       @include flex(y);
       gap:5px;
-      .pf_btn{flex:1;}
+      .com_btn{flex:1;}
     }
   }
 }
 
 //!약관동의
-.pf_agree_area {
+.com_agree_area {
 	// margin-top:20px;
 	// label{
 	//   color:$fc-default;
@@ -312,20 +312,20 @@
 	//     color: $point;
 	//   }
 	// }
-	// &+.pf_btn_wrap{
+	// &+.com_btn_wrap{
 	//   margin-top:33px;
 	// }
 }
 
 //!검색어 입력
-.pf_search {
+.com_search {
 	@include flex(s);
 	gap: 10px;
 	.input {
 		flex: 1;
 		width: 100%;
 	}
-	.pf_btn {
+	.com_btn {
 		width: 95px;
 		.dark & {
 		  color:#fff;

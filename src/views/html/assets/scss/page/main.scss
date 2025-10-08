@@ -5,7 +5,7 @@
 	margin-top: 0;
 
 
-	.pf_tab__wrap {
+	.com_tab__wrap {
 		margin-bottom: 40px;
 		@include media-max($l) {
 			margin-top: 60px;
@@ -24,7 +24,7 @@
 	@include media-max($l) {
 		padding-top: 5%;
 	}
-	.pf_center_wrap {
+	.com_center_wrap {
 		position: relative;
 	}
 	.svgAniLine {

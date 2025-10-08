@@ -284,7 +284,7 @@ function Main() {
       <main className="main">
         {/* section1 */}
         <section className="section1">
-          <div className="pf_center_wrap">
+          <div className="com_center_wrap">
             <div className="txt_area main_txt">
               <p>
                 <span>Web Publisher</span>
@@ -378,7 +378,7 @@ function Main() {
               <h2 className="tit_work en2 Right">Work</h2>
             </div>
           </div>
-          <div className="pf_center_wrap">
+          <div className="com_center_wrap">
             {/* 포트폴리오 리스트 */}
             <PortfolioList page={'main'} />
           </div>

@@ -1,5 +1,5 @@
 //!콘텐츠
-.pf_contents_item {
+.com_contents_item {
   .thumb {
     @include thumb(100%, auto, 210/180);
     border-radius: 10px;
@@ -52,7 +52,7 @@
       margin-top: 10px;
     }
   }
-  .pf_tag__wrap {
+  .com_tag__wrap {
     margin-top: 20px;
   }
   .stats {
@@ -88,7 +88,7 @@
       }
     }
   }
-  .pf_star_display {
+  .com_star_display {
     margin-right: 9px;
   }
   [class^='badge_'] {
@@ -191,4 +191,13 @@
       @include thumb(100%, auto, 250/350);
     }
   }
+}
+
+.com_flex_row{
+	@include flex(s);
+	gap:10px;
+	.typo_lg{
+	@include flex(s);
+
+	}
 }

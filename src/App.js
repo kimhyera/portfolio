@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, lazy, Suspense} from 'react';
-
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
+import { LenisContext } from './context/LenisContext';
 import Lenis from '@studio-freight/lenis';
 
 const HtmlRouter = lazy(() => import('./router/HtmlRouter.js'));
@@ -19,22 +19,23 @@ function App() {
       smoothTouch: true // 터치 장치에서 스무스 스크롤 활성화
     });
 
-    const animate = (time) => {
-      lenis.current.raf(time);
-      requestAnimationFrame(animate);
+    const raf = (time) => {
+      lenis.current?.raf(time);
+      requestAnimationFrame(raf);
     };
+    requestAnimationFrame(raf);
 
-    requestAnimationFrame(animate);
-
-    // Cleanup on unmount
-    return () => {
-      lenis.current.destroy();
-    };
+    return () => lenis.current?.destroy();
   }, []);
 
-  let routerComponent;
-  routerComponent = <HtmlRouter />;
-  return <Suspense>{routerComponent}</Suspense>;
+
+  return (
+    <LenisContext.Provider value={lenis}>
+      <Suspense>
+        <HtmlRouter />
+      </Suspense>
+    </LenisContext.Provider>
+  );
 }
 
 export default App;
