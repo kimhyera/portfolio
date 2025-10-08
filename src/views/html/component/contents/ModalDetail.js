@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useLenis } from '../../../../context/LenisContext';
 
 //css
@@ -7,6 +7,7 @@ import style from './popup.module.scss';
 
 function ModalDetail({ item = {}, open, close }) {
   const lenis = useLenis();
+  const popupRef = useRef(null);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -14,9 +15,8 @@ function ModalDetail({ item = {}, open, close }) {
       lenis.current?.stop();
       html.classList.add('scroll_lock');
       // popup 내부 스크롤
-      const popupScroll = document.querySelector('.content_container');
-      //popupScroll.addEventListener('wheel', (e) => e.stopPropagation()); //이벤트가 상위 DOM(부모)로 전파되지 않도록 막는 메서드
-      //popupScroll.addEventListener('touchmove', (e) => e.stopPropagation());
+      popupRef.current.addEventListener('wheel', (e) => e.stopPropagation()); //이벤트가 상위 DOM(부모)로 전파되지 않도록 막는 메서드
+      popupRef.current.addEventListener('touchmove', (e) => e.stopPropagation());
     } else {
       lenis.current?.start();
       html.classList.remove('scroll_lock');
@@ -30,10 +30,12 @@ function ModalDetail({ item = {}, open, close }) {
         <div className={style.popup__container}>
           <div className={style.popup__header}>
             <button type="button" className={style['popup__header-btn']} onClick={close}>
-              <i className="svg_icon icon_close white"></i>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 1L1.71987 19M1 1L18.2801 19" stroke="white" stroke-width="2" stroke-linecap="round" />
+              </svg>
             </button>
           </div>
-          <div className={style.popup__content}>
+          <div className={style.popup__content} ref={popupRef}>
             <div className={style['popup__content-img']}>
               <img src={imageUrl} alt="" className="" />
             </div>
@@ -41,7 +43,7 @@ function ModalDetail({ item = {}, open, close }) {
               <div className={style.popup__top}>
                 <h3>{item.titleDetail ? item.titleDetail.map((line, idx) => <p key={idx}>{line} </p>) : item.title}</h3>
                 <span>{item.descDetail ? item.titleDetail.map((line, idx) => <p key={idx}>{line} </p>) : item.desc}</span>
-                <a href={item.url} target="_blank" className="com_btn white l line oval">
+                <a href={item.url} target="_blank" className="com_btn white_2 l line oval">
                   사이트 바로가기 <i className="icon_chevron_right"></i>
                 </a>
               </div>
@@ -126,7 +128,7 @@ function ModalDetail({ item = {}, open, close }) {
                 </li>
               </ul>
               <div className={style.popup__bottom}>
-                <button className="com_btn white l oval line  " onClick={close}>
+                <button className="com_btn white_2 l oval line  " onClick={close}>
                   확인
                 </button>
               </div>

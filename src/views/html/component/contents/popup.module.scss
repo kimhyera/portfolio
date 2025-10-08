@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+    background-color: #1f1f1f;
   //@include media-min($m) {
   //  padding-inline: 20px;
   //}
@@ -47,9 +47,6 @@
     //border-radius: 10px;
     overflow: hidden;
     margin-inline: auto;
-    @include media-max($l) {
-      max-width: calc(100% - $pd-inline-m * 2) !important;
-    }
     @include media-max($m) {
       border-radius: 0;
       max-width: 100% !important;
@@ -83,27 +80,29 @@
     justify-content: flex-end;
     &-btn {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 0;
+      right: 0;
       padding: 20px;
       z-index: 1;
       background-color: rgba(#000, 0.2);
-      border-radius: 50%;
       transition: 0.3s;
-      @include media-max($l) {
-        padding: 14px;
-      }
-
-      .svg_icon.icon_close {
-        background-size: 20px 20px;
+      svg {
         transform: rotate(0);
         transition: 0.2s;
       }
 
       &:hover {
         background-color: rgba(#000, 0.5);
-        .svg_icon.icon_close {
+        svg {
           transform: rotate(180deg);
+        }
+      }
+      @include media-max($l) {
+        padding: 10px;
+      background-color: rgba(#000, 0.5);
+        svg {
+					width: 16px;
+					height: 16px;
         }
       }
     }
@@ -115,12 +114,12 @@
     text-align: left;
 
     @include scroll(calc(100vh), hidden, auto);
-    @include flex(x);
     height: 100vh;
     align-items: center;
-    @include media-max($l) {
-      flex-direction: column;
-    }
+		@include media-min($l) {
+				
+    @include flex(x);
+		}
   }
 
   &__top {
@@ -134,6 +133,11 @@
       width: 200px;
       border-width: 1px;
       align-self: flex-end;
+	
+			&:hover{
+				background-image: linear-gradient(#1f1f1f, #1f1f1f), 
+				linear-gradient(to right, #0088FF 0%, #7900C9 100%) 
+			}
       @include media-max($l) {
         height: 45px;
         padding-inline: 0;
@@ -167,12 +171,12 @@
     padding: 40px 60px;
     min-width: 38vw;
     //background: linear-gradient(180deg, #6c34f9 0%, #0e8ef9 100%);
-    background-color: #1f1f1f;
     height: 100vh;
     @include media-max($l) {
-      padding: 0 20px 0;
+      padding: 0 20px 20px;
       min-width: none;
       width: 100%;
+			height: auto;
     }
   }
   &__bottom {
@@ -185,7 +189,10 @@
     }
     :global(.com_btn) {
       width: 100%;
-      border-width: 1px;
+			&:hover{
+				background-image: linear-gradient(#1f1f1f, #1f1f1f), 
+				linear-gradient(to right, #0088FF 0%, #7900C9 100%);
+			}
     }
   }
   &__content-img {
@@ -194,6 +201,11 @@
     padding-bottom: 60px;
     padding-top: 50px;
     flex: 1;
+  background-color: #000;
+	@include media-min($l) {
+			height: 100vh;
+			@include flex(all)
+	}
     @include media-max($l) {
       padding: 20px;
       width: 100%;

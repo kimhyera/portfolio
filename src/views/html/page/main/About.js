@@ -33,10 +33,10 @@ function About() {
       const trigger = gsap.timeline({
         scrollTrigger: {
           trigger: motion,
-          start: 'top 85%',
+          start: 'top 100%',
           toggleClass: { targets: motion, className: 'active' },
-          scrub: 1
-          // markers: true,
+          scrub: 1,
+        // markers: true,
         }
       });
       triggers.push(trigger);
@@ -126,10 +126,12 @@ function About() {
                 <i className="icon_check"></i>반응형에 최적화된 코드로로 최대한 가볍고 빠르게 제작가능합니다.</span>
               </li>
               <li className="motion_txt">
-                <i className="icon_check"></i>클라이언트가 원하는 인터렉션 기법을 사용하여 작업합니다.
+								<span>
+                <i className="icon_check"></i>클라이언트가 원하는 인터렉션 기법을 사용하여 작업합니다.</span>
               </li>
               <li className="motion_txt">
-                <i className="icon_check"></i>Vue/Nuxt 프론트엔드 경험 및 React 기반 퍼블리싱 작업 합니다.
+								<span>
+                <i className="icon_check"></i>Vue/Nuxt 프론트엔드 경험 및 React 기반 퍼블리싱 작업 합니다.</span>
               </li>
             </ul>
           </div>

@@ -3,7 +3,7 @@
 .about {
   padding-block: 80px 120px;
   @include media-max($l) {
-    padding-block: 40px 60px;
+    padding-block: 40px 60px 100px;
   }
 
   &:before {
@@ -105,6 +105,10 @@
 		span{
 			gap:10px;
 			@include inflex(all);
+			@include media-max($m) {
+          align-items: flex-start;
+					
+			}
 		}
     &.active {
     transform: translateY(0%) rotate(0deg);
@@ -143,6 +147,7 @@
   @include media-max($m) {
     width: 24px;
     height: 24px;
+		margin-top: 5px;
   }
   @include inflex(all);
   &::after {
@@ -156,5 +161,11 @@
     height: 18px;
     border: solid $bg;
     border-width: 0 4px 4px 0;
+		@include media-max($m) {
+    border-width: 0 3px 3px 0;
+    width: 8px;
+    height: 16px;
+				
+		}
   }
 }
