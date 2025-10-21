@@ -72,6 +72,8 @@ function History() {
       //  '-=0.1'
       //);
 
+			
+
     return () => {
       triggers.forEach((t) => t.kill());
       tl2.kill();
