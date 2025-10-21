@@ -1,6 +1,6 @@
 @import '../common/variables';
-//about
-.about {
+//history
+.history {
   padding-block: 80px 120px;
   @include media-max($l) {
     padding-block: 40px 60px 100px;
@@ -26,21 +26,22 @@
     }
   }
   &__txt {
-    gap: 30px;
     @include flex(column);
     align-items: center;
     .h {
-      margin-bottom: 5%;
+      margin-bottom: 20px;
+      font-weight: 500;
+      text-transform: capitalize;
 
-      @include fontSize(40, 80);
+      @include fontSize(40, 90);
       @include media-max($l) {
-        margin-bottom: 5%;
+        margin-bottom: 10px;
       }
     }
     .h_st {
       @include flex(y);
       gap: 6px;
-      @include fontSize(20, 34);
+      @include fontSize(16, 24);
       font-weight: 500;
       color: $text-3;
       @include media-max($m) {
@@ -94,24 +95,6 @@
     .com_btn {
       width: fit-content;
       margin-top: 6%;
-    }
-  }
-  .motion_txt {
-    overflow: hidden;
-    transition: all 0.3s;
-    transform: translateY(100%) rotate(8deg);
-    opacity: 0;
-    @include calc('min-height', 30, 44);
-    span {
-      gap: 10px;
-      @include inflex(all);
-      @include media-max($m) {
-        align-items: flex-start;
-      }
-    }
-    &.active {
-      transform: translateY(0%) rotate(0deg);
-      opacity: 1;
     }
   }
 }
@@ -176,12 +159,84 @@
 
 .history__item {
   @include flex(between);
-	dt{
-		
-  @include fontSize(30, 40);
+  align-items: flex-start;
+	@include media-max($l) {
+			flex-direction: column;
 	}
-  dd {
+
+  dt {
+    margin-top: 6%;
+	@include media-max($l) {
+		margin-top: 0;
+		margin-bottom: 20px;
+		
+  @include flex(between);
+	width: 100%;
+	}
+  }
+  &-year {
+    @include fontSize(24, 64);
+    font-weight: bold;
+  }
+  &-hash {
+    @include fontSize(16, 30);
     color: $text-3;
-  @include fontSize(20, 30);
+    margin-top: 20px;
+	@include media-max($l) {
+		margin-top: 0;
+		width: 50%;
+		text-align: right
+	}
+  }
+  dd {
+    @include fontSize(16, 26);
+    color: $text-3;
+    @include media-min($l) {
+      width: 600px;
+    }
+  }
+
+  ul {
+    @include flex(column);
+    gap: 15px;
+    & + .history__item-tit {
+      margin-top: 50px;
+    }
+    li {
+      position: relative;
+      padding-left: 15px;
+      margin-left: 20px;
+      &::before {
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $text-3;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &-tit {
+    @include fontSize(18, 32);
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
   }
 }

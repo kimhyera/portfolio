@@ -112,6 +112,17 @@ function Header() {
               <NavLink
                 className="nav_item FadeUp"
                 activeclassname="active"
+                to="/History"
+                onClick={() => {
+                  resetNav();
+                  setBarMenu(false);
+                }}
+              >
+                HISTORY
+              </NavLink>
+              <NavLink
+                className="nav_item FadeUp"
+                activeclassname="active"
                 to="/Work"
                 onClick={() => {
                   resetNav();
