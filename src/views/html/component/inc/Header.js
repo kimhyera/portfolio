@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
-import { useLenis } from '../../../../context/LenisContext';
+//import { useLenis } from '../../../../context/LenisContext';
 
 import gsap from 'gsap';
 //img
@@ -8,7 +8,7 @@ import logoUrl from '../../assets/img/logo.svg';
 //component
 import ContactLinks from '../../component/inc/ContactLinks';
 function Header() {
-  const lenis = useLenis();
+  //const lenis = useLenis();
   const location = useLocation(); // 현재 경로 가져오기
   const [barMenu, setBarMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
@@ -61,11 +61,12 @@ function Header() {
   }, [location.pathname]);
 
   //최상단 이동
-  const handleScrollTop = () => {
-    if (lenis) {
-      lenis?.current?.scrollTo(0, { duration: 1.0 });
-    }
-  };
+const handleScrollTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 부드럽게 스크롤
+  });
+};
 
   return (
     <>

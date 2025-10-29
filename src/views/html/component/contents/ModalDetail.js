@@ -1,24 +1,23 @@
 /* eslint-disable */
 import React, { useRef, useEffect } from 'react';
-import { useLenis } from '../../../../context/LenisContext';
 
 //css
 import style from './popup.module.scss';
 
 function ModalDetail({ item = {}, open, close }) {
-  const lenis = useLenis();
+  //const lenis = useLenis();
   const popupRef = useRef(null);
 
   useEffect(() => {
     const html = document.documentElement;
     if (open) {
-      lenis.current?.stop();
+      //lenis.current?.stop();
       html.classList.add('scroll_lock');
       // popup 내부 스크롤
       popupRef.current.addEventListener('wheel', (e) => e.stopPropagation()); //이벤트가 상위 DOM(부모)로 전파되지 않도록 막는 메서드
       popupRef.current.addEventListener('touchmove', (e) => e.stopPropagation());
     } else {
-      lenis.current?.start();
+      //lenis.current?.start();
       html.classList.remove('scroll_lock');
     }
   }, [open]);
