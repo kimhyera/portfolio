@@ -12,72 +12,24 @@ function History() {
   //about
   useEffect(() => {
     // SplitType 적용 (chars 단위)
-    new SplitType('.char_text', { types: 'chars' });
-
-    // char_text 모션
-    gsap.timeline().to('.char_text .char', {
-      opacity: 1,
-      y: '0%',
-      duration: 0.3,
-      ease: 'power1.out',
-      delay: 0.5,
-      stagger: 0.03
-    });
-    // about 텍스트 클래스 순차적 추가
-    const triggers = [];
-
-    // 스크롤 트리거 애니메이션
-    const items = gsap.utils.toArray('.history .motion_txt');
-
-    items.forEach((motion) => {
-      const trigger = gsap.timeline({
-        scrollTrigger: {
-          trigger: motion,
-          start: 'top 100%',
-          toggleClass: { targets: motion, className: 'active' },
-          scrub: 1
-          // markers: true,
-        }
-      });
-      triggers.push(trigger);
-    });
 
     new SplitType('.char_text', {
       types: 'chars'
     });
-    const tl2 = gsap
-      .timeline()
-      .to(
-        '.char_text .char',
-        {
-          opacity: 1,
-          y: '0%',
-          duration: 0.3,
-          ease: 'power1.out',
-          delay: 0.5,
-          stagger: 0.03
-        },
-        0
-      )
-      //.fromTo(
-      //  '.motion_txt  dt, .motion_txt li',
-      //  { y: '100%', opacity: 0, rotate: 8 },
-      //  {
-      //    y: '0%',
-      //    opacity: 1,
-      //    rotate: 0,
-      //    stagger: 0.1,
-      //    duration: 0.3
-      //  },
-      //  '-=0.1'
-      //);
+    //글자 효과
 
-			
-
-    return () => {
-      triggers.forEach((t) => t.kill());
-      tl2.kill();
-    };
+    gsap.fromTo(
+      '.char_text .char',
+      { y: '100%', opacity: 0 },
+      {
+        opacity: 1,
+        y: '0%',
+        duration: 0.3,
+        ease: 'power1.out',
+        delay: 0.5,
+        stagger: 0.02
+      }
+    );
   }, []);
 
   return (
@@ -95,7 +47,9 @@ function History() {
           </div>
           <dl className="motion_txt history__item">
             <dt>
-              <p className="history__item-year">2024.6 ~ 현재</p>
+              <p className="history__item-year">
+                <span>2024.6 ~ 현재</span>
+              </p>
               <div className="history__item-hash">#퍼블리싱 · 디자인 프리랜서</div>
             </dt>
             <dd>

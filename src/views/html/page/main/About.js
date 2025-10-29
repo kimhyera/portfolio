@@ -34,9 +34,11 @@ function About() {
         scrollTrigger: {
           trigger: motion,
           start: 'top 100%',
-          toggleClass: { targets: motion, className: 'active' },
           scrub: 1,
-        // markers: true,
+          //toggleClass: { targets: motion, className: 'active' },
+          onEnter: () => motion.classList.add('active') // 올라갈 때(active 유지)
+          // onLeaveBack: () => motion.classList.remove('active'), ← 제거 안함!
+          // markers: true,
         }
       });
       triggers.push(trigger);
@@ -67,7 +69,7 @@ function About() {
           opacity: 1,
           rotate: 0,
           stagger: 0.1,
-          duration: 0.3
+          duration: 0.4
         },
         '-=0.1'
       );
@@ -89,13 +91,11 @@ function About() {
 
             <div className="motion_txt h_st">
               <span>
-               
                 <i className="icon_check"></i>10년 차 웹 퍼블리셔, 다양한 UI/UX 프로젝트 경험
               </span>
             </div>
             <div className="motion_txt h_st">
               <span>
-               
                 <i className="icon_check"></i>200여 건의 프로젝트 경험있는 디자인 가능한 퍼블리셔
               </span>
             </div>
@@ -118,20 +118,24 @@ function About() {
                 </span>
               </li>
               <li className="motion_txt">
-								<span>
-                <i className="icon_check"></i>UI 퍼포먼스를 극대화하는 개발자</span>
+                <span>
+                  <i className="icon_check"></i>UI 퍼포먼스를 극대화하는 개발자
+                </span>
               </li>
               <li className="motion_txt">
-								<span>
-                <i className="icon_check"></i>반응형에 최적화된 코드로로 최대한 가볍고 빠르게 제작가능합니다.</span>
+                <span>
+                  <i className="icon_check"></i>반응형에 최적화된 코드로로 최대한 가볍고 빠르게 제작가능합니다.
+                </span>
               </li>
               <li className="motion_txt">
-								<span>
-                <i className="icon_check"></i>클라이언트가 원하는 인터렉션 기법을 사용하여 작업합니다.</span>
+                <span>
+                  <i className="icon_check"></i>클라이언트가 원하는 인터렉션 기법을 사용하여 작업합니다.
+                </span>
               </li>
               <li className="motion_txt">
-								<span>
-                <i className="icon_check"></i>Vue/Nuxt 프론트엔드 경험 및 React 기반 퍼블리싱 작업 합니다.</span>
+                <span>
+                  <i className="icon_check"></i>Vue/Nuxt 프론트엔드 경험 및 React 기반 퍼블리싱 작업 합니다.
+                </span>
               </li>
             </ul>
           </div>
