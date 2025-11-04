@@ -187,6 +187,7 @@ function Main() {
       .to('.section3', { backgroundColor: '#020618', color: '#fff', duration: 5 }, 0)
       //title positon fixed
       .fromTo('.portfolio__list', { margin: '0 auto' }, { margin: '-10vh auto 0', position: 'relative', zIndex: 2, duration: 1 }, 0);
+			
 
 			
     // section3 아이템 클래스 순차적 추가 
