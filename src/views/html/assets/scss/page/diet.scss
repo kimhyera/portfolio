@@ -1,0 +1,516 @@
+.diet-diary {
+  padding: 60px 20px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .com_center_wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .diet-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .diet-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
+      margin: 0;
+    }
+
+    .view-toggle {
+      display: flex;
+      gap: 10px;
+      background: #fff;
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: transparent;
+        color: #666;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+
+        &.active {
+          background: #4a90e2;
+          color: #fff;
+
+          &:hover {
+            background: #357abd;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+
+      .view-toggle {
+        width: 100%;
+        justify-content: stretch;
+
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .diet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .date-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #555;
+      }
+
+      .date-input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .date-input {
+          flex: 1;
+          padding: 10px 40px 10px 15px;
+          font-size: 16px;
+          border: 2px solid #e0e0e0;
+          border-radius: 6px;
+          outline: none;
+          transition: border-color 0.3s;
+          cursor: pointer;
+
+          &:focus {
+            border-color: #4a90e2;
+          }
+        }
+
+        .calendar-toggle-btn {
+          position: absolute;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .calendar-popup {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 5px;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 15px;
+      z-index: 1000;
+      min-width: 300px;
+
+      .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .calendar-nav-btn {
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          padding: 5px 10px;
+          color: #333;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #4a90e2;
+          }
+        }
+
+        .calendar-month {
+          font-size: 16px;
+          font-weight: 600;
+          color: #333;
+        }
+      }
+
+      .calendar-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        margin-bottom: 10px;
+
+        .calendar-weekday {
+          text-align: center;
+          font-size: 12px;
+          font-weight: 600;
+          color: #666;
+          padding: 5px;
+        }
+      }
+
+      .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+
+        .calendar-day {
+          aspect-ratio: 1;
+          border: none;
+          background: #f8f9fa;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.2s;
+          color: #333;
+
+          &:hover:not(:disabled) {
+            background: #e9ecef;
+          }
+
+          &.today {
+            background: #e3f2fd;
+            font-weight: 600;
+          }
+
+          &.selected {
+            background: #4a90e2;
+            color: #fff;
+            font-weight: 600;
+          }
+
+          &.other-month {
+            color: #ccc;
+            opacity: 0.5;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        min-width: 280px;
+        padding: 10px;
+      }
+    }
+
+    .diet-actions {
+      display: flex;
+      gap: 10px;
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &.btn-save {
+          background-color: #4a90e2;
+          color: #fff;
+
+          &:hover {
+            background-color: #357abd;
+          }
+        }
+
+        &.btn-delete {
+          background-color: #e74c3c;
+          color: #fff;
+
+          &:hover {
+            background-color: #c0392b;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 15px;
+
+      .diet-actions {
+        width: 100%;
+
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .diet-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      input[type="number"],
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.3s;
+        font-family: inherit;
+
+        &:focus {
+          border-color: #4a90e2;
+        }
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      select {
+        cursor: pointer;
+        background-color: #fff;
+      }
+    }
+  }
+
+  // 리스트 뷰 스타일
+  .diet-list-view {
+    .empty-state {
+      background: #fff;
+      padding: 60px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+
+      p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .btn-add {
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #4a90e2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: #357abd;
+        }
+      }
+    }
+
+    .diary-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .diary-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .diary-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f0f0f0;
+
+        .diary-date {
+          font-size: 18px;
+          font-weight: 700;
+          color: #333;
+          margin: 0;
+        }
+
+        .condition-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          padding: 6px 12px;
+          background: #f0f7ff;
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 600;
+          color: #4a90e2;
+        }
+      }
+
+      .diary-item-content {
+        .diary-item-row {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 15px;
+          flex-wrap: wrap;
+
+          .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .label {
+              font-size: 12px;
+              color: #999;
+              font-weight: 500;
+            }
+
+            .value {
+              font-size: 16px;
+              font-weight: 600;
+              color: #333;
+            }
+          }
+        }
+
+        .meal-summary {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+          flex-wrap: wrap;
+
+          .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+          }
+
+          .meal-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+
+        .memo-preview {
+          display: flex;
+          gap: 10px;
+          padding: 10px;
+          background: #f9f9f9;
+          border-radius: 6px;
+
+          .label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            flex-shrink: 0;
+          }
+
+          .memo-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        padding: 15px;
+
+        .diary-item-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .diary-item-content {
+          .diary-item-row {
+            .info-item {
+              flex: 1;
+              min-width: calc(50% - 10px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -10,6 +10,7 @@ import About from '../views/html/page/main/About';
 import Work from '../views/html/page/main/Work';
 import History from '../views/html/page/main/History';
 import WorkDetail from '../views/html/page/main/WorkDetail';
+import DietDiary from '../views/html/page/main/DietDiary';
 
 
 function AppRouter() {
@@ -20,6 +21,7 @@ function AppRouter() {
     {path: '/History', element: <History />},
     {path: '/Work', element: <Work />},
     {path: '/WorkDetail', element: <WorkDetail />},
+    {path: '/DietDiary', element: <DietDiary />},
   ];
 
   return (
