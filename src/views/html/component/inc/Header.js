@@ -32,7 +32,7 @@ function Header() {
       const next = !current;
 
       if (next) {
-        gsap.to('.nav__bg', { scale: 35, duration: 0.4 });
+        gsap.to('.nav__bg', { scale: 40, duration: 0.4 });
         gsap.to('.nav', { opacity: 1, 'pointer-events': 'auto' });
         gsap.to('.nav .FadeUp', { opacity: 1, y: -30, stagger: 0.1, ease: 'Power3.easeOut' }, '<0.5');
       } else {
