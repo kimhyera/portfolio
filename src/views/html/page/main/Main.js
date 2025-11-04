@@ -19,6 +19,10 @@ function Main() {
   //function isMobile() {
   //  return /Mobi|Android/i.test(navigator.userAgent);
   //}
+  useEffect(() => {
+    document.body.classList.add('page_main');
+    return () => document.body.classList.remove('page_main');
+  }, []);
 
   //section1 gsap animation
   useEffect(() => {
@@ -78,7 +82,7 @@ function Main() {
       .fromTo(
         '.section1',
         {
-          backgroundColor: '#030712'
+          backgroundColor: '#020618'
         },
         {
           backgroundColor: '#fff',
@@ -180,7 +184,7 @@ function Main() {
           //markers: true,
         }
       })
-      .to('.section3', { backgroundColor: '#030712', color: '#fff', duration: 5 }, 0)
+      .to('.section3', { backgroundColor: '#020618', color: '#fff', duration: 5 }, 0)
       //title positon fixed
       .fromTo('.portfolio__list', { margin: '0 auto' }, { margin: '-10vh auto 0', position: 'relative', zIndex: 10, duration: 1 }, 0);
 
@@ -252,7 +256,7 @@ function Main() {
       .fromTo(
         '.section3',
         {
-          backgroundColor: '#030712'
+          backgroundColor: '#020618'
         },
         {
           backgroundColor: '#fff',

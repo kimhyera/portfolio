@@ -1,9 +1,9 @@
 @import '../common/variables';
 //about
 .about {
-  padding-block: 80px 120px;
+  padding-block: 150px 120px;
   @include media-max($l) {
-    padding-block: 40px 60px 100px;
+    padding-block: 100px;
   }
 
   &:before {
@@ -12,7 +12,7 @@
     inset: 0;
     bottom: 0;
     z-index: -1;
-    background-image: linear-gradient(to bottom, transparent 60%, #051661 120%);
+    background-image: radial-gradient(120% 70% at 50% 0%, #0b153a 0%, #0F172B 55%, #020618 100%);
   }
 
   .com_center_wrap {

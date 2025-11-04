@@ -12,7 +12,19 @@ function Header() {
   const location = useLocation(); // 현재 경로 가져오기
   const [barMenu, setBarMenu] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1279); // 모바일 여부 체크
-  console.log(isMobile);
+
+  useEffect(() => {
+    const headEl = document.querySelector('.head');
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (!headEl) return;
+      if (y > 10) headEl.classList.add('scrolled');
+      else headEl.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   //Nav 메뉴
   const toggleBarMenu = () => {

@@ -1,30 +1,43 @@
 //layout
-
 body {
   overflow-x: hidden;
-}
-body {
-  background-color: $bg;
   color: #fff;
+  background-image: radial-gradient(120% 70% at 50% 0%, #0b153a 0%, #0F172B 55%, #020618 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+  &.page_main{
+    background: $bg;
+
+  }
 }
 
-html.scroll_lock, html.lenis-stopped  {
+html.scroll_lock,
+html.lenis-stopped {
   touch-action: none !important;
   overflow: hidden !important;
-	height: 100vh;
-	scroll-behavior: smooth;
+  height: 100vh;
+  scroll-behavior: smooth;
 }
 
 
 
 main {
   position: relative;
+  padding-top: $head-h;
+
+  @include media-max($l) {
+    padding-top: $head-h-m;
+  }
+
   //padding-bottom: 100px;
   //@include media-max($l) {
   //	margin-top: $head-h-m;
   //	padding-bottom: 70px;
   //}
 }
+
 .com_center_wrap {
   max-width: 1820px;
   width: 100%;
@@ -34,20 +47,25 @@ main {
   //background-position: 0 0;
   //background-attachment: fixed;
   padding-inline: $pd-inline;
+
   @include media-max($xxl) {
     padding-inline: $pd-inline;
   }
+
   @include media-max($l) {
     padding-inline: $pd-inline-m;
   }
+
   &.l {
     max-width: 1960px;
   }
 }
+
 @keyframes rotateBg {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(800px);
   }
@@ -56,23 +74,46 @@ main {
 .main_container {
   min-height: 100vh;
   margin-inline: auto;
+
   @include media-min($xl) {
     @include flex(s);
     padding-top: 60px;
     gap: 40px;
   }
+
   @include media-max($xxl) {
     gap: 10px;
   }
+
   main {
     flex: 1;
   }
 }
+
 .head {
   position: relative;
   transition: 0.2s;
   z-index: 10;
   height: $head-h;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.3s;
+
+  &.scrolled {
+    background-color: rgba(2, 6, 24, 0.6);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+    @include media-min($l) {
+      height: 80px;
+
+    }
+  }
+
   .com_center_wrap {
     height: 100%;
     @include flex(between);
@@ -81,21 +122,26 @@ main {
   @include media-max($m) {
     height: $head-h-m;
   }
+
   .logo {
     @include inflex(all);
+
     @include media-max($l) {
       width: 130px;
     }
   }
+
   &__about {
     position: relative;
     line-height: 1.5;
     @include flex(column);
     gap: 10px;
     padding-bottom: 20px;
+
     @include media-max($m) {
       gap: 15px;
     }
+
     &-txt {
       //@include flex(s);
       //gap: 5px;
@@ -122,6 +168,7 @@ main {
       @include media-max($xxl) {
         font-size: 30px;
       }
+
       .name {
         background-image: linear-gradient(90deg, #00d36a, #00c1ff);
         background-size: 150% 150%;
@@ -135,6 +182,7 @@ main {
         line-height: normal;
         animation: gradientShift 2.5s ease-in-out infinite;
       }
+
       &:before {
         position: absolute;
         bottom: 0;
@@ -149,35 +197,45 @@ main {
         animation: gradientShift 2s ease-in-out infinite;
       }
     }
+
     &-desc {
       color: #a1a1aa;
       //padding-left: 35px;
       margin-top: 10px;
       font-size: 17px;
     }
+
     &-tel {
       color: #fff;
+
       .icon_phone {
         @include addImgSvg(icon_phone, 26, 26);
       }
     }
+
     @include media-max($xl) {
       position: relative;
+
       .head__about-txt {
         font-size: 20px;
+
         &::before {
           display: none;
         }
+
         .name {
           font-size: 16px;
           margin-top: 2px;
         }
       }
+
       .head__about-desc {
         display: none;
       }
+
       .head__about-links {
         margin-top: 0;
+
         a {
           text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
@@ -188,6 +246,7 @@ main {
 
 .nav {
   margin-top: 40px;
+
   &__bg {
     position: fixed;
     bottom: -10%;
@@ -198,8 +257,9 @@ main {
     border-radius: 50%;
     background-color: $bg-2;
     pointer-events: none;
-    background-image: linear-gradient(to bottom, $bg-2 40%, #041c86 120%);
+    background-image: radial-gradient(120% 70% at 50% 0%, #0b153a 0%, #0F172B 55%, #020618 100%);
   }
+
   .nav_item {
     color: #fff;
     font-size: 80px;
@@ -207,9 +267,11 @@ main {
     font-weight: 300;
     letter-spacing: 1px;
     opacity: 0;
+
     @include media-max($l) {
       font-size: 40px;
     }
+
     &.active {
       color: $point;
     }
@@ -218,24 +280,25 @@ main {
       @include flex(column);
       gap: 50px;
       align-items: center;
+
       @include media-max($l) {
         gap: 30px;
       }
     }
   }
+
   //@include media-max($xl) {
   margin-top: 0;
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100vh;
   @include flex(all);
   overflow: auto;
   overscroll-behavior: contain;
   opacity: 0;
   pointer-events: none;
-	width: 100%;
 
   //&.active {
   //	//opacity: 1;
@@ -244,6 +307,7 @@ main {
   .item {
     text-align: center;
   }
+
   //}
   &__open {
     //position: fixed;
@@ -255,12 +319,14 @@ main {
     height: 40px;
     margin-left: auto;
     overflow: hidden;
+
     @include media-max($l) {
       right: 20px;
       top: 20px;
       width: 22px;
       height: 20px;
     }
+
     //@include media-max($l) {
     //}
     .item {
@@ -272,42 +338,53 @@ main {
       background: #fff;
       display: block;
       transition: 0.3s ease-in;
+
       &:nth-of-type(2) {
         top: 14px;
         transform: translate(8px);
       }
+
       &:nth-of-type(3) {
         top: 28px;
       }
+
       @include media-max($l) {
         &:nth-of-type(2) {
           top: 9px;
           transform: translate(8px);
         }
+
         &:nth-of-type(3) {
           top: 18px;
         }
       }
     }
+
     &.active {
       justify-content: center;
+
       .item {
         &:nth-of-type(1) {
           top: 18px;
           transform: translate(0) rotate(225deg);
+
           @include media-max($l) {
             top: 9px;
           }
         }
+
         &:nth-of-type(2) {
           transform: translate(44px);
+
           @include media-max($l) {
             transform: translate(22px);
           }
         }
+
         &:nth-of-type(3) {
           top: 18px;
           transform: translate(0) rotate(135deg);
+
           @include media-max($l) {
             top: 9px;
           }
@@ -316,6 +393,7 @@ main {
     }
   }
 }
+
 .start_bg {
   position: fixed;
   left: 0;
@@ -397,11 +475,12 @@ main {
 }
 
 @keyframes shooting-ani {
-  0% {
-  }
+  0% {}
+
   50% {
     transform: scale(1) rotate(-45deg) translate(0px, 0px);
   }
+
   100% {
     transform: scale(0.5) rotate(-45deg) translate(0px, -1px);
   }
@@ -412,22 +491,27 @@ main {
     opacity: 0;
     transform: scale(0) rotate(0) translate3d(0, 0, 0);
   }
+
   50% {
     opacity: 1;
     transform: scale(1) rotate(0) translate3d(-200px, 200px, 0);
   }
+
   100% {
     opacity: 0;
     transform: scale(1) rotate(0) translate3d(-300px, 300px, 0);
   }
 }
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -439,16 +523,20 @@ main {
   @include flex(y);
   flex-wrap: wrap;
   gap: 30px;
+
   a {
     color: #fff;
     @include flex(y);
   }
+
   .icon_gmail {
     @include addImgSvg(icon_gmail, 26, 26);
   }
+
   .icon_github {
     @include addImgSvg(icon_github, 26, 26);
   }
+
   .icon_notion {
     @include addImgSvg(icon_notion, 26, 26);
   }
@@ -461,24 +549,29 @@ main {
     padding-block: 30px 60px;
     color: #fff;
     gap: 20px;
+
     @include media-max($m) {
       flex-direction: column;
       padding-block: 20px 30px;
       gap: 20px;
     }
+
     .line {
       border-bottom: 1px solid #fff;
     }
+
     .box_l {
       line-height: 1.6;
       font-size: 24px;
       font-weight: 600;
       flex: 1;
       width: 100%;
+
       @include media-max($l) {
         font-size: 18px;
       }
     }
+
     .list {
       font-size: 18px;
       gap: 10px;
@@ -488,14 +581,17 @@ main {
       @include list(20px, 20px, 2);
       width: auto;
       max-width: 560px;
+
       @include media-max($l) {
         font-size: 14px;
         max-width: 430px;
       }
+
       @include media-max($m) {
         width: 100%;
         @include list(5px, 10px, 2);
       }
+
       li {
         @include flex(s);
         gap: 5px;
@@ -506,10 +602,12 @@ main {
 
 .filter_list {
   @include inflex(all);
+
   @include media-max($m) {
     flex-wrap: wrap;
     max-width: 340px;
   }
+
   .filter {
     color: $text-3;
     padding-inline: 20px;
@@ -517,12 +615,15 @@ main {
     @include fontSize(16, 26);
     display: block;
     font-weight: 400;
+
     &.active {
       color: #fff;
       font-weight: 600;
     }
+
     &:not(:first-child) {
       @include bar(20px, $text-3, 10px);
+
       @include media-max($m) {
         @include bar(10px, $text-3, 5px);
       }
@@ -530,6 +631,7 @@ main {
 
     @include media-max($m) {
       padding-inline: 15px;
+
       &:nth-child(5) {
         &::before {
           display: none;
