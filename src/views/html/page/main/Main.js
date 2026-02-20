@@ -299,7 +299,7 @@ function Main() {
                             </p>
                         </div>
                         <div className="txt_area sub_txt">
-                            <span>UX/UI 기획이 가능한 실무자 · 디자인부터 퍼블리싱 10년차</span>
+                            <span>UX/UI 기획이 가능한 실무자 · 디자인부터 퍼블리싱 10년차 </span>
                             <span>아임웹·영카트 등 CMS/커머스 플랫폼 커스터마이징 기반 구축</span>
                             <span>웹 접근성과 사용성을 고려한 체계적 UI 설계·구현</span>
                             <span>디자인 시스템 기반으로 유지보수 용이한 퍼블리싱 수행</span>
