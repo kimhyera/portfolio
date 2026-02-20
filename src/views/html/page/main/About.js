@@ -114,7 +114,7 @@ function About() {
                         <ul className="list">
                             <li className="motion_txt">
                                 <span>
-                                    <i className="icon_check"></i>에이전시 실무 경험을 바탕으로 다양한 유형의 웹 사이트 구축 가능
+                                    <i className="icon_check"></i> 에이전시 실무 경험을 바탕으로 다양한 유형의 웹 사이트 구축 가능
                                 </span>
                             </li>
                             <li className="motion_txt">
