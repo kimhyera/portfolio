@@ -41,7 +41,7 @@ function ModalDetail({ item = {}, open, close }) {
             <div className={style.popup__body}>
               <div className={style.popup__top}>
                 <h3>{item.titleDetail ? item.titleDetail.map((line, idx) => <p key={idx}>{line} </p>) : item.title}</h3>
-                <span>{item.descDetail ? item.titleDetail.map((line, idx) => <p key={idx}>{line} </p>) : item.desc}</span>
+                <div className={style.popup__top_desc}>{item.descDetail ? item.descDetail.map((line, idx) => <p key={idx}>{line} </p>) : item.desc}</div>
                 <a href={item.url} target="_blank" className="com_btn white_2 l line oval">
                   사이트 바로가기 <i className="icon_chevron_right"></i>
                 </a>
