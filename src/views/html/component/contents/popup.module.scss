@@ -110,14 +110,41 @@
     &__content {
         /*스크롤영역*/
         overflow: hidden;
-        overflow-y: auto;
         text-align: left;
 
-        @include scroll(calc(100vh), hidden, auto);
         height: 100vh;
         align-items: center;
         @include media-min($l) {
             @include flex(x);
+        }
+        @include media-max($l) {
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        &-img {
+            position: relative;
+            text-align: center;
+            flex: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+            overflow-y: auto;
+            @include media-min($l) {
+                @include flex(all);
+                height: 100vh;
+            }
+            @include media-max($l) {
+                padding: 20px;
+                width: 100%;
+            }
+
+            img {
+                max-width: 100%;
+                @include media-max($m) {
+                    max-width: 100%;
+                }
+            }
         }
     }
 
@@ -197,28 +224,6 @@
             }
         }
     }
-    &__content-img {
-        position: relative;
-        text-align: center;
-        padding-bottom: 60px;
-        padding-top: 50px;
-        flex: 1;
-        background-color: #000;
-        @include media-min($l) {
-            height: 100vh;
-            @include flex(all);
-        }
-        @include media-max($l) {
-            padding: 20px;
-            width: 100%;
-        }
-        img {
-            max-width: 100%;
-            @include media-max($m) {
-                max-width: 100%;
-            }
-        }
-    }
     &__summary_list {
         margin-top: 30px;
         &-item {
@@ -259,5 +264,11 @@
                 padding-bottom: 15px;
             }
         }
+    }
+}
+
+:global(.pt_0korea) {
+    img {
+        align-self: flex-start;
     }
 }

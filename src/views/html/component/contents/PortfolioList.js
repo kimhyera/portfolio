@@ -6,6 +6,8 @@ import '../../assets/scss/component/portfolio.scss';
 //component
 import PortfolioItem from '../../component/contents/PortfolioItem';
 
+import ModalDetail from './ModalDetail';
+
 function PortfolioList({ page = 'work' }) {
     const items = [
         {
@@ -16,10 +18,10 @@ function PortfolioList({ page = 'work' }) {
             role: 'UX/UI 기획 · 디자인 · 영카트',
             stack: ['영카트', 'PHP', 'SCSS', '글로벌 커머스 UI'],
             type: ['쇼핑몰', '글로벌', '홈페이지'],
-            url: 'https://0korea.ranked0.com/',
-            titleDetail: ['0KOREA', '영카트 기반 글로벌 쇼핑몰 플랫폼'],
+            url: '#',
+            titleDetail: ['OMART', '영카트 기반 글로벌 쇼핑몰 플랫폼'],
             descDetail: ['글로벌 판매 흐름을 고려한 서비스 구조 기획', 'UX/UI 디자인 및 영카트 기반 쇼핑몰 커스터마이징'],
-            thumbDetail: 'pt_0korea.jpg',
+            thumbDetail: 'pt_0korea_detail.jpg',
             디바이스: 'PC / Mobile'
         },
         {
@@ -681,6 +683,17 @@ function PortfolioList({ page = 'work' }) {
         };
     }, []);
 
+    const [selectedItem, setSelectedItem] = useState(null);
+
+    const handleOpenDetail = (item) => {
+        setSelectedItem(item);
+    };
+
+    const handleCloseDetail = () => {
+        setSelectedItem(null);
+    };
+
+
     return (
         <>
             {page === 'work' ? (
@@ -712,10 +725,13 @@ function PortfolioList({ page = 'work' }) {
                     })
                     .map((item, index) => (
                         <>
-                            <PortfolioItem key={index} index={index} item={item} />
+                            <PortfolioItem key={index} index={index} item={item} onOpen={() => handleOpenDetail(item)} />
                         </>
                     ))}
             </div>
+            {selectedItem && <ModalDetail item={selectedItem} open={true} close={handleCloseDetail} />}
+			
+
         </>
     );
 }

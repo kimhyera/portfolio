@@ -1,20 +1,9 @@
 import React, {useState} from 'react';
 
 import '../../assets/scss/component/portfolio.scss';
-import ModalDetail from './ModalDetail';
 
-function PortfolioItem({item = {}}) {
-  const [modalDetail, setModalDetail] = useState(false);
-  const handleOpenDetail = (item) => {
-    //if (item.descDetail) {
-    setModalDetail(true);
-    //} else if (item.url) {
-    //	window.open(item.url, '_blank');
-    //}
-  };
-  const handleCloseDetail = () => {
-    setModalDetail(false);
-  };
+function PortfolioItem({item = {}, onOpen }) {
+
 	
   const imageUrl = require(`../../assets/img/${item.thumb}`);
   return (
@@ -22,7 +11,7 @@ function PortfolioItem({item = {}}) {
       <div className={`portfolio__item`}>
         <div
           className="portfolio__thumb"
-          onClick={() => handleOpenDetail(item)}
+           onClick={onOpen}
         >
           <img src={imageUrl} alt="" />
         </div>
@@ -35,7 +24,7 @@ function PortfolioItem({item = {}}) {
         </div>
         <div
           className="portfolio__hover"
-          onClick={() => handleOpenDetail(item)}
+           onClick={onOpen}
         >
           <p className="tit">{item.title} </p>
           <dl className="desc">
@@ -119,7 +108,7 @@ function PortfolioItem({item = {}}) {
             <dd className="flex_row">
               <button
                 className="link com_btn m point oval"
-                onClick={() => handleOpenDetail(item)}
+                 onClick={onOpen}
               >
                 <svg
                   className="icon_link"
@@ -151,9 +140,6 @@ function PortfolioItem({item = {}}) {
           </dl>
         </div>
       </div>
-
-      {/*{item.descDetail ? (*/}
-      <ModalDetail item={item} open={modalDetail} close={handleCloseDetail} />
     </>
   );
 }
