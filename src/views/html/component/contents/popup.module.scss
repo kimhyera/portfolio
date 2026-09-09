@@ -131,7 +131,9 @@
             overflow-x: hidden;
             overflow-y: auto;
             @include media-min($l) {
-                @include flex(all);
+                display: flex;
+				justify-content: center;
+               align-items: flex-start;
                 height: 100vh;
             }
             @include media-max($l) {

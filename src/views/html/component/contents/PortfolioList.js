@@ -11,31 +11,82 @@ import ModalDetail from './ModalDetail';
 function PortfolioList({ page = 'work' }) {
     const items = [
         {
+			title: '영카트 판매자 관리자 페이지',
+			thumb: 'pt_0korea_partner.gif',
+			desc: '판매자 운영을 위한 커머스 관리자 페이지 UX/UI 기획 및 퍼블리싱',
+			date: '2026',
+			role: 'UX/UI 기획 · 디자인 · 퍼블리싱',
+			stack: ['영카트', 'PHP', 'SCSS', '관리자 UI'],
+			type: ['관리자', '커머스', '어드민'],
+					url: '#',
+			titleDetail: [
+				'OMART',
+				'영카트 판매자 관리자 페이지'
+			],
+
+			descDetail: [
+				'판매자 관점의 커머스 운영 구조 및 관리자 UX 기획',
+				'상품·판매·주문·배송·정산 등 주요 관리 기능 UI 설계',
+				'판매 현황과 운영 데이터를 한눈에 확인할 수 있는 대시보드 구성'
+			],
+
+            thumbDetail: 'pt_0korea_partner_detail.png',
+            디바이스: 'PC '
+        },
+        {
             title: '영카트 기반 글로벌 쇼핑몰',
-            thumb: 'pt_0korea.jpg',
+            thumb: 'pt_0korea.gif',
             desc: '영카트 기반 글로벌 커머스 플랫폼 UX/UI 기획 및 퍼블리싱',
-            date: '2025',
+            date: '2026',
             role: 'UX/UI 기획 · 디자인 · 영카트',
             stack: ['영카트', 'PHP', 'SCSS', '글로벌 커머스 UI'],
             type: ['쇼핑몰', '글로벌', '홈페이지'],
-            url: '#',
+            url: 'https://0korea.com/',
             titleDetail: ['OMART', '영카트 기반 글로벌 쇼핑몰 플랫폼'],
             descDetail: ['글로벌 판매 흐름을 고려한 서비스 구조 기획', 'UX/UI 디자인 및 영카트 기반 쇼핑몰 커스터마이징'],
             thumbDetail: 'pt_0korea_detail.jpg',
             디바이스: 'PC / Mobile'
         },
         {
+            title: '쉐프애장 쇼핑몰',
+            thumb: 'pt_sf_jang.gif',
+            desc: '수산물 쇼핑몰',
+            date: '2026',
+            role: 'UX/UI 기획 & 디자인 · 아임웹 구현',
+            stack: ['Imweb (섹션 설계 및 커스터마이징)', '쇼핑몰'],
+            type: ['아임웹', '반응형', '쇼핑몰'],
+            url: 'https://sfjang.imweb.me/',
+            titleDetail: ['SHEF A JANG', '아임웹 기반 쇼핑몰 '],
+            descDetail: ['기업소개 기획', 'UX/UI 디자인 및 아임웹 쇼핑몰 구현'],
+            thumbDetail: 'pt_sf_jang.gif',
+            디바이스: 'PC / Tablet / Mobile'
+        },
+        {
+            title: '온더펫 쇼팡몰',
+            thumb: 'pt_onthepet.gif',
+            desc: '애견상품 쇼핑몰',
+            date: '2026',
+            role: 'UX/UI 기획 & 디자인 · 아임웹 구현',
+            stack: ['Imweb (섹션 설계 및 커스터마이징)', '쇼핑몰'],
+            type: ['아임웹', '반응형', '쇼핑몰'],
+            url: 'https://onthepetshop.imweb.me/',
+            titleDetail: ['ON THE PET', '아임웹 기반 쇼핑몰 '],
+            descDetail: ['기업소개 기획', 'UX/UI 디자인 및 아임웹 쇼핑몰 구현'],
+            thumbDetail: 'pt_onthepet.gif',
+            디바이스: 'PC / Tablet / Mobile'
+        },
+        {
             title: '아임웹 기반 교육 콘텐츠 사이트',
-            thumb: 'pt_lernity.jpg',
+            thumb: 'pt_lernity.gif',
             desc: '교육 콘텐츠 플랫폼',
-            date: '2025',
+            date: '2026',
             role: 'UX/UI 기획 & 디자인 · 아임웹 구현',
             stack: ['Imweb (섹션 설계 및 커스터마이징)', '반응형'],
             type: ['아임웹', '반응형', '교육 플랫폼'],
             url: 'https://lernity.imweb.me/Index',
             titleDetail: ['LERNITY', '아임웹 기반 교육 콘텐츠 사이트'],
             descDetail: ['교육 콘텐츠 흐름에 맞춘 서비스 구조 기획', 'UX/UI 디자인 및 아임웹 기반 사이트 구현'],
-            thumbDetail: 'pt_lernity.jpg',
+            thumbDetail: 'pt_lernity.gif',
             디바이스: 'PC / Tablet / Mobile'
         },
         {

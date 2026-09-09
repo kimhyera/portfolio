@@ -206,6 +206,7 @@
 
     img {
       max-width: 80%;
+	  min-height: 100%;
       @include media-max($m) {
         max-width: 100%;
       }
