@@ -1,14 +1,19 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.31d6cfe0.css",
-    "main.js": "/portfolio/static/js/main.54adf102.js",
-    "static/css/221.adb1cf9b.chunk.css": "/portfolio/static/css/221.adb1cf9b.chunk.css",
-    "static/js/221.0d0ed2da.chunk.js": "/portfolio/static/js/221.0d0ed2da.chunk.js",
+    "main.js": "/portfolio/static/js/main.446fcc9a.js",
+    "static/css/221.90623a94.chunk.css": "/portfolio/static/css/221.90623a94.chunk.css",
+    "static/js/221.d841d9a5.chunk.js": "/portfolio/static/js/221.d841d9a5.chunk.js",
     "static/js/488.7a876c9d.chunk.js": "/portfolio/static/js/488.7a876c9d.chunk.js",
     "static/js/412.312f6a46.chunk.js": "/portfolio/static/js/412.312f6a46.chunk.js",
+    "static/media/pt_0korea.gif": "/portfolio/static/media/pt_0korea.9d1d4570e3009875d328.gif",
+    "static/media/pt_onthepet.gif": "/portfolio/static/media/pt_onthepet.2f06a5e17cf623c506d9.gif",
+    "static/media/pt_lernity.gif": "/portfolio/static/media/pt_lernity.f219e9572ea712e3d1b2.gif",
+    "static/media/pt_sf_jang.gif": "/portfolio/static/media/pt_sf_jang.3ded3ae1a940bd1dfe77.gif",
     "static/media/pt_2024_cgplay.jpg": "/portfolio/static/media/pt_2024_cgplay.21e4e6a41c6734d80aea.jpg",
     "static/media/video_coffee.mov": "/portfolio/static/media/video_coffee.1bbdfb0ce3094d9e035e.mov",
     "static/media/pt_0korea_detail.jpg": "/portfolio/static/media/pt_0korea_detail.a11512277d31dbcd881c.jpg",
+    "static/media/pt_0korea_partner_detail.png": "/portfolio/static/media/pt_0korea_partner_detail.8a07ae57830afafbf8da.png",
     "static/media/Pretendard-Black.woff": "/portfolio/static/media/Pretendard-Black.fe80bd8c7ce9b3af972f.woff",
     "static/media/Pretendard-ExtraBold.woff": "/portfolio/static/media/Pretendard-ExtraBold.82ea4400a5eea299b40c.woff",
     "static/media/Pretendard-Bold.woff": "/portfolio/static/media/Pretendard-Bold.f6866c5eb21ccb9a8749.woff",
@@ -18,6 +23,7 @@
     "static/media/Pretendard-Light.woff": "/portfolio/static/media/Pretendard-Light.40808ea4485a78c05f92.woff",
     "static/media/Pretendard-ExtraLight.woff": "/portfolio/static/media/Pretendard-ExtraLight.ff5e73a97b5e7a5c5d5f.woff",
     "static/media/Pretendard-Thin.woff": "/portfolio/static/media/Pretendard-Thin.348f24715998d74e9f55.woff",
+    "static/media/pt_0korea_partner.gif": "/portfolio/static/media/pt_0korea_partner.8665b5f318976dae791d.gif",
     "static/media/Pretendard-Black.woff2": "/portfolio/static/media/Pretendard-Black.14a71ec59ff2b3bc6933.woff2",
     "static/media/Pretendard-ExtraBold.woff2": "/portfolio/static/media/Pretendard-ExtraBold.55bef92e8f01b6b6ef2f.woff2",
     "static/media/Pretendard-Bold.woff2": "/portfolio/static/media/Pretendard-Bold.0676c8838a37a3b770d8.woff2",
@@ -51,6 +57,7 @@
     "static/media/pt_hanjae.jpg": "/portfolio/static/media/pt_hanjae.c0ec226b8123669d746d.jpg",
     "static/media/pt_prefer.jpg": "/portfolio/static/media/pt_prefer.17f006fdb14f197988bf.jpg",
     "static/media/pt_manna_4.png": "/portfolio/static/media/pt_manna_4.23cfb8aef7da5aba0fc4.png",
+    "static/media/pt_0korea_partner.png": "/portfolio/static/media/pt_0korea_partner.cd29ad6d2aa5e68d2bf7.png",
     "static/media/pt_15.jpg": "/portfolio/static/media/pt_15.516763382af7bbdaad2e.jpg",
     "static/media/pt_2025_nalazoo.jpg": "/portfolio/static/media/pt_2025_nalazoo.7b0f02e3a2b8b33a68ca.jpg",
     "static/media/pt_hivesystem.jpg": "/portfolio/static/media/pt_hivesystem.d51553f230591f4cbde3.jpg",
@@ -195,14 +202,14 @@
     "static/media/icon_close.svg": "/portfolio/static/media/icon_close.fa5cae533706d1d99fb0.svg",
     "static/media/icon_bar.svg": "/portfolio/static/media/icon_bar.fd7422890e6865371c05.svg",
     "static/media/icon_caret.svg": "/portfolio/static/media/icon_caret.a1a6f490435d0d5fb096.svg",
-    "main.54adf102.js.map": "/portfolio/static/js/main.54adf102.js.map",
-    "221.adb1cf9b.chunk.css.map": "/portfolio/static/css/221.adb1cf9b.chunk.css.map",
-    "221.0d0ed2da.chunk.js.map": "/portfolio/static/js/221.0d0ed2da.chunk.js.map",
+    "main.446fcc9a.js.map": "/portfolio/static/js/main.446fcc9a.js.map",
+    "221.90623a94.chunk.css.map": "/portfolio/static/css/221.90623a94.chunk.css.map",
+    "221.d841d9a5.chunk.js.map": "/portfolio/static/js/221.d841d9a5.chunk.js.map",
     "488.7a876c9d.chunk.js.map": "/portfolio/static/js/488.7a876c9d.chunk.js.map",
     "412.312f6a46.chunk.js.map": "/portfolio/static/js/412.312f6a46.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.54adf102.js"
+    "static/js/main.446fcc9a.js"
   ]
 }
