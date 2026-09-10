@@ -289,7 +289,7 @@ function Main() {
                     <div className="com_center_wrap">
                         <div className="txt_area main_txt">
                             <p>
-                                <span>Web Publisher</span>
+                                <span>Web Design & Development</span>
                             </p>
                             <p className="en2">
                                 <span>Kim Hyera</span>
@@ -299,10 +299,10 @@ function Main() {
                             </p>
                         </div>
                         <div className="txt_area sub_txt">
-                            <span>UX/UI 기획이 가능한 실무자 · 디자인부터 퍼블리싱 10년차 </span>
-                            <span>아임웹·영카트 등 CMS/커머스 플랫폼 커스터마이징 기반 구축</span>
-                            <span>웹 접근성과 사용성을 고려한 체계적 UI 설계·구현</span>
-                            <span>디자인 시스템 기반으로 유지보수 용이한 퍼블리싱 수행</span>
+                            <span>디자인을 이해하고, 웹을 직접 구현합니다.</span>
+                            <span>UX/UI 기획부터 디자인, 퍼블리싱까지 10년간 실무 경험</span>
+                            <span>아임웹·영카트 기반 커스텀 홈페이지 제작</span>
+                            <span>디자인 완성도와 실제 운영까지 고려한 웹사이트 구축</span>
                         </div>
                         <svg className="svgAniLine" width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M428.233 458.734H348.991L360.311 511.561C360.311 519.897 353.553 526.655 345.218 526.655H216.922C208.587 526.655 201.829 519.897 201.829 511.561L213.149 458.734H24.479C16.143 458.734 9.38501 451.975 9.38501 443.639V88.94C9.38501 80.605 16.142 73.846 24.479 73.846H537.662C545.998 73.846 552.757 80.604 552.757 88.94V209.689" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
@@ -343,31 +343,32 @@ function Main() {
                         </video>
                     </div>
                     <ul className="txt_area en">
-                        <li>
-                            <p>
-                                <span className="point">React · Vue</span> 기반 프론트엔드 퍼블리싱
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <span className="point">아임웹 · 영카트</span> 커스터마이징 퍼블리싱
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                사용자 중심 <span className="point">인터랙션</span> 설계 및 구현
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <span className="point">Git 협업</span> 환경의 팀 프로젝트 경험
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <span className="point">디자인 시스템</span> 기반의 일관된 UI 설계
-                            </p>
-                        </li>
+                 <li>
+						<p>
+							<span className="point">UX/UI 기획 · 디자인</span>부터 웹사이트 제작까지
+						</p>
+					</li>
+					<li>
+						<p>
+							<span className="point">아임웹 · 영카트</span> 기반 커스텀 홈페이지 제작
+						</p>
+					</li>
+					<li>
+						<p>
+							<span className="point">반응형 웹</span> 디자인 및 디바이스별 최적화
+						</p>
+					</li>
+					<li>
+						<p>
+							<span className="point">HTML · CSS · JavaScript</span> 기반 UI · 인터랙션 구현
+						</p>
+					</li>
+					<li>
+						<p>
+							<span className="point">쇼핑몰 · 기업 · 브랜드</span> 웹사이트 구축 경험
+						</p>
+					</li>
+
                     </ul>
                 </section>
 

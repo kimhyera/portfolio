@@ -63,20 +63,20 @@
 				}
 			}
 
-			@include fontSize(44, 130);
+			@include fontSize(49, 120);
 		}
 		&.sub_txt {
 			font-size: 24px;
 			color: $text-2;
 			margin-top: 6%;
 			@include media-max($l) {
-				margin-top: 10%;
+				margin-top: 5%;
 				
 			}
 			span {
 				line-height: 1.8;
 			}
-			@include fontSize(18, 32);
+			@include fontSize(15, 32);
 		}
 		span {
 			line-height: 1.1;

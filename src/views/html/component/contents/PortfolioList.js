@@ -98,6 +98,7 @@ function PortfolioList({ page = 'work' }) {
             stack: ['Vue.js', 'SCSS', '웹 접근성(WA) 가이드 준수'],
             type: ['Vue', '반응형', '접근성'],
             url: 'https://kisa.awsome-app.kr/main',
+			
             titleDetail: ['KISA', '웹 접근성 기반 보안 서비스 사이트'],
             descDetail: ['웹 접근성(WCAG) 기준을 고려한 퍼블리싱', '디자이너와 협업하여 구조·스타일 구현'],
             디바이스: 'PC'
