@@ -30,7 +30,15 @@ function ModalDetail({ item = {}, open, close }) {
             el.removeEventListener('touchmove', stopScroll);
         };
     }, [open]);
-    const imageUrl = require(`../../assets/img/${item.thumbDetail || item.thumb}`);
+    // const imageUrl = require(`../../assets/img/${item.thumbDetail || item.thumb}`);
+const imageNames = item.thumbDetail !== undefined
+  ? (Array.isArray(item.thumbDetail) ? item.thumbDetail : [item.thumbDetail])
+  : [item.thumb];
+
+const imageUrl = imageNames.map((image) =>
+  require(`../../assets/img/${image}`)
+);
+
     return (
         <>
             <section className={style.popup}>
@@ -44,7 +52,14 @@ function ModalDetail({ item = {}, open, close }) {
                     </div>
                     <div className={style.popup__content} ref={popupRef}>
                         <div className={`${style['popup__content-img']} ${item.thumb.replace(/\.(jpg|jpeg|png|webp)$/i, '')}`}>
-                            <img src={imageUrl} alt="" className="" />
+                   {imageUrl.map((imageUrl, index) => (
+							<img
+								key={index}
+								src={imageUrl}
+								alt=""
+								className=""
+							/>
+							))}
                         </div>
                         <div className={style.popup__body}>
                             <div className={style.popup__top}>

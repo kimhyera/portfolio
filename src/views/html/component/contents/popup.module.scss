@@ -132,9 +132,11 @@
             overflow-y: auto;
             @include media-min($l) {
                 display: flex;
-				justify-content: center;
                align-items: flex-start;
                 height: 100vh;
+				
+				flex-direction: column;
+				gap: 20px;
             }
             @include media-max($l) {
                 padding: 20px;
