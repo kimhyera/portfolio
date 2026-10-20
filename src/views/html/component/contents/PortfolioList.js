@@ -11,24 +11,33 @@ import ModalDetail from './ModalDetail';
 function PortfolioList({ page = 'work' }) {
     const items = [
         {
-			title: '영카트 판매자 관리자 페이지',
-			thumb: 'pt_0korea_partner.gif',
-			desc: '판매자 운영을 위한 커머스 관리자 페이지 UX/UI 기획 및 퍼블리싱',
-			date: '2026',
-			role: 'UX/UI 기획 · 디자인 · 퍼블리싱',
-			stack: ['영카트', 'PHP', 'SCSS', '관리자 UI'],
-			type: ['관리자', '커머스', '어드민'],
-					url: '#',
-			titleDetail: [
-				'OMART',
-				'영카트 판매자 관리자 페이지'
-			],
+            title: '산지마켓',
+            thumb: 'pt_sanji.gif',
+            desc: '신선식품 커스텀 쇼핑몰 UX/UI 기획 및 디자인·퍼블리싱',
+            date: '2026',
+            role: 'UX/UI 기획 · 디자인 · 퍼블리싱 · PHP 기능 구현',
+            stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+            type: ['반응형', '커스텀 쇼핑몰', '상품 문의'],
+            url: 'https://platweb.dothome.co.kr/sanji',
 
-			descDetail: [
-				'판매자 관점의 커머스 운영 구조 및 관리자 UX 기획',
-				'상품·판매·주문·배송·정산 등 주요 관리 기능 UI 설계',
-				'판매 현황과 운영 데이터를 한눈에 확인할 수 있는 대시보드 구성'
-			],
+            titleDetail: ['산지마켓', '상품 탐색부터 문의 접수까지 연결하는 반응형 쇼핑몰'],
+            descDetail: ['신선함이 전해지는 디자인과 모바일에서도 편리한 화면', '관심 상품을 선택해 간편하게 주문 문의', '관리자 화면에서 문의 확인 및 답변', '문의 접수와 답변을 이메일로 자동 안내'],
+
+            thumbDetail: ['pt_sanji_dtail.png','pt_sanji_dtail2.png'],
+            디바이스: 'PC / Tablet / Mobile'
+        },
+        {
+            title: '영카트 판매자 관리자 페이지',
+            thumb: 'pt_0korea_partner.gif',
+            desc: '상품부터 주문·배송·정산까지 편리하게 관리하는 판매자 전용 페이지',
+            date: '2026',
+            role: 'UX/UI 기획 · 디자인 · 퍼블리싱',
+            stack: ['영카트', 'PHP', '관리자 UI'],
+            type: ['관리자', '커머스', '어드민'],
+            url: '#',
+            titleDetail: ['OMART', '영카트 판매자 관리자 페이지'],
+
+            descDetail: ['판매자가 필요한 기능을 쉽게 찾을 수 있는 화면 구성', '상품·주문·배송·정산을 한곳에서 편리하게 관리', '판매 현황과 주요 운영 정보를 한눈에 확인'],
 
             thumbDetail: 'pt_0korea_partner_detail.png',
             디바이스: 'PC '
@@ -39,7 +48,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '영카트 기반 글로벌 커머스 플랫폼 UX/UI 기획 및 퍼블리싱',
             date: '2026',
             role: 'UX/UI 기획 · 디자인 · 영카트',
-            stack: ['영카트', 'PHP', 'SCSS', '글로벌 커머스 UI'],
+            stack: ['영카트', 'PHP', '글로벌 커머스 UI'],
             type: ['쇼핑몰', '글로벌', '홈페이지'],
             url: 'https://0korea.com/',
             titleDetail: ['OMART', '영카트 기반 글로벌 쇼핑몰 플랫폼'],
@@ -50,58 +59,69 @@ function PortfolioList({ page = 'work' }) {
         {
             title: '쉐프애장 쇼핑몰',
             thumb: 'pt_sf_jang.gif',
-            desc: '수산물 쇼핑몰',
+            desc: '수산물의 신선함과 품질이 돋보이는 아임웹 쇼핑몰',
             date: '2026',
-            role: 'UX/UI 기획 & 디자인 · 아임웹 구현',
-            stack: ['Imweb (섹션 설계 및 커스터마이징)', '쇼핑몰'],
+            role: 'UX/UI 기획 · 디자인 · 아임웹 제작',
+            stack: ['아임웹', '섹션 구성 및 커스터마이징'],
             type: ['아임웹', '반응형', '쇼핑몰'],
             url: 'https://sfjang.imweb.me/',
-            titleDetail: ['SHEF A JANG', '아임웹 기반 쇼핑몰 '],
-            descDetail: ['기업소개 기획', 'UX/UI 디자인 및 아임웹 쇼핑몰 구현'],
+
+            titleDetail: ['SHEF A JANG', '신선함과 신뢰를 전하는 수산물 쇼핑몰'],
+
+            descDetail: ['브랜드의 특징과 수산물의 품질을 전달하는 디자인', '상품을 쉽게 살펴보고 구매할 수 있는 화면 구성', '모바일에서도 편리하게 이용하는 아임웹 쇼핑몰 제작'],
+
             thumbDetail: 'pt_sf_jang.png',
             디바이스: 'PC / Tablet / Mobile'
         },
         {
-            title: '온더펫 쇼팡몰',
+            title: '온더펫 쇼핑몰',
             thumb: 'pt_onthepet.gif',
-            desc: '애견상품 쇼핑몰',
+            desc: '반려동물 용품을 편리하게 쇼핑하는 아임웹 쇼핑몰',
             date: '2026',
-            role: 'UX/UI 기획 & 디자인 · 아임웹 구현',
-            stack: ['Imweb (섹션 설계 및 커스터마이징)', '쇼핑몰'],
+            role: 'UX/UI 기획 · 디자인 · 아임웹 제작',
+            stack: ['아임웹', '섹션 구성 및 커스터마이징'],
             type: ['아임웹', '반응형', '쇼핑몰'],
             url: 'https://onthepetshop.imweb.me/',
-            titleDetail: ['ON THE PET', '아임웹 기반 쇼핑몰 '],
-            descDetail: ['기업소개 기획', 'UX/UI 디자인 및 아임웹 쇼핑몰 구현'],
+
+            titleDetail: ['ON THE PET', '반려동물과의 일상을 위한 쇼핑몰'],
+
+            descDetail: ['친근하고 따뜻한 반려동물 브랜드 디자인', '필요한 상품을 쉽게 찾을 수 있는 화면 구성', '모바일에서도 편리하게 이용하는 아임웹 쇼핑몰 제작'],
+
             thumbDetail: 'pt_onthepet.png',
             디바이스: 'PC / Tablet / Mobile'
         },
         {
-            title: '아임웹 기반 교육 콘텐츠 사이트',
+            title: '러니티 교육 콘텐츠 사이트',
             thumb: 'pt_lernity.gif',
-            desc: '교육 콘텐츠 플랫폼',
+            desc: '교육 콘텐츠를 쉽게 탐색할 수 있는 아임웹 사이트',
             date: '2026',
-            role: 'UX/UI 기획 & 디자인 · 아임웹 구현',
-            stack: ['Imweb (섹션 설계 및 커스터마이징)', '반응형'],
-            type: ['아임웹', '반응형', '교육 플랫폼'],
+            role: 'UX/UI 기획 · 디자인 · 아임웹 제작',
+            stack: ['아임웹', '섹션 구성 및 커스터마이징'],
+            type: ['아임웹', '반응형', '교육'],
             url: 'https://lernity.imweb.me/Index',
-            titleDetail: ['LERNITY', '아임웹 기반 교육 콘텐츠 사이트'],
-            descDetail: ['교육 콘텐츠 흐름에 맞춘 서비스 구조 기획', 'UX/UI 디자인 및 아임웹 기반 사이트 구현'],
+
+            titleDetail: ['LERNITY', '배우고 싶은 콘텐츠를 쉽게 찾는 교육 사이트'],
+
+            descDetail: ['교육 콘텐츠를 보기 쉽게 정리한 메뉴와 화면 구성', '배움의 즐거움을 전달하는 브랜드 디자인', '모바일에서도 편리하게 이용하는 아임웹 사이트 제작'],
+
             thumbDetail: 'pt_lernity.png',
             디바이스: 'PC / Tablet / Mobile'
         },
         {
-            title: '한국인터넷진흥원(KISA) 접근성 웹 구축',
+            title: '한국인터넷진흥원(KISA) 보안 서비스 사이트',
             thumb: 'pt_kisa.gif',
-            desc: '웹 접근성 기준을 반영한 보안 서비스 사이트 퍼블리싱',
+            desc: '누구나 편리하게 이용할 수 있도록 웹 접근성을 고려한 사이트',
             date: '2025',
             role: '웹 접근성 기반 Vue 퍼블리싱',
-            stack: ['Vue.js', 'SCSS', '웹 접근성(WA) 가이드 준수'],
-            type: ['Vue', '반응형', '접근성'],
-		     thumbDetail: ['pt_kisa.png','pt_kisa02.png'],
+            stack: ['Vue.js', 'HTML', 'CSS', '웹 접근성'],
+            type: ['Vue', '공공기관', '접근성'],
             url: 'https://kisa.awsome-app.kr/main',
-			
-            titleDetail: ['KISA', '웹 접근성 기반 보안 서비스 사이트'],
-            descDetail: ['웹 접근성(WCAG) 기준을 고려한 퍼블리싱', '디자이너와 협업하여 구조·스타일 구현'],
+
+            titleDetail: ['KISA', '이용자의 접근성을 고려한 보안 서비스 사이트'],
+
+            descDetail: ['다양한 이용자가 접근할 수 있도록 웹 접근성 기준 반영', '필요한 정보를 읽기 쉽고 이용하기 편리한 화면 구현', '디자이너와 협업하여 디자인에 맞춘 퍼블리싱'],
+
+            thumbDetail: ['pt_kisa.png', 'pt_kisa02.png'],
             디바이스: 'PC'
         },
         // {
@@ -118,19 +138,21 @@ function PortfolioList({ page = 'work' }) {
         //     thumbDetail: 'pt_2025_jhmse.jpg',
         //     디바이스: 'PC'
         // },
-		
         {
             title: '디지털 교과서 | 역사 2',
             thumb: 'pt_2025_jmhistory.gif',
-            desc: '디지털 교과서 앱 내 웹뷰 기반 이러닝 콘텐츠 퍼블리싱',
+            desc: '퀴즈와 다양한 학습 활동으로 배우는 역사 디지털 교과서',
             date: '2025.07 ~ 2025.09',
-            role: '디지털 교과서 웹뷰 퍼블리싱',
-            stack: ['HTML/CSS 기반 교과서 퍼블리싱', '퀴즈 인터랙션 JavaScript'],
-            type: ['디지털교과서', '이러닝 콘텐츠', '웹뷰'],
+            role: '디지털 교과서 퍼블리싱 · 학습 인터랙션 구현',
+            stack: ['HTML', 'CSS', 'JavaScript'],
+            type: ['디지털 교과서', '이러닝', '웹뷰'],
             url: 'https://www.usuaia.me/ebook/jmkh2/',
-            titleDetail: ['역사 2', '디지털 교과서 앱(WebView) 콘텐츠'],
-            descDetail: ['디지털 교과서 전용 웹뷰 퍼블리싱', '퀴즈 및 학습 인터랙션 구현'],
-		     thumbDetail: ['pt_2025_jmhistory_01.png','pt_2025_jmhistory_02.png'],
+
+            titleDetail: ['역사 2', '읽고 풀며 배우는 역사 디지털 교과서'],
+
+            descDetail: ['교과 내용을 읽기 쉽게 구성한 학습 화면 구현', '퀴즈와 학습 활동으로 학생의 참여 유도', '디지털 교과서 앱 환경에 맞춘 콘텐츠 퍼블리싱'],
+
+            thumbDetail: ['pt_2025_jmhistory_01.png', 'pt_2025_jmhistory_02.png'],
             디바이스: 'PC'
         },
         // {
@@ -150,53 +172,67 @@ function PortfolioList({ page = 'work' }) {
         {
             title: '디지털 교과서 | 도덕 2',
             thumb: 'pt_2025_jmhs2.gif',
-            desc: '디지털 교과서 앱 내 웹뷰 기반 이러닝 콘텐츠 퍼블리싱',
+            desc: '퀴즈와 학습 활동으로 함께 배우는 도덕 디지털 교과서',
             date: '2025.07 ~ 2025.09',
-            role: '디지털 교과서 웹뷰 퍼블리싱',
-            stack: ['HTML/CSS 기반 교과서 퍼블리싱', '퀴즈 인터랙션 JavaScript'],
-            type: ['디지털교과서', '이러닝 콘텐츠', '웹뷰'],
+            role: '디지털 교과서 퍼블리싱 · 학습 인터랙션 구현',
+            stack: ['HTML', 'CSS', 'JavaScript'],
+            type: ['디지털 교과서', '이러닝', '웹뷰'],
             url: 'https://www.usuaia.me/ebook/jmkh2/',
-            titleDetail: ['도덕 2', '디지털 교과서 앱(WebView) 콘텐츠'],
-            descDetail: ['디지털 교과서 전용 웹뷰 퍼블리싱', '퀴즈 및 학습 인터랙션 구현'],
-		     thumbDetail: ['pt_2025_jmhs2_01.png','pt_2025_jmhs2_02.png'],
+
+            titleDetail: ['도덕 2', '읽고 생각하며 배우는 도덕 디지털 교과서'],
+
+            descDetail: ['교과 내용을 읽기 쉽게 구성한 학습 화면 구현', '퀴즈와 학습 활동으로 학생의 참여 유도', '디지털 교과서 앱 환경에 맞춘 콘텐츠 퍼블리싱'],
+
+            thumbDetail: ['pt_2025_jmhs2_01.png', 'pt_2025_jmhs2_02.png'],
             디바이스: 'PC'
         },
         {
-            title: '코그플레이(CogPlay) 웹·앱 반응형 구축',
+            title: '코그플레이 뇌 트레이닝 플랫폼',
             thumb: 'pt_2024_cgplay.jpg',
-            desc: '뇌 트레이닝 플랫폼 웹·앱 연계 반응형 퍼블리싱',
+            desc: 'PC와 모바일에서 편리하게 이용하는 뇌 트레이닝 플랫폼',
             date: '2024.11 ~ 2024.12',
-            role: 'React 기반 웹·앱 퍼블리싱',
-            stack: ['React', 'SCSS', '컴포넌트 기반 퍼블리싱'],
+            role: 'React 기반 반응형 퍼블리싱',
+            stack: ['React', '컴포넌트 기반 UI 구현'],
             type: ['React', '반응형', '웹/앱'],
             url: 'https://play.google.com/store/apps/details?id=com.cogplay2&hl=ko&pli=1',
-            titleDetail: ['CogPlay', '뇌 트레이닝 플랫폼 웹·앱 반응형 구축'],
-            descDetail: ['앱 연동을 고려한 반응형 웹 퍼블리싱', 'React 컴포넌트 단위 UI 퍼블리싱'],
-            thumbDetail: 'pt_2024_cgplay.png',
 
-            디바이스: 'PC/Tablet/Mobile'
+            titleDetail: ['CogPlay', '다양한 기기에서 즐기는 뇌 트레이닝'],
+
+            descDetail: ['뇌 트레이닝 서비스를 편리하게 이용하는 화면 구현', 'PC·태블릿·모바일에 맞춘 반응형 구성', '웹과 앱 연계를 고려한 UI 퍼블리싱'],
+
+            thumbDetail: 'pt_2024_cgplay.png',
+            디바이스: 'PC / Tablet / Mobile'
         },
         {
-            title: 'Vetbless B2B 관리자 플랫폼',
+            title: 'Vetbless B2B 관리 플랫폼',
             thumb: 'pt_2025_nalazoo.jpg',
-            desc: '상품·고객·예약 데이터를 관리하는 B2B 관리자 웹 퍼블리싱',
+            desc: '상품·고객·예약 정보를 한곳에서 관리하는 업무 플랫폼',
             date: '2025',
             role: 'B2B 관리자 퍼블리싱',
-            stack: ['PHP', 'SCSS', '관리자 UI 퍼블리싱'],
+            stack: ['PHP', '관리자 UI 퍼블리싱'],
             type: ['B2B', '관리자', '웹'],
             url: 'https://nalazoo.awsome-app.kr/front/Chart',
+
+            titleDetail: ['Vetbless', '상품부터 예약까지 한곳에서 관리하는 업무 공간'],
+
+            descDetail: ['상품·고객·예약 정보를 보기 쉽게 정리한 화면 구현', '필요한 관리 기능을 쉽게 찾을 수 있는 메뉴 구성', '업무 흐름을 고려한 관리자 화면 퍼블리싱'],
+
             디바이스: 'PC'
         },
         {
             title: '배달 플랫폼 모바일 서비스',
             thumb: 'manashop.jpg',
-            desc: '음식 배달 주문을 위한 B2C 모바일 플랫폼',
+            desc: '모바일에서 음식 탐색부터 주문까지 편리하게 이용하는 배달 서비스',
             date: '2023 ~ 2024',
             role: '모바일 퍼블리싱 · Vue 프론트엔드 개발',
-            stack: ['Vue.js', 'SCSS', '모바일 UI 퍼블리싱'],
+            stack: ['Vue.js', '모바일 UI 구현'],
             type: ['B2C', '모바일', '플랫폼', 'Vue'],
             url: 'https://634fa63d3236be6714353078--willowy-parfait-db4af9.netlify.app/path',
             url2: 'https://smartshop.mannashop.co.kr/shop/mns/',
+
+            titleDetail: ['배달 주문 플랫폼', '먹고 싶은 음식을 간편하게 주문하는 모바일 서비스'],
+
+            descDetail: ['음식과 매장 정보를 보기 쉽게 구성한 모바일 화면', '상품 선택부터 주문까지 이어지는 화면 및 기능 구현', 'Vue 기반 모바일 퍼블리싱 및 프론트엔드 개발'],
 
             디바이스: 'Mobile'
         },
@@ -207,7 +243,7 @@ function PortfolioList({ page = 'work' }) {
             descDetail: ['매장 내 QR 주문을 위한 모바일 테이블 주문 플랫폼', ' Nuxt3 프론트엔드 개발'],
             date: '2024',
             role: '모바일 퍼블리싱 · Nuxt3 프론트엔드 개발',
-            stack: ['Nuxt3', 'Vue.js', 'SCSS', '모바일 UI 퍼블리싱'],
+            stack: ['Nuxt3', 'Vue.js', '모바일 UI 퍼블리싱'],
             type: ['B2C', '모바일', '플랫폼', 'QR 주문'],
             url: 'https://web-nuxt-qr-netlify.netlify.app/pb/path',
             디바이스: 'Mobile'
@@ -219,7 +255,7 @@ function PortfolioList({ page = 'work' }) {
             descDetail: ['상품 탐색부터 주문까지 가능한 B2C 모바일 마트 주문 플랫폼', ' Vue 프론트엔드 개발'],
             date: '2023',
             role: '모바일 퍼블리싱 · Vue 프론트엔드 개발',
-            stack: ['Vue.js', 'SCSS', '모바일 커머스 UI 퍼블리싱'],
+            stack: ['Vue.js', '모바일 커머스 UI 퍼블리싱'],
             type: ['B2C', '모바일', '플랫폼', '커머스'],
             url: 'https://vue-mart-2.netlify.app/publish',
             url2: 'https://tsmartshop.mannashop.co.kr/shop/mts/',
@@ -231,7 +267,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '골프 예약 흐름을 중심으로 한 B2C 모바일 예약 플랫폼 Vue 퍼블리싱',
             date: '2024',
             role: 'Vue 기반 모바일 퍼블리싱',
-            stack: ['Vue.js', 'SCSS', '모바일 UI 퍼블리싱'],
+            stack: ['Vue.js', '모바일 UI 퍼블리싱'],
             type: ['B2C', '모바일', '플랫폼', '예약'],
             url: 'https://63233a86330f840008be9b72--extraordinary-snickerdoodle-799c22.netlify.app/path',
             디바이스: 'Mobile'
@@ -242,7 +278,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '자영업자를 위한 서비스 관리 모바일 플랫폼',
             date: '2024',
             role: '모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '모바일 UI 퍼블리싱'],
+            stack: ['PHP', '모바일 UI 퍼블리싱'],
             type: ['모바일', '플랫폼', '자영업'],
             url: 'https://suva.awsome-app.kr/',
             디바이스: 'Mobile'
@@ -253,7 +289,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '회원 참여형 이벤트 운영을 위한 반응형 웹 플랫폼',
             date: '2024',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['반응형', '웹', '이벤트'],
             url: 'https://ecohigh.kr/front/Member/Login',
             디바이스: 'PC / Tablet / Mobile'
@@ -264,7 +300,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '교사·학생 학습 관리를 위한 B2B 교육 관리 플랫폼 React 퍼블리싱',
             date: '2024',
             role: 'React 기반 퍼블리싱',
-            stack: ['React', 'SCSS', '컴포넌트 기반 UI 퍼블리싱'],
+            stack: ['React', '컴포넌트 기반 UI 퍼블리싱'],
             type: ['B2B', '교육', '반응형', 'React'],
             url: 'http://easy-study.awsome-app.kr/',
             디바이스: 'PC'
@@ -275,7 +311,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '지역 축제 운영을 위한 반응형 이벤트 웹 플랫폼',
             date: '2024',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '이벤트'],
             url: 'https://bluebird.awsome-app.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -286,7 +322,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '크리에이터 영상 콘텐츠 제공을 위한 반응형 웹 플랫폼',
             date: '2024',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '미디어 UI 퍼블리싱'],
+            stack: ['PHP', '미디어 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '콘텐츠'],
             url: 'https://onply.awsome-app.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -297,7 +333,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '고객 특허 유사도 분석 결과를 제공하는 반응형 웹 플랫폼',
             date: '2025',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '데이터 UI 퍼블리싱'],
+            stack: ['PHP', '데이터 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '플랫폼'],
             url: 'https://gadget.awsome-app.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -308,7 +344,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '인테리어 견적 요청 흐름을 중심으로 한 모바일·반응형 플랫폼',
             date: '2025',
             role: '모바일·반응형 퍼블리싱',
-            stack: ['PHP', 'SCSS', '모바일 UI 퍼블리싱'],
+            stack: ['PHP', '모바일 UI 퍼블리싱'],
             type: ['모바일', '반응형', '플랫폼'],
             url: 'https://gagu.awsome-app.kr/',
             디바이스: 'Mobile'
@@ -319,7 +355,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '기업 브랜딩 정보를 전달하는 반응형 회사소개 웹 퍼블리싱',
             date: '2025',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '기업'],
             url: 'https://winos.awsome-app.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -330,7 +366,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '상품 탐색과 구매를 위한 모바일 쇼핑몰 퍼블리싱',
             date: '2025',
             role: '모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '커머스 UI 퍼블리싱'],
+            stack: ['PHP', '커머스 UI 퍼블리싱'],
             type: ['모바일', '쇼핑몰', '커머스'],
             url: 'https://qding2.awsome-app.kr/front/Mall/Online',
             디바이스: 'Mobile'
@@ -341,7 +377,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '병원 정보 제공 및 상담 흐름을 고려한 반응형 웹 플랫폼',
             date: '2024',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '병원'],
             url: 'https://www.firsteyeclinic.co.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -352,7 +388,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '시력교정 병원 정보 제공을 위한 반응형 웹 플랫폼',
             date: '2024',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '병원'],
             url: 'https://lasikmasan.mycafe24.com/',
             디바이스: 'PC / Tablet / Mobile'
@@ -363,7 +399,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '가맹점 상품 등록·관리 기능을 제공하는 B2B POS 관리자 웹 퍼블리싱 및 PHP 프론트엔드 개발',
             date: '2022',
             role: 'PC 퍼블리싱 · PHP 프론트엔드 개발',
-            stack: ['PHP', 'SCSS', '관리자 UI 퍼블리싱'],
+            stack: ['PHP', '관리자 UI 퍼블리싱'],
             type: ['B2B', '관리자', 'POS'],
             url: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php',
             url2: 'https://tmng.mannashop.co.kr/linkage/pos_v2/contents/setGoods/goods/list.php'
@@ -374,7 +410,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '매장 정보 탐색과 주문을 위한 모바일 맛집 플랫폼',
             date: '2022',
             role: '모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '모바일 UI 퍼블리싱'],
+            stack: ['PHP', '모바일 UI 퍼블리싱'],
             type: ['모바일', '플랫폼', '맛집'],
             url: 'https://smartshop.mannashop.co.kr/shop/mns/',
             디바이스: 'Mobile'
@@ -385,7 +421,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '기업 브랜드와 제품 정보를 전달하는 PC·모바일 반응형 웹 퍼블리싱',
             date: '2021',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '기업'],
             url: 'https://www.shinhanwall.co.kr',
             디바이스: 'PC / Tablet / Mobile'
@@ -396,7 +432,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '쿠폰 발급 및 활용을 위한 반응형 웹 플랫폼',
             date: '2020',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '쿠폰'],
             url: 'https://hyera1828.cafe24.com/coupon_send/ch.html',
             디바이스: 'PC / Tablet / Mobile'
@@ -407,7 +443,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '기업 정보 전달을 위한 반응형 회사소개 웹 퍼블리싱',
             date: '2020',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '기업'],
             url: 'http://hanjae.freewebclub.com/main/main.html',
             디바이스: 'PC / Tablet / Mobile'
@@ -419,7 +455,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '기업 브랜드 정보를 전달하는 반응형 회사소개 웹 퍼블리싱',
             date: '2020',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '기업'],
             url: 'http://www.island-castle.co.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -430,7 +466,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '커뮤니티 중심의 정보 제공을 위한 반응형 웹 플랫폼',
             date: '2020',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '커뮤니티'],
             url: 'http://mc3099.freewebclub.com/main/main.html',
             디바이스: 'PC / Tablet / Mobile'
@@ -441,7 +477,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '프랜차이즈 브랜드 정보 제공을 위한 반응형 웹 퍼블리싱',
             date: '2020',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '브랜드 UI 퍼블리싱'],
+            stack: ['PHP', '브랜드 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '프랜차이즈'],
             url: 'http://mrbossam.co.kr/main/main.html',
             디바이스: 'PC / Tablet / Mobile'
@@ -452,7 +488,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '외식 프랜차이즈 브랜드 운영을 위한 반응형 웹 퍼블리싱',
             date: '2020',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '브랜드 UI 퍼블리싱'],
+            stack: ['PHP', '브랜드 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '프랜차이즈'],
             url: 'http://schoolfood.freewebclub.com/main/main.html',
             디바이스: 'PC / Tablet / Mobile'
@@ -464,7 +500,7 @@ function PortfolioList({ page = 'work' }) {
             descDetail: ['회사·지점·고객 관리를 포함한 병원 통합 플랫폼 ', '(ICT K어워드 코리아 e-비즈니스 은상)'],
             date: '2018',
             role: 'PC·모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '병원 플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '병원 플랫폼 UI 퍼블리싱'],
 
             type: ['홈페이지', '모바일', 'B2C', 'B2B', '병원'],
             url: 'https://www.cnpskin.com/pc/cnp/main/main.html',
@@ -477,7 +513,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '여행 상품 탐색 및 예약을 위한 PC·모바일 여행 플랫폼',
             date: '2019',
             role: 'PC·모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '여행 플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '여행 플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '모바일', '여행'],
             url: 'https://www.japanuranggi.com/main/main.html',
             디바이스: 'PC / Mobile'
@@ -489,7 +525,7 @@ function PortfolioList({ page = 'work' }) {
             descDetail: ['자전거 여행 상품 예약을 위한 PC·모바일 여행 플랫폼 ', '(ICT K어워드코리아 UI/UX 디자인 금상)'],
             date: '2020',
             role: 'PC·모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '여행 플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '여행 플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '모바일', '여행'],
             url: 'http://www.jangsadalin.com',
             디바이스: 'PC / Mobile'
@@ -500,7 +536,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '투자 상품 정보 제공을 위한 반응형 금융 플랫폼',
             date: '2019',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '금융 플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '금융 플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '금융'],
             url: 'https://www.titaninvest.co.kr',
             디바이스: 'PC / Tablet / Mobile'
@@ -513,7 +549,7 @@ function PortfolioList({ page = 'work' }) {
             descDetail: ['P2P 금융 서비스 제공을 위한 반응형 웹 플랫폼 ', '(ICT K어워드코리아 디지털콘텐츠솔루션 은상)'],
             date: '2016',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '금융 플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '금융 플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '금융'],
             url: 'https://www.grate.kr',
             디바이스: 'PC / Tablet / Mobile'
@@ -524,7 +560,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '문화센터 프로그램 안내 및 운영을 위한 반응형 웹 플랫폼',
             date: '2018',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '문화·교육 UI 퍼블리싱'],
+            stack: ['PHP', '문화·교육 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '문화'],
             url: 'https://saveculture.savezone.co.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -535,7 +571,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '창업 정보 제공과 서비스 이용을 위한 반응형 웹·앱 플랫폼',
             date: '2018',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '플랫폼 UI 퍼블리싱'],
+            stack: ['PHP', '플랫폼 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '창업'],
             url: 'http://www.jangsadalin.com',
             디바이스: 'PC / Tablet / Mobile'
@@ -546,7 +582,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '청소년 대상 커뮤니티 운영을 위한 반응형 웹 플랫폼',
             date: '2016',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '커뮤니티 UI 퍼블리싱'],
+            stack: ['PHP', '커뮤니티 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '공공'],
             url: 'https://www.grate.kr',
             디바이스: 'PC / Tablet / Mobile'
@@ -557,7 +593,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '금융 서비스 정보 제공을 위한 반응형 웹 플랫폼',
             date: '2017',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '금융 UI 퍼블리싱'],
+            stack: ['PHP', '금융 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '금융'],
             url: 'https://www.sbisb.co.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -568,7 +604,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '금융 정보 제공을 위한 PC·모바일 웹 퍼블리싱',
             date: '2016',
             role: 'PC·모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '금융 UI 퍼블리싱'],
+            stack: ['PHP', '금융 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '금융'],
             url: 'https://www.niceamc.co.kr/kr/index.do',
             디바이스: 'PC'
@@ -579,7 +615,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '출판사 서적 정보 제공을 위한 PC·모바일 웹 퍼블리싱',
             date: '2016',
             role: 'PC·모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '콘텐츠 UI 퍼블리싱'],
+            stack: ['PHP', '콘텐츠 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '출판'],
             url: 'https://www.dongyangbooks.com',
             디바이스: 'PC / Mobile'
@@ -590,7 +626,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '공공기관 커뮤니티 웹 구축 및 웹접근성 마크 획득',
             date: '2015',
             role: '퍼블리싱 · 웹접근성 마크 획득',
-            stack: ['PHP', 'SCSS', '웹접근성 기반 UI 퍼블리싱'],
+            stack: ['PHP', '웹접근성 기반 UI 퍼블리싱'],
             type: ['홈페이지', '공공', '접근성'],
             url: 'https://www.ggyc.kr/',
             디바이스: 'PC / Mobile'
@@ -601,7 +637,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '의료기기 제품 정보를 전달하는 반응형 웹 퍼블리싱',
             date: '2017',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '브랜드 UI 퍼블리싱'],
+            stack: ['PHP', '브랜드 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '제품'],
             url: 'http://eoflow.freewebclub.com/',
             디바이스: 'PC / Tablet / Mobile'
@@ -612,7 +648,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '상품 탐색과 구매를 위한 반응형 쇼핑몰 웹 퍼블리싱',
             date: '2017',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '커머스 UI 퍼블리싱'],
+            stack: ['PHP', '커머스 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '쇼핑몰'],
             url: 'https://www.breadgarden.co.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -623,7 +659,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '반려동물 용품 정보를 제공하는 반응형 웹 플랫폼',
             date: '2017',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '커머스 UI 퍼블리싱'],
+            stack: ['PHP', '커머스 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '반려동물'],
             url: 'https://www.mylittlefriend.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -634,7 +670,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '교육 콘텐츠 정보 제공을 위한 PC·모바일 웹 퍼블리싱',
             date: '2017',
             role: 'PC·모바일 퍼블리싱',
-            stack: ['PHP', 'SCSS', '교육 콘텐츠 UI 퍼블리싱'],
+            stack: ['PHP', '교육 콘텐츠 UI 퍼블리싱'],
             type: ['홈페이지', '모바일', '교육'],
             url: 'http://www.youngpull.com/',
             디바이스: 'PC / Mobile'
@@ -645,7 +681,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '사내 데이터 관리 및 업무 지원을 위한 B2B ERP 웹 퍼블리싱',
             date: '2015',
             role: 'B2B 퍼블리싱',
-            stack: ['PHP', 'SCSS', '관리자 UI 퍼블리싱'],
+            stack: ['PHP', '관리자 UI 퍼블리싱'],
             type: ['B2B', '홈페이지', 'ERP'],
             url: 'https://hivesystem.net/',
             디바이스: 'PC / Tablet / Mobile'
@@ -656,7 +692,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '법률 서비스 정보를 전달하는 반응형 웹 퍼블리싱',
             date: '2015',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '브랜드 UI 퍼블리싱'],
+            stack: ['PHP', '브랜드 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '법률'],
             url: 'https://gounlaw.com/',
             디바이스: 'PC / Tablet / Mobile'
@@ -667,7 +703,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '국제 음악제 정보 제공을 위한 반응형 커뮤니티 웹 퍼블리싱',
             date: '2016',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '콘텐츠 UI 퍼블리싱'],
+            stack: ['PHP', '콘텐츠 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '커뮤니티'],
             url: 'https://www.bmimf.co.kr/',
             디바이스: 'PC / Tablet / Mobile'
@@ -678,7 +714,7 @@ function PortfolioList({ page = 'work' }) {
             desc: '기업 서비스 및 기술 정보를 전달하는 반응형 웹 퍼블리싱',
             date: '2015',
             role: '반응형 웹 퍼블리싱',
-            stack: ['PHP', 'SCSS', '반응형 UI 퍼블리싱'],
+            stack: ['PHP', '반응형 UI 퍼블리싱'],
             type: ['홈페이지', '반응형', '기업'],
             url: 'https://hivesystem.net/',
             디바이스: 'PC / Tablet / Mobile'
@@ -761,7 +797,6 @@ function PortfolioList({ page = 'work' }) {
         setSelectedItem(null);
     };
 
-
     return (
         <>
             {page === 'work' ? (
@@ -798,8 +833,6 @@ function PortfolioList({ page = 'work' }) {
                     ))}
             </div>
             {selectedItem && <ModalDetail item={selectedItem} open={true} close={handleCloseDetail} />}
-			
-
         </>
     );
 }
