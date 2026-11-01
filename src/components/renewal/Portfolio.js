@@ -90,11 +90,11 @@ function Dialog({ title, onClose, children, wide = false }) {
             }}
         >
             <div className="rp-dialog-inner">
+                    <button className="rp-close" onClick={onClose} aria-label="닫기" autoFocus>
+                        ✕
+                    </button>
                 <div className="rp-dialog-heading">
                     <p className="rp-eyebrow">LET'S CONNECT THE DOTS</p>
-                    <button className="rp-close" onClick={onClose} aria-label="닫기" autoFocus>
-                        ×
-                    </button>
                 </div>
                 <h2 id="rp-dialog-title">{title}</h2>
                 {children}
@@ -305,7 +305,6 @@ export default function Portfolio() {
                 img.loading = 'eager';
             });
         document.body.classList.add('renewal-page');
-        document.title = '김혜라 | Design to Development';
         const sections = rootElement.querySelectorAll('section[id]');
         const observer = new IntersectionObserver(
             (entries) => {

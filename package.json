@@ -21,10 +21,12 @@
   },
   "scripts": {
  "start": "craco start",
+  "prebuild": "node scripts/generate-seo.cjs --public",
   "build": "craco build",
+  "postbuild": "node scripts/generate-seo.cjs",
   "test": "craco test",
     "eject": "react-scripts eject",
-    "predeploy": "react-scripts build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

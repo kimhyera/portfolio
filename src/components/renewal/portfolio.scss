@@ -43,6 +43,7 @@ body.renewal-page {
         cursor: pointer;
         border: 0;
         background: none;
+		
     }
 
     button,
@@ -712,9 +713,21 @@ body.renewal-page {
     border-radius: 50%;
     width: 36px;
     height: 36px;
-    background: #f3f0f7 !important;
-    font-size: 26px !important;
-    line-height: 1;
+	
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    position: sticky;
+    top: 15px;
+    float: right;
+    z-index: 3;
+    border: 0;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    background: #171d12 !important;
+    color: #fff !important;
+    font-size: 20px;
 }
 
 .rp-dialog h2 {

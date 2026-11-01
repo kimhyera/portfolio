@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 //css
 import '../views/html/assets/scss/styles.scss';
 //components
@@ -11,11 +11,12 @@ import Work from '../views/html/page/main/Work';
 import History from '../views/html/page/main/History';
 import WorkDetail from '../views/html/page/main/WorkDetail';
 import DietDiary from '../views/html/page/main/DietDiary';
+import Seo from '../seo/Seo';
 
 
 function AppRouter() {
   const routes = [
-    {path: '/', element: <Navigate to="/Main" />},
+    {path: '/', element: <Main />},
     {path: '/Main', element: <Main />},
     {path: '/About', element: <About />},
     {path: '/History', element: <History />},
@@ -39,6 +40,7 @@ function HtmlRouter() {
   return (
     <BrowserRouter basename={basename}>      {/* 환경에 따라 basename 설정 */}
    
+        <Seo />
         <Header />
         <AppRouter />
     </BrowserRouter>
