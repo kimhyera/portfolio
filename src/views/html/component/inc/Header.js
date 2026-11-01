@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import logoUrl from '../../assets/img/logo.svg';
 //component
 import ContactLinks from '../../component/inc/ContactLinks';
-function Header() {
+function LegacyHeader() {
   //const lenis = useLenis();
   const location = useLocation(); // 현재 경로 가져오기
   const [barMenu, setBarMenu] = useState(false);
@@ -173,5 +173,10 @@ const handleScrollTop = () => {
       </button>
     </>
   );
+}
+function Header() {
+  const { pathname } = useLocation();
+  if (pathname === '/' || pathname.toLowerCase() === '/main') return null;
+  return <LegacyHeader />;
 }
 export default Header;

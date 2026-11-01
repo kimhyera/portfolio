@@ -1,0 +1,32 @@
+/* ?capture=1: PNG 저장용 정적 레이아웃. 일반 화면에는 적용하지 않습니다. */
+.rp.is-capture {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .rp-title-item, .rp-reveal, .rp-home-artwork { opacity: 1 !important; visibility: visible !important; translate: none !important; transform: none !important; }
+    .rp-header { position: absolute; }
+    .rp-back-to-top { display: none; }
+    .rp-service-scene { height: auto !important; }
+    .rp-service-sticky { height: auto !important; min-height: 0; padding-block: 45px; --service-inset: 0px !important; --service-radius: 28px !important; }
+    .rp-service-window { overflow: visible !important; }
+    .rp-service-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; transform: none !important; }
+    .rp-service-card { width: auto; height: 390px; min-height: 390px; opacity: 1 !important; translate: none !important; }
+    .rp-service-controls, .rp-service-bottom { display: none; }
+    #home .rp-home-layout { min-height: 800px; padding-top: 220px; padding-bottom: 120px; }
+    #what-i-build { --build-dark: 0 !important; }
+    #what-i-build .rp-what-i-build-stack { padding-bottom: 0; }
+    #what-i-build .rp-what-i-build-stack-card { position: relative; top: auto; margin-bottom: 36px; }
+    #what-i-build .rp-what-i-build-card-surface { transform: none !important; filter: none !important; opacity: 1 !important; }
+    #portfolio .rp-portfolio-heading { --work-bg: 250; --work-ink: 25; }
+    .rp-process.is-static .rp-process-sticky { height: auto; }
+    .rp-process.is-static .rp-process-heading { position: static; }
+    .rp-process-sticky { padding-block: 55px; }
+    .rp-process-window ol { padding-bottom: 0 !important; }
+    .rp-process-window li { opacity: 1 !important; }
+    .rp-contact-content > button, .rp-contact-channels > a { opacity: 1 !important; transform: none !important; }
+}
+@media (max-width: 699px) {
+    .rp.is-capture {
+        #home .rp-home-layout { min-height: 0; padding: 48px 20px 28px; }
+        .rp-service-track { grid-template-columns: 1fr; }
+        .rp-service-card { height: 390px; }
+    }
+}

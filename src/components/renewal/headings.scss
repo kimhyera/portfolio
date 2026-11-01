@@ -1,0 +1,53 @@
+/* 공통 섹션 제목: 글자 크기, 강조 색상 및 모바일 타이포그래피. */
+
+.rp .rp-section-heading.rp-heading-standard {
+    > .rp-eyebrow {
+        color: #b78aff;
+        font-size: 24px;
+        letter-spacing: .2em;
+        margin-bottom: 30px;
+    }
+
+    > h2 {
+        color: #10131b;
+        font-size: clamp(30px, 5.6vw, 80px);
+        font-weight: 700;
+        line-height: 1.28;
+    }
+
+    > h2 em,
+    > h2 .rp-gradient-text {
+        font-style: normal;
+        font-weight: inherit;
+        background: linear-gradient(92.37deg, #b78aff 16.58%, #fe9c72 90.82%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    > p:last-child {
+        font-size: clamp(14px, 1.7vw, 22px);
+        color: #716776;
+        line-height: 1.8;
+        margin-top: 26px;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp .rp-section-heading.rp-heading-standard {
+        > .rp-eyebrow {
+            font-size: 11px;
+            margin-bottom: 22px;
+        }
+
+        > h2 {
+            font-size: clamp(25px, 6.7vw, 43px);
+        }
+
+        > p:last-child {
+            font-size: 13px;
+            margin-top: 20px;
+        }
+    }
+}
+

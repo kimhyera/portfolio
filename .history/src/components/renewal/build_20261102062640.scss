@@ -1,0 +1,287 @@
+/* WHAT I BUILD: 목업, 교차 카드와 스티키 스택. */
+
+.rp #what-i-build {
+    --build-dark: 0;
+    background: linear-gradient(rgba(0, 0, 0, var(--build-dark)), rgba(0, 0, 0, var(--build-dark))), radial-gradient(ellipse at 100% 10%, #eee8ff70, transparent 45%), #fcfbff;
+    padding-bottom: 70px;
+
+    .rp-what-i-build-stack {
+        max-width: 1200px;
+        width: 100%;
+        margin-top: 55px;
+        padding-bottom: min(40vh, 360px);
+    }
+
+    .rp-what-i-build-stack-card {
+        position: sticky;
+        top: calc(100px + var(--stack-index) * 14px);
+        z-index: calc(var(--stack-index) + 1);
+        padding: 0;
+        margin-bottom: 36px;
+    }
+
+    .rp-what-i-build-stack-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .rp-what-i-build-card-surface {
+        position: relative;
+        display: grid;
+        grid-template-columns: 110px minmax(0, 1fr) 44%;
+        gap: 25px;
+        min-height: 325px;
+        padding: 80px 60px;
+        border: 1px solid #e6e0f6;
+        border-radius: 24px;
+        background: linear-gradient(110deg, #f0eafd, #e2d9fb);
+        box-shadow: 0 15px 30px #3622640c;
+        overflow: hidden;
+    }
+
+    .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-card-surface {
+        grid-template-columns: 40% minmax(0, 1fr) 110px;
+        color: #f5f6ff;
+        background: radial-gradient(ellipse at 60% 60%, #1c2940, #101a2c);
+        border-color: #263149;
+    }
+
+    .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-card-surface::before {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 130%;
+        border: 1px solid #ffffff06;
+        border-radius: 50%;
+        right: 5%;
+        top: -15%;
+        rotate: 20deg;
+        pointer-events: none;
+    }
+
+    .rp-what-i-build-stack-2 .rp-what-i-build-card-surface {
+        background: #f9f8ff;
+        border-color: #edebf5;
+    }
+
+    .rp-what-i-build-copy {
+        position: relative;
+        z-index: 1;
+    }
+
+    .rp-what-i-build-copy .rp-eyebrow {
+        font-size: 16px;
+        font-weight: 500;
+        color: #997efe;
+        margin-bottom: 15px;
+        letter-spacing: 0.025em;
+    }
+
+    .rp-what-i-build-copy h3 {
+        font-size: clamp(25px, 2.5vw, 40px);
+        font-weight: 650;
+    }
+
+    .rp-what-i-build-copy > p:not(.rp-eyebrow) {
+        font-size: 20px;
+        line-height: 1.8;
+        opacity: 0.8;
+        margin-top: 12px;
+    }
+
+    .rp-what-i-build-copy .rp-tags {
+        margin-top: 23px;
+        gap: 6px;
+    }
+
+    .rp-what-i-build-copy .rp-tags span {
+        font-size: 16px;
+    }
+
+    .rp-what-i-build-stack-card:nth-child(even) .rp-eyebrow {
+        color: #d8dcf3;
+    }
+
+    .rp-what-i-build-devices {
+        position: relative;
+        height: 235px;
+        align-self: center;
+    }
+
+    .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-devices {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .rp-what-i-build-card-icon {
+        display: block;
+        width: 120px;
+        height: 135px;
+        border-radius: 0;
+        background-image: url('../../views/html/assets/img/build-design-reference.jpg');
+        background-repeat: no-repeat;
+        background-size: 1024px 1536px;
+        box-shadow: none;
+        transform: none;
+        mask-image: radial-gradient(ellipse at center, #000 40%, transparent 72%);
+    }
+
+    .rp-what-i-build-reference-icon-0 {
+        background-position: -90px -410px;
+    }
+
+    .rp-what-i-build-reference-icon-1 {
+        background-position: -810px -685px;
+    }
+
+    .rp-what-i-build-reference-icon-2 {
+        background-position: -85px -965px;
+    }
+
+    .rp-what-i-build-reference-icon-3 {
+        background-position: -810px -1220px;
+    }
+
+    .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-card-icon {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .rp-what-i-build-reference-devices {
+        display: flex;
+        align-items: center;
+        height: auto;
+        min-height: 235px;
+    }
+
+    .rp-what-i-build-reference-art {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .rp-what-i-build-reference-art img {
+        position: absolute;
+        max-width: none;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 999px) {
+    .rp #what-i-build {
+        .rp-what-i-build-card-surface {
+            grid-template-columns: 75px minmax(0, 1fr) 40%;
+            padding: 28px;
+            gap: 20px;
+            min-height: 295px;
+        }
+
+        .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-card-surface {
+            grid-template-columns: 40% minmax(0, 1fr) 75px;
+        }
+
+        .rp-what-i-build-card-icon {
+            scale: 0.75;
+            transform-origin: left center;
+            margin-left: -15px;
+        }
+
+        .rp-what-i-build-copy h3 {
+            font-size: 25px;
+        }
+
+        .rp-what-i-build-copy > p:not(.rp-eyebrow) {
+            font-size: 13px;
+        }
+
+        .rp-what-i-build-copy .rp-tags span {
+            font-size: 14px;
+        }
+
+        .rp-what-i-build-devices {
+            height: 200px;
+        }
+
+        .rp-what-i-build-reference-devices {
+            height: auto;
+            min-height: 180px;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    .rp #what-i-build {
+        .rp-what-i-build-stack {
+            margin-top: 40px;
+            padding-bottom: 150px;
+        }
+
+        .rp-what-i-build-stack-card {
+            top: calc(80px + var(--stack-index) * 10px);
+            margin-bottom: 90px;
+        }
+
+        .rp-what-i-build-card-surface,
+        .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-card-surface {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            padding: 27px;
+            min-height: 430px;
+            border-radius: 21px;
+        }
+
+        .rp-what-i-build-card-icon {
+            display: none;
+        }
+
+        .rp-what-i-build-copy {
+            padding-right: 0;
+        }
+
+        .rp-what-i-build-copy h3 {
+            font-size: 27px;
+        }
+
+        .rp-what-i-build-copy .rp-eyebrow {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .rp-what-i-build-copy > p:not(.rp-eyebrow) {
+            font-size: 16px;
+        }
+
+        .rp-what-i-build-copy .rp-tags {
+            margin-top: 16px;
+        }
+
+        .rp-what-i-build-devices,
+        .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-devices {
+            grid-column: 1;
+            grid-row: 2;
+            height: 200px;
+            width: 100%;
+        }
+
+        .rp-what-i-build-reference-devices,
+        .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-reference-devices {
+            height: auto;
+            min-height: 0;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce), (max-height: 580px) {
+    .rp #what-i-build .rp-what-i-build-stack-card {
+        position: relative;
+        top: auto;
+        margin-bottom: 30px;
+    }
+
+    .rp #what-i-build .rp-what-i-build-stack {
+        padding-bottom: 0;
+    }
+}
+

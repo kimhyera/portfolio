@@ -1,0 +1,403 @@
+/* WHAT I DO: 서비스 카드, 가로 스크롤, 진행 표시 및 모바일 대체. */
+
+.rp .rp-what-i-do {
+    background: #faf8f9;
+    padding-top: clamp(90px, 12vw, 180px);
+
+    .rp-service-intro {
+        padding: 0 24px 75px;
+    }
+
+    .rp-service-intro .rp-eyebrow {
+        color: #b78aff;
+        font-size: 24px;
+        letter-spacing: .2em;
+        margin-bottom: 30px;
+    }
+
+    .rp-service-intro h2 {
+        font-size: clamp(30px, 5.6vw, 80px);
+        font-weight: 600;
+        line-height: 1.28;
+    }
+
+    .rp-service-intro h2 em {
+        font-style: normal;
+        font-weight: 600;
+        background: linear-gradient( 92.37deg, #b78aff 16.58%, #fe9c72 90.82% );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .rp-service-intro > p:last-child {
+        font-size: clamp(14px, 1.7vw, 22px);
+        color: #716776;
+        line-height: 1.8;
+        margin-top: 26px;
+    }
+}
+
+.rp .rp-service-scene {
+    position: relative;
+    --service-top: 84px;
+}
+
+.rp .rp-service-sticky {
+    --service-inset: 5%;
+    --service-radius: 38px;
+    position: sticky;
+    top: var(--service-top);
+    height: calc(100svh - var(--service-top));
+    min-height: 530px;
+    padding: clamp(28px, 4vh, 55px) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    isolation: isolate;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(105deg, #fbdfe3, #eedcf2 42%, #dfcefc);
+        clip-path: inset(0 var(--service-inset) round var(--service-radius));
+    }
+}
+
+.rp .rp-service-heading {
+    width: 86%;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rp .rp-service-heading .rp-eyebrow {
+    font-size: 16px;
+    letter-spacing: .2em;
+    color: #b78aff;
+    margin-bottom: 10px;
+}
+
+.rp .rp-service-heading h3 {
+    font-size: clamp(27px, 3vw, 42px);
+    font-weight: 700;
+}
+
+.rp .rp-service-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rp .rp-service-controls > span {
+    color: #8a7897;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.rp .rp-service-controls button {
+    background: #fffc;
+    border: 1px solid #fff9;
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    font-size: 19px;
+    box-shadow: 0 3px 8px #70468e13;
+}
+
+.rp .rp-service-controls button:disabled {
+    opacity: .4;
+    cursor: default;
+}
+
+.rp .rp-service-window {
+    width: 86%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.rp .rp-service-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+}
+
+.rp .rp-service-card {
+    position: relative;
+    flex: 0 0 clamp(270px, 23vw, 345px);
+    width: clamp(270px, 23vw, 345px);
+    min-height: 350px;
+    height: clamp(320px, 47vh, 430px);
+    padding: 27px;
+    border-radius: 25px;
+    background: #ffffffb0;
+    border: 1px solid #ffffff60;
+    opacity: 1;
+
+    h4 {
+        color: #15111a;
+        font-family: 'Pretendard', sans-serif;
+        font-size: clamp(22px, 1.9vw, 28px);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -.045em;
+        margin: 21px 0 20px;
+    }
+
+    h4 {
+        white-space: pre-line;
+    }
+
+    > p {
+        white-space: pre-line;
+        font-size: 16px;
+        color: #766a7c;
+        line-height: 1.75;
+    }
+}
+
+.rp .rp-service-number {
+    font-size: 13px;
+    color: #85788a;
+    font-weight: 600;
+}
+
+.rp .rp-service-inquiry {
+    position: absolute;
+    right: 24px;
+    bottom: 38px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: #2a2630;
+    border-radius: 50%;
+    font-size: 21px;
+    transition: translate .2s;
+}
+
+.rp .rp-service-inquiry:hover {
+    translate: 4px 0;
+}
+
+.rp .rp-service-art {
+    position: absolute;
+    bottom: 17px;
+    left: 20px;
+    width: 130px;
+    height: 120px;
+    background-image: url('../../views/html/assets/img/service-icons-reference.png');
+    background-repeat: no-repeat;
+    background-size: 1690px 461px;
+    mix-blend-mode: multiply;
+    mask-image: radial-gradient(ellipse at center, black 38%, transparent 71%);
+}
+
+.rp .rp-service-art-0 {
+    background-position: -28px -300px;
+}
+
+.rp .rp-service-art-1 {
+    background-position: -310px -300px;
+}
+
+.rp .rp-service-art-2 {
+    background-position: -584px -300px;
+}
+
+.rp .rp-service-art-3 {
+    background-position: -860px -300px;
+}
+
+.rp .rp-service-art-4 {
+    background-position: -1137px -300px;
+}
+
+.rp .rp-service-art-5 {
+    background-position: -1411px -300px;
+}
+
+.rp .rp-service-bottom {
+    width: 86%;
+    margin: 26px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: #8c7a9d;
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+.rp .rp-service-bottom b {
+    color: #5c416e;
+    font-weight: 600;
+}
+
+.rp .rp-service-bottom > span {
+    white-space: nowrap;
+}
+
+.rp .rp-service-meter {
+    flex: 1;
+    height: 2px;
+    background: #b69aca44;
+    overflow: hidden;
+}
+
+.rp .rp-service-meter span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #a67dc5;
+    transform: scaleX(var(--service-progress, 0));
+    transform-origin: left;
+}
+
+.rp .rp-service-scene.is-native {
+    height: auto;
+
+    .rp-service-sticky {
+        position: relative;
+        top: auto;
+        min-height: 0;
+        height: auto;
+        padding-block: 40px;
+    }
+
+    .rp-service-window {
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 15px;
+        scrollbar-width: thin;
+        scrollbar-color: #b998cd transparent;
+    }
+
+    .rp-service-card {
+        scroll-snap-align: start;
+    }
+
+    .rp-service-track {
+        will-change: auto;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .rp .rp-service-scene:not(.is-visible) .rp-service-card {
+        opacity: 0;
+        translate: -40px 0;
+    }
+
+    .rp .rp-service-card {
+        transition: opacity .7s, translate .7s;
+        transition-delay: calc(var(--card-index) * 100ms);
+    }
+}
+
+@media (max-width: 699px) {
+    .rp .rp-what-i-do {
+        padding-top: 80px;
+
+        .rp-service-intro {
+            padding: 0 20px 45px;
+        }
+
+        .rp-service-intro .rp-eyebrow {
+            font-size: 11px;
+            margin-bottom: 22px;
+        }
+
+        .rp-service-intro h2 {
+            font-size: clamp(25px, 6.7vw, 43px);
+        }
+
+        .rp-service-intro > p:last-child {
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        .rp-service-intro br {
+            display: none;
+        }
+    }
+
+    .rp .rp-service-heading,
+    .rp .rp-service-window,
+    .rp .rp-service-bottom {
+        width: 88%;
+    }
+
+    .rp .rp-service-heading {
+        margin-bottom: 24px;
+        gap: 10px;
+    }
+
+    .rp .rp-service-heading .rp-eyebrow {
+        font-size: 9px;
+        margin-bottom: 9px;
+    }
+
+    .rp .rp-service-heading h3 {
+        font-size: 25px;
+    }
+
+    .rp .rp-service-controls {
+        gap: 7px;
+    }
+
+    .rp .rp-service-controls > span {
+        display: none;
+    }
+
+    .rp .rp-service-controls button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .rp .rp-service-card {
+        flex-basis: 280px;
+        width: 280px;
+        height: 350px;
+        min-height: 350px;
+        padding: 25px;
+    }
+
+    .rp .rp-service-card h4 {
+        font-size: 24px;
+    }
+
+    .rp .rp-service-card > p {
+        font-size: 15px;
+    }
+
+    .rp .rp-service-track {
+        gap: 15px;
+    }
+
+    .rp .rp-service-bottom {
+        gap: 15px;
+        font-size: 9px;
+        margin-top: 22px;
+    }
+
+    .rp .rp-service-bottom > span:last-child {
+        font-size: 7px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rp .rp-service-card {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+}
+

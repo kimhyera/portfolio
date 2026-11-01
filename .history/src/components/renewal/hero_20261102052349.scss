@@ -1,0 +1,58 @@
+.rp .rp-logo .rp-brand-logo { display: block; width: 138px; height: auto; }
+.rp .rp-footer .rp-brand-logo { filter: brightness(0) invert(1); width: 118px; }
+@media (max-width: 699px) { .rp .rp-header .rp-brand-logo { width: 112px; } }
+.rp[data-active-section='hero'] .rp-header { background: #f8f6fc66; backdrop-filter: blur(8px); border-bottom-color: transparent; }
+.rp .rp-header.is-fixed { background: rgba(255, 255, 255, .2); backdrop-filter: blur(16px); border-bottom: 1px solid #ffffff26; }
+.rp .rp-back-to-top { position: fixed; right: 28px; bottom: 28px; z-index: 35; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #a34af0; color: #fff; box-shadow: 0 5px 22px #5e258b40; opacity: 0; visibility: hidden; translate: 0 12px; transition: opacity .25s, translate .25s, visibility .25s; font-size: 27px; }
+.rp .rp-back-to-top.is-visible { opacity: 1; visibility: visible; translate: 0 0; }
+.rp .rp-back-to-top:hover { background: #8740cf; }
+@media (max-width: 699px) { .rp .rp-back-to-top { right: 20px; bottom: calc(20px + env(safe-area-inset-bottom)); width: 44px; height: 44px; } }
+.rp-hero.rp-hero--art {
+  background: #f6f4fc;
+  &::after { display: none; }
+  .rp-hero-layout { max-width: none; width: 100%; min-height: max(720px, calc(100svh - 84px)); padding: 250px 5.3vw 17vh; position: relative; display: flex; align-items: flex-end; }
+  .rp-hero-visual { position: absolute; inset: -84px 0 0; width: 100%; height: auto; margin: 0; max-width: none; z-index: -1; transform: none; }
+  .rp-hero-visual::before, .rp-hero-visual::after { display: none; }
+  .rp-hero-artwork { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; }
+  .rp-hero-copy { width: 36%; max-width: 580px; }
+  .rp-hero-copy > .rp-eyebrow, .rp-hero-keywords { display: none; }
+  h1 { color: #080808; font-size: clamp(49px, 4.2vw, 78px); font-weight: 700; line-height: 1.02; letter-spacing: -.065em; }
+  h1 > span { color: inherit; background: none; -webkit-text-fill-color: currentColor; }
+  .rp-hero-description { color: #45424a; font-size: clamp(15px, 1.15vw, 20px); line-height: 1.65; margin-top: 27px !important; max-width: 510px; }
+  .rp-hero-actions { margin-top: 29px; gap: 21px; }
+  .rp-hero-actions .rp-primary { background: #171717; min-height: 53px; padding: 13px 28px; border: 1px solid #171717; border-radius: 40px; font-size: 16px; gap: 12px; }
+  .rp-hero-actions .rp-primary:hover { background: #363039; }
+  .rp-text-link { border: 1px solid #28252d; padding: 13px 27px; min-height: 53px; border-radius: 40px; font-size: 16px; }
+  .rp-hero-aside { position: absolute; top: 55px; right: 5.3vw; width: 310px; }
+  .rp-hero-aside h2 { color: #161319; border-left: 4px solid #a993d8; padding-left: 17px; font-size: 22px; font-weight: 650; line-height: 1.45; }
+  .rp-hero-aside p { color: #615c66; margin: 17px 0 0 21px; font-size: 15px; line-height: 1.75; }
+  .rp-hero-bottom { display: none; }
+}
+@media (max-width: 1199px) and (min-width: 700px) {
+  .rp-hero.rp-hero--art {
+    .rp-hero-layout { min-height: 750px; padding-inline: 40px; padding-bottom: 110px; }
+    .rp-hero-copy { width: 44%; }
+    h1 { font-size: 5vw; }
+    .rp-hero-description { font-size: 14px; }
+    .rp-hero-aside { right: 40px; width: 280px; }
+    .rp-hero-aside h2 { font-size: 19px; }
+    .rp-hero-aside p { font-size: 13px; }
+    .rp-hero-actions { gap: 13px; }
+    .rp-hero-actions .rp-primary, .rp-text-link { font-size: 13px; padding-inline: 21px; }
+  }
+}
+@media (max-width: 699px) {
+  .rp-hero.rp-hero--art {
+    .rp-hero-layout { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 65px 20px 35px; }
+    .rp-hero-copy { width: 100%; max-width: none; }
+    h1 { font-size: clamp(42px, 10.6vw, 65px); }
+    .rp-hero-description { font-size: 14px; max-width: 360px; margin-top: 23px !important; }
+    .rp-hero-actions { gap: 14px; margin-top: 25px; }
+    .rp-hero-actions .rp-primary, .rp-text-link { min-height: 48px; padding: 11px 21px; font-size: 14px; }
+    .rp-hero-visual { position: relative; inset: auto; width: calc(100% + 40px); height: 330px; margin: 25px -20px 0; z-index: 0; }
+    .rp-hero-artwork { position: static; object-position: 74% center; }
+    .rp-hero-aside { position: static; width: auto; margin-top: 15px; }
+    .rp-hero-aside h2 { font-size: 18px; }
+    .rp-hero-aside p { font-size: 13px; margin-top: 13px; }
+  }
+}

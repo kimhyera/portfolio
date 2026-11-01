@@ -1,0 +1,279 @@
+/* PROCESS: sticky + requestAnimationFrame 타임라인. */
+
+.rp .fw-process {
+    position: relative;
+    isolation: isolate;
+    height: var(--fw-process-height, auto);
+    padding: 0;
+    background: #080504;padding: 60px 7%;
+
+    .fw-process-sticky {
+        position: sticky;
+        top: 50px;
+        height: calc(100svh - 100px);
+        min-height: 0;
+        overflow: hidden;
+        isolation: isolate;
+        background: radial-gradient(ellipse at 0 0, #6e240b38, transparent 45%), radial-gradient(ellipse at 100% 100%, #72260045, transparent 45%), #080504;
+    }
+
+    .fw-process-sticky::before,
+    .fw-process-sticky::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 600px;
+        height: 300px;
+        border: 1px solid #ffb14a;
+        border-radius: 50%;
+        background: linear-gradient(160deg, #fe9c0759, #ff690022 45%, transparent 70%);
+        box-shadow: 0 0 40px #ff65004a, inset 0 0 22px #ff86005a;
+        rotate: -30deg;
+        pointer-events: none;
+    }
+
+    .fw-process-sticky::before {
+        left: -320px;
+        top: -255px;
+    }
+
+    .fw-process-sticky::after {
+        right: -260px;
+        bottom: -250px;
+    }
+
+    .fw-process-grid {
+        display: grid;
+        grid-template-columns: 58% 42%;
+        height: 100%;
+    }
+
+    .fw-process-heading {
+        align-self: center;
+        padding: 30px 40px 30px 0;
+    }
+
+    .section-label {
+        color: #ff793d;
+        font-size: 14px;
+        letter-spacing: .04em;
+        margin-bottom: 38px;
+    }
+
+    .section-title {
+        color: #fff;
+        font-size: clamp(38px, 4.2vw, 64px);
+        font-weight: 700;
+        line-height: 1.42;
+        letter-spacing: -.055em;
+    }
+
+    .fw-process-heading > .text-body {
+        color: #bfb6b0;
+        font-size: 17px;
+        line-height: 2;
+        margin-top: 34px;
+    }
+
+    .fw-process-window {
+        position: relative;
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+        padding-left: 40px;
+    }
+
+    .fw-process-window ol {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0 0 max(0px, calc(100svh - 345px));
+        margin: 0;
+        transform: translate3d(0, var(--fw-process-list-y, 0px), 0);
+        will-change: transform;
+    }
+
+    .fw-process-window li {
+        position: relative;
+        flex: 0 0 245px;
+        min-height: 245px;
+        padding: 27px 24px;
+        border: 1px solid #be582015;
+        border-radius: 20px;
+        background: linear-gradient(110deg, #52200914, #6a240a20);
+        opacity: .48;
+        transition: opacity .3s, border-color .3s;
+    }
+
+    .fw-process-window li::before {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d59a7c;
+        box-shadow: 0 0 0 5px #f8783010;
+    }
+
+    .fw-process-window li.fw-step-active {
+        opacity: 1;
+        border-color: #f56b302b;
+        background: linear-gradient(110deg, #54200a26, #7b280d30);
+    }
+
+    .fw-step-active::before {
+        background: #fff1e6 !important;
+        box-shadow: 0 0 0 5px #ff76212b, 0 0 15px #ff6f28 !important;
+    }
+
+    .fw-process-window li.fw-step-complete {
+        opacity: .7;
+    }
+
+    .fw-process-window small {
+        display: block;
+        color: #ff7839;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .card-title {
+        color: #f5eee8;
+        font-size: 38px;
+        font-weight: 700;
+    }
+
+    .fw-step-active .card-title {
+        color: #ff6f2e;
+    }
+
+    li .text-body {
+        color: #c5bbb4;
+        font-size: 17px;
+        font-weight: 550;
+        line-height: 1.9;
+        margin-top: 13px;
+    }
+
+    .fw-process-rail {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 13px;
+        width: 1px;
+        background: #f8763628;
+    }
+
+    .fw-process-rail i {
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: #f87636;
+        transform: scaleY(var(--fw-process-progress, 0));
+        transform-origin: top;
+    }
+
+    .fw-process-rail b {
+        position: absolute;
+        left: -4px;
+        top: calc(var(--fw-process-progress, 0) * 100%);
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #ffccaa;
+        box-shadow: 0 0 15px #ff793c;
+    }
+
+    &.is-static {
+        height: auto;
+        padding-block: 50px;
+    }
+
+    &.is-static .fw-process-sticky {
+        position: relative;
+        top: auto;
+        height: auto;
+    }
+
+    &.is-static .fw-process-heading {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    &.is-static .fw-process-window {
+        height: auto;
+        overflow: visible;
+    }
+
+    &.is-static .fw-process-window ol {
+        padding-bottom: 0;
+        transform: none;
+        will-change: auto;
+    }
+
+    &.is-static .fw-process-window li {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp .fw-process {
+        .fw-process-sticky {
+            padding-inline: 24px;
+        }
+
+        .fw-process-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .fw-process-heading,
+        &.is-static .fw-process-heading {
+            position: static;
+            padding: 0;
+        }
+
+        .section-label {
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 8vw, 43px);
+        }
+
+        .fw-process-heading > .text-body {
+            font-size: 14px;
+            margin-top: 22px;
+        }
+
+        .fw-process-window {
+            padding-left: 30px;
+        }
+
+        .fw-process-window li {
+            min-height: 220px;
+            flex-basis: 220px;
+            padding: 24px 22px;
+        }
+
+        .fw-process-window li::before {
+            left: -29px;
+        }
+
+        .fw-process-rail {
+            left: 6px;
+        }
+
+        .card-title {
+            font-size: 32px;
+        }
+
+        li .text-body {
+            font-size: 15px;
+        }
+    }
+}
