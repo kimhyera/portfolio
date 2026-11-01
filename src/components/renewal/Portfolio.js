@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import HeroObjects from './HeroObjects';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import projects from '../../data/projects';
@@ -478,6 +479,7 @@ export default function Portfolio() {
                             </div>
                         </div>
                         <HeroVisual />
+                        <HeroObjects />
                         <aside className="rp-home-aside">
                             <h2>
                                 웹을 설계하고, 구현하고,

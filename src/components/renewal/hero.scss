@@ -1,5 +1,36 @@
 /* HERO: 배경, 소개 문구, 로고, 스크롤 헤더 및 상단 이동 버튼. */
 
+.rp-home-objects {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    > span {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 76px;
+        height: 76px;
+        border-radius: 23px;
+        color: #9b71d0;
+        border: 1px solid rgba(255, 255, 255, .85);
+        background: linear-gradient(140deg, #ffffff70, #d9c3ff1f 65%, #b78aff33);
+        backdrop-filter: blur(7px);
+        box-shadow: inset 1px 1px 5px #ffffffb3, inset -1px -1px 4px #a888dc26, 0 10px 25px #7350a51a;
+
+        svg { width: 34px; height: 34px; filter: drop-shadow(0 1px 1px #fff); }
+    }
+
+    > span:nth-child(1) { left: 26%; top: 16%; transform: rotate(14deg); }
+    > span:nth-child(2) { left: 63%; top: 9%; transform: rotate(-12deg); }
+    > span:nth-child(3) { right: 7%; top: 64%; transform: rotate(22deg); }
+}
+
+@media (hover: none), (max-width: 699px) {
+    .rp-home-objects { display: none; }
+}
+
 @media (min-width: 700px) and (max-width: 999px) {
     .rp .rp-header-inner { gap: 16px; padding-inline: 24px; }
     .rp .rp-nav { gap: 12px; }
@@ -26,7 +57,6 @@
 }
 
 .rp[data-active-section='home'] .rp-header {
-    background: #f8f6fc66;
     backdrop-filter: blur(8px);
     border-bottom-color: transparent;
 }
