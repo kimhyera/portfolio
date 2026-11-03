@@ -1,4 +1,52 @@
 const projects = [
+		{
+			title: '그리드넥사',
+			thumb: 'pt_gridnexa.gif',
+			desc: '기업 브랜드 홈페이지 UX/UI 기획 및 디자인·아임웹 제작',
+			date: '2026',
+			role: 'UX/UI 기획 · 웹디자인 · 아임웹 제작',
+			stack: ['아임웹', 'HTML', 'CSS', 'JavaScript'],
+			type: ['기업 홈페이지', '아임웹', '반응형'],
+			url: 'https://gridnexacom.imweb.me',
+
+			titleDetail: [
+				'그리드넥사',
+				'브랜드의 전문성과 신뢰를 전달하는 반응형 기업 홈페이지'
+			],
+			descDetail: [
+				'기업의 브랜드 아이덴티티를 반영한 UX/UI 기획 및 디자인',
+				'핵심 사업과 서비스 정보를 효과적으로 전달하는 콘텐츠 구성',
+				'PC·태블릿·모바일에 최적화된 반응형 레이아웃',
+				'아임웹 기반 섹션 커스터마이징 및 인터랙션 구현'
+			],
+
+			thumbDetail: [ 'pt_gridnexa.gif'],
+			디바이스: 'PC / Tablet / Mobile'
+		},
+		{
+			title: '플랫웹',
+			thumb: 'pt_platweb.gif',
+			desc: '웹에이전시 브랜드 홈페이지 UX/UI 기획부터 디자인·개발까지 구축',
+			date: '2026',
+			role: 'UX/UI 기획 · 웹디자인 · 퍼블리싱 · PHP 개발',
+			stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+			type: ['웹에이전시', '브랜드 홈페이지', '반응형'],
+			url: 'https://flatweb.mycafe24.com/flatweb',
+
+			titleDetail: [
+				'플랫웹',
+				'기획부터 디자인·개발까지 연결하는 웹에이전시 브랜드 홈페이지'
+			],
+			descDetail: [
+				'브랜드 아이덴티티를 반영한 UX/UI 기획 및 비주얼 디자인',
+				'서비스·포트폴리오·제작 프로세스를 중심으로 한 콘텐츠 설계',
+				'스크롤 인터랙션과 모션을 활용한 반응형 웹 퍼블리싱',
+				'PHP·MySQL 기반 프로젝트 문의 접수 및 관리자 기능 구현'
+			],
+
+			thumbDetail: ['pt_platweb_dtail.png'],
+			디바이스: 'PC / Tablet / Mobile'
+		},
         {
             title: '산지마켓',
             thumb: 'pt_sanji.gif',
@@ -7,7 +55,7 @@ const projects = [
             role: 'UX/UI 기획 · 디자인 · 퍼블리싱 · PHP 기능 구현',
             stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
             type: ['반응형', '커스텀 쇼핑몰', '상품 문의'],
-            url: 'https://platweb.dothome.co.kr/sanji',
+            url: 'https://flatweb.mycafe24.com/sanji',
 
             titleDetail: ['산지마켓', '상품 탐색부터 문의 접수까지 연결하는 반응형 쇼핑몰'],
             descDetail: ['신선함이 전해지는 디자인과 모바일에서도 편리한 화면', '관심 상품을 선택해 간편하게 주문 문의', '관리자 화면에서 문의 확인 및 답변', '문의 접수와 답변을 이메일로 자동 안내'],
