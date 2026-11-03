@@ -27,6 +27,7 @@ export default function ServiceSection({ onInquiry }) {
     const portfolioRoot = element.closest('.rp');
     const workTitle = portfolioRoot.querySelector('.rp-portfolio-title');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobile = window.matchMedia('(max-width: 699px)');
     let distance = 0;
     let travel = 0;
     let header = 84;
@@ -48,13 +49,15 @@ export default function ServiceSection({ onInquiry }) {
       const p = native ? clamp(viewport.scrollLeft / Math.max(1, distance)) : clamp((header - rect.top - hold) / Math.max(1, distance));
       track.style.transform = native ? '' : `translate3d(${-distance * p}px, 0, 0)`;
       stage.style.setProperty('--service-progress', p);
-      if (workTitle) {
+      if (workTitle && !mobile.matches) {
         const titleRect = workTitle.getBoundingClientRect();
         const exit = clamp(
           (window.innerHeight / 5 - titleRect.top - titleRect.height / 2) /
           Math.max(1, window.innerHeight * 0.15)
         );
         portfolioRoot.style.setProperty('--portfolio-inversion', exit);
+      } else if (mobile.matches) {
+        portfolioRoot.style.removeProperty('--portfolio-inversion');
       }
       setProgress(p);
       setCurrent(Math.round(p * (services.length - 1)));

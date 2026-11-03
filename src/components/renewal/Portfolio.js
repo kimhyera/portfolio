@@ -3,8 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, ArrowUp, ArrowDown, X, Mail, Plus } from 'lucide-react';
 import HeroObjects from './HeroObjects';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import projects from '../../data/projects';
 import SiteHeader from './SiteHeader';
 import './styles.scss';
@@ -12,7 +10,6 @@ import ServiceSection from './ServiceSection';
 import ProcessSection from './ProcessSection';
 import MobileMenu from './MobileMenu';
 
-gsap.registerPlugin(ScrollTrigger);
 const asset = (name) => require(`../../views/html/assets/img/${name}`);
 const workCategories = ['전체', '쇼핑몰', '관리자·서비스', '교육·이러닝', '웹사이트'];
 function projectCategory(item) {
@@ -296,7 +293,7 @@ export default function Portfolio() {
 
     const [activeSection, setActiveSection] = useState('home');
     const [workCategory, setWorkCategory] = useState('전체');
-    const [workLimit, setWorkLimit] = useState(6);
+    const [workLimit, setWorkLimit] = useState(12);
     const filteredProjects = projects.filter((item) => workCategory === '전체' || projectCategory(item) === workCategory);
     const visibleProjects = filteredProjects.slice(0, workLimit);
 
@@ -371,53 +368,64 @@ export default function Portfolio() {
                 });
             });
         }
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const motionTargets = rootElement.querySelectorAll(
+            '.rp-home-artwork, .rp-reveal:not(.rp-title-reveal), .rp-project-image img, .rp-what-i-build-stack-card .rp-what-i-build-card-surface, #contact .rp-contact-content > button, #contact .rp-contact-channels > a'
+        );
+        let motionObserver;
+        if (prefersReducedMotion || rootElement.classList.contains('is-capture')) {
+            motionTargets.forEach((target) => target.classList.add('is-motion-visible'));
+        } else {
+            motionTargets.forEach((target) => target.classList.add('rp-motion-reveal'));
+            motionObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-motion-visible');
+                    motionObserver.unobserve(entry.target);
+                });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+            motionTargets.forEach((target) => motionObserver.observe(target));
+        }
+        const buildSection = rootElement.querySelector('#what-i-build');
+        const lastBuildCard = rootElement.querySelector('.rp-what-i-build-stack-card:last-child');
+        const buildObserver = lastBuildCard && !prefersReducedMotion
+            ? new IntersectionObserver(([entry]) => {
+                buildSection.style.setProperty('--build-dark', entry.isIntersecting ? '0.88' : '0');
+            }, { threshold: 0.15 })
+            : null;
+        if (buildObserver) buildObserver.observe(lastBuildCard);
+        const buildCards = [...rootElement.querySelectorAll('.rp-what-i-build-stack-card')];
+        let buildScaleFrame = 0;
+        const updateBuildScale = () => {
+            buildScaleFrame = 0;
+            buildCards.slice(0, -1).forEach((card, index) => {
+                const nextTop = buildCards[index + 1].getBoundingClientRect().top;
+                const progress = Math.max(0, Math.min(1, (window.innerHeight * 0.75 - nextTop) / (window.innerHeight * 0.55)));
+                card.querySelector('.rp-what-i-build-card-surface').style.scale = String(1 - progress * 0.06);
+            });
+        };
+        const queueBuildScale = () => {
+            if (!buildScaleFrame) buildScaleFrame = requestAnimationFrame(updateBuildScale);
+        };
+        if (!prefersReducedMotion) {
+            window.addEventListener('scroll', queueBuildScale, { passive: true });
+            window.addEventListener('resize', queueBuildScale, { passive: true });
+            queueBuildScale();
+        }
         paintTitleGradients();
         window.addEventListener('resize', paintTitleGradients);
-        const media = gsap.matchMedia();
-        media.add(
-            '(prefers-reduced-motion: no-preference)',
-            () => {
-                gsap.fromTo(
-                    '#what-i-build',
-                    { '--build-dark': 0 },
-                    {
-                        '--build-dark': 1,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: '.rp-what-i-build-stack-card:last-child',
-                            start: 'top 30%',
-                            end: () => `+=${window.innerHeight * 0.65}`,
-                            scrub: 0.7,
-                            invalidateOnRefresh: true
-                        }
-                    }
-                );
-                gsap.from('.rp-home-artwork', { opacity: 0, duration: 1.1, ease: 'power2.out', clearProps: 'opacity' });
-                gsap.utils.toArray('.rp-reveal:not(.rp-title-reveal)').forEach((element) => {
-                    gsap.from(element, { y: 35, opacity: 0, duration: 0.75, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 92%', once: true }, clearProps: 'all' });
-                });
-                gsap.timeline({ scrollTrigger: { trigger: '#contact', start: 'top 70%', once: true } }).from('.rp-contact-content > button, .rp-contact-channels > a', { y: 20, opacity: 0, stagger: 0.12, duration: 0.6, delay: 0.5 });
-            },
-            root
-        );
-        media.add(
-            '(min-width: 1000px) and (prefers-reduced-motion: no-preference)',
-            () => {
-                gsap.utils.toArray('.rp-project-image img').forEach((image) => gsap.fromTo(image, { yPercent: -3 }, { yPercent: 3, ease: 'none', scrollTrigger: { trigger: image.closest('.rp-project'), start: 'top bottom', end: 'bottom top', scrub: true } }));
-                gsap.utils.toArray('.rp-what-i-build-stack-card').forEach((card, index) => {
-                    gsap.from(card.querySelector('.rp-what-i-build-card-surface'), { y: 65, opacity: 0, duration: 0.8, scrollTrigger: { trigger: card, start: 'top 93%', once: true }, clearProps: 'y,opacity' });
-                    if (index < 3) gsap.to(card.querySelector('.rp-what-i-build-card-surface'), { scale: 0.94, transformOrigin: 'center top', ease: 'none', scrollTrigger: { trigger: card.nextElementSibling, start: 'top 75%', end: 'top 20%', scrub: true } });
-                });
-            },
-            root
-        );
-        const refresh = () => ScrollTrigger.refresh();
-        rootElement.querySelectorAll('img').forEach((img) => img.addEventListener('load', refresh, { once: true }));
         return () => {
             observer.disconnect();
             titleObserver.disconnect();
             window.removeEventListener('resize', paintTitleGradients);
-            media.revert();
+            motionObserver?.disconnect();
+            buildObserver?.disconnect();
+            window.removeEventListener('scroll', queueBuildScale);
+            window.removeEventListener('resize', queueBuildScale);
+            cancelAnimationFrame(buildScaleFrame);
+            buildCards.forEach((card) => card.querySelector('.rp-what-i-build-card-surface').style.removeProperty('scale'));
+            motionTargets.forEach((target) => target.classList.remove('rp-motion-reveal', 'is-motion-visible'));
+            buildSection?.style.removeProperty('--build-dark');
             titleGroups.forEach((group) => {
                 group.classList.remove('rp-title-reveal', 'rp-section-title-group', 'is-title-visible');
                 group.querySelectorAll('.rp-title-item').forEach((child) => {
@@ -425,7 +433,6 @@ export default function Portfolio() {
                     child.style.removeProperty('--title-order');
                 });
             });
-            rootElement.querySelectorAll('img').forEach((img) => img.removeEventListener('load', refresh));
             document.body.classList.remove('renewal-page');
         };
     }, []);
@@ -441,11 +448,6 @@ export default function Portfolio() {
         window.addEventListener('keydown', onEscape);
         return () => window.removeEventListener('keydown', onEscape);
     }, [menuOpen]);
-
-    useEffect(() => {
-        const refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
-        return () => cancelAnimationFrame(refreshFrame);
-    }, [workCategory, workLimit]);
 
     return (
         <div className={`rp${new URLSearchParams(window.location.search).has('capture') ? ' is-capture' : ''}`} ref={root} data-active-section={activeSection}>
@@ -527,7 +529,7 @@ export default function Portfolio() {
                                     aria-pressed={workCategory === category}
                                     onClick={() => {
                                         setWorkCategory(category);
-                                        setWorkLimit(6);
+                                        setWorkLimit(12);
                                     }}
                                 >
                                     {category}
@@ -562,7 +564,7 @@ export default function Portfolio() {
                         </div>
                         <div className="rp-portfolio-footer">
                             {workLimit < filteredProjects.length && (
-                                <button type="button" className="rp-button rp-outline-light" onClick={() => setWorkLimit((limit) => limit + 6)}>
+                                <button type="button" className="rp-button rp-outline-light" onClick={() => setWorkLimit((limit) => limit + 12)}>
                                     작업 더 보기 <span aria-hidden="true"><Plus size={20} /></span>
                                 </button>
                             )}
