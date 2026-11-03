@@ -24,3 +24,6 @@ yarn-error.log*
 
 # Editor local history (Git maintains project history)
 /.history/
+
+# Local portfolio backup archive
+/next_포트폴리오.zip
