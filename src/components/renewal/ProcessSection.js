@@ -1,3 +1,4 @@
+import AnimatedTitle from './AnimatedTitle';
 import React, { useEffect, useRef } from 'react';
 
 const steps = [
@@ -85,10 +86,10 @@ export default function ProcessSection() {
                     <div className="section-head rp-process-heading">
                         <div>
                             <p className="section-label">PROCESS</p>
-                            <h2 className="section-title">
+                            <AnimatedTitle className="section-title">
                                이해하고, 구현하고,<br />
 끝까지 완성합니다.
-                            </h2>
+                            </AnimatedTitle>
                         </div>
                         <p className="text-body">
                     기획부터 디자인, 개발과 검증까지 <br />

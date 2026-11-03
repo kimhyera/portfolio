@@ -31,7 +31,7 @@ function AppRouter() {
         <Route
           key={index}
           path={route.path}
-          element={route.path === '/' || route.path === '/Main' ? route.element : <><Header />{route.element}</>}
+          element={route.path === '/' || route.path === '/Main' || route.path === '/About' ? route.element : <><Header />{route.element}</>}
         />
       ))}
     </Routes>
@@ -39,8 +39,8 @@ function AppRouter() {
 }
 
 function HtmlRouter() {
-  // 로컬 개발 환경에서는 basename 설정을 하지 않음
-  const basename = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+  // 개발 서버와 배포 환경 모두 CRA의 공개 경로를 기준으로 라우팅합니다.
+  const basename = new URL(process.env.PUBLIC_URL || '/', window.location.origin).pathname.replace(/\/$/, '');
   return (
     <BrowserRouter basename={basename}>      {/* 환경에 따라 basename 설정 */}
    

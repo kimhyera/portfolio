@@ -25,11 +25,11 @@ html.lenis-stopped {
 
 main {
   position: relative;
-  padding-top: $head-h;
+//   padding-top: $head-h;
 
-  @include media-max($l) {
-    padding-top: $head-h-m;
-  }
+//   @include media-max($l) {
+//     padding-top: $head-h-m;
+//   }
 
   //padding-bottom: 100px;
   //@include media-max($l) {

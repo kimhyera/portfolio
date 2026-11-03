@@ -1,10 +1,12 @@
+import AnimatedTitle from './AnimatedTitle';
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, ArrowUpRight, ArrowUp, ArrowDown, X, Menu, Mail, Plus } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, ArrowUp, ArrowDown, X, Mail, Plus } from 'lucide-react';
 import HeroObjects from './HeroObjects';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import projects from '../../data/projects';
-import navigation from './navigation';
+import SiteHeader from './SiteHeader';
 import './styles.scss';
 import ServiceSection from './ServiceSection';
 import ProcessSection from './ProcessSection';
@@ -104,7 +106,7 @@ function Dialog({ title, onClose, children, wide = false }) {
     );
 }
 
-function Inquiry({ onClose }) {
+export function Inquiry({ onClose }) {
     const [prepared, setPrepared] = useState(false);
     const [privacy, setPrivacy] = useState(false);
     const [draft, setDraft] = useState('');
@@ -279,6 +281,12 @@ function HeroVisual() {
 }
 
 export default function Portfolio() {
+    const { hash } = useLocation();
+    useEffect(() => {
+        if (!hash) return;
+        const frame = requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' }));
+        return () => cancelAnimationFrame(frame);
+    }, [hash]);
     const root = useRef(null);
     const build = useRef(null);
 
@@ -350,6 +358,21 @@ export default function Portfolio() {
                 });
             titleObserver.observe(group);
         });
+        function paintTitleGradients() {
+            rootElement.querySelectorAll('.rp-letter-title, .rp-letter-title em, .rp-letter-title span').forEach(source => {
+                const style = window.getComputedStyle(source);
+                if (style.backgroundImage === 'none' || style.webkitTextFillColor !== 'rgba(0, 0, 0, 0)') return;
+                const bounds = source.getBoundingClientRect();
+                source.querySelectorAll('.rp-title-letter').forEach(letter => {
+                    letter.classList.add('rp-title-gradient-letter');
+                    letter.style.backgroundImage = style.backgroundImage;
+                    letter.style.backgroundSize = bounds.width + 'px 100%';
+                    letter.style.backgroundPosition = -(letter.getBoundingClientRect().left - bounds.left) + 'px 0';
+                });
+            });
+        }
+        paintTitleGradients();
+        window.addEventListener('resize', paintTitleGradients);
         const media = gsap.matchMedia();
         media.add(
             '(prefers-reduced-motion: no-preference)',
@@ -393,6 +416,7 @@ export default function Portfolio() {
         return () => {
             observer.disconnect();
             titleObserver.disconnect();
+            window.removeEventListener('resize', paintTitleGradients);
             media.revert();
             titleGroups.forEach((group) => {
                 group.classList.remove('rp-title-reveal', 'rp-section-title-group', 'is-title-visible');
@@ -428,32 +452,7 @@ export default function Portfolio() {
             <a className="rp-skip" href="#main-content">
                 본문 바로가기
             </a>
-            <header className={`rp-header${isFixed ? ' is-fixed' : ''}`}>
-                <div className="rp-header-inner">
-                    <a className="rp-logo" href="#home" aria-label="김혜라 포트폴리오 처음으로">
-                        <img src={asset('hyera-logo.png')} alt="hyera" className="rp-brand-logo" width="694" height="202" />
-                    </a>
-                    <nav className="rp-nav" id="rp-navigation" aria-label="주요 메뉴">
-                        {navigation.map(([id, name]) => (
-                            <a key={id} href={`#${id}`} aria-current={activeSection === id ? 'location' : undefined}>
-                                {name}
-                            </a>
-                        ))}
-                    </nav>
-                    <button
-                        className="rp-header-contact"
-                        onClick={() => {
-                            setMenuOpen(false);
-                            setModal('inquiry');
-                        }}
-                    >
-                        Let's talk <Arrow />
-                    </button>
-                    <button id="rp-menu-toggle" className="rp-menu-toggle" aria-label={menuOpen ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={menuOpen} aria-controls="rp-mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
-                        {menuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-                    </button>
-                </div>
-            </header>
+            <SiteHeader home isFixed={isFixed} activeSection={activeSection} menuOpen={menuOpen} setMenuOpen={setMenuOpen} onInquiry={() => setModal('inquiry')} />
             <main id="main-content" className="rp-main">
                 <section id="home" className="rp-home rp-home--art">
                     <div className="rp-container rp-home-layout">
@@ -461,11 +460,11 @@ export default function Portfolio() {
                             <p className="rp-eyebrow">
                                 <span className="rp-status-dot" /> KIM HYERA · PORTFOLIO
                             </p>
-                            <h1>
+                            <AnimatedTitle as="h1">
                                 Design meets
                                 <br />
                                 <span>Development.</span>
-                            </h1>
+                            </AnimatedTitle>
                             <p className="rp-home-description">
                                 디자인의 의도를 이해하고, 실제 사용자 경험으로 완성하는
                                 <br className="rp-desktop-break" /> 웹 퍼블리셔 / 프론트엔드 개발자입니다.
@@ -474,9 +473,7 @@ export default function Portfolio() {
                                 <a className="rp-button rp-primary" href="#portfolio">
                                     View Projects <span aria-hidden="true"><ArrowRight size={22} /></span>
                                 </a>
-                                <a className="rp-text-link" href="#what-i-do">
-                                    About Me
-                                </a>
+                                <Link className="rp-text-link" to="/About">About Me</Link>
                             </div>
                             <div className="rp-home-keywords">
                                 <span>UX/UI DESIGN</span>
@@ -487,10 +484,10 @@ export default function Portfolio() {
                         <HeroVisual />
                         <HeroObjects />
                         <aside className="rp-home-aside">
-                            <h2>
+                            <AnimatedTitle>
                                 웹을 설계하고, 구현하고,
                                 <br />더 나은 경험으로 완성합니다.
-                            </h2>
+                            </AnimatedTitle>
                             <p>
                                 기획부터 퍼블리싱, 성능 최적화까지
                                 <br />
@@ -518,7 +515,7 @@ export default function Portfolio() {
                                 <br />
                                 다양한 웹사이트를 제작했습니다.
                             </p>
-                            <h2 className="rp-portfolio-title">Portfolio</h2>
+                            <AnimatedTitle className="rp-portfolio-title">Portfolio</AnimatedTitle>
                         </div>
                         <div className="rp-portfolio-filters" role="group" aria-label="프로젝트 카테고리">
                             {workCategories.map((category, index) => (
@@ -580,11 +577,11 @@ export default function Portfolio() {
                     <div className="rp-container">
                         <div className="rp-section-heading rp-centered rp-reveal rp-heading-standard">
                             <p className="rp-eyebrow">WHAT I BUILD</p>
-                            <h2>
+                            <AnimatedTitle>
                                 다양한 서비스에서
                                 <br />
                                 <span className="rp-gradient-text">경험을 쌓았습니다.</span>
-                            </h2>
+                            </AnimatedTitle>
                             <p>
                                 쇼핑몰부터 관리자 시스템, 기업 웹사이트, 교육 콘텐츠까지. <br />
                                 다양한 환경에서 쌓은 프로젝트 경험을 소개합니다.
@@ -621,9 +618,9 @@ export default function Portfolio() {
                     <div className="rp-contact-glow" />
                     <div className="rp-container rp-contact-content">
                         <p className="rp-eyebrow">SECTION 06 / CONTACT</p>
-                        <h2>
+                        <AnimatedTitle>
                            함께 <span>좋은 경험</span>을 만들어가요.
-                        </h2>
+                        </AnimatedTitle>
                         <p>좋은 아이디어를 함께 완성해요.</p>
                         <button className="rp-button rp-primary" onClick={() => setModal('inquiry')}>
                             프로젝트 문의하기 <Arrow />

@@ -257,14 +257,14 @@
         pointer-events: none;
     }
     .rp-what-i-build-stack-2 .rp-what-i-build-card-surface {
-        background: #f9f8ff;
-        border-color: #edebf5;
+        background: #d4ecff;
+        border-color: #d4ecff;
     }
     .rp-what-i-build-copy {
         position: relative;
         z-index: 1;
     }
-    .rp-what-i-build-copy .rp-eyebrow {
+    .rp-what-i-build-copy .rp-30 {
         font-size: 18px;
         font-weight: 500;
         color: #997efe;
@@ -275,7 +275,7 @@
         font-size: clamp(25px, 2.5vw, 40px);
         font-weight: 650;
     }
-    .rp-what-i-build-copy > p:not(.rp-eyebrow) {
+    .rp-what-i-build-copy > p:not(.rp-g) {
         font-size: 20px;
         line-height: 1.8;
         opacity: 0.8;
@@ -305,24 +305,24 @@
         width: 120px;
         height: 135px;
         border-radius: 0;
-        background-image: url('../../views/html/assets/img/build-design-reference.jpg');
+        background-image: url('../../views/html/assets/img/build-01.png');
+
         background-repeat: no-repeat;
-        background-size: 1024px 1536px;
+        background-size: cover;
         box-shadow: none;
         transform: none;
-        mask-image: radial-gradient(ellipse at center, #000 40%, transparent 72%);
     }
     .rp-what-i-build-reference-icon-0 {
-        background-position: -90px -410px;
+        background-image: url('../../views/html/assets/img/build-01.png');
     }
     .rp-what-i-build-reference-icon-1 {
-        background-position: -810px -685px;
+        background-image: url('../../views/html/assets/img/build-02.png');
     }
     .rp-what-i-build-reference-icon-2 {
-        background-position: -85px -965px;
+        background-image: url('../../views/html/assets/img/build-03.png');
     }
     .rp-what-i-build-reference-icon-3 {
-        background-position: -810px -1220px;
+        background-image: url('../../views/html/assets/img/build-04.png');
     }
     .rp-what-i-build-stack-card:nth-child(even) .rp-what-i-build-card-icon {
         grid-column: 3;

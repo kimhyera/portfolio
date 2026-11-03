@@ -42,13 +42,15 @@
 
 .rp-nav {
     display: flex;
-    gap: 34px;
+    gap: 40px;
 }
 
 .rp-nav a {
-    font-size: 18px;
     font-weight: 500;
     position: relative;
+
+
+    font-size: clamp(14px, 1.3vw, 16px);
 }
 
 // 메뉴에는 글자와 활성 상태 표시만 사용합니다.
@@ -96,6 +98,7 @@
 .rp-menu-toggle {
     display: none;
 }
+
 
 @media (max-width: 1199px) {
     .rp-header-inner {

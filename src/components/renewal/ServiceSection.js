@@ -1,3 +1,4 @@
+import AnimatedTitle from './AnimatedTitle';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -122,7 +123,7 @@ export default function ServiceSection({ onInquiry }) {
   }, []);
 
   return <section id="what-i-do" className="rp-what-i-do" aria-labelledby="rp-service-intro-title">
-    <div className="rp-section-heading rp-centered rp-service-intro rp-heading-standard"><p className="rp-eyebrow">WHAT I DO</p><h2 id="rp-service-intro-title">생각을 화면으로,<br /><em>화면을 경험으로 완성합니다.</em></h2><p>기획, 디자인, 퍼블리싱, 프론트엔드 개발, 웹빌더 작업까지<br />하나의 실무 워크플로우로 연결해, 아이디어를 실제 서비스로 구현합니다.</p></div>
+    <div className="rp-section-heading rp-centered rp-service-intro rp-heading-standard"><p className="rp-eyebrow">WHAT I DO</p><AnimatedTitle id="rp-service-intro-title">생각을 화면으로,<br /><em>화면을 경험으로 완성합니다.</em></AnimatedTitle><p>기획, 디자인, 퍼블리싱, 프론트엔드 개발, 웹빌더 작업까지<br />하나의 실무 워크플로우로 연결해, 아이디어를 실제 서비스로 구현합니다.</p></div>
     <div className="rp-service-scene" ref={scene}>
       <div className="rp-service-sticky">
         <div className="rp-service-heading"><div></div><div className="rp-service-controls"><span>스크롤하며 살펴보세요</span><button type="button" onClick={() => controller.current?.(-1)} disabled={progress <= 0} aria-label="이전 서비스"><ArrowLeft size={19} aria-hidden="true" /></button><button type="button" onClick={() => controller.current?.(1)} disabled={progress >= 1} aria-label="다음 서비스"><ArrowRight size={19} aria-hidden="true" /></button></div></div>

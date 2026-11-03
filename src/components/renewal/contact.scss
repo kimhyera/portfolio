@@ -166,10 +166,10 @@
         width: 680px;
         height: 680px;
         border-radius: 50%;
-        border: 1px solid #c38affb3;
-        box-shadow: 0 0 45px #ac54f970, inset 0 0 50px #ac54f955;
+        // border: 1px solid #c38affb3;
+        // box-shadow: 0 0 45px #ac54f970, inset 0 0 50px #ac54f955;
         z-index: -1;
-        background: linear-gradient(140deg, #35204e, #7c2fbb77);
+        // background: linear-gradient(140deg, #35204e, #7c2fbb77);
     }
     .rp-contact::after {
         content: '';
@@ -177,10 +177,10 @@
         width: 680px;
         height: 680px;
         border-radius: 50%;
-        border: 1px solid #c38affb3;
-        box-shadow: 0 0 45px #ac54f970, inset 0 0 50px #ac54f955;
+        // border: 1px solid #c38affb3;
+        // box-shadow: 0 0 45px #ac54f970, inset 0 0 50px #ac54f955;
         z-index: -1;
-        background: linear-gradient(140deg, #35204e, #7c2fbb77);
+        // background: linear-gradient(140deg, #35204e, #7c2fbb77);
     }
     .rp-contact::before {
         left: -430px;
@@ -194,7 +194,7 @@
         color: #b154f9;
     }
     .rp-contact h2 {
-        font-size: clamp(44px, 5.8vw, 90px);
+        font-size: clamp(40px, 5.8vw, 72px);
         margin-top: 60px;
         font-weight: 650;
     }

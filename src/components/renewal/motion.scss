@@ -50,3 +50,19 @@
         animation-delay: calc(var(--title-order, 0) * 130ms);
     }
 }
+
+// Match the About hero's letter-by-letter fade-in-up for main section titles.
+@keyframes rp-letter-fade-up {
+ from { opacity: 0; transform: translate3d(0,.65em,0); }
+ to { opacity: 1; transform: translate3d(0,0,0); }
+}
+.rp .rp-title-word { display: inline-block; white-space: nowrap; font: inherit; }
+.rp .rp-title-letter { display: inline-block; font: inherit; }
+@media (prefers-reduced-motion: no-preference) {
+ .rp .rp-title-reveal > .rp-letter-title.rp-title-item { opacity: 1; translate: none; animation: none; }
+ .rp .rp-title-reveal .rp-title-letter { opacity: 0; transform: translate3d(0,.65em,0); }
+ .rp .rp-title-reveal.is-title-visible .rp-title-letter { animation: rp-letter-fade-up .8s cubic-bezier(.22,1,.36,1) both; animation-delay: calc(var(--title-order,0) * .13s + var(--letter-delay,0s)); }
+ .rp.is-capture .rp-title-letter { opacity: 1; transform: none; animation: none !important; }
+}
+
+.rp .rp-title-gradient-letter { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-repeat: no-repeat; }

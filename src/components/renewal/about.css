@@ -1,0 +1,836 @@
+.rp .hyera-about {
+    --ink: #172232;
+    --muted: #5d6977;
+    --blue: #478cfa;
+    --purple: #8862d8;
+    --max: 1400px;
+}
+.rp .hyera-about * {
+    box-sizing: border-box;
+}
+.rp .hyera-about {
+    scroll-behavior: smooth;
+}
+.rp .hyera-about {
+    margin: 0;
+    color: var(--ink);
+    background: #f8f9fb;
+    font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+.rp .hyera-about button,
+.rp .hyera-about a {
+    -webkit-tap-highlight-color: transparent;
+}
+.rp .hyera-about button {
+    font: inherit;
+}
+.rp .hyera-about a {
+    color: inherit;
+    text-decoration: none;
+}
+.rp .hyera-about button:focus-visible,
+.rp .hyera-about a:focus-visible {
+    outline: 3px solid #7163f2;
+    outline-offset: 4px;
+}
+.rp .hyera-about .container {
+    width: min(calc(100% - 100px), var(--max));
+    margin: auto;
+}
+.rp .hyera-about .skip-link {
+    position: absolute;
+    z-index: 300;
+    top: -50px;
+    left: 20px;
+    padding: 10px;
+    background: #fff;
+}
+.rp .hyera-about .skip-link:focus {
+    top: 10px;
+}
+.rp .hyera-about .site-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+.rp .hyera-about .site-header__inner {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rp .hyera-about .brand {
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -2px;
+}
+.rp .hyera-about .brand__dot {
+    color: #6c63ba;
+}
+.rp .hyera-about .nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.rp .hyera-about .nav > a:not(.nav__contact):hover {
+    color: #4d7ee5;
+}
+.rp .hyera-about .nav__contact {
+    background: #192435;
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 20px;
+}
+.rp .hyera-about .nav__contact span {
+    margin-left: 15px;
+}
+.rp .hyera-about .menu-toggle,
+.rp .hyera-about .mobile-menu {
+    display: none;
+}
+.rp .hyera-about .hero {
+    height: min(850px, 100svh);
+    min-height: 570px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse 55% 85% at 15% 4%, #fbdfe3 0%, transparent 80%), 
+	radial-gradient(ellipse 55% 80% at 88% 83%, #dfcefc 0%, transparent 72%), 
+	radial-gradient(ellipse 65% 105% at 50% 18%, #dfcefc 0%, #dfcefc 60%, #dfcefc 100%);
+}
+.rp .hyera-about .hero__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.65;
+    pointer-events: none;
+}
+.rp .hyera-about .hero__glow--one {
+    background: #fbdfe3;
+    width: 40%;
+    height: 85%;
+    right: 14%;
+    top: 24%;
+}
+.rp .hyera-about .hero__glow--two {
+    background: #fbdfe3;
+    width: 34%;
+    height: 75%;
+    left: 7%;
+    top: 8%;
+}
+.rp .hyera-about .hero__content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 40px;
+}
+.rp .hyera-about .hero__eyebrow span{
+    letter-spacing: 0.24em;
+    font-weight: 700;
+    opacity: 0.7;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+.rp .hyera-about .hero__title {
+    font-size: clamp(76px, 10vw, 156px);
+    line-height: 1.2;
+    margin: 22px 0 0;
+    font-weight: 800;
+}
+.rp .hyera-about .hero__title > span:first-child {
+    font-weight: 800;
+}
+.rp .hyera-about .hero__title .brand__dot {
+    color: #253752;
+}
+.rp .hyera-about .hero__subtitle {
+    font-size: clamp(18px, 1.8vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    margin: 14px 0;
+}
+.rp .hyera-about .scroll-down {
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0.55;
+    animation: about-bounce 2s ease-in-out infinite;
+}
+@keyframes about-bounce {
+    50% {
+        transform: translate(-50%, 8px);
+    }
+}
+.rp .hyera-about .section {
+    position: relative;
+    padding: 135px 0;
+}
+.rp .hyera-about .intro {
+    background: radial-gradient(ellipse 44% 38% at 100% 90%, #e6f2ff 0%, transparent 95%), #fafafa;
+}
+.rp .hyera-about .section-heading {
+    text-align: center;
+    margin: 0 auto 76px;
+}
+.rp .hyera-about .eyebrow {
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    color: #7e85a2;
+    margin-bottom: 18px;
+}
+.rp .hyera-about .section-heading h2 {
+    line-height: 1.37;
+    margin: 0;
+    font-weight: 800;
+}
+.rp .hyera-about .section-heading h2 strong {
+    font-weight: 800;
+}
+.rp .hyera-about .section-heading p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin: 22px 0 0;
+}
+.rp .hyera-about .story-feature {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 60px;
+    padding: 55px 65px;
+    min-height: 310px;
+    max-width: 1030px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 25px 80px rgba(55, 99, 143, 0.045);
+}
+.rp .hyera-about .story-feature__left,
+.rp .hyera-about .story-feature__right {
+    position: relative;
+    z-index: 1;
+}
+.rp .hyera-about .story-feature__number {
+    font-size: 12px;
+    color: #8191a7;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+.rp .hyera-about .story-feature h3 {
+    font-size: clamp(26px, 2.6vw, 42px);
+    line-height: 1.35;
+    letter-spacing: -0.065em;
+    margin: 20px 0;
+    font-weight: 800;
+}
+.rp .hyera-about .story-feature__meta {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #99a6b3;
+    margin-top: 30px;
+    font-weight: 700;
+}
+.rp .hyera-about .story-feature__right {
+    display: flex;
+    align-items: center;
+}
+.rp .hyera-about .story-feature__right p {
+    font-size: 16px;
+    line-height: 2;
+    color: #586779;
+    word-break: keep-all;
+}
+.rp .hyera-about .story-feature__glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 45% 80% at 39% 35%, #d4ecff 0%, transparent 80%);
+    opacity: 0.8;
+    transition: background 0.4s;
+}
+.rp .hyera-about .story-feature[data-variant='1'] .story-feature__glow {
+    background: radial-gradient(ellipse 45% 80% at 39% 35%, #dce2ff, transparent 80%);
+}
+.rp .hyera-about .story-feature[data-variant='2'] .story-feature__glow {
+    background: radial-gradient(ellipse 45% 80% at 39% 35%, #d3f4ed, transparent 80%);
+}
+.rp .hyera-about .story-feature[data-variant='3'] .story-feature__glow {
+    background: radial-gradient(ellipse 45% 80% at 39% 35%, #fff2cd, transparent 80%);
+}
+.rp .hyera-about .story-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+    margin: 18px auto 0;
+    max-width: 1220px;
+}
+.rp .hyera-about .story-tab {
+    height: 100px;
+    padding: 20px 22px;
+    border: 0;
+    border-radius: 15px;
+    text-align: left;
+    background: #e2f0ff;
+    color: #60738a;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    cursor: pointer;
+    transition:
+        background 0.25s,
+        transform 0.25s,
+        color 0.25s;
+}
+.rp .hyera-about .story-tab:hover {
+    transform: translateY(-4px);
+}
+.rp .hyera-about .story-tab.is-active {
+    color: #10283b;
+    background: #b7dfff;
+}
+.rp .hyera-about .story-tab > span {
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+}
+.rp .hyera-about .story-tab svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linejoin: round;
+    opacity: 0.8;
+}
+.rp .hyera-about .slider-controls {
+    max-width: 1220px;
+    margin: 21px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.rp .hyera-about .slider-controls button {
+    border: 0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: #eaf0f6;
+    color: #566d80;
+    cursor: pointer;
+}
+.rp .hyera-about .slider-controls button:hover {
+    background: #c6dcf2;
+}
+.rp .hyera-about .slider-controls__counter {
+    font-size: 12px;
+    color: #8492a2;
+    margin-right: 8px;
+}
+.rp .hyera-about .principles {
+    padding-top: 165px;
+    background: radial-gradient(ellipse 43% 50% at 90% 46%, #dcecff 0%, transparent 100%), linear-gradient(180deg, #f8fafb, #f3f9fd);
+}
+.rp .hyera-about .impact-list {
+    width: min(100%, 1030px);
+    margin: auto;
+    display: grid;
+    gap: 22px;
+}
+.rp .hyera-about .impact-card {
+    display: grid;
+    grid-template-columns: 41% 59%;
+    align-items: center;
+    gap: 20px;
+    min-height: 260px;
+    border-radius: 28px;
+    padding: 34px 45px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 32px #aecade0a;
+}
+.rp .hyera-about .impact-card--blue {
+    background: linear-gradient(110deg, #d9edff, #c4e0fa 60%, #eff9ff);
+}
+.rp .hyera-about .impact-card--mint {
+    background: linear-gradient(110deg, #e2f7f5, #d4f5ff 65%, #effcff);
+}
+.rp .hyera-about .impact-card--yellow {
+    background: linear-gradient(110deg, #fff7d8, #fff3c6 50%, #f9fbf0);
+}
+.rp .hyera-about .impact-card__num {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 800;
+    opacity: 0.5;
+}
+.rp .hyera-about .impact-card__heading h3 {
+    font-size: clamp(34px, 4.1vw, 59px);
+    line-height: 1.04;
+    letter-spacing: -0.08em;
+    margin: 14px 0;
+}
+.rp .hyera-about .impact-card__heading p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    color: #647484;
+}
+.rp .hyera-about .impact-card__points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+.rp .hyera-about .impact-card__points li {
+    background: #ffffffdf;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: #526679;
+}
+.rp .hyera-about .experience {
+    background: radial-gradient(ellipse 44% 65% at 11% 90%, #ede6ff, transparent 92%), radial-gradient(ellipse 38% 70% at 97% 20%, #e5efff, transparent 92%), #fafaff;
+}
+.rp .hyera-about .expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.45fr;
+    gap: 20px;
+}
+.rp .hyera-about .expertise-stat,
+.rp .hyera-about .expertise-skills {
+    border: 1px solid #fff;
+    background: #ffffffa8;
+    border-radius: 28px;
+    min-height: 270px;
+    padding: 42px;
+    box-shadow: 0 15px 55px #6a7c9c0b;
+}
+.rp .hyera-about .expertise-stat > span {
+    font-size: clamp(50px, 5.6vw, 83px);
+    line-height: 1;
+    letter-spacing: -0.08em;
+    font-weight: 800;
+}
+.rp .hyera-about .expertise-stat .plus {
+    color: #8b75d5;
+}
+.rp .hyera-about .expertise-stat p {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    margin: 30px 0 9px;
+}
+.rp .hyera-about .expertise-stat small {
+    color: #758295;
+    font-size: 14px;
+}
+.rp .hyera-about .expertise-skills h3 {
+    font-size: 14px;
+    letter-spacing: 0.09em;
+    margin: 0 0 25px;
+}
+.rp .hyera-about .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+.rp .hyera-about .skill-pills span {
+    font-size: 13px;
+    font-weight: 600;
+    background: #edf1fa;
+    color: #50607a;
+    border-radius: 30px;
+    padding: 12px 14px;
+}
+.rp .hyera-about .history {
+    background: #f7f9fb;
+    padding-bottom: 145px;
+}
+.rp .hyera-about .history-list {
+    max-width: 1070px;
+    margin: 0 auto;
+    border-top: 1px solid #d9e3eb;
+}
+.rp .hyera-about .history-item {
+    padding: 37px 12px;
+    border-bottom: 1px solid #d9e3eb;
+    display: grid;
+    grid-template-columns: 260px 1fr 50px;
+    gap: 25px;
+    align-items: start;
+}
+.rp .hyera-about .history-item__year {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+.rp .hyera-about .history-item__category {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    font-weight: 800;
+    color: #7b95b5;
+}
+.rp .hyera-about .history-item__body h3 {
+    font-size: 23px;
+    letter-spacing: -0.05em;
+    margin: 10px 0;
+}
+.rp .hyera-about .history-item__body p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #6b7b88;
+    margin: 0;
+    word-break: keep-all;
+}
+.rp .hyera-about .history-item__index {
+    color: #bac8d3;
+    font-size: 28px;
+    font-weight: 800;
+}
+.rp .hyera-about .history-footer {
+    max-width: 1070px;
+    margin: 80px auto 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.rp .hyera-about .history-footer p {
+    font-size: clamp(24px, 2.9vw, 43px);
+    line-height: 1.5;
+    letter-spacing: -0.06em;
+    font-weight: 700;
+}
+.rp .hyera-about .history-footer p strong {
+    font-weight: 800;
+}
+.rp .hyera-about .back-top {
+    border-radius: 50px;
+    border: 1px solid #c7d3df;
+    padding: 14px 23px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.rp .hyera-about .back-top span {
+    margin-left: 18px;
+}
+.rp .hyera-about .site-footer {
+    background: #e9eff5;
+    padding: 30px 0;
+}
+.rp .hyera-about .site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    color: #687b8c;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+.rp .hyera-about .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 0.85s ease,
+        transform 0.85s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.rp .hyera-about .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 900px) {
+    .rp .hyera-about .container {
+        width: min(calc(100% - 48px), var(--max));
+    }
+    .rp .hyera-about .section {
+        padding: 100px 0;
+    }
+    .rp .hyera-about .story-feature {
+        padding: 38px;
+        gap: 30px;
+    }
+    .rp .hyera-about .story-tabs {
+        gap: 9px;
+    }
+    .rp .hyera-about .story-tab {
+        padding: 14px;
+    }
+    .rp .hyera-about .impact-card {
+        grid-template-columns: 38% 62%;
+        padding: 30px;
+    }
+    .rp .hyera-about .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .rp .hyera-about .expertise-skills {
+        grid-column: 1/-1;
+        min-height: 180px;
+    }
+    .rp .hyera-about .history-item {
+        grid-template-columns: 200px 1fr 35px;
+    }
+    .rp .hyera-about .nav {
+        gap: 16px;
+    }
+}
+@media (max-width: 640px) {
+    .rp .hyera-about .container {
+        width: calc(100% - 38px);
+    }
+    .rp .hyera-about .site-header__inner {
+        height: 65px;
+    }
+    .rp .hyera-about .brand {
+        font-size: 20px;
+    }
+    .rp .hyera-about .nav {
+        display: none;
+    }
+    .rp .hyera-about .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: transparent;
+        border: 0;
+        padding: 12px;
+    }
+    .rp .hyera-about .menu-toggle span {
+        width: 25px;
+        height: 2px;
+        background: #172232;
+    }
+    .rp .hyera-about .mobile-menu:not([hidden]) {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background: #f7fafbf5;
+        padding: 25px 22px;
+        font-weight: 700;
+    }
+    .rp .hyera-about .hero {
+        min-height: 550px;
+        height: 80svh;
+    }
+    .rp .hyera-about .hero__eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.12em;
+    }
+    .rp .hyera-about .hero__title {
+        font-size: clamp(58px, 13vw, 90px);
+    }
+    .rp .hyera-about .hero__subtitle {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    .rp .hyera-about .scroll-down {
+        bottom: 34px;
+    }
+    .rp .hyera-about .section {
+        padding: 88px 0;
+    }
+    .rp .hyera-about .section-heading {
+        margin-bottom: 42px;
+    }
+    .rp .hyera-about .section-heading h2 {
+        font-size: 29px;
+        line-height: 1.48;
+    }
+    .rp .hyera-about .section-heading p {
+        font-size: 13px;
+        line-height: 1.85;
+        margin-top: 16px;
+    }
+    .rp .hyera-about .desktop-only {
+        display: none;
+    }
+    .rp .hyera-about .story-feature {
+        grid-template-columns: 1fr;
+        min-height: 330px;
+        gap: 8px;
+        border-radius: 23px;
+        padding: 28px;
+    }
+    .rp .hyera-about .story-feature h3 {
+        font-size: 29px;
+        margin: 12px 0;
+    }
+    .rp .hyera-about .story-feature__meta {
+        margin-top: 12px;
+    }
+    .rp .hyera-about .story-feature__right p {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+    .rp .hyera-about .story-tabs {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-left: -19px;
+        margin-right: -19px;
+        padding: 0 19px 12px;
+        scrollbar-width: none;
+    }
+    .rp .hyera-about .story-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .rp .hyera-about .story-tab {
+        flex: 0 0 152px;
+        height: 83px;
+        scroll-snap-align: start;
+    }
+    .rp .hyera-about .story-tab > span {
+        font-size: 12px;
+    }
+    .rp .hyera-about .story-tab svg {
+        width: 19px;
+    }
+    .rp .hyera-about .slider-controls {
+        margin-top: 4px;
+    }
+    .rp .hyera-about .impact-list {
+        gap: 14px;
+    }
+    .rp .hyera-about .impact-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 23px;
+        border-radius: 23px;
+    }
+    .rp .hyera-about .impact-card__heading h3 {
+        font-size: 40px;
+        margin: 10px 0;
+    }
+    .rp .hyera-about .impact-card__heading p {
+        font-size: 13px;
+    }
+    .rp .hyera-about .impact-card__points li {
+        font-size: 12px;
+        padding: 12px 15px;
+    }
+    .rp .hyera-about .expertise-grid {
+        gap: 10px;
+    }
+    .rp .hyera-about .expertise-stat {
+        min-height: 180px;
+        padding: 24px 16px;
+        border-radius: 18px;
+    }
+    .rp .hyera-about .expertise-stat > span {
+        font-size: 48px;
+    }
+    .rp .hyera-about .expertise-stat p {
+        font-size: 9px;
+        margin: 20px 0 8px;
+    }
+    .rp .hyera-about .expertise-stat small {
+        font-size: 12px;
+    }
+    .rp .hyera-about .expertise-skills {
+        padding: 26px;
+        border-radius: 18px;
+    }
+    .rp .hyera-about .skill-pills span {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+    .rp .hyera-about .history-item {
+        grid-template-columns: 1fr 27px;
+        gap: 9px 12px;
+        padding: 27px 0;
+    }
+    .rp .hyera-about .history-item__year {
+        grid-column: 1;
+        font-size: 18px;
+    }
+    .rp .hyera-about .history-item__body {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .rp .hyera-about .history-item__body h3 {
+        font-size: 19px;
+    }
+    .rp .hyera-about .history-item__body p {
+        font-size: 13px;
+    }
+    .rp .hyera-about .history-item__index {
+        grid-column: 2;
+        grid-row: 1/3;
+        font-size: 22px;
+    }
+    .rp .hyera-about .history-footer {
+        margin-top: 45px;
+        display: block;
+    }
+    .rp .hyera-about .history-footer p {
+        font-size: 25px;
+    }
+    .rp .hyera-about .back-top {
+        display: inline-block;
+        margin-top: 14px;
+    }
+    .rp .hyera-about .site-footer .container {
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 9px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .rp .hyera-about *,
+    .rp .hyera-about *::before,
+    .rp .hyera-about *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .rp .hyera-about .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.rp .hyera-about {
+    overflow: clip;
+    line-height: 1.6;
+}
+.rp .hyera-about .hero {
+    padding-top: 84px;
+}
+.rp .hyera-about p {
+    word-break: keep-all;
+}
+
+
+/* Hero typography: staggered letters, preserving whole words on narrow screens. */
+.rp .hyera-about .about-hero-word { display: inline-block; white-space: nowrap; }
+.rp .hyera-about .about-hero-letter { display: inline-block; opacity: 0; transform: translate3d(0, .65em, 0); animation: about-letter-up .8s cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes about-letter-up { from { opacity: 0; transform: translate3d(0, .65em, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@media (prefers-reduced-motion: reduce) { .rp .hyera-about .about-hero-letter { animation: none; opacity: 1; transform: none; } }
+
+/* Stagger the rest of About only when the section is in view. */
+.rp .hyera-about .section-heading.about-motion-group,
+.rp .hyera-about .history-footer.about-motion-group { opacity: 1; transform: none; transition: none; }
+.rp .hyera-about .about-motion-group .about-motion-item { opacity: 0; transform: translate3d(0, 22px, 0); transition: opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay: var(--about-motion-delay, 0s); }
+.rp .hyera-about .about-motion-group.is-visible .about-motion-item { opacity: 1; transform: translate3d(0,0,0); }
+.rp .hyera-about .section-heading .about-hero-letter { animation: none; opacity: 0; transform: translate3d(0,.65em,0); }
+.rp .hyera-about .section-heading.is-visible .about-hero-letter { animation: about-letter-up .75s cubic-bezier(.22,1,.36,1) both; }
+/* The heading itself stays still while its individual letters move. */
+.rp .hyera-about .section-heading.about-motion-group h2.about-motion-item { opacity: 1; transform: none; transition: none; }
+@media(prefers-reduced-motion:reduce) {
+ .rp .hyera-about .about-motion-group .about-motion-item,
+ .rp .hyera-about .section-heading .about-hero-letter,
+ .rp .hyera-about .section-heading.is-visible .about-hero-letter { opacity: 1; transform: none; transition: none; animation: none; }
+}
