@@ -339,7 +339,13 @@
         width: 100%;
         overflow: hidden;
         border-radius: 10px;
+		background-repeat: no-repeat;
+		height: 200px;
+		background-size: contain;
+		background-position: center;
     }
+
+	
     .rp-what-i-build-reference-art img {
         position: absolute;
         max-width: none;
@@ -348,7 +354,26 @@
     }
 }
 
+.rp-what-i-build-stack-0 .rp-what-i-build-reference-art{
+        background-image: url('../../views/html/assets/img/mockup-01.png');
+}
+
+.rp-what-i-build-stack-1 .rp-what-i-build-reference-art{
+        background-image: url('../../views/html/assets/img/mockup-02.png');
+}
+
+.rp-what-i-build-stack-2 .rp-what-i-build-reference-art{
+        background-image: url('../../views/html/assets/img/mockup-03.png');
+}
+
+
+.rp-what-i-build-stack-3 .rp-what-i-build-reference-art{
+        background-image: url('../../views/html/assets/img/mockup-04.png');
+}
 @media (max-width: 999px) {
+	.rp #what-i-build .rp-what-i-build-reference-art{
+		height: 150px;
+	}
     .rp #what-i-build {
         .rp-what-i-build-card-surface {
             grid-template-columns: 75px minmax(0, 1fr) 40%;

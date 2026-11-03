@@ -266,7 +266,7 @@ function BuildMockup({ index, title }) {
     return (
         <div className="rp-what-i-build-devices rp-what-i-build-reference-devices">
             <div className="rp-what-i-build-reference-art" style={{ aspectRatio: `${crop.width} / ${crop.height}` }}>
-                <img src={asset('build-design-reference.jpg')} alt={`${title} PC·모바일 UI 목업 디자인 예시`} loading={new URLSearchParams(window.location.search).has('capture') ? 'eager' : 'lazy'} style={{ width: `${(1024 / crop.width) * 100}%`, left: `${(-crop.x / crop.width) * 100}%`, top: `${(-crop.y / crop.height) * 100}%` }} />
+               
             </div>
         </div>
     );
