@@ -369,12 +369,15 @@ export default function Portfolio() {
             });
         }
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const mobileBuildMotion = window.matchMedia('(max-width: 699px)').matches;
+        const buildTargets = rootElement.querySelectorAll('.rp-what-i-build-stack-card .rp-what-i-build-card-surface');
         const motionTargets = rootElement.querySelectorAll(
-            '.rp-home-artwork, .rp-reveal:not(.rp-title-reveal), .rp-project-image img, .rp-what-i-build-stack-card .rp-what-i-build-card-surface, #contact .rp-contact-content > button, #contact .rp-contact-channels > a'
+            '.rp-home-artwork, .rp-reveal:not(.rp-title-reveal), .rp-project-image img, #contact .rp-contact-content > button, #contact .rp-contact-channels > a'
         );
         let motionObserver;
         if (prefersReducedMotion || rootElement.classList.contains('is-capture')) {
             motionTargets.forEach((target) => target.classList.add('is-motion-visible'));
+            buildTargets.forEach((target) => target.classList.add('is-motion-visible'));
         } else {
             motionTargets.forEach((target) => target.classList.add('rp-motion-reveal'));
             motionObserver = new IntersectionObserver((entries) => {
@@ -385,10 +388,16 @@ export default function Portfolio() {
                 });
             }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
             motionTargets.forEach((target) => motionObserver.observe(target));
+            if (mobileBuildMotion) {
+                buildTargets.forEach((target) => target.classList.add('is-motion-visible'));
+            } else {
+                buildTargets.forEach((target) => target.classList.add('rp-motion-reveal'));
+                buildTargets.forEach((target) => motionObserver.observe(target));
+            }
         }
         const buildSection = rootElement.querySelector('#what-i-build');
         const lastBuildCard = rootElement.querySelector('.rp-what-i-build-stack-card:last-child');
-        const buildObserver = lastBuildCard && !prefersReducedMotion
+        const buildObserver = lastBuildCard && !prefersReducedMotion && !mobileBuildMotion
             ? new IntersectionObserver(([entry]) => {
                 buildSection.style.setProperty('--build-dark', entry.isIntersecting ? '0.88' : '0');
             }, { threshold: 0.15 })
@@ -407,7 +416,7 @@ export default function Portfolio() {
         const queueBuildScale = () => {
             if (!buildScaleFrame) buildScaleFrame = requestAnimationFrame(updateBuildScale);
         };
-        if (!prefersReducedMotion) {
+        if (!prefersReducedMotion && !mobileBuildMotion) {
             window.addEventListener('scroll', queueBuildScale, { passive: true });
             window.addEventListener('resize', queueBuildScale, { passive: true });
             queueBuildScale();
@@ -424,7 +433,7 @@ export default function Portfolio() {
             window.removeEventListener('resize', queueBuildScale);
             cancelAnimationFrame(buildScaleFrame);
             buildCards.forEach((card) => card.querySelector('.rp-what-i-build-card-surface').style.removeProperty('scale'));
-            motionTargets.forEach((target) => target.classList.remove('rp-motion-reveal', 'is-motion-visible'));
+            [...motionTargets, ...buildTargets].forEach((target) => target.classList.remove('rp-motion-reveal', 'is-motion-visible'));
             buildSection?.style.removeProperty('--build-dark');
             titleGroups.forEach((group) => {
                 group.classList.remove('rp-title-reveal', 'rp-section-title-group', 'is-title-visible');
