@@ -252,6 +252,7 @@
     word-break: keep-all;
 }
 .rp .hyera-about .story-feature__glow {
+	
     position: absolute;
     inset: 0;
     background: radial-gradient(ellipse 45% 80% at 39% 35%, #d4ecff 0%, transparent 80%);
