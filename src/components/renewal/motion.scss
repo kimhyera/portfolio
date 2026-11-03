@@ -1,0 +1,52 @@
+/* 공통 모션과 접근성 — 반응형 규칙도 이 파일에서 관리합니다. */
+
+@keyframes rp-scroll-fade-in-up {
+    from { opacity: 0; translate: 0 36px; }
+    to { opacity: 1; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .rp .rp-scroll-reveal {
+        opacity: 0;
+        translate: 0 36px;
+    }
+    .rp .rp-scroll-reveal.is-scroll-visible {
+        animation: rp-scroll-fade-in-up .65s cubic-bezier(.16, 1, .3, 1) both;
+        animation-delay: var(--reveal-delay, 0ms);
+    }
+    .rp .rp-scroll-reveal:focus-within,
+    .rp.is-capture .rp-scroll-reveal {
+        opacity: 1;
+        translate: none;
+        animation: none;
+    }
+}
+
+@keyframes rp-title-fade-in-up {
+    0% {
+        scale: 0.97;
+        opacity: 0;
+        translate: 0 75px;
+    }
+    68% {
+        scale: 1;
+        opacity: 1;
+        translate: 0 -5px;
+    }
+    100% {
+        scale: 1;
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .rp .rp-title-reveal > .rp-title-item {
+        opacity: 0;
+        translate: 0 75px;
+    }
+    .rp .rp-title-reveal.is-title-visible > .rp-title-item {
+        animation: rp-title-fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-delay: calc(var(--title-order, 0) * 130ms);
+    }
+}

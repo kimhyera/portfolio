@@ -1,0 +1,296 @@
+/* 06 CONTACT와 푸터 — 반응형 규칙도 이 파일에서 관리합니다. */
+
+.rp-contact {
+    position: relative;
+    background: #050b1d;
+    color: white;
+    padding-top: 130px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.rp-contact-glow {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at 50% 45%, #50287140, transparent 62%);
+}
+
+.rp-contact-content {
+    text-align: center;
+    position: relative;
+}
+
+.rp-contact-content > .rp-eyebrow {
+    color: #aba0bc;
+    font-size: 16px;
+}
+
+.rp-contact h2 {
+    position: relative;
+    display: inline-block;
+    margin-top: 33px;
+    font-size: clamp(66px, 8vw, 115px);
+   
+    font-weight: 550;
+}
+
+.rp-contact h2 > span:not(.rp-contact-star) {
+    color: #c3a1eb;
+}
+
+.rp-contact-content > p:not(.rp-eyebrow) {
+    margin: 26px 0 32px;
+    font-size: 18px;
+    color: #a7a1b6;
+}
+
+.rp-contact-content .rp-button {
+    min-width: 218px;
+}
+
+.rp-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-inline: 5.3vw;
+    background: #050b1d;
+    border-top: 1px solid #24263b;
+}
+
+.rp-footer .rp-logo {
+    font-size: 25px;
+    color: #eeebf3;
+}
+
+.rp-footer > p {
+    font-size: 9px;
+    letter-spacing: 0.07em;
+    color: #66687d;
+}
+
+.rp-footer > div {
+    display: flex;
+    gap: 25px;
+    color: #9592a8;
+    font-size: 11px;
+}
+
+.rp-footer a:hover {
+    color: #c3a1eb;
+}
+
+@media (max-width: 999px) {
+    .rp-footer {
+        gap: 25px;
+    }
+    .rp-footer > div {
+        gap: 17px;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp-contact {
+        padding-top: 85px;
+    }
+    .rp-contact-content > .rp-eyebrow {
+        font-size: 8px;
+    }
+    .rp-contact h2 {
+        font-size: clamp(58px, 15vw, 85px);
+        margin-top: 30px;
+    }
+    .rp-contact-content > p:not(.rp-eyebrow) {
+        font-size: 15px;
+        margin: 23px 0 27px;
+    }
+    .rp-contact-content .rp-button {
+        min-width: 205px;
+    }
+    .rp-footer {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        padding-top: 27px;
+        padding-bottom: 27px;
+        gap: 22px;
+    }
+    .rp-footer > p {
+        text-align: right;
+        font-size: 8px;
+    }
+    .rp-footer > div {
+        grid-column: 1 / -1;
+        justify-content: space-between;
+        font-size: 10px;
+    }
+    .rp-footer .rp-logo {
+        font-size: 25px;
+    }
+}
+
+.rp {
+    .rp-contact-content > .rp-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 23px;
+    }
+    .rp-contact-content > .rp-eyebrow::before {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+    .rp-contact-content > .rp-eyebrow::after {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+    .rp-contact {
+        background: #100e18;
+        padding-top: 140px;
+    }
+    .rp-contact-glow {
+        background: radial-gradient(ellipse at -10% -10%, #8238bf77, transparent 45%), radial-gradient(ellipse at 110% 100%, #8238bf77, transparent 45%);
+    }
+    .rp-contact::before {
+        content: '';
+        position: absolute;
+        width: 680px;
+        height: 680px;
+        border-radius: 50%;
+        border: 1px solid #c38affb3;
+        box-shadow: 0 0 45px #ac54f970, inset 0 0 50px #ac54f955;
+        z-index: -1;
+        background: linear-gradient(140deg, #35204e, #7c2fbb77);
+    }
+    .rp-contact::after {
+        content: '';
+        position: absolute;
+        width: 680px;
+        height: 680px;
+        border-radius: 50%;
+        border: 1px solid #c38affb3;
+        box-shadow: 0 0 45px #ac54f970, inset 0 0 50px #ac54f955;
+        z-index: -1;
+        background: linear-gradient(140deg, #35204e, #7c2fbb77);
+    }
+    .rp-contact::before {
+        left: -430px;
+        top: -470px;
+    }
+    .rp-contact::after {
+        right: -470px;
+        bottom: -470px;
+    }
+    .rp-contact-content > .rp-eyebrow {
+        color: #b154f9;
+    }
+    .rp-contact h2 {
+        font-size: clamp(44px, 5.8vw, 90px);
+        margin-top: 60px;
+        font-weight: 650;
+    }
+    .rp-contact h2 > span:not(.rp-contact-star) {
+        color: #b154f9;
+        display: inline-block;
+    }
+    .rp-contact-content > p:not(.rp-eyebrow) {
+        color: #c5cbd6;
+        margin: 28px 0 45px;
+        font-size: 24px;
+    }
+    .rp-contact-content .rp-primary {
+        background: linear-gradient(110deg, #bb70fa, #9850ed);
+        color: #fff;
+        border-radius: 40px;
+        min-height: 67px;
+        min-width: 310px;
+        font-size: 18px;
+        font-weight: 650;
+    }
+    .rp-contact-content .rp-primary:hover {
+        background: #c084fc;
+    }
+    .rp-contact-channels {
+        margin-top: 50px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        font-size: 15px;
+        color: #e0e4ed;
+        flex-wrap: wrap;
+    }
+    .rp-contact-channels a + a {
+        border-left: 1px solid #656d7f;
+        padding-left: 30px;
+    }
+    .rp-contact-channels a > span {
+        color: #b154f9;
+        margin-right: 8px;
+    }
+    .rp-contact .rp-footer {
+        margin-top: 110px;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp {
+        .rp-contact-content > .rp-eyebrow {
+            gap: 14px;
+        }
+        .rp-contact {
+            padding-top: 85px;
+        }
+        .rp-contact h2 {
+            font-size: 38px;
+            margin-top: 40px;
+			width: 100%;
+        }
+        .rp-contact-content > p:not(.rp-eyebrow) {
+            font-size: 16px;
+            margin: 25px 0 20px;
+        }
+        .rp-contact-content .rp-primary {
+            min-height: 57px;
+            min-width: 255px;
+            font-size: 15px;
+        }
+        .rp-contact-channels {
+            gap: 17px;
+            margin-top: 35px;
+            font-size: 12px;
+        }
+        .rp-contact-channels a:first-child {
+            width: 100%;
+        }
+        .rp-contact-channels a:nth-child(2) {
+            border-left: 0;
+            padding-left: 0;
+        }
+        .rp-contact-channels a + a {
+            padding-left: 17px;
+        }
+        .rp-contact .rp-footer {
+            margin-top: 65px;
+        }
+    }
+    .rp .rp-contact::before {
+        display: none;
+    }
+    .rp .rp-contact::after {
+        display: none;
+    }
+}
+
+.rp .rp-footer .rp-brand-logo {
+    filter: brightness(0) invert(1);
+    width: 118px;
+}

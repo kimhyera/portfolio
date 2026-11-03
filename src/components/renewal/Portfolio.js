@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, ArrowUpRight, ArrowUp, ArrowDown, X, Menu, Mail, Plus } from 'lucide-react';
 import HeroObjects from './HeroObjects';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -56,8 +57,8 @@ const buildTypes = [
     }
 ];
 
-function Arrow({ diagonal = false }) {
-    return <span aria-hidden="true">{diagonal ? '↗' : '↗'}</span>;
+function Arrow() {
+    return <span aria-hidden="true"><ArrowUpRight size={20} /></span>;
 }
 
 function Dialog({ title, onClose, children, wide = false }) {
@@ -91,7 +92,7 @@ function Dialog({ title, onClose, children, wide = false }) {
         >
             <div className="rp-dialog-inner">
                     <button className="rp-close" onClick={onClose} aria-label="닫기" autoFocus>
-                        ✕
+                        <X size={22} aria-hidden="true" />
                     </button>
                 <div className="rp-dialog-heading">
                     <p className="rp-eyebrow">LET'S CONNECT THE DOTS</p>
@@ -292,6 +293,19 @@ export default function Portfolio() {
     const visibleProjects = filteredProjects.slice(0, workLimit);
 
     useEffect(() => {
+        const targets = root.current.querySelectorAll('#portfolio .rp-scroll-reveal:not(.is-scroll-visible)');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-scroll-visible');
+                observer.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
+        targets.forEach(target => observer.observe(target));
+        return () => observer.disconnect();
+    }, [workCategory, workLimit]);
+
+    useEffect(() => {
         const updateHeader = () => setIsFixed(window.scrollY > 10);
         updateHeader();
         window.addEventListener('scroll', updateHeader, { passive: true });
@@ -366,7 +380,7 @@ export default function Portfolio() {
         media.add(
             '(min-width: 1000px) and (prefers-reduced-motion: no-preference)',
             () => {
-                gsap.utils.toArray('.rp-project-window img').forEach((image) => gsap.fromTo(image, { yPercent: -3 }, { yPercent: 3, ease: 'none', scrollTrigger: { trigger: image.closest('.rp-project'), start: 'top bottom', end: 'bottom top', scrub: true } }));
+                gsap.utils.toArray('.rp-project-image img').forEach((image) => gsap.fromTo(image, { yPercent: -3 }, { yPercent: 3, ease: 'none', scrollTrigger: { trigger: image.closest('.rp-project'), start: 'top bottom', end: 'bottom top', scrub: true } }));
                 gsap.utils.toArray('.rp-what-i-build-stack-card').forEach((card, index) => {
                     gsap.from(card.querySelector('.rp-what-i-build-card-surface'), { y: 65, opacity: 0, duration: 0.8, scrollTrigger: { trigger: card, start: 'top 93%', once: true }, clearProps: 'y,opacity' });
                     if (index < 3) gsap.to(card.querySelector('.rp-what-i-build-card-surface'), { scale: 0.94, transformOrigin: 'center top', ease: 'none', scrollTrigger: { trigger: card.nextElementSibling, start: 'top 75%', end: 'top 20%', scrub: true } });
@@ -436,14 +450,7 @@ export default function Portfolio() {
                         Let's talk <Arrow />
                     </button>
                     <button id="rp-menu-toggle" className="rp-menu-toggle" aria-label={menuOpen ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={menuOpen} aria-controls="rp-mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
-                        {menuOpen ? (
-                            '×'
-                        ) : (
-                            <>
-                                <span />
-                                <span />
-                            </>
-                        )}
+                        {menuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
                     </button>
                 </div>
             </header>
@@ -465,7 +472,7 @@ export default function Portfolio() {
                             </p>
                             <div className="rp-home-actions">
                                 <a className="rp-button rp-primary" href="#portfolio">
-                                    View Projects <span aria-hidden="true">→</span>
+                                    View Projects <span aria-hidden="true"><ArrowRight size={22} /></span>
                                 </a>
                                 <a className="rp-text-link" href="#what-i-do">
                                     About Me
@@ -494,7 +501,7 @@ export default function Portfolio() {
                     <div className="rp-container rp-home-bottom">
                         <span>THOUGHTFUL DESIGN. MEANINGFUL CODE.</span>
                         <a href="#what-i-do">
-                            SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+                            SCROLL TO EXPLORE <span aria-hidden="true"><ArrowDown size={14} /></span>
                         </a>
                         <span>SEOUL, SOUTH KOREA</span>
                     </div>
@@ -514,10 +521,12 @@ export default function Portfolio() {
                             <h2 className="rp-portfolio-title">Portfolio</h2>
                         </div>
                         <div className="rp-portfolio-filters" role="group" aria-label="프로젝트 카테고리">
-                            {workCategories.map((category) => (
+                            {workCategories.map((category, index) => (
                                 <button
                                     type="button"
                                     key={category}
+                                    className="rp-scroll-reveal"
+                                    style={{ '--reveal-delay': `${index * 80}ms` }}
                                     aria-pressed={workCategory === category}
                                     onClick={() => {
                                         setWorkCategory(category);
@@ -531,16 +540,9 @@ export default function Portfolio() {
                         </div>
                         <div className="rp-project-grid">
                             {visibleProjects.map((item, index) => (
-                                <article className={`rp-project rp-project-tone-${index % 3}`} key={item.title}>
+                                <article className={`rp-project rp-project-tone-${index % 3} rp-scroll-reveal`} key={item.title} style={{ '--reveal-delay': `${(index % 3) * 90}ms` }}>
                                     <button className="rp-project-image" onClick={() => setModal(item)} aria-label={`${item.title} 프로젝트 상세 보기`}>
-                                        <div className="rp-project-window">
-                                            <div className="rp-window-dots">
-                                                <i />
-                                                <i />
-                                                <i />
-                                            </div>
-                                            <img src={asset(item.thumb)} alt={`${item.title} 웹사이트 화면`} loading={new URLSearchParams(window.location.search).has('capture') ? 'eager' : 'lazy'} width="720" height="480" />
-                                        </div>
+                                        <img src={asset(item.thumb)} alt={`${item.title} 웹사이트 화면`} loading={new URLSearchParams(window.location.search).has('capture') ? 'eager' : 'lazy'} width="720" height="480" />
                                     </button>
                                     <div className="rp-project-info">
                                         <div className="rp-project-meta">
@@ -564,7 +566,7 @@ export default function Portfolio() {
                         <div className="rp-portfolio-footer">
                             {workLimit < filteredProjects.length && (
                                 <button type="button" className="rp-button rp-outline-light" onClick={() => setWorkLimit((limit) => limit + 6)}>
-                                    작업 더 보기 <span aria-hidden="true">＋</span>
+                                    작업 더 보기 <span aria-hidden="true"><Plus size={20} /></span>
                                 </button>
                             )}
                             <span role="status">
@@ -628,7 +630,7 @@ export default function Portfolio() {
                         </button>
                         <div className="rp-contact-channels">
                             <a href="mailto:khr1828@gmail.com">
-                                <span aria-hidden="true">✉</span> khr1828@gmail.com
+                                <span aria-hidden="true"><Mail size={18} /></span> khr1828@gmail.com
                             </a>
                             <a href="https://github.com/kimhyera" target="_blank" rel="noopener noreferrer">
                                 GitHub <Arrow />
@@ -651,14 +653,14 @@ export default function Portfolio() {
                                 Notion <Arrow />
                             </a>
                             <a href="#home" aria-label="페이지 맨 위로">
-                                Back to top ↑
+                                Back to top <ArrowUp size={16} aria-hidden="true" />
                             </a>
                         </div>
                     </footer>
                 </section>
             </main>
             <button type="button" className={`rp-back-to-top${isFixed ? ' is-visible' : ''}`} aria-label="맨 위로 이동" tabIndex={isFixed ? 0 : -1} onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>
-                <span aria-hidden="true">↑</span>
+                <ArrowUp size={23} aria-hidden="true" />
             </button>
             {menuOpen && (
                 <MobileMenu

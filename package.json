@@ -9,6 +9,7 @@
     "cra-template": "1.2.0",
     "gh-pages": "^6.3.0",
     "gsap": "^3.12.7",
+    "lucide-react": "^1.66.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.27.0",
@@ -20,11 +21,11 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
- "start": "craco start",
-  "prebuild": "node scripts/generate-seo.cjs --public",
-  "build": "craco build",
-  "postbuild": "node scripts/generate-seo.cjs",
-  "test": "craco test",
+    "start": "craco start",
+    "prebuild": "node scripts/generate-seo.cjs --public",
+    "build": "craco build",
+    "postbuild": "node scripts/generate-seo.cjs",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -41,7 +42,6 @@
       "not dead",
       "not op_mini all"
     ],
-		
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

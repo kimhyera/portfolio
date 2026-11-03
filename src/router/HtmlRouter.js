@@ -28,7 +28,11 @@ function AppRouter() {
   return (
     <Routes>
       {routes.map((route, index) => (
-        <Route key={index} path={route.path} element={route.element} />
+        <Route
+          key={index}
+          path={route.path}
+          element={route.path === '/' || route.path === '/Main' ? route.element : <><Header />{route.element}</>}
+        />
       ))}
     </Routes>
   );
@@ -41,7 +45,6 @@ function HtmlRouter() {
     <BrowserRouter basename={basename}>      {/* 환경에 따라 basename 설정 */}
    
         <Seo />
-        <Header />
         <AppRouter />
     </BrowserRouter>
   );

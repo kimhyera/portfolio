@@ -1,0 +1,84 @@
+/* 공통 버튼·태그·상태 표시 — 반응형 규칙도 이 파일에서 관리합니다. */
+@use 'tokens';
+
+.rp-status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: tokens.$purple;
+    border-radius: 50%;
+    margin-right: 9px;
+    vertical-align: 1px;
+    box-shadow: 0 0 0 4px #b154f914;
+}
+
+.rp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    min-height: 54px;
+    border-radius: 9px;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 550;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.rp-button > span {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.rp-text-link > span {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.rp-button:hover {
+    transform: translateY(-3px);
+}
+
+.rp .rp-primary {
+    background: tokens.$purple;
+    color: #fff;
+}
+
+.rp .rp-primary:hover {
+    background: #8d31d3;
+}
+
+.rp-text-link {
+    display: inline-flex;
+    gap: 22px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.rp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.rp-tags span {
+    padding: 5px 10px;
+    border: 1px solid #EDE8FA;
+    font-size: 16px;
+    line-height: 1.4;
+    border-radius: 5px;
+}
+
+@media (max-width: 699px) {
+    .rp-button {
+        min-height: 49px;
+        font-size: 13px;
+        gap: 23px;
+        padding: 12px 20px;
+    }
+    .rp-text-link {
+        font-size: 12px;
+        gap: 15px;
+    }
+}

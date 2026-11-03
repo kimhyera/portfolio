@@ -1,16 +1,15 @@
-/* 리뉴얼 스타일 진입점. 공통 → 섹션 순서를 유지해 스타일 우선순위를 고정합니다. */
-
-// 공통 기반과 제목 모션
-@use 'portfolio';
-@use 'sections';
-
-// 섹션별 스타일
-@use 'services';
+// 공통 → 레이아웃·섹션 → 캡처. 각 모듈은 한 번만 로드합니다.
+@use 'base';
+@use 'components';
 @use 'headings';
-@use 'build';
+@use 'motion';
+@use 'header';
 @use 'hero';
-@use 'process-sticky';
+@use 'services';
+@use 'work';
+@use 'build';
+@use 'process';
+@use 'contact';
+@use 'dialog';
 @use 'mobile-menu';
-@use 'responsive';
 @use 'capture';
-

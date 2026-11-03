@@ -1,3 +1,4 @@
+import { PanelsTopLeft, CodeXml, Layers } from 'lucide-react';
 import React, { useEffect, useRef } from 'react';
 
 export default function HeroObjects() {
@@ -50,8 +51,8 @@ export default function HeroObjects() {
         };
     }, []);
     return <div className="rp-home-objects" ref={ref} aria-hidden="true">
-        <span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="5" width="24" height="22" rx="4" /><path d="M4 12h24M13 12v15M8 8.5h.01m3 0h.01" /></svg></span>
-        <span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="m10 9-7 7 7 7m12-14 7 7-7 7M19 5l-6 22" /></svg></span>
-        <span><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m16 4 13 7-13 7L3 11l13-7ZM4 17l12 7 12-7M4 23l12 7 12-7" /></svg></span>
+        <span><PanelsTopLeft /></span>
+        <span><CodeXml /></span>
+        <span><Layers /></span>
     </div>;
 }

@@ -1,4 +1,94 @@
-/* 공통 섹션 제목: 글자 크기, 강조 색상 및 모바일 타이포그래피. */
+/* 공통 섹션 제목 — 반응형 규칙도 이 파일에서 관리합니다. */
+
+.rp-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    line-height: 1.4;
+}
+
+.rp-section-heading > .rp-eyebrow {
+    margin-bottom: 23px;
+    color: #6f607d;
+}
+
+.rp-section-heading > p:last-child {
+    color: #7d7685;
+    margin-top: 22px;
+    font-size: 16px;
+}
+
+.rp-centered {
+    text-align: center;
+}
+
+.rp-gradient-text {
+    background: linear-gradient(100deg, #a273df, #ac73c6 60%, #e59f83);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 699px) {
+    .rp-eyebrow {
+        font-size: 10px;
+    }
+    .rp-section-heading > .rp-eyebrow {
+        margin-bottom: 20px;
+    }
+    .rp-section-heading > p:last-child {
+        font-size: 13px;
+        margin-top: 18px;
+    }
+}
+
+.rp {
+    .rp-section-heading > .rp-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 23px;
+    }
+    .rp-section-heading > .rp-eyebrow::before {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+    .rp-section-heading > .rp-eyebrow::after {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+    .rp-section-heading h2 {
+        font-weight: 700;
+    }
+    .rp-section-heading > p:last-child {
+        line-height: 1.9;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp {
+        .rp-section-heading h2 {
+            font-size: 32px;
+        }
+        .rp-section-heading > p:last-child {
+            font-size: 12px;
+        }
+        .rp-section-heading > .rp-eyebrow {
+            gap: 14px;
+        }
+        .rp-section-heading > .rp-eyebrow::before {
+            width: 25px;
+        }
+        .rp-section-heading > .rp-eyebrow::after {
+            width: 25px;
+        }
+    }
+}
 
 .rp .rp-section-heading.rp-heading-standard {
     > .rp-eyebrow {
@@ -7,15 +97,20 @@
         letter-spacing: .2em;
         margin-bottom: 30px;
     }
-
     > h2 {
         color: #10131b;
-        font-size: clamp(30px, 5.6vw, 80px);
+        font-size: clamp(34px, 5.6vw, 80px);
         font-weight: 700;
-        line-height: 1.28;
+        line-height: 1.4;
     }
-
-    > h2 em,
+    > h2 em {
+        font-style: normal;
+        font-weight: inherit;
+        background: linear-gradient(92.37deg, #b78aff 16.58%, #fe9c72 90.82%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     > h2 .rp-gradient-text {
         font-style: normal;
         font-weight: inherit;
@@ -24,7 +119,6 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
     > p:last-child {
         font-size: clamp(14px, 1.7vw, 22px);
         color: #716776;
@@ -39,15 +133,12 @@
             font-size: 11px;
             margin-bottom: 22px;
         }
-
         > h2 {
-            font-size: clamp(25px, 6.7vw, 43px);
+            font-size: clamp(30px, 6.7vw, 43px);
         }
-
         > p:last-child {
             font-size: 13px;
             margin-top: 20px;
         }
     }
 }
-

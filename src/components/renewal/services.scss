@@ -1,26 +1,21 @@
-/* WHAT I DO: 서비스 카드, 가로 스크롤, 진행 표시 및 모바일 대체. */
+/* 02 WHAT I DO — 반응형 규칙도 이 파일에서 관리합니다. */
 
 .rp .rp-what-i-do {
     background: #faf8f9;
     padding-top: clamp(90px, 12vw, 180px);
-
     .rp-service-intro {
         padding: 0 24px 75px;
     }
-
     .rp-service-intro .rp-eyebrow {
         color: #b78aff;
         font-size: 24px;
         letter-spacing: .2em;
         margin-bottom: 30px;
     }
-
     .rp-service-intro h2 {
-        font-size: clamp(30px, 5.6vw, 80px);
+        font-size: clamp(34px, 5.6vw, 80px);
         font-weight: 600;
-        line-height: 1.28;
     }
-
     .rp-service-intro h2 em {
         font-style: normal;
         font-weight: 600;
@@ -29,7 +24,6 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
     .rp-service-intro > p:last-child {
         font-size: clamp(14px, 1.7vw, 22px);
         color: #716776;
@@ -56,7 +50,6 @@
     justify-content: center;
     isolation: isolate;
     overflow: hidden;
-
     &::before {
         content: '';
         position: absolute;
@@ -139,7 +132,6 @@
     background: #ffffffb0;
     border: 1px solid #ffffff60;
     opacity: 1;
-
     h4 {
         color: #15111a;
         font-family: 'Pretendard', sans-serif;
@@ -148,12 +140,8 @@
         line-height: 1.4;
         letter-spacing: -.045em;
         margin: 21px 0 20px;
-    }
-
-    h4 {
         white-space: pre-line;
     }
-
     > p {
         white-space: pre-line;
         font-size: 16px;
@@ -262,7 +250,6 @@
 
 .rp .rp-service-scene.is-native {
     height: auto;
-
     .rp-service-sticky {
         position: relative;
         top: auto;
@@ -270,7 +257,6 @@
         height: auto;
         padding-block: 40px;
     }
-
     .rp-service-window {
         overflow-x: auto;
         overscroll-behavior-x: contain;
@@ -279,11 +265,9 @@
         scrollbar-width: thin;
         scrollbar-color: #b998cd transparent;
     }
-
     .rp-service-card {
         scroll-snap-align: start;
     }
-
     .rp-service-track {
         will-change: auto;
     }
@@ -294,7 +278,6 @@
         opacity: 0;
         translate: -40px 0;
     }
-
     .rp .rp-service-card {
         transition: opacity .7s, translate .7s;
         transition-delay: calc(var(--card-index) * 100ms);
@@ -304,64 +287,54 @@
 @media (max-width: 699px) {
     .rp .rp-what-i-do {
         padding-top: 80px;
-
         .rp-service-intro {
             padding: 0 20px 45px;
         }
-
         .rp-service-intro .rp-eyebrow {
             font-size: 11px;
             margin-bottom: 22px;
         }
-
         .rp-service-intro h2 {
             font-size: clamp(25px, 6.7vw, 43px);
         }
-
         .rp-service-intro > p:last-child {
-            font-size: 13px;
             margin-top: 20px;
         }
-
         .rp-service-intro br {
             display: none;
         }
     }
-
-    .rp .rp-service-heading,
-    .rp .rp-service-window,
+    .rp .rp-service-heading {
+        width: 88%;
+    }
+    .rp .rp-service-window {
+        width: 88%;
+    }
     .rp .rp-service-bottom {
         width: 88%;
     }
-
     .rp .rp-service-heading {
         margin-bottom: 24px;
         gap: 10px;
     }
-
     .rp .rp-service-heading .rp-eyebrow {
         font-size: 9px;
         margin-bottom: 9px;
     }
-
     .rp .rp-service-heading h3 {
         font-size: 25px;
     }
-
     .rp .rp-service-controls {
         gap: 7px;
     }
-
     .rp .rp-service-controls > span {
         display: none;
     }
-
     .rp .rp-service-controls button {
         width: 30px;
         height: 30px;
         font-size: 16px;
     }
-
     .rp .rp-service-card {
         flex-basis: 280px;
         width: 280px;
@@ -369,25 +342,20 @@
         min-height: 350px;
         padding: 25px;
     }
-
     .rp .rp-service-card h4 {
         font-size: 24px;
     }
-
     .rp .rp-service-card > p {
         font-size: 15px;
     }
-
     .rp .rp-service-track {
         gap: 15px;
     }
-
     .rp .rp-service-bottom {
         gap: 15px;
         font-size: 9px;
         margin-top: 22px;
     }
-
     .rp .rp-service-bottom > span:last-child {
         font-size: 7px;
     }
@@ -401,3 +369,22 @@
     }
 }
 
+@media (max-width: 699px) {
+    .rp .rp-what-i-do {
+        padding-top: 65px;
+    }
+    .rp .rp-service-intro h2 br {
+        display: initial;
+    }
+    .rp .rp-service-sticky {
+        justify-content: flex-start;
+        padding-block: 28px;
+    }
+    .rp .rp-service-window {
+        flex-shrink: 0;
+    }
+    .rp .rp-service-card {
+        height: 390px;
+        min-height: 390px;
+    }
+}

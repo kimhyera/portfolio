@@ -1,0 +1,566 @@
+/* 03 PORTFOLIO — 반응형 규칙도 이 파일에서 관리합니다. */
+@use 'tokens';
+
+.rp-portfolio {
+    background: tokens.$navy;
+    color: #fff;
+    padding: 140px 0 100px;
+}
+
+.rp-portfolio-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.rp-portfolio-heading .rp-eyebrow {
+    color: #9896ad;
+    margin-bottom: 22px;
+}
+
+.rp-portfolio-heading h2 {
+    font-size: clamp(70px, 8.3vw, 128px);
+    line-height: 1;
+    letter-spacing: -0.065em;
+    font-weight: 550;
+}
+
+.rp-portfolio-heading h2 > span {
+    color: #b99bdc;
+}
+
+.rp-portfolio-heading sup {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0;
+    vertical-align: top;
+    display: inline-block;
+    margin: 16px 0 0 17px;
+    color: #9590a8;
+}
+
+.rp-portfolio-heading > p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #9798ad;
+    padding-bottom: 5px;
+}
+
+.rp-project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px 36px;
+}
+
+.rp-project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.45;
+    display: grid;
+    place-items: center;
+    padding: 38px;
+    background: #d4d9ee !important;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.rp-project-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #8c8da5;
+    font-size: 11px;
+    margin: 23px 0 9px;
+}
+
+.rp-project-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+    font-size: 23px !important;
+    font-weight: 550 !important;
+    line-height: 1.4 !important;
+}
+
+.rp-project-title > span {
+    color: #898499;
+    font-size: 26px;
+    margin-left: 10px;
+}
+
+.rp-project-role {
+    color: #a2a2b5;
+    font-size: 13px;
+    margin: 10px 0 19px !important;
+}
+
+.rp-portfolio .rp-tags span {
+    border-color: #303449;
+    color: #9395ab;
+    font-size: 10px;
+}
+
+.rp-portfolio-footer {
+    border-top: 1px solid #262b40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-top: 35px;
+}
+
+.rp-portfolio-footer > span {
+    color: #9494ab;
+    font-size: 14px;
+}
+
+.rp-outline-light {
+    border: 1px solid #414359;
+    color: white;
+    font-size: 13px;
+    min-height: 48px;
+}
+
+@media (max-width: 1199px) {
+    .rp-project-image {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 999px) {
+    .rp-portfolio {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .rp-portfolio-heading {
+        gap: 25px;
+    }
+    .rp-portfolio-heading > p {
+        font-size: 12px;
+    }
+    .rp-project-grid {
+        gap: 45px 25px;
+    }
+    .rp-project-title {
+        font-size: 20px !important;
+    }
+    .rp-project-image {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp-portfolio {
+        padding: 85px 0 70px;
+    }
+    .rp-portfolio-heading {
+        display: block;
+        margin-bottom: 40px;
+    }
+    .rp-portfolio-heading .rp-eyebrow {
+        margin-bottom: 20px;
+    }
+    .rp-portfolio-heading h2 {
+        font-size: 73px;
+    }
+    .rp-portfolio-heading sup {
+        font-size: 11px;
+        margin-top: 11px;
+        margin-left: 10px;
+    }
+    .rp-portfolio-heading > p {
+        font-size: 12px;
+        margin-top: 24px;
+    }
+    .rp-project-grid {
+        grid-template-columns: 1fr;
+        gap: 39px;
+    }
+    .rp-project-image {
+        padding: 26px;
+        border-radius: 16px;
+        aspect-ratio: 1.4;
+    }
+    .rp-project-meta {
+        margin-top: 18px;
+        font-size: 10px;
+    }
+    .rp-project-title {
+        font-size: 21px !important;
+    }
+    .rp-project-role {
+        font-size: 11px;
+        line-height: 1.8;
+        margin-bottom: 15px !important;
+    }
+    .rp-portfolio .rp-tags span {
+        font-size: 9px;
+    }
+    .rp-portfolio-footer {
+        margin-top: 45px;
+        padding-top: 27px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .rp-portfolio-footer > span {
+        font-size: 12px;
+    }
+}
+
+.rp {
+    .rp-portfolio-heading > .rp-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 23px;
+    }
+    .rp-portfolio-heading > .rp-eyebrow::before {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+    .rp-portfolio-heading > .rp-eyebrow::after {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.4;
+    }
+    .rp-portfolio {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        background: #090c20;
+    }
+    .rp-portfolio-orb {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 0 70%, #422d7100 45%, #8c6de175 80%, #bca5ff);
+        box-shadow: -20px -20px 75px #8464e726;
+        right: -420px;
+        top: -370px;
+        z-index: -1;
+    }
+    .rp-portfolio-heading {
+        display: block;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    .rp-portfolio-heading > .rp-eyebrow {
+        color: #c499f1;
+        margin-bottom: 30px;
+    }
+    .rp-portfolio-heading h2 {
+        display: inline-block;
+        font-size: 88px;
+        line-height: 0.95;
+        font-weight: 500;
+    }
+    .rp-portfolio-heading h2 > span {
+        display: block;
+        font-family: Georgia, serif;
+        font-style: italic;
+        color: #f6f0ff;
+        font-weight: 400;
+        font-size: 1.18em;
+    }
+    .rp-portfolio-heading > p {
+        color: #b8b3cb;
+        font-size: 16px;
+        margin-top: 27px;
+    }
+    .rp-project-grid {
+        max-width: 1160px;
+        margin: auto;
+        gap: 25px;
+    }
+    .rp-project-image {
+        padding: 35px 40px 12px;
+        border-radius: 0;
+        background: transparent !important;
+        aspect-ratio: 1.65;
+    }
+    .rp-project-info {
+        padding: 0 30px 27px;
+    }
+    .rp-project-meta {
+        color: #74658e;
+        margin: 12px 0 7px;
+    }
+    .rp-project-title {
+        font-size: 22px !important;
+        font-weight: 650 !important;
+        margin-bottom: 10px;
+    }
+    .rp-project-title > span {
+        background: #ffffff9e;
+        border-radius: 50%;
+        width: 33px;
+        min-width: 33px;
+        height: 33px;
+        text-align: center;
+        font-size: 23px;
+        color: #191829;
+    }
+    .rp-project-role {
+        color: #cacaca;
+        font-size: 16px;
+        margin: 10px 0 14px !important;
+    }
+    .rp-portfolio .rp-tags span {
+        color: #c5c2ca;
+        border-color: #b6a6cd66;
+        font-size: 14px;
+    }
+    .rp-portfolio-footer {
+        flex-direction: column;
+        gap: 18px;
+        border: 0;
+        margin-top: 45px;
+        padding-top: 0;
+    }
+    .rp-portfolio-footer .rp-button {
+        border: 1px solid #cda2f2;
+        border-radius: 40px;
+        min-width: 215px;
+        box-shadow: 0 0 17px #c48fe621;
+    }
+    .rp-portfolio-footer > span {
+        font-size: 10px;
+        color: #9a90ad;
+        letter-spacing: 0.08em;
+    }
+}
+
+@media (max-width: 999px) {
+    .rp {
+        .rp-project-image {
+            padding: 26px 25px 12px;
+        }
+        .rp-project-info {
+            padding: 0 22px 25px;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    .rp {
+        .rp-portfolio-heading > .rp-eyebrow {
+            gap: 14px;
+        }
+        .rp-portfolio {
+            padding: 80px 0;
+        }
+        .rp-portfolio-heading {
+            margin-bottom: 45px;
+        }
+        .rp-portfolio-heading h2 {
+            font-size: 67px;
+        }
+        .rp-portfolio-heading > p {
+            font-size: 13px;
+            margin-top: 25px;
+        }
+        .rp-project-grid {
+            gap: 22px;
+        }
+        .rp-project {
+            border-radius: 21px;
+        }
+        .rp-project-image {
+            padding: 28px 28px 12px;
+        }
+        .rp-project-info {
+            padding: 0 24px 25px;
+        }
+        .rp-project-title {
+            font-size: 20px !important;
+        }
+        .rp-project-role {
+            font-size: 12px;
+        }
+        .rp-portfolio .rp-tags span {
+            font-size: 12px;
+        }
+    }
+}
+
+.rp #portfolio {
+    background: #050505;
+    padding-top: 0;
+    .rp-portfolio-orb {
+        background: radial-gradient(circle at 20% 65%, transparent 55%, #b55a3138 82%, #dc754f);
+        box-shadow: -20px -20px 75px #b95b3326;
+        top: 150px;
+    }
+    > .rp-container {
+        max-width: none;
+        padding: 0;
+    }
+    .rp-portfolio-heading {
+        --work-bg: calc(250 * (1 - var(--portfolio-inversion, 0)));
+        --work-ink: calc(25 + 225 * var(--portfolio-inversion, 0));
+        background: rgb(var(--work-bg), var(--work-bg), var(--work-bg));
+        color: rgb(var(--work-ink), var(--work-ink), var(--work-ink));
+        text-align: center;
+        margin: 0 0 60px;
+        padding: 150px 20px 150px;
+    }
+    .rp-portfolio-heading > .rp-eyebrow {
+        color: inherit;
+        font-size: 21px;
+        font-weight: 650;
+        letter-spacing: -0.04em;
+        margin: 0 0 25px;
+    }
+    .rp-portfolio-heading > .rp-eyebrow::before {
+        display: none;
+    }
+    .rp-portfolio-heading > .rp-eyebrow::after {
+        display: none;
+    }
+    .rp-portfolio-title {
+        font-size: clamp(68px, 14vw, 210px);
+        font-weight: 750;
+        line-height: 1.05;
+        letter-spacing: -0.06em;
+    }
+    .rp-portfolio-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 1400px;
+        padding: 0 30px;
+        margin: 0 auto 85px;
+    }
+    .rp-portfolio-filters button {
+        border: 1px solid #444;
+        border-radius: 40px;
+        background: #ffffff04;
+        color: #ddd6d1;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: 650;
+    }
+    .rp-portfolio-filters button[aria-pressed='true'] {
+        background: #b78aff;
+        border-color: #b78aff;
+        color: #17100d;
+    }
+    .rp-project-grid {
+        max-width: 1400px;
+        padding: 0 30px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 65px 55px;
+    }
+    .rp-project {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        border-radius: 0;
+    }
+    .rp-project-info {
+        display: contents;
+    }
+    .rp-project-title {
+        order: -3;
+        color: #f3eeeb;
+        font-size: 20px !important;
+        margin-bottom: 10px;
+    }
+    .rp-project-title > span {
+        display: none;
+    }
+    .rp-project-meta {
+        order: -2;
+        margin: 0 0 28px;
+        color: #b9b0aa;
+        font-size: 13px;
+        display: none;
+    }
+    .rp-project-meta > span:first-child {
+        display: none;
+    }
+    .rp-project-image {
+        aspect-ratio: 1.47;
+        padding: 22px 15px 0;
+        border-radius: 15px;
+        background: #c6d8c2 !important;
+    }
+    .rp-project-tone-1 .rp-project-image {
+        background: linear-gradient(130deg, #347cf4, #5235ef) !important;
+    }
+    .rp-project-tone-2 .rp-project-image {
+        background: #e5e3df !important;
+    }
+    .rp-project-role {
+        color: #b8b8b8;
+    }
+    .rp-tags span {
+        color: #c5c3c2;
+        border-color: #5f5b5a;
+    }
+    .rp-portfolio-footer {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 999px) {
+    .rp #portfolio .rp-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 45px 25px;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp #portfolio {
+        .rp-portfolio-heading {
+            padding: 65px 20px 45px;
+            margin-bottom: 35px;
+        }
+        .rp-portfolio-heading > .rp-eyebrow {
+            font-size: 16px;
+        }
+        .rp-portfolio-title {
+            font-size: clamp(60px, 15vw, 100px);
+        }
+        .rp-portfolio-filters {
+            padding: 0 20px;
+            gap: 8px;
+            margin-bottom: 45px;
+        }
+        .rp-portfolio-filters button {
+            font-size: 12px;
+            padding: 9px 13px;
+        }
+        .rp-project-grid {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+            gap: 38px;
+        }
+        .rp-project-meta {
+            margin-bottom: 18px;
+        }
+    }
+}
+
+/* 프레임 없이 프로젝트 이미지를 직접 표시합니다. */
+.rp #portfolio .rp-project-image {
+    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.rp .rp-project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 106%;
+    object-fit: cover;
+    object-position: top;
+}

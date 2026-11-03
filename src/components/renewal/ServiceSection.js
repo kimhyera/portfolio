@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 
 const services = [
@@ -23,8 +24,7 @@ export default function ServiceSection({ onInquiry }) {
     const track = element.querySelector('.rp-service-track');
     const cards = [...track.children];
     const portfolioRoot = element.closest('.rp');
-    const workHeading = portfolioRoot.querySelector('.rp-portfolio-heading');
-    const workTitle = workHeading?.querySelector('.rp-portfolio-title');
+    const workTitle = portfolioRoot.querySelector('.rp-portfolio-title');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     let distance = 0;
     let travel = 0;
@@ -47,12 +47,11 @@ export default function ServiceSection({ onInquiry }) {
       const p = native ? clamp(viewport.scrollLeft / Math.max(1, distance)) : clamp((header - rect.top - hold) / Math.max(1, distance));
       track.style.transform = native ? '' : `translate3d(${-distance * p}px, 0, 0)`;
       stage.style.setProperty('--service-progress', p);
-      // Start at the viewport center; finish when the entire title exits above it.
       if (workTitle) {
         const titleRect = workTitle.getBoundingClientRect();
         const exit = clamp(
-          (window.innerHeight / 2 - titleRect.top - titleRect.height / 2) /
-          Math.max(1, window.innerHeight / 3 + titleRect.height / 2)
+          (window.innerHeight / 5 - titleRect.top - titleRect.height / 2) /
+          Math.max(1, window.innerHeight * 0.15)
         );
         portfolioRoot.style.setProperty('--portfolio-inversion', exit);
       }
@@ -126,9 +125,9 @@ export default function ServiceSection({ onInquiry }) {
     <div className="rp-section-heading rp-centered rp-service-intro rp-heading-standard"><p className="rp-eyebrow">WHAT I DO</p><h2 id="rp-service-intro-title">생각을 화면으로,<br /><em>화면을 경험으로 완성합니다.</em></h2><p>기획, 디자인, 퍼블리싱, 프론트엔드 개발, 웹빌더 작업까지<br />하나의 실무 워크플로우로 연결해, 아이디어를 실제 서비스로 구현합니다.</p></div>
     <div className="rp-service-scene" ref={scene}>
       <div className="rp-service-sticky">
-        <div className="rp-service-heading"><div></div><div className="rp-service-controls"><span>스크롤하며 살펴보세요</span><button type="button" onClick={() => controller.current?.(-1)} disabled={progress <= 0} aria-label="이전 서비스">←</button><button type="button" onClick={() => controller.current?.(1)} disabled={progress >= 1} aria-label="다음 서비스">→</button></div></div>
+        <div className="rp-service-heading"><div></div><div className="rp-service-controls"><span>스크롤하며 살펴보세요</span><button type="button" onClick={() => controller.current?.(-1)} disabled={progress <= 0} aria-label="이전 서비스"><ArrowLeft size={19} aria-hidden="true" /></button><button type="button" onClick={() => controller.current?.(1)} disabled={progress >= 1} aria-label="다음 서비스"><ArrowRight size={19} aria-hidden="true" /></button></div></div>
         <div className="rp-service-window" role="region" aria-label="제작 가능한 서비스 6개" tabIndex={0} onKeyDown={(event) => { if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); controller.current?.(event.key === 'ArrowRight' ? 1 : -1); } }}>
-          <div className="rp-service-track">{services.map(([title, description], index) => <article className="rp-service-card" key={title} style={{ '--card-index': index }}><span className="rp-service-number">0{index + 1}</span><h4>{title}</h4><p>{description}</p><div className={`rp-service-art rp-service-art-${index}`} aria-hidden="true" /><button type="button" className="rp-service-inquiry" onClick={onInquiry} aria-label={`${title} 문의하기`}>→</button></article>)}</div>
+          <div className="rp-service-track">{services.map(([title, description], index) => <article className="rp-service-card" key={title} style={{ '--card-index': index }}><span className="rp-service-number">0{index + 1}</span><h4>{title}</h4><p>{description}</p><div className={`rp-service-art rp-service-art-${index}`} aria-hidden="true" /><button type="button" className="rp-service-inquiry" onClick={onInquiry} aria-label={`${title} 문의하기`}><ArrowRight size={19} aria-hidden="true" /></button></article>)}</div>
         </div>
         <div className="rp-service-bottom"><span><b>{String(current + 1).padStart(2, '0')}</b> / 06</span><div className="rp-service-meter"><span /></div><span>DESIGN TO DEVELOPMENT</span></div>
       </div>

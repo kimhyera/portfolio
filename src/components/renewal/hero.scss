@@ -1,11 +1,386 @@
-/* HERO: 배경, 소개 문구, 로고, 스크롤 헤더 및 상단 이동 버튼. */
+/* 01 HERO — 반응형 규칙도 이 파일에서 관리합니다. */
+@use 'tokens';
+
+.rp-home {
+    position: relative;
+    padding-top: 84px;
+    background: radial-gradient(ellipse at 79% 53%, #e8ddfc9c 0, #fbfaff 43%, #fff 73%);
+}
+
+.rp-home-layout {
+    min-height: min(770px, calc(100svh - 145px));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+.rp-home-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.rp-home-copy > .rp-eyebrow {
+    color: #5e5869;
+    margin-bottom: 30px;
+    font-size: 11px;
+}
+
+.rp-home h1 {
+    font-size: clamp(54px, 5.65vw, 88px);
+    line-height: 1.06;
+    font-weight: 650;
+    letter-spacing: -0.075em;
+    margin-left: -4px;
+    white-space: nowrap;
+}
+
+.rp-home h1 > span {
+    background: linear-gradient(95deg, #8b49d8, #b154f9 60%, #cf8de7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rp-home-description {
+    font-size: 15px;
+    color: #777582;
+    line-height: 1.9;
+    margin-top: 14px !important;
+}
+
+.rp-home-actions {
+    display: flex;
+    gap: 27px;
+    align-items: center;
+    margin-top: 31px;
+}
+
+.rp-home-keywords {
+    display: flex;
+    gap: 17px;
+    margin-top: 47px;
+    color: #85818d;
+}
+
+.rp-home-keywords span {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+}
+
+.rp-home-keywords span + span::before {
+    content: '·';
+    margin-right: 17px;
+    color: tokens.$purple;
+}
+
+.rp-home-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 69px;
+    color: #8a8692;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+}
+
+.rp-home-bottom a {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+}
+
+.rp-home-bottom a span {
+    font-size: 20px;
+    color: tokens.$ink;
+}
+
+.rp-home-visual {
+    height: 500px;
+    position: relative;
+    perspective: 1300px;
+    margin-left: 3%;
+}
+
+.rp-home-visual::before {
+    content: '';
+    position: absolute;
+    inset: 5% -12% -3%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, #cdb1ff80, #e5d5ff44 40%, transparent 67%);
+    filter: blur(20px);
+}
+
+@media (min-width: 1700px) {
+    .rp-home-layout {
+        min-height: 820px;
+    }
+    .rp-home-visual {
+        transform: scale(1.07);
+        transform-origin: left center;
+    }
+}
+
+@media (max-width: 1199px) {
+    .rp-home h1 {
+        font-size: 6vw;
+    }
+    .rp-home-visual {
+        transform: scale(0.88);
+        transform-origin: left center;
+        width: 112%;
+    }
+    .rp-home-layout {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .rp-home-description {
+        font-size: 13px;
+    }
+    .rp-home-keywords {
+        gap: 10px;
+    }
+    .rp-home-keywords span {
+        font-size: 8px;
+    }
+    .rp-home-keywords span + span::before {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 999px) {
+    .rp-home {
+        padding-top: 72px;
+    }
+    .rp-home-layout {
+        min-height: 680px;
+    }
+    .rp-home-copy {
+        align-self: center;
+    }
+    .rp-home h1 {
+        font-size: 6.8vw;
+    }
+    .rp-home-visual {
+        transform: scale(0.75);
+        width: 125%;
+        margin-left: -10%;
+    }
+    .rp-home-bottom > span:first-child {
+        display: none;
+    }
+    .rp-home-description .rp-desktop-break {
+        display: none;
+    }
+    .rp-home-keywords {
+        flex-wrap: wrap;
+        row-gap: 4px;
+    }
+}
+
+@media (max-width: 699px) {
+    .rp-home {
+        padding-top: 68px;
+        background: radial-gradient(ellipse at 65% 68%, #e8ddfc9c, #fbfaff 40%, #fff 78%);
+    }
+    .rp-home-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 65px;
+        padding-bottom: 10px;
+        min-height: 0;
+    }
+    .rp-home-copy {
+        width: 100%;
+    }
+    .rp-home-copy > .rp-eyebrow {
+        font-size: 9px;
+        margin-bottom: 23px;
+    }
+    .rp-home h1 {
+        font-size: clamp(43px, 11.8vw, 78px);
+        margin-left: -2px;
+    }
+    .rp-home-description {
+        font-size: 13px;
+        max-width: 360px;
+        line-height: 1.9;
+        margin-top: 12px !important;
+    }
+    .rp-home-actions {
+        gap: 24px;
+        margin-top: 25px;
+    }
+    .rp-home-keywords {
+        gap: 12px;
+        margin-top: 28px;
+    }
+    .rp-home-keywords span {
+        font-size: 7px;
+    }
+    .rp-home-keywords span + span::before {
+        margin-right: 12px;
+    }
+    .rp-home-visual {
+        margin: 35px 0 0;
+        width: 100%;
+        max-width: 440px;
+        height: 360px;
+        transform: none;
+    }
+    .rp-home-bottom {
+        min-height: 65px;
+        font-size: 7px;
+    }
+    .rp-home-bottom a {
+        font-size: 7px;
+        gap: 10px;
+    }
+    .rp-home-bottom > span {
+        font-size: 7px;
+    }
+    .rp-home-bottom a span {
+        font-size: 16px;
+    }
+}
+
+.rp-home.rp-home--art {
+    isolation: isolate;
+    .rp-home-layout {
+        padding-top: 235px;
+        padding-bottom: 85px;
+    }
+    .rp-home-visual {
+        perspective: none;
+        pointer-events: none;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background: linear-gradient(90deg, #f8f7fbe8 0%, #f8f7fbc7 23%, #f8f7fb30 38%, transparent 52%);
+    }
+    .rp-home-copy > .rp-eyebrow {
+        font-size: 9px;
+        color: #8b8994;
+        margin-bottom: 23px;
+    }
+    .rp-home-keywords {
+        margin-top: 24px;
+    }
+    .rp-home-actions .rp-primary {
+        padding-inline: 30px;
+    }
+    .rp-home-aside {
+        z-index: 2;
+    }
+    .rp-home-aside h2 {
+        letter-spacing: -0.04em;
+    }
+    .rp-home-bottom {
+        position: relative;
+        z-index: 2;
+        border-top: 1px solid #d9d5e559;
+    }
+}
+
+@media (max-width: 1199px) {
+    .rp-home.rp-home--art {
+        .rp-home-layout {
+            min-height: 740px;
+            padding-top: 240px;
+        }
+        h1 {
+            font-size: 5vw;
+        }
+        .rp-home-aside {
+            right: 40px;
+        }
+        .rp-home-aside h2 {
+            font-size: 19px;
+        }
+        .rp-home-description {
+            font-size: 13px;
+        }
+        .rp-home-actions {
+            gap: 13px;
+        }
+        .rp-home-actions .rp-primary {
+            padding-inline: 20px;
+        }
+    }
+}
+
+@media (max-width: 999px) and (min-width: 700px) {
+    .rp-home.rp-home--art {
+        .rp-home-copy {
+            width: 53%;
+        }
+        .rp-home-visual {
+            inset-block-start: -72px;
+        }
+        .rp-home-artwork {
+            object-position: 44% center;
+        }
+        .rp-home-aside {
+            top: 45px;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    .rp-home.rp-home--art {
+        background: #f6f4fc;
+        &::after {
+            display: none;
+        }
+        .rp-home-layout {
+            padding-top: 55px;
+            padding-bottom: 0;
+        }
+        .rp-home-keywords {
+            margin-top: 23px;
+            gap: 10px;
+        }
+        .rp-home-visual {
+            max-width: none;
+            aspect-ratio: 1.2;
+            overflow: hidden;
+        }
+        .rp-home-artwork {
+            inset: 0;
+            object-fit: cover;
+        }
+        .rp-home-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto;
+            height: 50px;
+            background: linear-gradient(#f6f4fc, transparent);
+        }
+        .rp-home-aside {
+            padding: 15px 0 30px;
+        }
+        .rp-home-aside h2 {
+            padding-left: 15px;
+        }
+        .rp-home-aside p {
+            margin-left: 16px;
+        }
+    }
+}
 
 .rp-home-objects {
     position: absolute;
     inset: 0;
     z-index: 1;
     pointer-events: none;
-
     > span {
         position: absolute;
         display: grid;
@@ -18,101 +393,40 @@
         background: linear-gradient(140deg, #ffffff70, #d9c3ff1f 65%, #b78aff33);
         backdrop-filter: blur(7px);
         box-shadow: inset 1px 1px 5px #ffffffb3, inset -1px -1px 4px #a888dc26, 0 10px 25px #7350a51a;
-
-        svg { width: 34px; height: 34px; filter: drop-shadow(0 1px 1px #fff); }
+        svg {
+            width: 34px;
+            height: 34px;
+            filter: drop-shadow(0 1px 1px #fff);
+        }
     }
-
-    > span:nth-child(1) { left: 26%; top: 16%; transform: rotate(14deg); }
-    > span:nth-child(2) { left: 63%; top: 9%; transform: rotate(-12deg); }
-    > span:nth-child(3) { right: 7%; top: 64%; transform: rotate(22deg); }
+    > span:nth-child(1) {
+        left: 26%;
+        top: 16%;
+        transform: rotate(14deg);
+    }
+    > span:nth-child(2) {
+        left: 63%;
+        top: 9%;
+        transform: rotate(-12deg);
+    }
+    > span:nth-child(3) {
+        right: 7%;
+        top: 64%;
+        transform: rotate(22deg);
+    }
 }
 
 @media (hover: none), (max-width: 699px) {
-    .rp-home-objects { display: none; }
-}
-
-@media (min-width: 700px) and (max-width: 999px) {
-    .rp .rp-header-inner { gap: 16px; padding-inline: 24px; }
-    .rp .rp-nav { gap: 12px; }
-    .rp .rp-nav a { font-size: 10px; white-space: nowrap; }
-    .rp .rp-logo .rp-brand-logo { width: 110px; }
-    .rp .rp-header-contact { gap: 8px; padding: 8px 10px; font-size: 11px !important; }
-}
-
-.rp .rp-logo .rp-brand-logo {
-    display: block;
-    width: 138px;
-    height: auto;
-}
-
-.rp .rp-footer .rp-brand-logo {
-    filter: brightness(0) invert(1);
-    width: 118px;
-}
-
-@media (max-width: 699px) {
-    .rp .rp-header .rp-brand-logo {
-        width: 112px;
-    }
-}
-
-.rp[data-active-section='home'] .rp-header {
-    backdrop-filter: blur(8px);
-    border-bottom-color: transparent;
-}
-
-.rp .rp-header.is-fixed {
-    background: rgba(255, 255, 255, .8);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid #ffffff26;
-}
-
-.rp .rp-back-to-top {
-    position: fixed;
-    right: 28px;
-    bottom: 28px;
-    z-index: 35;
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #a34af0;
-    color: #fff;
-    box-shadow: 0 5px 22px #5e258b40;
-    opacity: 0;
-    visibility: hidden;
-    translate: 0 12px;
-    transition: opacity .25s, translate .25s, visibility .25s;
-    font-size: 27px;
-}
-
-.rp .rp-back-to-top.is-visible {
-    opacity: 1;
-    visibility: visible;
-    translate: 0 0;
-}
-
-.rp .rp-back-to-top:hover {
-    background: #8740cf;
-}
-
-@media (max-width: 699px) {
-    .rp .rp-back-to-top {
-        right: 20px;
-        bottom: calc(20px + env(safe-area-inset-bottom));
-        width: 44px;
-        height: 44px;
+    .rp-home-objects {
+        display: none;
     }
 }
 
 .rp-home.rp-home--art {
     background: #f6f4fc;
-
     &::after {
         display: none;
     }
-
     .rp-home-layout {
         max-width: none;
         width: 100%;
@@ -122,7 +436,6 @@
         display: flex;
         align-items: flex-end;
     }
-
     .rp-home-visual {
         position: absolute;
         inset: -84px 0 0;
@@ -133,12 +446,12 @@
         z-index: -1;
         transform: none;
     }
-
-    .rp-home-visual::before,
+    .rp-home-visual::before {
+        display: none;
+    }
     .rp-home-visual::after {
         display: none;
     }
-
     .rp-home-artwork {
         width: 100%;
         height: 100%;
@@ -146,17 +459,16 @@
         object-fit: cover;
         object-position: center;
     }
-
     .rp-home-copy {
         width: 36%;
         max-width: 580px;
     }
-
-    .rp-home-copy > .rp-eyebrow,
+    .rp-home-copy > .rp-eyebrow {
+        display: none;
+    }
     .rp-home-keywords {
         display: none;
     }
-
     h1 {
         color: #080808;
         font-size: clamp(49px, 4.2vw, 78px);
@@ -164,13 +476,11 @@
         line-height: 1.02;
         letter-spacing: -.065em;
     }
-
     h1 > span {
         color: inherit;
         background: none;
         -webkit-text-fill-color: currentColor;
     }
-
     .rp-home-description {
         color: #45424a;
         font-size: clamp(15px, 1.15vw, 20px);
@@ -178,12 +488,10 @@
         margin-top: 27px !important;
         max-width: 510px;
     }
-
     .rp-home-actions {
         margin-top: 29px;
         gap: 21px;
     }
-
     .rp-home-actions .rp-primary {
         background: #171717;
         min-height: 53px;
@@ -193,11 +501,9 @@
         font-size: 16px;
         gap: 12px;
     }
-
     .rp-home-actions .rp-primary:hover {
         background: #363039;
     }
-
     .rp-text-link {
         border: 1px solid #28252d;
         padding: 13px 27px;
@@ -205,14 +511,12 @@
         border-radius: 40px;
         font-size: 16px;
     }
-
     .rp-home-aside {
         position: absolute;
         top: 55px;
         right: 5.3vw;
         width: 310px;
     }
-
     .rp-home-aside h2 {
         color: #161319;
         border-left: 4px solid #a993d8;
@@ -221,14 +525,12 @@
         font-weight: 650;
         line-height: 1.45;
     }
-
     .rp-home-aside p {
         color: #615c66;
         margin: 17px 0 0 21px;
         font-size: 15px;
         line-height: 1.75;
     }
-
     .rp-home-bottom {
         display: none;
     }
@@ -241,37 +543,32 @@
             padding-inline: 40px;
             padding-bottom: 110px;
         }
-
         .rp-home-copy {
             width: 44%;
         }
-
         h1 {
             font-size: 5vw;
         }
-
         .rp-home-description {
             font-size: 14px;
         }
-
         .rp-home-aside {
             right: 40px;
             width: 280px;
         }
-
         .rp-home-aside h2 {
             font-size: 19px;
         }
-
         .rp-home-aside p {
             font-size: 13px;
         }
-
         .rp-home-actions {
             gap: 13px;
         }
-
-        .rp-home-actions .rp-primary,
+        .rp-home-actions .rp-primary {
+            font-size: 13px;
+            padding-inline: 21px;
+        }
         .rp-text-link {
             font-size: 13px;
             padding-inline: 21px;
@@ -288,34 +585,32 @@
             min-height: 0;
             padding: 65px 20px 35px;
         }
-
         .rp-home-copy {
             width: 100%;
             max-width: none;
         }
-
         h1 {
             font-size: clamp(42px, 10.6vw, 65px);
         }
-
         .rp-home-description {
             font-size: 14px;
             max-width: 360px;
             margin-top: 23px !important;
         }
-
         .rp-home-actions {
             gap: 14px;
             margin-top: 25px;
         }
-
-        .rp-home-actions .rp-primary,
+        .rp-home-actions .rp-primary {
+            min-height: 48px;
+            padding: 11px 21px;
+            font-size: 14px;
+        }
         .rp-text-link {
             min-height: 48px;
             padding: 11px 21px;
             font-size: 14px;
         }
-
         .rp-home-visual {
             position: relative;
             inset: auto;
@@ -324,22 +619,18 @@
             margin: 25px -20px 0;
             z-index: 0;
         }
-
         .rp-home-artwork {
             position: static;
             object-position: 74% center;
         }
-
         .rp-home-aside {
             position: static;
             width: auto;
             margin-top: 15px;
         }
-
         .rp-home-aside h2 {
             font-size: 18px;
         }
-
         .rp-home-aside p {
             font-size: 13px;
             margin-top: 13px;
@@ -347,3 +638,69 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .rp-home.rp-home--art {
+        padding-top: 68px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+    .rp-home.rp-home--art {
+        .rp-home-layout {
+            min-height: 740px;
+            padding-top: 190px;
+            padding-bottom: 80px;
+        }
+        .rp-home-copy {
+            width: 50%;
+            min-width: 0;
+        }
+        h1 {
+            font-size: clamp(40px, 5.1vw, 54px);
+        }
+        .rp-home-aside {
+            top: 40px;
+            right: 30px;
+            width: 270px;
+        }
+        .rp-home-visual {
+            inset-block-start: -68px;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    .rp-home.rp-home--art {
+        .rp-home-layout {
+            min-height: 0;
+            padding: 48px 20px 28px;
+        }
+        .rp-home-copy {
+            min-width: 0;
+        }
+        h1 {
+            font-size: clamp(33px, 10.2vw, 56px);
+            white-space: normal;
+        }
+        .rp-home-actions {
+            flex-wrap: wrap;
+        }
+        .rp-home-visual {
+            width: calc(100% + 40px);
+            height: auto;
+            aspect-ratio: 1.35;
+            margin-top: 24px;
+            overflow: hidden;
+            background: #f6f4fc;
+        }
+        .rp-home-artwork {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+        .rp-home-aside {
+            margin-top: 8px;
+        }
+    }
+}

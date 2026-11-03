@@ -1,4 +1,4 @@
-/* 모바일 전체 메뉴: 내비게이션, 연락 채널과 문의 버튼. */
+/* 모바일 메뉴 — 반응형 규칙도 이 파일에서 관리합니다. */
 
 .rp-mobile-menu {
     position: fixed;
@@ -8,7 +8,7 @@
     max-width: none;
     height: 100dvh;
     max-height: none;
-    padding: 20px 28px 55px;
+    padding: 15px 20px 55px;
     border: 0;
     border-radius: 0;
     background: radial-gradient(ellipse at 85% 105%, #3f1d7759, transparent 50%), #0e0b1b;
@@ -19,28 +19,27 @@
     font-size: 16px;
     line-height: 1.5;
     isolation: isolate;
-
     &::backdrop {
         background: #0e0b1b;
     }
-
-    *,
-    *::before,
+    * {
+        box-sizing: border-box;
+    }
+    *::before {
+        box-sizing: border-box;
+    }
     *::after {
         box-sizing: border-box;
     }
-
     a {
         color: inherit;
         text-decoration: none;
     }
-
     button {
         font: inherit;
         color: inherit;
         cursor: pointer;
     }
-
     :focus-visible {
         outline: 2px solid #b56cff;
         outline-offset: 4px;
@@ -69,8 +68,8 @@
 .rp-mobile-menu-close {
     display: grid;
     place-items: center;
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     background: transparent;
     border: 1.5px solid #a353f5;
     border-radius: 50%;
@@ -167,14 +166,11 @@
     .rp-mobile-menu {
         padding-inline: 20px;
     }
-
     .rp-mobile-menu-channels {
         gap: 6px;
     }
-
     .rp-mobile-menu-channels a {
         padding-inline: 6px;
         font-size: 11px;
     }
 }
-
