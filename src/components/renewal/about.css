@@ -484,7 +484,7 @@
     font-size: 11px;
     letter-spacing: 0.2em;
     font-weight: 800;
-    color: #7b95b5;
+    color: #b98ade;
 }
 .rp .hyera-about .history-item__body h3 {
     font-size: 23px;
@@ -806,9 +806,6 @@
 .rp .hyera-about {
     overflow: clip;
     line-height: 1.6;
-}
-.rp .hyera-about .hero {
-    padding-top: 84px;
 }
 .rp .hyera-about p {
     word-break: keep-all;

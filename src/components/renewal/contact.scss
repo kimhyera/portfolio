@@ -57,8 +57,8 @@
     padding-top: 30px;
     padding-bottom: 30px;
     padding-inline: 5.3vw;
-    background: #050b1d;
-    border-top: 1px solid #24263b;
+    // background: #171717;
+    // border-top: 1px solid #171717;
 }
 
 .rp-footer .rp-logo {
@@ -154,11 +154,11 @@
         opacity: 0.4;
     }
     .rp-contact {
-        background: #100e18;
+        background: #171717;
         padding-top: 140px;
     }
-    .rp-contact-glow {
-        background: radial-gradient(ellipse at -10% -10%, #8238bf77, transparent 45%), radial-gradient(ellipse at 110% 100%, #8238bf77, transparent 45%);
+    .rp-contact-glow {background: radial-gradient(ellipse at -40%  25%, #472838, transparent 45%), 
+		radial-gradient(ellipse at 110% 60%, #472838, transparent 45%);
     }
     .rp-contact::before {
         content: '';
@@ -191,15 +191,15 @@
         bottom: -470px;
     }
     .rp-contact-content > .rp-eyebrow {
-        color: #b154f9;
-    }
+        color: #af73dc;
+}
     .rp-contact h2 {
         font-size: clamp(40px, 5.8vw, 72px);
         margin-top: 60px;
         font-weight: 650;
     }
     .rp-contact h2 > span:not(.rp-contact-star) {
-        color: #b154f9;
+        color: #9c52d4;
         display: inline-block;
     }
     .rp-contact-content > p:not(.rp-eyebrow) {
@@ -233,7 +233,7 @@
         padding-left: 30px;
     }
     .rp-contact-channels a > span {
-        color: #b154f9;
+        color: #9c52d4;
         margin-right: 8px;
     }
     .rp-contact .rp-footer {

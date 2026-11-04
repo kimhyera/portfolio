@@ -397,16 +397,20 @@ export default function Portfolio() {
         }
         const buildSection = rootElement.querySelector('#what-i-build');
         const lastBuildCard = rootElement.querySelector('.rp-what-i-build-stack-card:last-child');
-        const buildObserver = lastBuildCard && !prefersReducedMotion && !mobileBuildMotion
-            ? new IntersectionObserver(([entry]) => {
-                buildSection.style.setProperty('--build-dark', entry.isIntersecting ? '0.88' : '0');
-            }, { threshold: 0.15 })
-            : null;
-        if (buildObserver) buildObserver.observe(lastBuildCard);
         const buildCards = [...rootElement.querySelectorAll('.rp-what-i-build-stack-card')];
         let buildScaleFrame = 0;
         const updateBuildScale = () => {
             buildScaleFrame = 0;
+            if (buildSection && lastBuildCard) {
+                // Layout coordinates keep the color progressing while the card is sticky.
+                let cardTop = 0;
+                for (let node = lastBuildCard; node; node = node.offsetParent) cardTop += node.offsetTop;
+                const progress = Math.max(0, Math.min(1,
+                    (window.innerHeight * 0.85 - (cardTop - window.scrollY)) / (window.innerHeight * 1.2)
+                ));
+                const eased = progress * progress * (3 - 2 * progress);
+                buildSection.style.setProperty('--build-dark', String(eased * 1));
+            }
             buildCards.slice(0, -1).forEach((card, index) => {
                 const nextTop = buildCards[index + 1].getBoundingClientRect().top;
                 const progress = Math.max(0, Math.min(1, (window.innerHeight * 0.75 - nextTop) / (window.innerHeight * 0.55)));
@@ -428,7 +432,6 @@ export default function Portfolio() {
             titleObserver.disconnect();
             window.removeEventListener('resize', paintTitleGradients);
             motionObserver?.disconnect();
-            buildObserver?.disconnect();
             window.removeEventListener('scroll', queueBuildScale);
             window.removeEventListener('resize', queueBuildScale);
             cancelAnimationFrame(buildScaleFrame);

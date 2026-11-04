@@ -19,7 +19,9 @@
         padding: 60px 7%;
         overflow: hidden;
         isolation: isolate;
-        background: radial-gradient(ellipse at 0 0, #602b9138, transparent 45%), radial-gradient(ellipse at 100% 100%, #6827a145, transparent 45%), #090610;
+		
+    background: radial-gradient(ellipse at -10% 40%, #472838, transparent 45%), radial-gradient(ellipse at 100% 100%, #171717, transparent 45%),
+	 #171717;
     }
     .rp-process-sticky::before {
         content: '';
@@ -65,8 +67,8 @@
         padding: 30px 40px 30px 0;
     }
     .section-label {
-        color: #b78aff;
-        font-size: 18px;
+        color: #c275ff;
+        font-size: clamp(14px, 1.5vw, 20px);
         letter-spacing: .04em;
         margin-bottom: 38px;
     }
@@ -123,8 +125,8 @@
     }
     .rp-process-window li.rp-step-active {
         opacity: 1;
-        border-color: #b56bf52b;
-        background: linear-gradient(110deg, #49206b26, #692b9630);
+        border-color: #B154FA;
+        // background: linear-gradient(110deg, #49206b26, #692b9630);
     }
     .rp-step-active::before {
         background: #f6edff !important;
@@ -135,7 +137,7 @@
     }
     .rp-process-window small {
         display: block;
-        color: #b78aff;
+        color: #c275ff;
         font-size: 18px;
         margin-bottom: 10px;
     }
@@ -145,7 +147,7 @@
         font-weight: 700;
     }
     .rp-step-active .card-title {
-        color: #b76cff;
+        color: #B154FA;
     }
     li .text-body {
         color: #c4bacf;

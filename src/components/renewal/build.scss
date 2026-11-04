@@ -207,7 +207,9 @@
 
 .rp #what-i-build {
     --build-dark: 0;
-    background: linear-gradient(rgba(0, 0, 0, var(--build-dark)), rgba(0, 0, 0, var(--build-dark))), radial-gradient(ellipse at 100% 10%, #eee8ff70, transparent 45%), #fcfbff;
+    background: linear-gradient(rgba(23,23,23, var(--build-dark)), rgba(23,23,23, var(--build-dark))),
+	 radial-gradient(ellipse at 100% 10%, #eee8ff70, transparent 45%), #fcfbff;
+	 
     padding-bottom: 70px;
     .rp-what-i-build-stack {
         max-width: 1200px;
